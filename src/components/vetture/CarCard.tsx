@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Vettura } from "@/data/vetture";
 
 interface Props {
@@ -21,9 +22,19 @@ export default function CarCard({ vettura }: Props) {
     >
       {/* Image */}
       <div className="relative aspect-[16/10] overflow-hidden bg-[#111]">
-        <div className="absolute inset-0 flex items-center justify-center text-[#5A5A5A] font-body text-[10px] tracking-widest uppercase">
-          {vettura.make} {vettura.model}
-        </div>
+        {vettura.image ? (
+          <Image
+            src={vettura.image}
+            alt={`${vettura.make} ${vettura.model}`}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center text-[#5A5A5A] font-body text-[10px] tracking-widest uppercase">
+            {vettura.make} {vettura.model}
+          </div>
+        )}
         <span className="absolute top-3 left-3 font-body text-[9px] tracking-[0.2em] uppercase text-[#F5F0E8] bg-[#080808] px-2 py-1 z-10">
           {vettura.year}
         </span>

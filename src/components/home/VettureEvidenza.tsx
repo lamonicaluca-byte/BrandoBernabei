@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import SectionLabel from "@/components/ui/SectionLabel";
 import Button from "@/components/ui/Button";
 import { getEvidenzaVetture, Vettura } from "@/data/vetture";
@@ -11,16 +12,6 @@ function formatPrezzo(prezzo: number) {
   return "€ " + prezzo.toLocaleString("it-IT");
 }
 
-function CarPlaceholder({ label, className = "" }: { label: string; className?: string }) {
-  return (
-    <div
-      className={`bg-anthracite flex items-center justify-center text-mid-grey font-body text-[10px] tracking-widest uppercase ${className}`}
-    >
-      {label}
-    </div>
-  );
-}
-
 function FeaturedCard({ vettura }: { vettura: Vettura }) {
   return (
     <Link
@@ -28,8 +19,16 @@ function FeaturedCard({ vettura }: { vettura: Vettura }) {
       className="group flex flex-col md:flex-row bg-pure-white border border-border-light overflow-hidden hover:shadow-md transition-shadow"
     >
       {/* Image */}
-      <div className="relative md:w-[55%] aspect-[16/10] md:aspect-auto overflow-hidden">
-        <CarPlaceholder label={`${vettura.make} ${vettura.model}`} className="w-full h-full" />
+      <div className="relative md:w-[55%] aspect-[16/10] md:aspect-auto overflow-hidden bg-anthracite">
+        {vettura.image && (
+          <Image
+            src={vettura.image}
+            alt={`${vettura.make} ${vettura.model}`}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            sizes="(max-width: 768px) 100vw, 55vw"
+          />
+        )}
         <span className="absolute top-3 left-3 font-body text-[9px] tracking-[0.2em] uppercase text-warm-white bg-luxury-black px-2 py-1">
           {vettura.year}
         </span>
@@ -84,8 +83,16 @@ function StandardCard({ vettura }: { vettura: Vettura }) {
       href={`/vetture/${vettura.slug}`}
       className="group flex flex-col bg-pure-white border border-border-light overflow-hidden hover:shadow-md transition-shadow"
     >
-      <div className="relative aspect-[16/10] overflow-hidden">
-        <CarPlaceholder label={`${vettura.make} ${vettura.model}`} className="w-full h-full" />
+      <div className="relative aspect-[16/10] overflow-hidden bg-anthracite">
+        {vettura.image && (
+          <Image
+            src={vettura.image}
+            alt={`${vettura.make} ${vettura.model}`}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        )}
         <span className="absolute top-3 left-3 font-body text-[9px] tracking-[0.2em] uppercase text-warm-white bg-luxury-black px-2 py-1">
           {vettura.year}
         </span>

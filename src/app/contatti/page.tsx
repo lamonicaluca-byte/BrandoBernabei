@@ -196,7 +196,7 @@ export default function ContattiPage() {
                 personalmente.
               </p>
               <a
-                href="https://wa.me/39XXXXXXXXXX"
+                href="https://wa.me/393395027983"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-[#1A2E1A] text-[#7ABF7A] font-body text-[10px] tracking-[0.15em] uppercase px-5 py-3 hover:bg-[#1f3a1f] transition-colors self-start"
@@ -229,13 +229,13 @@ export default function ContattiPage() {
                 Dove siamo
               </div>
               <address className="not-italic font-body text-[12px] text-mid-grey leading-[1.9]">
-                Via Esempio 00<br />
-                00100 Roma (RM)<br />
+                Via Flaminia, 318/a<br />
+                00196 Roma (RM)<br />
                 <a
-                  href="tel:+3906XXXXXXXX"
+                  href="tel:+393395027983"
                   className="hover:text-champagne-gold transition-colors"
                 >
-                  +39 06 XXX XXXXX
+                  +39 339 502 7983
                 </a>
                 <br />
                 <a
@@ -246,11 +246,17 @@ export default function ContattiPage() {
                 </a>
               </address>
 
-              {/* Google Maps placeholder */}
-              <div className="mt-5 aspect-[16/9] bg-dark-graphite flex items-center justify-center">
-                <span className="font-body text-[10px] tracking-[0.2em] uppercase text-mid-grey">
-                  [Google Maps]
-                </span>
+              <div className="mt-5 aspect-[16/9] relative overflow-hidden">
+                <iframe
+                  src="https://maps.google.com/maps?q=Via+Flaminia+318%2Fa+00196+Roma+RM&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Bernabei Automobili — Via Flaminia 318/a Roma"
+                />
               </div>
             </div>
           </div>

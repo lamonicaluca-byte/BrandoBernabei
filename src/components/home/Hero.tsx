@@ -36,7 +36,7 @@ export default function Hero() {
           <Button href="/vetture" variant="primary">
             Scopri le vetture disponibili
           </Button>
-          <Button href="https://wa.me/39XXXXXXXXXX" variant="outline-gold" external>
+          <Button href="https://wa.me/393395027983" variant="outline-gold" external>
             Parla con Brando
           </Button>
         </div>

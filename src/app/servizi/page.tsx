@@ -5,7 +5,7 @@ import Button from "@/components/ui/Button";
 export const metadata: Metadata = {
   title: "Servizi | Bernabei Automobili Roma",
   description:
-    "I servizi di Bernabei Automobili: consulenza, permuta, finanziamento, consegna in tutta Italia, assistenza post-vendita. Tutto per rendere il tuo acquisto semplice e sicuro.",
+    "Consulenza, permuta, finanziamento, garanzia e consegna in tutta Italia. Tutti i servizi di Bernabei Automobili Roma.",
 };
 
 const servizi = [

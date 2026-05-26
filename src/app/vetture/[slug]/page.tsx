@@ -122,7 +122,7 @@ export default async function VetturaPage({ params }: Props) {
             {/* CTA buttons */}
             <div className="flex flex-col gap-3">
               <Button
-                href={`https://wa.me/39XXXXXXXXXX?text=${waMessage}`}
+                href={`https://wa.me/393395027983?text=${waMessage}`}
                 variant="primary"
                 external
                 className="w-full justify-center"
@@ -164,7 +164,7 @@ export default async function VetturaPage({ params }: Props) {
       {/* Sticky CTA mobile */}
       <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-luxury-black border-t border-[0.5px] border-dark-graphite p-4 flex gap-3 z-40">
         <Button
-          href={`https://wa.me/39XXXXXXXXXX?text=${waMessage}`}
+          href={`https://wa.me/393395027983?text=${waMessage}`}
           variant="primary"
           external
           className="flex-1 justify-center"

@@ -47,12 +47,12 @@ export default function Footer() {
               Contatti
             </span>
             <address className="not-italic flex flex-col gap-2 font-body text-[11px] text-[#666]">
-              <span>Via Esempio 00, Roma 00100</span>
+              <span>Via Flaminia, 318/a · 00196 Roma (RM)</span>
               <a
-                href="tel:+3906XXXXXXXX"
+                href="tel:+393395027983"
                 className="hover:text-[#C9A96E] transition-colors"
               >
-                +39 06 XXX XXXXX
+                +39 339 502 7983
               </a>
               <a
                 href="mailto:info@bernabeiautomobili.it"
@@ -70,10 +70,10 @@ export default function Footer() {
         {/* Bottom */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between pt-5 gap-3">
           <span className="font-body text-[9px] text-[#3A3A3A]">
-            © {new Date().getFullYear()} Bernabei Automobili di Brando Bernabei · P.IVA XXXXXXXXXXX
+            © {new Date().getFullYear()} Bernabei Automobili di Brando Bernabei · P.IVA 15074791003
           </span>
           <a
-            href="https://wa.me/39XXXXXXXXXX"
+            href="https://wa.me/393395027983"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-[#1A2E1A] text-[#7ABF7A] font-body text-[9px] tracking-[.15em] uppercase px-4 py-2 hover:bg-[#1f3a1f] transition-colors"
