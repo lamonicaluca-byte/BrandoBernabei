@@ -6,9 +6,9 @@ import { ArrowRight } from "lucide-react"
 import { useState, useEffect } from "react"
 
 const heroImages = [
-  'https://images.unsplash.com/photo-1756990637536-714b76296a30?q=80&w=2070&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1762873493699-8c0cfe03656e?q=80&w=2070&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1773136666162-a459e44b5d8c?q=80&w=2070&auto=format&fit=crop',
+  '/911_2.avif',
+  '/911_3.jpg',
+  '/911_4.jpg',
 ]
 
 export function HeroSection() {
