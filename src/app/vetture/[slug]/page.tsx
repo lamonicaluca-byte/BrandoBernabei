@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!vettura) return {}
   return {
     title: `${vettura.make} ${vettura.model} ${vettura.year} | Bernabei Automobili`,
-    description: vettura.descrizione ?? `${vettura.make} ${vettura.model} ${vettura.year} — ${vettura.km.toLocaleString("it-IT")} km, ${vettura.cv} CV. Disponibile da Bernabei Automobili Roma.`,
+    description: vettura.descrizione ?? `${vettura.make} ${vettura.model} ${vettura.year}, ${vettura.km.toLocaleString("it-IT")} km, ${vettura.cv} CV. Disponibile da Bernabei Automobili Roma.`,
   }
 }
 

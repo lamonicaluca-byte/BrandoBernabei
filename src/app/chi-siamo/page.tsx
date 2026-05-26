@@ -83,7 +83,7 @@ export default function ChiSiamoPage() {
                   <p>
                     Il principio è semplice: trattare ogni cliente come vorremmo essere trattati
                     noi. Nessuna pressione commerciale, nessuna mezza verità. Solo competenza
-                    e onestà. Uno stock piccolo non è una limitazione — è una scelta. Ogni
+                    e onestà. Uno stock piccolo non è una limitazione: è una scelta. Ogni
                     vettura deve superare criteri precisi prima di entrare da noi.
                   </p>
                   <p>
@@ -155,7 +155,7 @@ export default function ChiSiamoPage() {
               una persona che sta per fare un investimento importante e merita tutta la mia
               attenzione e onestà. È così che ho sempre lavorato.&rdquo;
             </blockquote>
-            <p className="mt-6 font-semibold text-foreground">— Brando Bernabei</p>
+            <p className="mt-6 font-semibold text-foreground">Brando Bernabei</p>
             <div className="mt-12">
               <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
                 <Link href="/contatti">

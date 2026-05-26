@@ -13,7 +13,7 @@ export function CTASection() {
               &ldquo;Quando un cliente mi contatta, non vedo una vendita. Vedo una persona che sta per fare un investimento importante e merita tutta la mia attenzione.&rdquo;
             </blockquote>
             <p className="mt-6 text-sm text-muted-foreground tracking-wide">
-              — Brando Bernabei, fondatore
+              Brando Bernabei, fondatore
             </p>
           </div>
 

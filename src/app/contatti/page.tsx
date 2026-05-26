@@ -35,7 +35,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Indirizzo",
-    value: "Via Flaminia, 318/a — Roma",
+    value: "Via Flaminia, 318/a, Roma",
     href: "https://maps.app.goo.gl/EhJjdfo2syPRQTgKA",
     description: "Visite su appuntamento",
   },
@@ -141,7 +141,7 @@ export default function ContattiPage() {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Bernabei Automobili — Via Flaminia 318/a, Roma"
+            title="Bernabei Automobili, Via Flaminia 318/a, Roma"
           />
         </section>
       </main>

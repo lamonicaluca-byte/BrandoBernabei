@@ -76,7 +76,7 @@ export function AutoScoutSection() {
               <p className="mt-6 font-serif text-lg italic text-foreground/70 leading-relaxed border-t border-border pt-6">
                 &ldquo;Finalmente un concessionario serio. Trasparenza totale, nessuna pressione.&rdquo;
               </p>
-              <p className="mt-2 text-xs text-muted-foreground">— Alessandro P., cliente verificato</p>
+              <p className="mt-2 text-xs text-muted-foreground">Alessandro P., cliente verificato</p>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-card border border-border p-6 text-center">

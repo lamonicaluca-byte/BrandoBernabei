@@ -15,7 +15,7 @@ const pillars = [
     number: "03",
     title: "Competenza",
     description:
-      "Oltre 25 anni nel mercato premium e sportivo. Sappiamo riconoscere le vetture che meritano — e quelle da evitare.",
+      "Oltre 25 anni nel mercato premium e sportivo. Sappiamo riconoscere le vetture che meritano, e quelle da evitare.",
   },
   {
     number: "04",

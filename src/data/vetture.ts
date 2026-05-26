@@ -38,7 +38,7 @@ export const vetture: Vettura[] = [
     colore: "GT Silver Metallic",
     cilindrata: "2981 cc",
     trasmissione: "Trazione posteriore",
-    note: "Pacchetti Sport Chrono, PDLS+, interni in pelle nera. Una 911 esemplare — difficile trovarne una più onesta.",
+    note: "Pacchetti Sport Chrono, PDLS+, interni in pelle nera. Una 911 esemplare, difficile trovarne una più onesta.",
   },
   {
     slug: "bmw-m4-competition-2020",

@@ -1,10 +1,10 @@
-@import 'tailwindcss';
+﻿@import 'tailwindcss';
 @import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Bernabei Automobili — Luxury Automotive Palette */
+  /* Bernabei Automobili â€” Luxury Automotive Palette */
   --luxury-black: oklch(0.15 0 0);
   --anthracite: oklch(0.35 0.005 250);
   --champagne: oklch(0.78 0.06 85);
