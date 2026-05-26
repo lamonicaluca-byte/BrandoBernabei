@@ -1,19 +1,41 @@
+"use client"
+
 import Link from "next/link"
 import { Button } from "@/components/ui/Button"
 import { ArrowRight } from "lucide-react"
+import { useState, useEffect } from "react"
+
+const heroImages = [
+  'https://images.unsplash.com/photo-1756990637536-714b76296a30?q=80&w=2070&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1762873493699-8c0cfe03656e?q=80&w=2070&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1773136666162-a459e44b5d8c?q=80&w=2070&auto=format&fit=crop',
+]
 
 export function HeroSection() {
+  const [current, setCurrent] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent(prev => (prev + 1) % heroImages.length)
+    }, 5000)
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background */}
+      {/* Background slideshow */}
       <div className="absolute inset-0 z-0">
-        <div
-          className="absolute inset-0 bg-cover bg-no-repeat"
-          style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1756990637536-714b76296a30?q=80&w=2070&auto=format&fit=crop')`,
-            backgroundPosition: 'center center',
-          }}
-        />
+        {heroImages.map((url, i) => (
+          <div
+            key={url}
+            className="absolute inset-0 bg-cover bg-no-repeat transition-opacity duration-1000"
+            style={{
+              backgroundImage: `url('${url}')`,
+              backgroundPosition: 'center center',
+              opacity: i === current ? 1 : 0,
+            }}
+          />
+        ))}
         <div className="absolute inset-0 bg-gradient-to-b from-primary/85 via-primary/65 to-primary/80" />
       </div>
 
@@ -32,10 +54,7 @@ export function HeroSection() {
         </h1>
 
         {/* Subheadline */}
-        <p
-          className="mt-8 text-lg sm:text-xl text-white/90 max-w-xl mx-auto leading-relaxed px-6 py-3 rounded-2xl"
-          style={{ background: 'rgba(0,0,0,0.45)', backdropFilter: 'blur(6px)' }}
-        >
+        <p className="mt-8 text-lg sm:text-xl text-white/70 max-w-xl mx-auto leading-relaxed">
           Trovare l&apos;auto giusta è una cosa. Trovare qualcuno di cui fidarsi per farlo è un&apos;altra.
         </p>
 
@@ -82,6 +101,19 @@ export function HeroSection() {
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-3">
         <span className="text-[9px] tracking-[0.25em] text-white/30 uppercase">Scorri</span>
         <div className="w-px h-14 bg-gradient-to-b from-white/30 to-transparent" />
+      </div>
+
+      {/* Slide dots */}
+      <div className="absolute bottom-10 right-8 z-10 flex gap-2">
+        {heroImages.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
+              i === current ? 'bg-accent w-4' : 'bg-white/30'
+            }`}
+          />
+        ))}
       </div>
     </section>
   )
