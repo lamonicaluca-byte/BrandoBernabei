@@ -5,15 +5,15 @@ type Variant = "primary" | "outline-gold" | "outline-dark";
 
 const variantClasses: Record<Variant, string> = {
   primary:
-    "bg-champagne-gold text-luxury-black hover:bg-[#c9a45e] transition-colors",
+    "bg-[#C9A96E] text-[#080808] hover:bg-[#b8954f] transition-colors font-medium",
   "outline-gold":
-    "bg-transparent border border-[0.5px] border-champagne-gold text-champagne-gold hover:bg-champagne-gold hover:text-luxury-black transition-colors",
+    "bg-transparent border border-[0.5px] border-[#C9A96E] text-[#C9A96E] hover:bg-[#C9A96E] hover:text-[#080808] transition-colors",
   "outline-dark":
-    "bg-transparent border border-[0.5px] border-anthracite text-anthracite hover:bg-anthracite hover:text-warm-white transition-colors",
+    "bg-transparent border border-[0.5px] border-[#1C1C1C] text-[#1C1C1C] hover:bg-[#1C1C1C] hover:text-[#F5F0E8] transition-colors",
 };
 
 const baseClasses =
-  "inline-flex items-center justify-center px-6 py-3 font-body text-[10px] tracking-[0.2em] uppercase cursor-pointer select-none";
+  "inline-flex items-center justify-center px-6 py-3 font-body text-[10px] tracking-[0.18em] uppercase cursor-pointer select-none";
 
 type LinkButtonProps = {
   href: string;

@@ -15,17 +15,17 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 pb-10">
           {/* Col 1 – Brand */}
           <div className="flex flex-col gap-3">
-            <span className="font-display text-champagne-gold text-[22px] font-light tracking-wide">
+            <span className="font-display text-[#C9A96E] text-[22px] font-light tracking-[.1em]">
               Bernabei Automobili
             </span>
-            <p className="font-body text-[10px] text-mid-grey leading-relaxed max-w-[220px]">
+            <p className="font-body text-[10px] text-[#5A5A5A] leading-relaxed max-w-[220px]">
               Concessionaria specializzata in vetture premium e sportive · Roma
             </p>
           </div>
 
           {/* Col 2 – Pages */}
           <div className="flex flex-col gap-4">
-            <span className="font-body text-[9px] tracking-[0.25em] uppercase text-muted-grey">
+            <span className="uppercase tracking-[.22em] text-[9px] text-[#444]">
               Pagine
             </span>
             <nav className="flex flex-col gap-2.5">
@@ -33,7 +33,7 @@ export default function Footer() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="font-body text-[11px] text-mid-grey hover:text-warm-white transition-colors"
+                  className="font-body text-[11px] text-[#666] hover:text-[#9A9A9A] transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -43,20 +43,20 @@ export default function Footer() {
 
           {/* Col 3 – Contacts */}
           <div className="flex flex-col gap-4">
-            <span className="font-body text-[9px] tracking-[0.25em] uppercase text-muted-grey">
+            <span className="uppercase tracking-[.22em] text-[9px] text-[#444]">
               Contatti
             </span>
-            <address className="not-italic flex flex-col gap-2 font-body text-[11px] text-mid-grey">
+            <address className="not-italic flex flex-col gap-2 font-body text-[11px] text-[#666]">
               <span>Via Esempio 00, Roma 00100</span>
               <a
                 href="tel:+3906XXXXXXXX"
-                className="hover:text-champagne-gold transition-colors"
+                className="hover:text-[#C9A96E] transition-colors"
               >
                 +39 06 XXX XXXXX
               </a>
               <a
                 href="mailto:info@bernabeiautomobili.it"
-                className="hover:text-champagne-gold transition-colors"
+                className="hover:text-[#C9A96E] transition-colors"
               >
                 info@bernabeiautomobili.it
               </a>
@@ -65,7 +65,7 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-[0.5px] border-[#1E1E1E]" />
+        <div className="border-t border-[#1A1A1A]" />
 
         {/* Bottom */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between pt-5 gap-3">
@@ -76,7 +76,7 @@ export default function Footer() {
             href="https://wa.me/39XXXXXXXXXX"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#1A2E1A] text-[#7ABF7A] font-body text-[9px] tracking-[0.15em] uppercase px-4 py-2 hover:bg-[#1f3a1f] transition-colors"
+            className="inline-flex items-center gap-2 bg-[#1A2E1A] text-[#7ABF7A] font-body text-[9px] tracking-[.15em] uppercase px-4 py-2 hover:bg-[#1f3a1f] transition-colors"
           >
             <svg
               width="14"

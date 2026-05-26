@@ -23,16 +23,16 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 bg-luxury-black h-[52px] px-8 flex items-center justify-between transition-all duration-300 ${
-        scrolled ? "border-b border-[0.5px] border-[#1E1E1E]" : ""
+      className={`fixed top-0 left-0 right-0 z-50 bg-[#080808] h-[52px] px-8 flex items-center justify-between transition-all duration-300 ${
+        scrolled ? "border-b border-[#1E1E1E]" : ""
       }`}
     >
       {/* Logo */}
       <Link href="/" className="flex flex-col leading-none">
-        <span className="font-display text-champagne-gold text-[18px] font-light tracking-wide">
+        <span className="font-display text-[#C9A96E] text-[18px] font-light tracking-[.1em]">
           Bernabei Automobili
         </span>
-        <span className="font-body text-[9px] text-[#8A8A8A] tracking-[0.15em] uppercase mt-0.5">
+        <span className="font-body text-[9px] text-[#666] tracking-[.2em] uppercase mt-0.5">
           Roma · Dal 1998
         </span>
       </Link>
@@ -43,7 +43,7 @@ export default function Navbar() {
           <Link
             key={link.href}
             href={link.href}
-            className="font-body text-[10px] tracking-[0.18em] uppercase text-muted-grey hover:text-warm-white transition-colors duration-200"
+            className="uppercase tracking-[.18em] text-[10px] text-[#9A9A9A] hover:text-[#C9A96E] transition-colors duration-200"
           >
             {link.label}
           </Link>
@@ -60,25 +60,25 @@ export default function Navbar() {
         aria-label="Apri menu"
       >
         <span
-          className={`block w-5 h-px bg-warm-white transition-transform duration-200 ${menuOpen ? "rotate-45 translate-y-[7px]" : ""}`}
+          className={`block w-5 h-px bg-[#F5F0E8] transition-transform duration-200 ${menuOpen ? "rotate-45 translate-y-[7px]" : ""}`}
         />
         <span
-          className={`block w-5 h-px bg-warm-white transition-opacity duration-200 ${menuOpen ? "opacity-0" : ""}`}
+          className={`block w-5 h-px bg-[#F5F0E8] transition-opacity duration-200 ${menuOpen ? "opacity-0" : ""}`}
         />
         <span
-          className={`block w-5 h-px bg-warm-white transition-transform duration-200 ${menuOpen ? "-rotate-45 -translate-y-[7px]" : ""}`}
+          className={`block w-5 h-px bg-[#F5F0E8] transition-transform duration-200 ${menuOpen ? "-rotate-45 -translate-y-[7px]" : ""}`}
         />
       </button>
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden absolute top-[52px] left-0 right-0 bg-luxury-black border-t border-[#1E1E1E] py-6 px-8 flex flex-col gap-5">
+        <div className="md:hidden absolute top-[52px] left-0 right-0 bg-[#080808] border-t border-[#1E1E1E] py-6 px-8 flex flex-col gap-5">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="font-body text-[10px] tracking-[0.18em] uppercase text-muted-grey hover:text-warm-white transition-colors"
+              className="uppercase tracking-[.18em] text-[10px] text-[#9A9A9A] hover:text-[#C9A96E] transition-colors"
             >
               {link.label}
             </Link>

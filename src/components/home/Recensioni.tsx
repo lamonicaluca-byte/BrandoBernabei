@@ -37,7 +37,7 @@ function Stars() {
           width="10"
           height="10"
           viewBox="0 0 24 24"
-          fill="#D4AF72"
+          fill="#C9A96E"
           aria-hidden="true"
         >
           <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
@@ -49,22 +49,22 @@ function Stars() {
 
 export default function Recensioni() {
   return (
-    <section className="bg-off-white py-16 px-8">
+    <section className="bg-[#EDEBE4] py-16 px-8">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
           <div>
             <SectionLabel className="mb-4">Cosa dicono i clienti</SectionLabel>
-            <h2 className="font-display text-[32px] font-light text-luxury-black">
+            <h2 className="font-display font-light text-[32px] text-[#1C1C1C]">
               Le parole di chi ha scelto Bernabei
             </h2>
           </div>
           <div className="flex flex-col items-start md:items-end gap-1">
-            <div className="font-display text-[52px] font-light text-luxury-black leading-none">
+            <div className="font-display font-light text-7xl text-[#1C1C1C] leading-none">
               4.9
             </div>
             <Stars />
-            <span className="font-body text-[9px] tracking-[0.15em] uppercase text-mid-grey mt-1">
+            <span className="font-body text-[9px] tracking-[0.15em] uppercase text-[#5A5A5A] mt-1">
               su AutoScout24
             </span>
           </div>
@@ -75,13 +75,13 @@ export default function Recensioni() {
           {recensioni.map((r) => (
             <div
               key={r.autore}
-              className="bg-pure-white border border-[0.5px] border-border-light p-6 flex flex-col gap-4"
+              className="bg-white border border-[#E0DDD6] p-6 flex flex-col gap-4"
             >
               <Stars />
-              <p className="font-display text-[14px] italic text-luxury-black leading-relaxed">
+              <p className="font-display italic text-sm text-[#3A3A3A] leading-relaxed">
                 &ldquo;{r.testo}&rdquo;
               </p>
-              <span className="font-body text-[9px] tracking-[0.2em] uppercase text-muted-grey">
+              <span className="font-body text-[9px] tracking-[0.2em] uppercase text-[#9A9A9A]">
                 — {r.autore}, {r.citta}
               </span>
             </div>

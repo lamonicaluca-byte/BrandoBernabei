@@ -8,25 +8,25 @@ const stats = [
 
 export default function Hero() {
   return (
-    <section className="bg-luxury-black pt-[52px]">
+    <section className="bg-[#080808] pt-[52px]">
       <div className="max-w-6xl mx-auto px-8 py-16 md:py-24">
         {/* Badge */}
         <div className="flex items-center gap-3 mb-8">
-          <span className="w-6 h-px bg-champagne-gold" />
-          <span className="font-body text-[9px] tracking-[0.3em] uppercase text-champagne-gold">
+          <span className="w-7 h-px bg-[#C9A96E] flex-shrink-0" />
+          <span className="font-body text-[9px] tracking-[0.3em] uppercase text-[#C9A96E]">
             Concessionaria premium a Roma
           </span>
         </div>
 
         {/* H1 */}
-        <h1 className="font-display text-[48px] md:text-[64px] font-light text-warm-white leading-[1.1] mb-6 max-w-3xl">
+        <h1 className="font-display font-light text-5xl md:text-[64px] leading-[1.05] tracking-tight text-[#F5F0E8] mb-6 max-w-3xl">
           Auto selezionate.
           <br />
-          <em className="text-champagne-gold not-italic">Fiducia garantita.</em>
+          <em className="text-[#C9A96E] italic">Fiducia garantita.</em>
         </h1>
 
         {/* Subtitle */}
-        <p className="font-body text-[12px] font-light text-mid-grey leading-[1.9] max-w-xl mb-10">
+        <p className="font-body text-[12px] font-light text-[#5A5A5A] leading-[1.9] max-w-xl mb-10">
           Ogni vettura che trovi da noi è stata scelta personalmente. Non siamo un marketplace
           — siamo consulenti che mettono la tua soddisfazione prima di ogni trattativa.
         </p>
@@ -42,17 +42,17 @@ export default function Hero() {
         </div>
 
         {/* Stats */}
-        <div className="border-t border-[0.5px] border-dark-graphite">
+        <div className="border-t border-[#1E1E1E]">
           <div className="grid grid-cols-3">
             {stats.map((stat, i) => (
               <div
                 key={stat.label}
-                className={`py-6 pr-6 ${i > 0 ? "pl-6 border-l border-[0.5px] border-dark-graphite" : ""}`}
+                className={`py-6 pr-6 ${i > 0 ? "pl-6 border-l border-[#1E1E1E]" : ""}`}
               >
-                <div className="font-display text-[30px] font-light text-champagne-gold leading-none mb-1">
+                <div className="font-display font-light text-4xl text-[#C9A96E] leading-none mb-1">
                   {stat.value}
                 </div>
-                <div className="font-body text-[9px] tracking-[0.15em] uppercase text-mid-grey">
+                <div className="uppercase tracking-[.2em] text-[9px] text-[#444]">
                   {stat.label}
                 </div>
               </div>
