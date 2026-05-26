@@ -53,7 +53,7 @@ export function HeroSection() {
             size="lg"
             className="text-white/90 hover:bg-white/10 hover:text-white px-8 text-base font-medium"
           >
-            <Link href="/contatti">Parla con Brando</Link>
+            <Link href="/contatti">Contattaci</Link>
           </Button>
         </div>
 
