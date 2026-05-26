@@ -36,7 +36,7 @@ const contactInfo = [
     icon: MapPin,
     title: "Indirizzo",
     value: "Via Flaminia, 318/a — Roma",
-    href: "https://maps.google.com/?q=Via+Flaminia+318a+00196+Roma",
+    href: "https://maps.app.goo.gl/EhJjdfo2syPRQTgKA",
     description: "Visite su appuntamento",
   },
 ]

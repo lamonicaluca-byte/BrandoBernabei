@@ -33,10 +33,10 @@ export function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3">
           <div className="flex flex-col">
-            <span className="font-serif text-xl font-medium tracking-wide text-primary">
+            <span className="font-serif text-3xl font-medium tracking-wide text-primary">
               BERNABEI
             </span>
-            <span className="text-[10px] tracking-[0.3em] text-muted-foreground uppercase">
+            <span className="text-[11px] tracking-[0.3em] text-muted-foreground uppercase">
               Automobili
             </span>
           </div>
