@@ -33,7 +33,7 @@ export function HeroSection() {
 
           {/* Subheadline */}
           <p className="mt-8 text-lg sm:text-xl text-white/70 max-w-xl leading-relaxed">
-            Da oltre una semplice compravendita. Ti accompagniamo nella scelta della vettura giusta, con trasparenza e competenza.
+            Trovare l&apos;auto giusta è una cosa. Trovare qualcuno di cui fidarsi per farlo è un&apos;altra.
           </p>
 
           {/* CTAs */}
