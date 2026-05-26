@@ -55,7 +55,7 @@ export default async function VetturaPage({ params }: Props) {
       {/* Header scuro */}
       <div className="bg-luxury-black pt-[52px] pb-10 px-8">
         <div className="max-w-6xl mx-auto pt-10">
-          <div className="flex items-center gap-2 text-mid-grey font-body text-[10px] tracking-widest uppercase mb-4">
+          <div className="flex items-center gap-2 text-muted-grey font-body text-[10px] tracking-widest uppercase mb-4">
             <a href="/vetture" className="hover:text-champagne-gold transition-colors">
               Vetture
             </a>
@@ -80,7 +80,7 @@ export default async function VetturaPage({ params }: Props) {
           <div className="flex flex-col gap-3">
             {/* Main image */}
             <div className="aspect-[16/10] bg-anthracite flex items-center justify-center">
-              <span className="font-body text-[10px] tracking-[0.25em] uppercase text-mid-grey">
+              <span className="font-body text-[10px] tracking-[0.25em] uppercase text-muted-grey">
                 {vettura.make} {vettura.model} · {vettura.year}
               </span>
             </div>

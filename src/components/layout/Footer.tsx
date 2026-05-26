@@ -15,17 +15,17 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 pb-10">
           {/* Col 1 – Brand */}
           <div className="flex flex-col gap-3">
-            <span className="font-display text-[#C9A96E] text-[22px] font-light tracking-[.1em]">
+            <span className="font-display text-[#C9A96E] text-[28px] font-light tracking-[.1em]">
               Bernabei Automobili
             </span>
-            <p className="font-body text-[10px] text-[#5A5A5A] leading-relaxed max-w-[220px]">
+            <p className="font-body text-[12px] text-[#8A8A8A] leading-relaxed max-w-[280px]">
               Concessionaria specializzata in vetture premium e sportive · Roma
             </p>
           </div>
 
           {/* Col 2 – Pages */}
           <div className="flex flex-col gap-4">
-            <span className="uppercase tracking-[.22em] text-[9px] text-[#444]">
+            <span className="uppercase tracking-[.22em] text-[9px] text-[#666]">
               Pagine
             </span>
             <nav className="flex flex-col gap-2.5">
@@ -43,7 +43,7 @@ export default function Footer() {
 
           {/* Col 3 – Contacts */}
           <div className="flex flex-col gap-4">
-            <span className="uppercase tracking-[.22em] text-[9px] text-[#444]">
+            <span className="uppercase tracking-[.22em] text-[9px] text-[#666]">
               Contatti
             </span>
             <address className="not-italic flex flex-col gap-2 font-body text-[11px] text-[#666]">
