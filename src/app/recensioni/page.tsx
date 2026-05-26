@@ -125,7 +125,7 @@ export default function RecensioniPage() {
               </div>
               {/* Barra percentuale */}
               <div className="mt-4 flex items-center gap-4">
-                <div className="flex-1 bg-dark-graphite h-1">
+                <div className="flex-1 bg-[#3A3A3A] h-1">
                   <div className="bg-champagne-gold h-1 w-[97%]" />
                 </div>
                 <span className="font-display text-[20px] text-champagne-gold font-light whitespace-nowrap">
@@ -169,7 +169,7 @@ export default function RecensioniPage() {
                 <Stars count={r.voto} />
                 <span className="font-body text-[9px] text-[#AAAAAA]">{r.data}</span>
               </div>
-              <p className="font-display text-[14px] italic text-luxury-black leading-relaxed flex-1">
+              <p className="font-display text-[16px] italic text-luxury-black leading-relaxed flex-1">
                 &ldquo;{r.testo}&rdquo;
               </p>
               <div className="pt-3 border-t border-[0.5px] border-border-light">

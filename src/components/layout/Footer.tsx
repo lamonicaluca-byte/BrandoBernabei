@@ -25,7 +25,7 @@ export default function Footer() {
 
           {/* Col 2 – Pages */}
           <div className="flex flex-col gap-4">
-            <span className="uppercase tracking-[.22em] text-[9px] text-[#666]">
+            <span className="uppercase tracking-[.22em] text-[9px] text-[#888]">
               Pagine
             </span>
             <nav className="flex flex-col gap-2.5">
@@ -33,7 +33,7 @@ export default function Footer() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="font-body text-[11px] text-[#666] hover:text-[#9A9A9A] transition-colors"
+                  className="font-body text-[12px] text-[#9A9A9A] hover:text-[#C9A96E] transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -43,10 +43,10 @@ export default function Footer() {
 
           {/* Col 3 – Contacts */}
           <div className="flex flex-col gap-4">
-            <span className="uppercase tracking-[.22em] text-[9px] text-[#666]">
+            <span className="uppercase tracking-[.22em] text-[9px] text-[#888]">
               Contatti
             </span>
-            <address className="not-italic flex flex-col gap-2 font-body text-[11px] text-[#666]">
+            <address className="not-italic flex flex-col gap-2 font-body text-[12px] text-[#9A9A9A]">
               <span>Via Flaminia, 318/a · 00196 Roma (RM)</span>
               <a
                 href="tel:+393395027983"
@@ -65,11 +65,11 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-[#1A1A1A]" />
+        <div className="border-t border-[#2A2A2A]" />
 
         {/* Bottom */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between pt-5 gap-3">
-          <span className="font-body text-[9px] text-[#3A3A3A]">
+          <span className="font-body text-[9px] text-[#666]">
             © {new Date().getFullYear()} Bernabei Automobili di Brando Bernabei · P.IVA 15074791003
           </span>
           <a

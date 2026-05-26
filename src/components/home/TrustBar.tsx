@@ -2,7 +2,7 @@ export default function TrustBar() {
   return (
     <div className="bg-[#131313] py-3 px-8">
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
-        <span className="font-body text-[10px] text-[#6A6A6A]">
+        <span className="font-body text-[10px] font-medium text-[#C0C0C0]">
           Verificato su AutoScout24
         </span>
         <div className="flex items-center gap-2">
@@ -26,7 +26,7 @@ export default function TrustBar() {
           href="https://www.autoscout24.it/concessionari/bernabei-automobili-di-brando-bernabei"
           target="_blank"
           rel="noopener noreferrer"
-          className="font-body text-[9px] text-[#4A4A4A] hover:text-champagne-gold transition-colors"
+          className="font-body text-[9px] text-[#9A9A9A] hover:text-champagne-gold transition-colors"
         >
           Autoscout24.it →
         </a>

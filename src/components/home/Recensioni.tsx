@@ -78,7 +78,7 @@ export default function Recensioni() {
               className="bg-white border border-[#E0DDD6] p-6 flex flex-col gap-4"
             >
               <Stars />
-              <p className="font-display italic text-sm text-[#3A3A3A] leading-relaxed">
+              <p className="font-display italic text-[16px] text-[#3A3A3A] leading-relaxed">
                 &ldquo;{r.testo}&rdquo;
               </p>
               <span className="font-body text-[9px] tracking-[0.2em] uppercase text-[#9A9A9A]">

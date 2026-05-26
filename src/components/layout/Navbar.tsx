@@ -29,10 +29,10 @@ export default function Navbar() {
     >
       {/* Logo */}
       <Link href="/" className="flex flex-col leading-none">
-        <span className="font-display text-[#C9A96E] text-[24px] font-light tracking-[.1em]">
+        <span className="font-display text-[#C9A96E] text-[28px] font-light tracking-[.1em]">
           Bernabei Automobili
         </span>
-        <span className="font-body text-[9px] text-[#888] tracking-[.2em] uppercase mt-0.5">
+        <span className="font-body text-[9px] font-medium text-[#AAAAAA] tracking-[.2em] uppercase mt-0.5">
           Roma · Dal 1998
         </span>
       </Link>
@@ -43,7 +43,7 @@ export default function Navbar() {
           <Link
             key={link.href}
             href={link.href}
-            className="uppercase tracking-[.18em] text-[10px] text-[#9A9A9A] hover:text-[#C9A96E] transition-colors duration-200"
+            className="uppercase tracking-[.18em] text-[10px] font-medium text-[#BBBBBB] hover:text-[#C9A96E] transition-colors duration-200"
           >
             {link.label}
           </Link>
@@ -78,7 +78,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="uppercase tracking-[.18em] text-[10px] text-[#9A9A9A] hover:text-[#C9A96E] transition-colors"
+              className="uppercase tracking-[.18em] text-[10px] font-medium text-[#BBBBBB] hover:text-[#C9A96E] transition-colors"
             >
               {link.label}
             </Link>

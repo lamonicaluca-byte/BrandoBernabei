@@ -44,7 +44,7 @@ export default function MetodoBernabei() {
                   : ""
               }`}
             >
-              <div className="font-display text-5xl text-[#222] leading-none select-none">
+              <div className="font-display text-5xl text-[#555] leading-none select-none">
                 {step.number}
               </div>
               <div className="uppercase tracking-[.2em] text-[10px] text-[#C9A96E]">
