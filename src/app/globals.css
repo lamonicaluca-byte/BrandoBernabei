@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+:root {
+  --luxury-black:   #0A0A0A;
+  --anthracite:     #1C1C1C;
+  --dark-graphite:  #2A2A2A;
+  --mid-grey:       #5A5A5A;
+  --muted-grey:     #9A9A9A;
+  --champagne-gold: #D4AF72;
+  --warm-white:     #F8F6F1;
+  --off-white:      #F0EDE6;
+  --pure-white:     #FFFFFF;
+  --border-light:   #E0DDD6;
+}
+
+@theme inline {
+  --color-luxury-black:   var(--luxury-black);
+  --color-anthracite:     var(--anthracite);
+  --color-dark-graphite:  var(--dark-graphite);
+  --color-mid-grey:       var(--mid-grey);
+  --color-muted-grey:     var(--muted-grey);
+  --color-champagne-gold: var(--champagne-gold);
+  --color-warm-white:     var(--warm-white);
+  --color-off-white:      var(--off-white);
+  --color-pure-white:     var(--pure-white);
+  --color-border-light:   var(--border-light);
+
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Montserrat', system-ui, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--luxury-black);
+  color: var(--warm-white);
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
