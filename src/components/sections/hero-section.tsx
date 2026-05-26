@@ -17,50 +17,48 @@ export function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 py-32 w-full">
-        <div className="max-w-3xl">
-          {/* Eyebrow */}
-          <span className="text-xs tracking-[0.3em] text-accent/80 uppercase">
-            Roma · Auto Premium &amp; Sportive
-          </span>
+      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 py-32 w-full text-center">
+        {/* Eyebrow */}
+        <span className="text-xs tracking-[0.3em] text-accent/80 uppercase">
+          Roma · Auto Premium &amp; Sportive
+        </span>
 
-          {/* Headline */}
-          <h1 className="mt-6 font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light tracking-tight text-white leading-[1.05]">
-            Auto selezionate.
-            <br />
-            <em className="not-italic text-accent">Fiducia garantita.</em>
-          </h1>
+        {/* Headline */}
+        <h1 className="mt-6 font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light tracking-tight text-white leading-[1.05]">
+          Auto selezionate.
+          <br />
+          <em className="not-italic text-accent">Fiducia garantita.</em>
+        </h1>
 
-          {/* Subheadline */}
-          <p className="mt-8 text-lg sm:text-xl text-white/70 max-w-xl leading-relaxed">
-            Trovare l&apos;auto giusta è una cosa. Trovare qualcuno di cui fidarsi per farlo è un&apos;altra.
-          </p>
+        {/* Subheadline */}
+        <p className="mt-8 text-lg sm:text-xl text-white/70 max-w-xl mx-auto leading-relaxed">
+          Trovare l&apos;auto giusta è una cosa. Trovare qualcuno di cui fidarsi per farlo è un&apos;altra.
+        </p>
 
-          {/* CTAs */}
-          <div className="mt-12 flex flex-col sm:flex-row items-start gap-4">
-            <Button
-              asChild
-              size="lg"
-              className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 text-base font-medium"
-            >
-              <Link href="/vetture">
-                Scopri le vetture disponibili
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-            <Button
-              asChild
-              variant="ghost"
-              size="lg"
-              className="text-white/90 hover:bg-white/10 hover:text-white px-8 text-base font-medium"
-            >
-              <Link href="/contatti">Parla con Brando</Link>
-            </Button>
-          </div>
+        {/* CTAs */}
+        <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Button
+            asChild
+            size="lg"
+            className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 text-base font-medium"
+          >
+            <Link href="/vetture">
+              Scopri le vetture disponibili
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </Button>
+          <Button
+            asChild
+            variant="ghost"
+            size="lg"
+            className="text-white/90 hover:bg-white/10 hover:text-white px-8 text-base font-medium"
+          >
+            <Link href="/contatti">Parla con Brando</Link>
+          </Button>
         </div>
 
         {/* Trust Stats */}
-        <div className="mt-24 flex flex-wrap items-center gap-10 sm:gap-16">
+        <div className="mt-24 flex flex-wrap items-center justify-center gap-10 sm:gap-16">
           <div>
             <div className="font-serif text-3xl font-light text-accent">97%</div>
             <div className="text-[11px] text-white/45 mt-1 tracking-[0.15em] uppercase">Recensioni positive</div>
