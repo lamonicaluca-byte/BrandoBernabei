@@ -8,9 +8,10 @@ export function HeroSection() {
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-no-repeat"
           style={{
             backgroundImage: `url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2070&auto=format&fit=crop')`,
+            backgroundPosition: 'center 30%',
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary/85 via-primary/65 to-primary/80" />
@@ -31,7 +32,10 @@ export function HeroSection() {
         </h1>
 
         {/* Subheadline */}
-        <p className="mt-8 text-lg sm:text-xl text-white/70 max-w-xl mx-auto leading-relaxed">
+        <p
+          className="mt-8 text-lg sm:text-xl text-white/90 max-w-xl mx-auto leading-relaxed px-6 py-3 rounded-2xl"
+          style={{ background: 'rgba(0,0,0,0.45)', backdropFilter: 'blur(6px)' }}
+        >
           Trovare l&apos;auto giusta è una cosa. Trovare qualcuno di cui fidarsi per farlo è un&apos;altra.
         </p>
 
@@ -47,14 +51,12 @@ export function HeroSection() {
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
-          <Button
-            asChild
-            variant="ghost"
-            size="lg"
-            className="text-white/90 hover:bg-white/10 hover:text-white px-8 text-base font-medium"
+          <Link
+            href="/contatti"
+            className="text-sm text-white font-normal opacity-70 hover:opacity-100 hover:underline underline-offset-4 transition-all"
           >
-            <Link href="/contatti">Contattaci</Link>
-          </Button>
+            Contattaci
+          </Link>
         </div>
 
         {/* Trust Stats */}

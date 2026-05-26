@@ -59,7 +59,7 @@ export function Header() {
             <Button
               asChild
               size="sm"
-              className="rounded-full bg-accent text-black hover:bg-accent/85 font-semibold px-5 text-sm"
+              className="rounded-full border border-accent bg-transparent text-accent hover:bg-accent hover:text-black font-medium px-5 text-sm transition-colors"
             >
               <Link href="/contatti">Contattaci</Link>
             </Button>
