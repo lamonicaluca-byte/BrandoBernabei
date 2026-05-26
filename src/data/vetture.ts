@@ -11,6 +11,7 @@ export interface Vettura {
   badge: string;
   descrizione?: string;
   featured: boolean;
+  image?: string;
   colore?: string;
   potenza?: string;
   cilindrata?: string;
@@ -33,6 +34,7 @@ export const vetture: Vettura[] = [
     descrizione:
       "Veicolo selezionato personalmente. Certificata Porsche Approved, mantenimento scrupoloso, service documentato dal primo km.",
     featured: true,
+    image: "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?w=800&q=80",
     colore: "GT Silver Metallic",
     cilindrata: "2981 cc",
     trasmissione: "Trazione posteriore",
@@ -50,6 +52,7 @@ export const vetture: Vettura[] = [
     prezzo: 79500,
     badge: "Garanzia inclusa",
     featured: false,
+    image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&q=80",
     colore: "Sao Paulo Yellow",
     cilindrata: "2993 cc",
     trasmissione: "Trazione posteriore",
@@ -69,6 +72,7 @@ export const vetture: Vettura[] = [
     prezzo: 68900,
     badge: "Permuta accettata",
     featured: false,
+    image: "https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?w=800&q=80",
     colore: "Nero Ribelle",
     cilindrata: "3799 cc",
     trasmissione: "Trazione integrale Q4",
@@ -88,6 +92,7 @@ export const vetture: Vettura[] = [
     prezzo: 189000,
     badge: "Disponibile",
     featured: false,
+    image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&q=80",
     colore: "Obsidian Black",
     cilindrata: "3982 cc",
     trasmissione: "AMG Performance 4MATIC+",
@@ -107,6 +112,7 @@ export const vetture: Vettura[] = [
     prezzo: 109900,
     badge: "Disponibile",
     featured: false,
+    image: "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=800&q=80",
     colore: "Nardo Grey",
     cilindrata: "3996 cc",
     trasmissione: "Quattro",
@@ -126,6 +132,7 @@ export const vetture: Vettura[] = [
     prezzo: 149900,
     badge: "Certificata",
     featured: false,
+    image: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=800&q=80",
     colore: "Rosso Corsa",
     cilindrata: "3855 cc",
     trasmissione: "Trazione posteriore",
@@ -145,6 +152,7 @@ export const vetture: Vettura[] = [
     prezzo: 239000,
     badge: "In evidenza",
     featured: false,
+    image: "https://images.unsplash.com/photo-1621135802920-133df287f89c?w=800&q=80",
     colore: "Giallo Auge",
     cilindrata: "3996 cc",
     trasmissione: "AWD",
@@ -164,6 +172,7 @@ export const vetture: Vettura[] = [
     prezzo: 179000,
     badge: "Garanzia inclusa",
     featured: false,
+    image: "https://images.unsplash.com/photo-1580274455191-1c62238fa333?w=800&q=80",
     colore: "Midnight Emerald",
     cilindrata: "5950 cc",
     trasmissione: "AWD",
