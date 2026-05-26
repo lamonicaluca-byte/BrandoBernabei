@@ -1,182 +1,173 @@
-import type { Metadata } from "next";
-import SectionLabel from "@/components/ui/SectionLabel";
-import Button from "@/components/ui/Button";
+import { Metadata } from "next"
+import Image from "next/image"
+import Link from "next/link"
+import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
+import { Button } from "@/components/ui/Button"
+import { ArrowRight, Award, Users, Shield, Heart } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Chi Siamo | Bernabei Automobili Roma",
+  title: "Chi Siamo | Bernabei Automobili",
   description:
-    "La storia di Bernabei Automobili: 25 anni di esperienza nel settore delle auto usate premium a Roma. Brando Bernabei seleziona personalmente ogni vettura.",
-};
+    "La storia di Bernabei Automobili: oltre 25 anni di esperienza nel settore delle auto premium a Roma. Brando Bernabei seleziona personalmente ogni vettura.",
+}
 
-const valori = [
+const values = [
   {
+    icon: Shield,
     title: "Trasparenza",
-    desc: "Nessuna sorpresa. Ogni difetto, ogni intervento, ogni storia della vettura viene comunicata prima della trattativa. La chiarezza è il fondamento di ogni rapporto duraturo.",
+    description:
+      "Nessuna sorpresa. Ogni difetto, ogni intervento, ogni storia della vettura viene comunicata prima della trattativa.",
   },
   {
+    icon: Award,
     title: "Competenza",
-    desc: "25 anni di esperienza diretta sul mercato delle auto premium e sportive. Conoscere le vetture significa saper riconoscere quelle che non meritano e valorizzare quelle che sì.",
+    description:
+      "25 anni di esperienza diretta nel mercato premium e sportivo. Conoscere le vetture significa riconoscere quelle che meritano.",
   },
   {
-    title: "Selezione",
-    desc: "Uno stock piccolo non è una limitazione: è una scelta. Ogni vettura deve superare criteri precisi prima di entrare da noi. La quantità non è mai stata il nostro obiettivo.",
+    icon: Heart,
+    title: "Passione",
+    description:
+      "Non è solo lavoro: è una passione. Ogni vettura che entra nel nostro stock risponde a criteri precisi di qualità.",
   },
   {
-    title: "Assistenza",
-    desc: "La vendita non è la fine del rapporto. Assistiamo i clienti anche dopo la consegna, per pratiche, garanzie, consigli tecnici. Il valore di una concessionaria si misura nel tempo.",
+    icon: Users,
+    title: "Relazione",
+    description:
+      "La vendita non è la fine del rapporto. Assistiamo i clienti anche dopo la consegna, per anni.",
   },
-];
-
-const timeline = [
-  { anno: "1998", evento: "Fondazione di Bernabei Automobili a Roma, con focus su vetture selezionate" },
-  { anno: "2005", evento: "Specializzazione esclusiva nel segmento premium e sportivo" },
-  { anno: "2012", evento: "Apertura dello showroom attuale, capace di ospitare una selezione curata" },
-  { anno: "2018", evento: "Raggiungimento delle 500 vetture consegnate con 97% recensioni positive" },
-  { anno: "Oggi", evento: "Continuiamo con gli stessi valori del primo giorno: selezione, onestà, relazione" },
-];
+]
 
 export default function ChiSiamoPage() {
   return (
-    <div className="bg-warm-white min-h-screen">
-      {/* Hero */}
-      <div className="bg-luxury-black pt-[52px] pb-16 px-8">
-        <div className="max-w-6xl mx-auto pt-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <SectionLabel light className="mb-5">
-                Chi siamo
-              </SectionLabel>
-              <h1 className="font-display text-[44px] md:text-[56px] font-light text-warm-white leading-tight mb-6">
-                Una storia di
-                <br />
-                <em className="text-champagne-gold not-italic">passione vera.</em>
+    <>
+      <Header />
+      <main className="pt-20">
+        {/* Hero */}
+        <section className="relative py-24 lg:py-32 bg-primary text-primary-foreground">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="max-w-3xl">
+              <span className="text-sm font-medium tracking-widest uppercase text-accent">
+                Chi Siamo
+              </span>
+              <h1 className="mt-4 font-serif text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight">
+                Una passione che diventa professione
               </h1>
-              <p className="font-body text-[12px] text-[#C0C0C0] leading-[1.9] max-w-md">
-                Dal 1998, Bernabei Automobili è sinonimo di selezione rigorosa e rapporti
-                onesti. Non siamo un marketplace: siamo persone che amano le auto e rispettano
-                chi le acquista.
+              <p className="mt-6 text-xl text-primary-foreground/80 leading-relaxed">
+                Dal 1998 accompagniamo i nostri clienti nella scelta della vettura perfetta,
+                con competenza, trasparenza e dedizione personale.
               </p>
             </div>
-            <div className="aspect-[4/3] bg-dark-graphite flex items-center justify-center">
-              <span className="font-body text-[10px] tracking-[0.25em] uppercase text-mid-grey">
-                [FOTO SHOWROOM]
-              </span>
+          </div>
+        </section>
+
+        {/* Story */}
+        <section className="py-24 bg-background">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div>
+                <span className="text-sm font-medium tracking-widest uppercase text-accent">
+                  La nostra storia
+                </span>
+                <h2 className="mt-4 font-serif text-4xl sm:text-5xl font-light text-foreground tracking-tight">
+                  Tutto è iniziato con una passione vera
+                </h2>
+                <div className="mt-8 space-y-6 text-muted-foreground leading-relaxed">
+                  <p>
+                    Bernabei Automobili nasce dalla passione di Brando per il mondo automotive.
+                    Quello che è iniziato come una vocazione si è trasformato in una missione:
+                    offrire un&apos;esperienza di acquisto completamente diversa da quella
+                    della concessionaria tradizionale.
+                  </p>
+                  <p>
+                    Il principio è semplice: trattare ogni cliente come vorremmo essere trattati
+                    noi. Nessuna pressione commerciale, nessuna mezza verità. Solo competenza
+                    e onestà. Uno stock piccolo non è una limitazione — è una scelta. Ogni
+                    vettura deve superare criteri precisi prima di entrare da noi.
+                  </p>
+                  <p>
+                    Oggi, con oltre 500 clienti soddisfatti e un tasso di recensioni positive
+                    del 97% su AutoScout24, possiamo dire con orgoglio che la nostra filosofia
+                    funziona.
+                  </p>
+                </div>
+              </div>
+              <div className="relative">
+                <div className="aspect-[4/5] rounded-sm overflow-hidden">
+                  <Image
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop"
+                    alt="Brando Bernabei"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="absolute -bottom-6 -left-6 bg-accent px-8 py-6 rounded-sm">
+                  <div className="font-serif text-3xl font-light text-accent-foreground">25+</div>
+                  <div className="text-sm text-accent-foreground/80">Anni di esperienza</div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
+        </section>
 
-      {/* Brando section */}
-      <div className="bg-warm-white py-16 px-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="aspect-[3/4] bg-dark-graphite flex items-center justify-center order-2 md:order-1">
-              <span className="font-body text-[10px] tracking-[0.25em] uppercase text-mid-grey">
-                [FOTO BRANDO]
+        {/* Values */}
+        <section className="py-24 bg-secondary">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="text-sm font-medium tracking-widest uppercase text-accent">
+                I nostri valori
               </span>
-            </div>
-            <div className="order-1 md:order-2 flex flex-col gap-6">
-              <SectionLabel className="mb-0">Brando Bernabei</SectionLabel>
-              <h2 className="font-display text-[32px] font-light text-luxury-black">
-                Il titolare. La garanzia.
+              <h2 className="mt-4 font-serif text-4xl sm:text-5xl font-light text-foreground tracking-tight">
+                Perché scegliere Bernabei Automobili
               </h2>
-              <blockquote className="border-l-2 border-champagne-gold pl-5">
-                <p className="font-display text-[17px] italic text-luxury-black leading-relaxed">
-                  "Non vendo auto. Aiuto le persone a trovare quella giusta per loro."
-                </p>
-              </blockquote>
-              <p className="font-body text-[12px] text-mid-grey leading-[1.9]">
-                Brando Bernabei ha fondato questa concessionaria con un principio semplice: il
-                cliente deve uscire da questa porta convinto, non solo comprato. Ogni vettura
-                che entra nello stock viene esaminata personalmente. Nessuna delega, nessun
-                compromesso.
-              </p>
-              <p className="font-body text-[12px] text-mid-grey leading-[1.9]">
-                La sua competenza si è costruita in 25 anni di mercato diretto, con rapporti
-                consolidati con i migliori tecnici e carrozzieri di Roma. Ogni acquisto è
-                preceduto da un'ispezione approfondita che dà al cliente la certezza di sapere
-                esattamente cosa sta comprando.
-              </p>
             </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Timeline */}
-      <div className="bg-off-white py-16 px-8">
-        <div className="max-w-6xl mx-auto">
-          <SectionLabel className="mb-5">La nostra storia</SectionLabel>
-          <h2 className="font-display text-[32px] font-light text-luxury-black mb-12">
-            25 anni di selezione
-          </h2>
-          <div className="relative">
-            <div className="absolute left-0 top-0 bottom-0 w-px bg-border-light" />
-            <div className="flex flex-col gap-8 pl-8">
-              {timeline.map((item) => (
-                <div key={item.anno} className="relative">
-                  <div className="absolute -left-8 w-2 h-2 bg-champagne-gold rounded-full mt-1.5" />
-                  <div className="font-display text-[20px] text-champagne-gold font-light mb-1">
-                    {item.anno}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              {values.map((value, index) => (
+                <div
+                  key={index}
+                  className="p-8 bg-card rounded-sm border border-border hover:border-accent/50 transition-colors"
+                >
+                  <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-6">
+                    <value.icon className="h-6 w-6 text-accent" />
                   </div>
-                  <p className="font-body text-[12px] text-mid-grey leading-relaxed">
-                    {item.evento}
+                  <h3 className="font-semibold text-lg text-foreground mb-3">{value.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {value.description}
                   </p>
                 </div>
               ))}
             </div>
           </div>
-        </div>
-      </div>
+        </section>
 
-      {/* Valori */}
-      <div className="bg-luxury-black py-16 px-8">
-        <div className="max-w-6xl mx-auto">
-          <SectionLabel light className="mb-5">
-            I nostri principi
-          </SectionLabel>
-          <h2 className="font-display text-[32px] font-light text-warm-white mb-12">
-            Perché scegliere Bernabei Automobili
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0">
-            {valori.map((v, i) => (
-              <div
-                key={v.title}
-                className={`py-8 pr-8 flex flex-col gap-4 ${
-                  i > 0
-                    ? "border-t sm:border-t-0 sm:border-l border-[0.5px] border-dark-graphite sm:pl-8"
-                    : ""
-                }`}
-              >
-                <div className="font-body text-[10px] tracking-[0.2em] uppercase text-champagne-gold">
-                  {v.title}
-                </div>
-                <p className="font-body text-[11px] text-[#C0C0C0] leading-[1.9]">{v.desc}</p>
-              </div>
-            ))}
+        {/* Philosophy */}
+        <section className="py-24 bg-background">
+          <div className="mx-auto max-w-3xl mx-auto text-center px-6">
+            <span className="text-sm font-medium tracking-widest uppercase text-accent">
+              La nostra filosofia
+            </span>
+            <h2 className="mt-4 font-serif text-4xl sm:text-5xl font-light text-foreground tracking-tight">
+              Non vendiamo auto. Costruiamo relazioni.
+            </h2>
+            <blockquote className="mt-8 font-serif text-xl text-muted-foreground leading-relaxed italic">
+              &ldquo;Quando un cliente entra nel nostro showroom, non vedo una vendita. Vedo
+              una persona che sta per fare un investimento importante e merita tutta la mia
+              attenzione e onestà. È così che ho sempre lavorato.&rdquo;
+            </blockquote>
+            <p className="mt-6 font-semibold text-foreground">— Brando Bernabei</p>
+            <div className="mt-12">
+              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                <Link href="/contatti">
+                  Prenota un appuntamento
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+            </div>
           </div>
-        </div>
-      </div>
-
-      {/* CTA finale */}
-      <div className="bg-warm-white py-16 px-8 text-center">
-        <div className="max-w-xl mx-auto flex flex-col items-center gap-6">
-          <h2 className="font-display text-[32px] font-light text-luxury-black">
-            Inizia il tuo percorso
-          </h2>
-          <p className="font-body text-[12px] text-mid-grey">
-            Scopri le vetture disponibili o contattaci direttamente per una consulenza senza
-            impegno.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3">
-            <Button href="/vetture" variant="primary">
-              Vedi le vetture
-            </Button>
-            <Button href="/contatti" variant="outline-dark">
-              Contattaci
-            </Button>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+        </section>
+      </main>
+      <Footer />
+    </>
+  )
 }

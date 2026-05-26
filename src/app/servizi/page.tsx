@@ -1,139 +1,220 @@
-import type { Metadata } from "next";
-import SectionLabel from "@/components/ui/SectionLabel";
-import Button from "@/components/ui/Button";
+import { Metadata } from "next"
+import Link from "next/link"
+import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
+import { Button } from "@/components/ui/Button"
+import { Search, RefreshCw, CreditCard, Shield, Truck, Wrench, ArrowRight, Check } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Servizi | Bernabei Automobili Roma",
+  title: "Servizi | Bernabei Automobili",
   description:
-    "Consulenza, permuta, finanziamento, garanzia e consegna in tutta Italia. Tutti i servizi di Bernabei Automobili Roma.",
-};
+    "Consulenza personalizzata, permuta, finanziamenti, garanzia e consegna in tutta Italia. Assistenza completa prima, durante e dopo l'acquisto.",
+}
 
-const servizi = [
+const services = [
   {
-    numero: "01",
-    title: "Consulenza personalizzata",
-    desc: "Brando ascolta le tue esigenze reali — budget, utilizzo, gusti estetici — e ti orienta verso la vettura più adatta. Nessuna pressione, nessun obiettivo di vendita da raggiungere.",
+    id: "ricerca",
+    icon: Search,
+    title: "Ricerca Personalizzata",
+    description:
+      "Non trovi l'auto dei tuoi sogni? Affidati a noi. Cerchiamo per te la vettura perfetta su tutto il mercato europeo, con ispezione personale prima dell'acquisto.",
+    features: [
+      "Ricerca su misura delle tue esigenze",
+      "Verifica della provenienza e storico",
+      "Ispezione personale prima dell'acquisto",
+      "Report dettagliato con foto e video",
+      "Nessun costo se non trovi l'auto giusta",
+    ],
   },
   {
-    numero: "02",
-    title: "Permuta valutata",
-    desc: "Hai già un'auto? La valutiamo con serietà e trasparenza. La permuta viene gestita come parte integrante della trattativa, senza sorprese finali.",
+    id: "permuta",
+    icon: RefreshCw,
+    title: "Permuta",
+    description:
+      "Hai già un'auto? La valutiamo con serietà e trasparenza. Quotazione chiara, gestione completa del passaggio. Senza sorprese.",
+    features: [
+      "Valutazione gratuita e senza impegno",
+      "Quotazione trasparente e competitiva",
+      "Gestione completa del passaggio",
+      "Ritiro anche senza acquisto",
+      "Pagamento immediato",
+    ],
   },
   {
-    numero: "03",
-    title: "Finanziamento e leasing",
-    desc: "Collaboriamo con istituti finanziari selezionati per offrirti condizioni competitive. Gestiamo la pratica direttamente noi, dall'istruttoria alla firma.",
+    id: "finanziamenti",
+    icon: CreditCard,
+    title: "Finanziamenti e Leasing",
+    description:
+      "Soluzioni di finanziamento personalizzate con istituti selezionati. Gestiamo la pratica direttamente, dall'istruttoria alla firma.",
+    features: [
+      "Preventivo gratuito immediato",
+      "Tassi competitivi dal 3,99%",
+      "Durata flessibile fino a 84 mesi",
+      "Possibilità di maxirata finale",
+      "Approvazione rapida in 24h",
+    ],
   },
   {
-    numero: "04",
+    id: "garanzia",
+    icon: Shield,
+    title: "Garanzia",
+    description:
+      "Tutte le nostre vetture sono coperte da garanzia. Non perché lo impone la legge, ma perché è il minimo che puoi aspettarti da un professionista serio.",
+    features: [
+      "Garanzia minima 12 mesi inclusa",
+      "Estensione disponibile fino a 36 mesi",
+      "Copertura completa del motore",
+      "Assistenza stradale 24/7",
+      "Nessuna franchigia",
+    ],
+  },
+  {
+    id: "consegna",
+    icon: Truck,
     title: "Consegna in tutta Italia",
-    desc: "Non sei a Roma? Nessun problema. Consegniamo in tutta Italia con trasportatori di fiducia. La documentazione viene gestita completamente da remoto.",
+    description:
+      "Dovunque tu sia, ti raggiungiamo. Consegniamo la tua nuova auto direttamente a casa tua in tutta Italia, con trasportatori di fiducia.",
+    features: [
+      "Consegna a domicilio",
+      "Trasporto su bisarca coperta",
+      "Assicurazione durante il trasporto",
+      "Tempi certi di consegna",
+      "Documentazione gestita da remoto",
+    ],
   },
   {
-    numero: "05",
-    title: "Garanzia e assistenza",
-    desc: "Le nostre vetture vengono consegnate con garanzia. Non ci fermiamo alla firma: siamo disponibili per qualsiasi necessità nei mesi successivi all'acquisto.",
+    id: "assistenza",
+    icon: Wrench,
+    title: "Assistenza Post-Vendita",
+    description:
+      "Il nostro rapporto non finisce con la vendita. Siamo sempre a tua disposizione per qualsiasi necessità, mesi dopo l'acquisto.",
+    features: [
+      "Supporto dedicato post-acquisto",
+      "Rete di officine convenzionate",
+      "Consulenza per manutenzioni",
+      "Priorità per clienti Bernabei",
+      "Contatto diretto con Brando",
+    ],
   },
-  {
-    numero: "06",
-    title: "Ispezione pre-acquisto",
-    desc: "Vuoi far ispezionare la vettura da un tuo tecnico di fiducia prima di acquistare? Lo incoraggiamo. La trasparenza non è uno slogan: è il nostro metodo.",
-  },
-];
+]
 
 export default function ServiziPage() {
   return (
-    <div className="bg-warm-white min-h-screen">
-      {/* Hero */}
-      <div className="bg-luxury-black pt-[52px] pb-16 px-8">
-        <div className="max-w-6xl mx-auto pt-12">
-          <SectionLabel light className="mb-5">
-            I nostri servizi
-          </SectionLabel>
-          <h1 className="font-display text-[44px] md:text-[56px] font-light text-warm-white mb-5">
-            Tutto quello che serve,
-            <br />
-            <em className="text-champagne-gold not-italic">niente di più.</em>
-          </h1>
-          <p className="font-body text-[12px] text-[#C0C0C0] max-w-lg leading-[1.9]">
-            I nostri servizi nascono dall'ascolto dei clienti nel corso di 25 anni. Ogni
-            dettaglio è pensato per rendere l'acquisto semplice, sicuro e piacevole.
-          </p>
-        </div>
-      </div>
-
-      {/* Servizi grid */}
-      <div className="max-w-6xl mx-auto px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {servizi.map((s) => (
-            <div
-              key={s.numero}
-              className="flex flex-col gap-4 p-8 bg-pure-white border border-[0.5px] border-border-light"
-            >
-              <div className="font-display text-[36px] font-light text-[#E8E4DC] leading-none select-none">
-                {s.numero}
-              </div>
-              <h3 className="font-body text-[10px] tracking-[0.2em] uppercase text-champagne-gold">
-                {s.title}
-              </h3>
-              <p className="font-body text-[11px] text-mid-grey leading-[1.9]">{s.desc}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Garanzia highlight */}
-      <div className="bg-luxury-black py-16 px-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <SectionLabel light className="mb-5">
-                La nostra promessa
-              </SectionLabel>
-              <h2 className="font-display text-[32px] font-light text-warm-white mb-5">
-                La garanzia Bernabei
-              </h2>
-              <p className="font-body text-[12px] text-[#C0C0C0] leading-[1.9] mb-4">
-                Ogni vettura che vendiamo è garantita. Non perché lo impone la legge, ma perché
-                è il minimo che puoi aspettarti da un professionista serio. Se qualcosa non va,
-                ci occupiamo noi.
-              </p>
-              <p className="font-body text-[12px] text-[#C0C0C0] leading-[1.9] mb-8">
-                Siamo disponibili telefonicamente, via WhatsApp e via email. La nostra
-                assistenza non termina con la firma del contratto.
-              </p>
-              <Button href="/contatti" variant="outline-gold">
-                Parla con noi
-              </Button>
-            </div>
-            <div className="aspect-[4/3] bg-dark-graphite flex items-center justify-center">
-              <span className="font-body text-[10px] tracking-[0.25em] uppercase text-mid-grey">
-                [FOTO ASSISTENZA]
+    <>
+      <Header />
+      <main className="pt-20">
+        {/* Hero */}
+        <section className="py-16 lg:py-24 bg-primary text-primary-foreground">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="max-w-3xl">
+              <span className="text-sm font-medium tracking-widest uppercase text-accent">
+                I nostri servizi
               </span>
+              <h1 className="mt-4 font-serif text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight">
+                Tutto ciò di cui hai bisogno
+              </h1>
+              <p className="mt-6 text-xl text-primary-foreground/80 leading-relaxed">
+                Un&apos;assistenza completa che ti accompagna prima, durante e dopo l&apos;acquisto.
+                Perché scegliere Bernabei significa scegliere la tranquillità.
+              </p>
             </div>
           </div>
-        </div>
-      </div>
+        </section>
 
-      {/* CTA finale */}
-      <div className="bg-warm-white py-16 px-8 text-center">
-        <div className="max-w-xl mx-auto flex flex-col items-center gap-6">
-          <h2 className="font-display text-[32px] font-light text-luxury-black">
-            Inizia adesso
-          </h2>
-          <p className="font-body text-[12px] text-mid-grey">
-            Scopri le vetture disponibili o contattaci per una consulenza gratuita.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3">
-            <Button href="/vetture" variant="primary">
-              Vedi le vetture
-            </Button>
-            <Button href="/contatti" variant="outline-dark">
-              Richiedi consulenza
-            </Button>
+        {/* Services */}
+        <section className="py-16 bg-background">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="space-y-16">
+              {services.map((service, index) => (
+                <div
+                  key={service.id}
+                  id={service.id}
+                  className="scroll-mt-24 grid lg:grid-cols-2 gap-12 items-center"
+                >
+                  <div className={index % 2 === 1 ? "lg:order-2" : ""}>
+                    <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-accent/10 mb-6">
+                      <service.icon className="h-7 w-7 text-accent" />
+                    </div>
+                    <h2 className="font-serif text-3xl sm:text-4xl font-light text-foreground tracking-tight">
+                      {service.title}
+                    </h2>
+                    <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
+                      {service.description}
+                    </p>
+                    <ul className="mt-8 space-y-3">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-start gap-3">
+                          <Check className="h-5 w-5 text-accent mt-0.5 shrink-0" />
+                          <span className="text-foreground">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="mt-8">
+                      <Button
+                        asChild
+                        className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                      >
+                        <Link href={`/contatti?servizio=${encodeURIComponent(service.title)}`}>
+                          Richiedi informazioni
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                      </Button>
+                    </div>
+                  </div>
+
+                  <div className={index % 2 === 1 ? "lg:order-1" : ""}>
+                    <div className="relative aspect-[4/3] rounded-sm overflow-hidden bg-secondary">
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="text-center p-8">
+                          <service.icon className="h-24 w-24 text-accent/20 mx-auto mb-4" />
+                          <span className="font-serif text-6xl font-light text-accent/30">
+                            {String(index + 1).padStart(2, "0")}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
-  );
+        </section>
+
+        {/* CTA */}
+        <section className="py-24 bg-secondary">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto">
+              <h2 className="font-serif text-3xl sm:text-4xl font-light text-foreground tracking-tight">
+                Hai domande sui nostri servizi?
+              </h2>
+              <p className="mt-4 text-lg text-muted-foreground">
+                Siamo a tua disposizione per qualsiasi chiarimento. Contattaci senza impegno.
+              </p>
+              <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                >
+                  <Link href="/contatti">
+                    Contattaci ora
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="border-border hover:border-accent"
+                >
+                  <a href="tel:+393395027983">Chiamaci: +39 339 502 7983</a>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
+  )
 }

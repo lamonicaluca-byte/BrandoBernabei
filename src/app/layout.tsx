@@ -1,42 +1,51 @@
-import type { Metadata } from "next";
-import { Montserrat, Cormorant_Garamond } from "next/font/google";
-import "./globals.css";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
+import type { Metadata } from 'next'
+import { Inter, Cormorant_Garamond } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
+import './globals.css'
 
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  variable: "--font-body",
-  weight: ["300", "400", "500", "600"],
-});
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+})
 
 const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  variable: "--font-display",
-  weight: ["300", "400", "500"],
-  style: ["normal", "italic"],
-});
+  subsets: ['latin'],
+  variable: '--font-cormorant',
+  weight: ['300', '400', '500'],
+  style: ['normal', 'italic'],
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
-  title: "Bernabei Automobili | Auto Usate Premium e Sportive a Roma",
+  title: 'Bernabei Automobili | Auto Premium e Sportive Selezionate a Roma',
   description:
-    "Concessionaria specializzata in auto usate di lusso e sportive a Roma. Selezione personale, trasparenza garantita, assistenza post-vendita. 97% recensioni positive su AutoScout24.",
+    'Concessionaria di auto usate premium e sportive a Roma. Selezione accurata, trasparenza garantita e assistenza personalizzata. Scopri le vetture disponibili.',
   keywords:
-    "auto usate lusso Roma, auto sportive usate Roma, Porsche usata Roma, concessionaria premium Roma",
-};
+    'auto usate di lusso Roma, auto sportive usate Roma, Porsche usate Roma, concessionaria auto premium Roma, vendita auto sportive Roma',
+  openGraph: {
+    title: 'Bernabei Automobili | Auto Premium e Sportive Selezionate',
+    description:
+      'Concessionaria di auto usate premium e sportive a Roma. Selezione accurata, trasparenza garantita.',
+    type: 'website',
+    locale: 'it_IT',
+  },
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
-    <html lang="it" className={`${montserrat.variable} ${cormorant.variable} h-full`}>
-      <body className="min-h-full flex flex-col">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+    <html
+      lang="it"
+      className={`${inter.variable} ${cormorant.variable} bg-background`}
+    >
+      <body className="font-sans antialiased">
+        {children}
+        {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
-  );
+  )
 }

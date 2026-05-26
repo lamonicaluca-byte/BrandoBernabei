@@ -1,267 +1,151 @@
-"use client";
+import { Metadata } from "next"
+import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
+import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react"
+import { ContactForm } from "./ContactForm"
 
-import { useState } from "react";
-import SectionLabel from "@/components/ui/SectionLabel";
-import Button from "@/components/ui/Button";
-import { vetture } from "@/data/vetture";
+export const metadata: Metadata = {
+  title: "Contatti | Bernabei Automobili",
+  description:
+    "Contatta Bernabei Automobili: telefono, WhatsApp, email o modulo di contatto. Via Flaminia 318/a, Roma. Risposta entro poche ore.",
+}
 
-const orari = [
-  { giorno: "Lunedì – Venerdì", orario: "09:00 – 13:00 / 15:00 – 19:00" },
-  { giorno: "Sabato", orario: "09:00 – 13:00" },
-  { giorno: "Domenica", orario: "Su appuntamento" },
-];
+const contactInfo = [
+  {
+    icon: Phone,
+    title: "Telefono",
+    value: "+39 339 502 7983",
+    href: "tel:+393395027983",
+    description: "Lun–Sab: 9:00–19:00",
+  },
+  {
+    icon: MessageCircle,
+    title: "WhatsApp",
+    value: "+39 339 502 7983",
+    href: "https://wa.me/393395027983",
+    description: "Risposta rapida",
+  },
+  {
+    icon: Mail,
+    title: "Email",
+    value: "info@bernabeiautomobili.it",
+    href: "mailto:info@bernabeiautomobili.it",
+    description: "Risposta entro 24h",
+  },
+  {
+    icon: MapPin,
+    title: "Indirizzo",
+    value: "Via Flaminia, 318/a — Roma",
+    href: "https://maps.google.com/?q=Via+Flaminia+318a+00196+Roma",
+    description: "Visite su appuntamento",
+  },
+]
 
 export default function ContattiPage() {
-  const [form, setForm] = useState({
-    nome: "",
-    email: "",
-    telefono: "",
-    vettura: "",
-    messaggio: "",
-  });
-  const [sent, setSent] = useState(false);
-
-  function handleChange(
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  }
-
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    setSent(true);
-  }
-
   return (
-    <div className="bg-warm-white min-h-screen">
-      {/* Hero */}
-      <div className="bg-luxury-black pt-[52px] pb-16 px-8">
-        <div className="max-w-6xl mx-auto pt-12">
-          <SectionLabel light className="mb-5">
-            Contattaci
-          </SectionLabel>
-          <h1 className="font-display text-[44px] md:text-[56px] font-light text-warm-white mb-4">
-            Inizia una conversazione.
-          </h1>
-          <p className="font-body text-[12px] text-[#C0C0C0] max-w-lg leading-[1.9]">
-            Che tu abbia trovato una vettura specifica o voglia una consulenza generale, siamo
-            qui. Rispondiamo sempre entro poche ore.
-          </p>
-        </div>
-      </div>
-
-      <div className="max-w-6xl mx-auto px-8 py-14">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14">
-          {/* Form */}
-          <div>
-            <SectionLabel className="mb-6">Scrivici</SectionLabel>
-            {sent ? (
-              <div className="flex flex-col gap-4 py-12">
-                <div className="font-display text-[28px] font-light text-luxury-black">
-                  Messaggio ricevuto.
-                </div>
-                <p className="font-body text-[12px] text-mid-grey leading-relaxed">
-                  Ti risponderemo il prima possibile, di solito entro poche ore.
-                </p>
-                <Button
-                  href="/vetture"
-                  variant="outline-dark"
-                  className="self-start mt-4"
-                >
-                  Torna alle vetture
-                </Button>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="flex flex-col gap-1.5">
-                    <label
-                      htmlFor="nome"
-                      className="font-body text-[9px] tracking-[0.2em] uppercase text-mid-grey"
-                    >
-                      Nome *
-                    </label>
-                    <input
-                      id="nome"
-                      name="nome"
-                      type="text"
-                      required
-                      value={form.nome}
-                      onChange={handleChange}
-                      className="bg-pure-white border border-[0.5px] border-border-light px-4 py-3 font-body text-[11px] text-luxury-black focus:outline-none focus:border-champagne-gold transition-colors"
-                      placeholder="Il tuo nome"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-1.5">
-                    <label
-                      htmlFor="telefono"
-                      className="font-body text-[9px] tracking-[0.2em] uppercase text-mid-grey"
-                    >
-                      Telefono
-                    </label>
-                    <input
-                      id="telefono"
-                      name="telefono"
-                      type="tel"
-                      value={form.telefono}
-                      onChange={handleChange}
-                      className="bg-pure-white border border-[0.5px] border-border-light px-4 py-3 font-body text-[11px] text-luxury-black focus:outline-none focus:border-champagne-gold transition-colors"
-                      placeholder="+39 XXX XXX XXXX"
-                    />
-                  </div>
-                </div>
-
-                <div className="flex flex-col gap-1.5">
-                  <label
-                    htmlFor="email"
-                    className="font-body text-[9px] tracking-[0.2em] uppercase text-mid-grey"
-                  >
-                    Email *
-                  </label>
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    value={form.email}
-                    onChange={handleChange}
-                    className="bg-pure-white border border-[0.5px] border-border-light px-4 py-3 font-body text-[11px] text-luxury-black focus:outline-none focus:border-champagne-gold transition-colors"
-                    placeholder="la-tua@email.it"
-                  />
-                </div>
-
-                <div className="flex flex-col gap-1.5">
-                  <label
-                    htmlFor="vettura"
-                    className="font-body text-[9px] tracking-[0.2em] uppercase text-mid-grey"
-                  >
-                    Vettura di interesse (opzionale)
-                  </label>
-                  <select
-                    id="vettura"
-                    name="vettura"
-                    value={form.vettura}
-                    onChange={handleChange}
-                    className="bg-pure-white border border-[0.5px] border-border-light px-4 py-3 font-body text-[11px] text-luxury-black focus:outline-none focus:border-champagne-gold transition-colors cursor-pointer"
-                  >
-                    <option value="">Seleziona una vettura</option>
-                    {vetture.map((v) => (
-                      <option key={v.slug} value={v.slug}>
-                        {v.make} {v.model} {v.year}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                <div className="flex flex-col gap-1.5">
-                  <label
-                    htmlFor="messaggio"
-                    className="font-body text-[9px] tracking-[0.2em] uppercase text-mid-grey"
-                  >
-                    Messaggio *
-                  </label>
-                  <textarea
-                    id="messaggio"
-                    name="messaggio"
-                    required
-                    rows={5}
-                    value={form.messaggio}
-                    onChange={handleChange}
-                    className="bg-pure-white border border-[0.5px] border-border-light px-4 py-3 font-body text-[11px] text-luxury-black focus:outline-none focus:border-champagne-gold transition-colors resize-none"
-                    placeholder="Descrivi la tua richiesta..."
-                  />
-                </div>
-
-                <div className="pt-2">
-                  <Button type="submit" variant="primary">
-                    Invia messaggio
-                  </Button>
-                </div>
-              </form>
-            )}
-          </div>
-
-          {/* Info */}
-          <div className="flex flex-col gap-10">
-            {/* WhatsApp */}
-            <div className="bg-luxury-black p-7 flex flex-col gap-4">
-              <div className="font-body text-[9px] tracking-[0.2em] uppercase text-champagne-gold">
-                Risposta immediata
-              </div>
-              <h3 className="font-display text-[22px] font-light text-warm-white">
-                Scrivici su WhatsApp
-              </h3>
-              <p className="font-body text-[11px] text-[#C0C0C0] leading-relaxed">
-                Per una risposta più veloce, scrivici direttamente su WhatsApp. Brando risponde
-                personalmente.
+    <>
+      <Header />
+      <main className="pt-20">
+        {/* Hero */}
+        <section className="py-16 lg:py-24 bg-primary text-primary-foreground">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="max-w-3xl">
+              <span className="text-sm font-medium tracking-widest uppercase text-accent">
+                Contatti
+              </span>
+              <h1 className="mt-4 font-serif text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight">
+                Parliamo della tua prossima auto
+              </h1>
+              <p className="mt-6 text-xl text-primary-foreground/80 leading-relaxed">
+                Sono a tua disposizione per qualsiasi domanda. Contattami senza impegno,
+                sarò felice di aiutarti.
               </p>
-              <a
-                href="https://wa.me/393395027983"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#1A2E1A] text-[#7ABF7A] font-body text-[10px] tracking-[0.15em] uppercase px-5 py-3 hover:bg-[#1f3a1f] transition-colors self-start"
-              >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                </svg>
-                Apri WhatsApp
-              </a>
             </div>
+          </div>
+        </section>
 
-            {/* Orari */}
-            <div>
-              <div className="font-body text-[9px] tracking-[0.2em] uppercase text-champagne-gold mb-4">
-                Orari di apertura
-              </div>
-              <div className="divide-y divide-[0.5px] divide-border-light">
-                {orari.map((o) => (
-                  <div key={o.giorno} className="flex justify-between items-center py-3">
-                    <span className="font-body text-[11px] text-luxury-black">{o.giorno}</span>
-                    <span className="font-body text-[11px] text-mid-grey">{o.orario}</span>
+        {/* Contact Section */}
+        <section className="py-16 bg-background">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-16">
+              {/* Left: Contact info */}
+              <div>
+                <h2 className="font-serif text-2xl font-medium text-foreground mb-8">
+                  Come contattarmi
+                </h2>
+                <div className="grid sm:grid-cols-2 gap-6">
+                  {contactInfo.map((item, index) => (
+                    <a
+                      key={index}
+                      href={item.href}
+                      target={item.href.startsWith("http") ? "_blank" : undefined}
+                      rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                      className="p-6 bg-card rounded-sm border border-border hover:border-accent/50 transition-colors group"
+                    >
+                      <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
+                        <item.icon className="h-6 w-6 text-accent" />
+                      </div>
+                      <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
+                      <p className="text-foreground group-hover:text-accent transition-colors">
+                        {item.value}
+                      </p>
+                      <p className="text-sm text-muted-foreground mt-1">{item.description}</p>
+                    </a>
+                  ))}
+                </div>
+
+                {/* Hours */}
+                <div className="mt-8 p-6 bg-secondary rounded-sm">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Clock className="h-5 w-5 text-accent" />
+                    <h3 className="font-semibold text-foreground">Orari di apertura</h3>
                   </div>
-                ))}
+                  <div className="space-y-2 text-sm">
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground">Lunedì – Venerdì</span>
+                      <span className="text-foreground">9:00 – 19:00</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground">Sabato</span>
+                      <span className="text-foreground">9:00 – 13:00</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground">Domenica</span>
+                      <span className="text-foreground">Chiuso</span>
+                    </div>
+                  </div>
+                  <p className="mt-4 text-xs text-muted-foreground">
+                    * Visite su appuntamento anche fuori orario
+                  </p>
+                </div>
               </div>
-            </div>
 
-            {/* Indirizzo */}
-            <div>
-              <div className="font-body text-[9px] tracking-[0.2em] uppercase text-champagne-gold mb-4">
-                Dove siamo
-              </div>
-              <address className="not-italic font-body text-[12px] text-mid-grey leading-[1.9]">
-                Via Flaminia, 318/a<br />
-                00196 Roma (RM)<br />
-                <a
-                  href="tel:+393395027983"
-                  className="hover:text-champagne-gold transition-colors"
-                >
-                  +39 339 502 7983
-                </a>
-                <br />
-                <a
-                  href="mailto:info@bernabeiautomobili.it"
-                  className="hover:text-champagne-gold transition-colors"
-                >
-                  info@bernabeiautomobili.it
-                </a>
-              </address>
-
-              <div className="mt-5 aspect-[16/9] relative overflow-hidden">
-                <iframe
-                  src="https://maps.google.com/maps?q=Via+Flaminia+318%2Fa+00196+Roma+RM&output=embed"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Bernabei Automobili — Via Flaminia 318/a Roma"
-                />
+              {/* Right: Form */}
+              <div>
+                <h2 className="font-serif text-2xl font-medium text-foreground mb-8">
+                  Inviami un messaggio
+                </h2>
+                <ContactForm />
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  );
+        </section>
+
+        {/* Map */}
+        <section className="h-96">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.1!2d12.4731!3d41.9281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f60e8e8d1c0ef%3A0xb180365fb3b1f882!2sVia%20Flaminia%2C%20318%2Fa%2C%2000196%20Roma%20RM!5e0!3m2!1sit!2sit!4v1"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Bernabei Automobili — Via Flaminia 318/a, Roma"
+          />
+        </section>
+      </main>
+      <Footer />
+    </>
+  )
 }

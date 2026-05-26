@@ -1,58 +1,96 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
 
 :root {
-  --luxury-black:   #080808;
-  --anthracite:     #1C1C1C;
-  --dark-graphite:  #1C1C1C;
-  --mid-grey:       #5A5A5A;
-  --muted-grey:     #9A9A9A;
-  --champagne-gold: #C9A96E;
-  --warm-white:     #F5F0E8;
-  --off-white:      #EDEBE4;
-  --pure-white:     #FFFFFF;
-  --border-light:   #E0DDD6;
-  --border-subtle:  #2A2A2A;
+  /* Bernabei Automobili — Luxury Automotive Palette */
+  --luxury-black: oklch(0.15 0 0);
+  --anthracite: oklch(0.35 0.005 250);
+  --champagne: oklch(0.78 0.06 85);
+  --warm-white: oklch(0.98 0.005 90);
+  --graphite: oklch(0.25 0.005 250);
+
+  --background: var(--warm-white);
+  --foreground: var(--graphite);
+  --card: oklch(1 0 0);
+  --card-foreground: var(--graphite);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--graphite);
+  --primary: var(--luxury-black);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.96 0.005 90);
+  --secondary-foreground: var(--graphite);
+  --muted: oklch(0.94 0.005 90);
+  --muted-foreground: var(--anthracite);
+  --accent: var(--champagne);
+  --accent-foreground: var(--luxury-black);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.90 0.005 90);
+  --input: oklch(0.92 0.005 90);
+  --ring: var(--champagne);
+  --radius: 0.25rem;
 }
 
 @theme inline {
-  --color-luxury-black:   var(--luxury-black);
-  --color-anthracite:     var(--anthracite);
-  --color-dark-graphite:  var(--dark-graphite);
-  --color-mid-grey:       var(--mid-grey);
-  --color-muted-grey:     var(--muted-grey);
-  --color-champagne-gold: var(--champagne-gold);
-  --color-warm-white:     var(--warm-white);
-  --color-off-white:      var(--off-white);
-  --color-pure-white:     var(--pure-white);
-  --color-border-light:   var(--border-light);
-  --color-border-subtle:  var(--border-subtle);
-
-  --font-display: var(--font-display);
-  --font-body: var(--font-body);
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-serif: var(--font-cormorant), Georgia, serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-luxury-black: var(--luxury-black);
+  --color-anthracite: var(--anthracite);
+  --color-champagne: var(--champagne);
+  --color-warm-white: var(--warm-white);
+  --color-graphite: var(--graphite);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
-*, *::before, *::after {
-  box-sizing: border-box;
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
-html {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+::-webkit-scrollbar {
+  width: 6px;
 }
 
-body {
+::-webkit-scrollbar-track {
+  background: var(--muted);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--anthracite);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
   background: var(--luxury-black);
-  color: var(--warm-white);
-  font-family: var(--font-body);
-  font-weight: 300;
-  font-size: 12px;
-  line-height: 1.8;
-}
-
-.font-display {
-  font-family: var(--font-display);
-}
-
-.font-body {
-  font-family: var(--font-body);
 }
