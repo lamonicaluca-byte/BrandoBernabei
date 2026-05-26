@@ -10,8 +10,8 @@ export function HeroSection() {
         <div
           className="absolute inset-0 bg-cover bg-no-repeat"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2070&auto=format&fit=crop')`,
-            backgroundPosition: 'center 30%',
+            backgroundImage: `url('https://images.unsplash.com/photo-1756990637536-714b76296a30?q=80&w=2070&auto=format&fit=crop')`,
+            backgroundPosition: 'center center',
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary/85 via-primary/65 to-primary/80" />
