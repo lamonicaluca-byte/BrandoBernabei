@@ -29,10 +29,10 @@ export default function Navbar() {
     >
       {/* Logo */}
       <Link href="/" className="flex flex-col leading-none">
-        <span className="font-display text-[#C9A96E] text-[18px] font-light tracking-[.1em]">
+        <span className="font-display text-[#C9A96E] text-[24px] font-light tracking-[.1em]">
           Bernabei Automobili
         </span>
-        <span className="font-body text-[9px] text-[#666] tracking-[.2em] uppercase mt-0.5">
+        <span className="font-body text-[9px] text-[#888] tracking-[.2em] uppercase mt-0.5">
           Roma · Dal 1998
         </span>
       </Link>

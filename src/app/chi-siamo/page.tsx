@@ -51,7 +51,7 @@ export default function ChiSiamoPage() {
                 <br />
                 <em className="text-champagne-gold not-italic">passione vera.</em>
               </h1>
-              <p className="font-body text-[12px] text-muted-grey leading-[1.9] max-w-md">
+              <p className="font-body text-[12px] text-[#C0C0C0] leading-[1.9] max-w-md">
                 Dal 1998, Bernabei Automobili è sinonimo di selezione rigorosa e rapporti
                 onesti. Non siamo un marketplace: siamo persone che amano le auto e rispettano
                 chi le acquista.
@@ -150,7 +150,7 @@ export default function ChiSiamoPage() {
                 <div className="font-body text-[10px] tracking-[0.2em] uppercase text-champagne-gold">
                   {v.title}
                 </div>
-                <p className="font-body text-[11px] text-muted-grey leading-[1.9]">{v.desc}</p>
+                <p className="font-body text-[11px] text-[#C0C0C0] leading-[1.9]">{v.desc}</p>
               </div>
             ))}
           </div>

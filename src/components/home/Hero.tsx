@@ -26,7 +26,7 @@ export default function Hero() {
         </h1>
 
         {/* Subtitle */}
-        <p className="font-body text-[12px] font-light text-[#9A9A9A] leading-[1.9] max-w-xl mb-10">
+        <p className="font-body text-[12px] font-light text-[#C0C0C0] leading-[1.9] max-w-xl mb-10">
           Ogni vettura che trovi da noi è stata scelta personalmente. Non siamo un marketplace
           — siamo consulenti che mettono la tua soddisfazione prima di ogni trattativa.
         </p>
@@ -52,7 +52,7 @@ export default function Hero() {
                 <div className="font-display font-light text-4xl text-[#C9A96E] leading-none mb-1">
                   {stat.value}
                 </div>
-                <div className="uppercase tracking-[.2em] text-[9px] text-[#777]">
+                <div className="uppercase tracking-[.2em] text-[9px] text-[#999]">
                   {stat.label}
                 </div>
               </div>

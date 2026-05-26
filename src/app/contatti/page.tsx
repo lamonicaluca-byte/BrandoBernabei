@@ -43,7 +43,7 @@ export default function ContattiPage() {
           <h1 className="font-display text-[44px] md:text-[56px] font-light text-warm-white mb-4">
             Inizia una conversazione.
           </h1>
-          <p className="font-body text-[12px] text-muted-grey max-w-lg leading-[1.9]">
+          <p className="font-body text-[12px] text-[#C0C0C0] max-w-lg leading-[1.9]">
             Che tu abbia trovato una vettura specifica o voglia una consulenza generale, siamo
             qui. Rispondiamo sempre entro poche ore.
           </p>
@@ -191,7 +191,7 @@ export default function ContattiPage() {
               <h3 className="font-display text-[22px] font-light text-warm-white">
                 Scrivici su WhatsApp
               </h3>
-              <p className="font-body text-[11px] text-muted-grey leading-relaxed">
+              <p className="font-body text-[11px] text-[#C0C0C0] leading-relaxed">
                 Per una risposta più veloce, scrivici direttamente su WhatsApp. Brando risponde
                 personalmente.
               </p>

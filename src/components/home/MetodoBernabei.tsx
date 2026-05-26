@@ -50,7 +50,7 @@ export default function MetodoBernabei() {
               <div className="uppercase tracking-[.2em] text-[10px] text-[#C9A96E]">
                 {step.title}
               </div>
-              <p className="text-[10px] text-[#9A9A9A] leading-relaxed">
+              <p className="text-[10px] text-[#C0C0C0] leading-relaxed">
                 {step.desc}
               </p>
             </div>

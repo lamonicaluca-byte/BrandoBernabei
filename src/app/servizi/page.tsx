@@ -55,7 +55,7 @@ export default function ServiziPage() {
             <br />
             <em className="text-champagne-gold not-italic">niente di più.</em>
           </h1>
-          <p className="font-body text-[12px] text-muted-grey max-w-lg leading-[1.9]">
+          <p className="font-body text-[12px] text-[#C0C0C0] max-w-lg leading-[1.9]">
             I nostri servizi nascono dall'ascolto dei clienti nel corso di 25 anni. Ogni
             dettaglio è pensato per rendere l'acquisto semplice, sicuro e piacevole.
           </p>
@@ -93,12 +93,12 @@ export default function ServiziPage() {
               <h2 className="font-display text-[32px] font-light text-warm-white mb-5">
                 La garanzia Bernabei
               </h2>
-              <p className="font-body text-[12px] text-muted-grey leading-[1.9] mb-4">
+              <p className="font-body text-[12px] text-[#C0C0C0] leading-[1.9] mb-4">
                 Ogni vettura che vendiamo è garantita. Non perché lo impone la legge, ma perché
                 è il minimo che puoi aspettarti da un professionista serio. Se qualcosa non va,
                 ci occupiamo noi.
               </p>
-              <p className="font-body text-[12px] text-muted-grey leading-[1.9] mb-8">
+              <p className="font-body text-[12px] text-[#C0C0C0] leading-[1.9] mb-8">
                 Siamo disponibili telefonicamente, via WhatsApp e via email. La nostra
                 assistenza non termina con la firma del contratto.
               </p>

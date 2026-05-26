@@ -120,7 +120,7 @@ export default function RecensioniPage() {
                 4.9
               </div>
               <Stars count={5} />
-              <div className="font-body text-[10px] tracking-[0.2em] uppercase text-muted-grey">
+              <div className="font-body text-[10px] tracking-[0.2em] uppercase text-[#C0C0C0]">
                 Su AutoScout24
               </div>
               {/* Barra percentuale */}
@@ -132,7 +132,7 @@ export default function RecensioniPage() {
                   97%
                 </span>
               </div>
-              <span className="font-body text-[9px] text-muted-grey tracking-wider">
+              <span className="font-body text-[9px] text-[#C0C0C0] tracking-wider">
                 recensioni positive
               </span>
             </div>
@@ -143,13 +143,13 @@ export default function RecensioniPage() {
       {/* Parole chiave */}
       <div className="bg-[#131313] py-5 px-8">
         <div className="max-w-6xl mx-auto flex flex-wrap items-center gap-3">
-          <span className="font-body text-[9px] tracking-[0.2em] uppercase text-muted-grey mr-2">
+          <span className="font-body text-[9px] tracking-[0.2em] uppercase text-[#C0C0C0] mr-2">
             Cosa emerge:
           </span>
           {paroleChiave.map((p) => (
             <span
               key={p}
-              className="font-body text-[9px] tracking-[0.15em] uppercase text-[#9A9A9A] border border-[0.5px] border-[#333] px-3 py-1"
+              className="font-body text-[9px] tracking-[0.15em] uppercase text-[#C0C0C0] border border-[0.5px] border-[#444] px-3 py-1"
             >
               {p}
             </span>
