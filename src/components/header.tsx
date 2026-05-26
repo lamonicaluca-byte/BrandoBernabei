@@ -36,7 +36,7 @@ export function Header() {
             <span className="font-serif text-xl font-medium tracking-wide text-white">
               BERNABEI
             </span>
-            <span className="hidden sm:inline text-[9px] tracking-[0.25em] text-white/45 uppercase">
+            <span className="hidden sm:inline text-[9px] tracking-[0.25em] text-white uppercase">
               Automobili
             </span>
           </Link>
