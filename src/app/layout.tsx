@@ -18,17 +18,36 @@ const cormorant = Cormorant_Garamond({
 })
 
 export const metadata: Metadata = {
-  title: 'Bernabei Automobili | Auto Premium e Sportive Selezionate a Roma',
+  title: {
+    default: 'Bernabei Automobili | Auto Premium Selezionate a Roma',
+    template: '%s | Bernabei Automobili',
+  },
   description:
-    'Concessionaria di auto usate premium e sportive a Roma. Selezione accurata, trasparenza garantita e assistenza personalizzata. Scopri le vetture disponibili.',
-  keywords:
-    'auto usate di lusso Roma, auto sportive usate Roma, Porsche usate Roma, concessionaria auto premium Roma, vendita auto sportive Roma',
+    'Selezione esclusiva di auto premium e sportive usate a Roma. Porsche, Ferrari, BMW M, Mercedes-AMG, Lamborghini. Trasparenza, competenza e garanzia inclusa.',
+  keywords: [
+    'auto usate di lusso Roma',
+    'auto sportive usate Roma',
+    'Porsche usate Roma',
+    'concessionaria auto premium Roma',
+    'vendita auto sportive Roma',
+    'Ferrari usata Roma',
+    'BMW M usata Roma',
+    'Mercedes AMG usata Roma',
+    'Bernabei Automobili',
+    'Brando Bernabei',
+  ],
   openGraph: {
-    title: 'Bernabei Automobili | Auto Premium e Sportive Selezionate',
+    title: 'Bernabei Automobili | Auto Premium Selezionate a Roma',
     description:
-      'Concessionaria di auto usate premium e sportive a Roma. Selezione accurata, trasparenza garantita.',
+      'Selezione esclusiva di auto premium e sportive usate a Roma. 97% recensioni positive su AutoScout24.',
     type: 'website',
     locale: 'it_IT',
+    url: 'https://www.bernabeiautomobili.com',
+    siteName: 'Bernabei Automobili',
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 }
 

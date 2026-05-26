@@ -1,41 +1,35 @@
-import { Star, ThumbsUp, Award, Users } from "lucide-react"
-
-const stats = [
+const pillars = [
   {
-    icon: Star,
-    value: "97%",
-    label: "Recensioni positive",
-    description: "Su AutoScout24",
+    number: "01",
+    title: "Selezione",
+    description:
+      "Ogni vettura entra nel nostro stock solo dopo un'ispezione personale. Non acquistiamo a scatola chiusa: la qualità si verifica dal vivo.",
   },
   {
-    icon: Users,
-    value: "500+",
-    label: "Clienti soddisfatti",
-    description: "Negli ultimi anni",
+    number: "02",
+    title: "Trasparenza",
+    description:
+      "Ogni difetto, ogni intervento, ogni storia della vettura viene comunicata prima della trattativa. Nessuna sorpresa, mai.",
   },
   {
-    icon: Award,
-    value: "25+",
-    label: "Anni di esperienza",
-    description: "Nel settore automotive",
+    number: "03",
+    title: "Competenza",
+    description:
+      "Oltre 25 anni nel mercato premium e sportivo. Sappiamo riconoscere le vetture che meritano — e quelle da evitare.",
   },
   {
-    icon: ThumbsUp,
-    value: "100%",
-    label: "Vetture garantite",
-    description: "Con certificazione",
+    number: "04",
+    title: "Relazione",
+    description:
+      "Non ti vendiamo un'auto. Ti aiutiamo a sceglierla. E restiamo a disposizione ben oltre la consegna.",
   },
 ]
 
-const qualities = [
-  "Professionalità",
-  "Affidabilità",
-  "Competenza",
-  "Disponibilità",
-  "Attenzione al cliente",
-  "Assistenza post-vendita",
-  "Trasparenza",
-  "Serietà",
+const stats = [
+  { value: "97%", label: "Recensioni positive su AutoScout24" },
+  { value: "500+", label: "Clienti soddisfatti negli anni" },
+  { value: "25+", label: "Anni di esperienza nel settore" },
+  { value: "100%", label: "Vetture garantite con copertura inclusa" },
 ]
 
 export function WhyChooseUsSection() {
@@ -43,50 +37,43 @@ export function WhyChooseUsSection() {
     <section className="py-24 bg-secondary">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-sm font-medium tracking-widest uppercase text-accent">
-            La nostra garanzia
+        <div className="max-w-2xl mb-20">
+          <span className="text-xs tracking-[0.25em] uppercase text-accent/80">
+            La nostra differenza
           </span>
           <h2 className="mt-3 font-serif text-4xl sm:text-5xl lg:text-6xl font-light text-foreground tracking-tight">
             Perché i clienti ci scelgono
           </h2>
-          <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-            Le parole più usate dai nostri clienti nelle recensioni su AutoScout24 descrivono il nostro approccio al lavoro.
-          </p>
         </div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {stats.map((stat, index) => (
-            <div
-              key={index}
-              className="p-6 lg:p-8 bg-card rounded-sm border border-border text-center"
-            >
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-accent/10 mb-4">
-                <stat.icon className="h-6 w-6 text-accent" />
+        {/* Pillars */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
+          {pillars.map((pillar) => (
+            <div key={pillar.number}>
+              <div className="font-serif text-5xl font-light text-accent/60 mb-4">
+                {pillar.number}
               </div>
-              <div className="font-serif text-3xl lg:text-4xl font-light text-foreground">
-                {stat.value}
-              </div>
-              <div className="mt-2 text-sm font-medium text-foreground">
-                {stat.label}
-              </div>
-              <div className="mt-1 text-xs text-muted-foreground">
-                {stat.description}
-              </div>
+              <h3 className="font-serif text-xl font-medium text-foreground mb-3">
+                {pillar.title}
+              </h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {pillar.description}
+              </p>
             </div>
           ))}
         </div>
 
-        {/* Qualities */}
-        <div className="flex flex-wrap justify-center gap-3">
-          {qualities.map((quality, index) => (
-            <span
-              key={index}
-              className="px-4 py-2 bg-card border border-border rounded-full text-sm text-foreground hover:border-accent/50 hover:bg-accent/5 transition-colors cursor-default"
-            >
-              {quality}
-            </span>
+        {/* Stats strip */}
+        <div className="mt-20 pt-12 border-t border-border grid grid-cols-2 lg:grid-cols-4 gap-6">
+          {stats.map((stat, index) => (
+            <div key={index} className="text-center sm:text-left">
+              <div className="font-serif text-3xl font-light text-foreground">
+                {stat.value}
+              </div>
+              <div className="mt-1 text-xs text-muted-foreground leading-snug">
+                {stat.label}
+              </div>
+            </div>
           ))}
         </div>
       </div>

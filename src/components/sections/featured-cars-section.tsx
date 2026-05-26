@@ -1,56 +1,26 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/Button"
-import { ArrowRight, Fuel, Gauge, Calendar } from "lucide-react"
-
-const featuredCars = [
-  {
-    id: 1,
-    name: "Porsche 911 Carrera S",
-    year: 2021,
-    price: "€ 125.000",
-    mileage: "18.500 km",
-    fuel: "Benzina",
-    image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2070&auto=format&fit=crop",
-    badge: "In evidenza",
-  },
-  {
-    id: 2,
-    name: "Mercedes-AMG GT",
-    year: 2020,
-    price: "€ 98.500",
-    mileage: "24.000 km",
-    fuel: "Benzina",
-    image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=2070&auto=format&fit=crop",
-    badge: "Appena arrivata",
-  },
-  {
-    id: 3,
-    name: "BMW M4 Competition",
-    year: 2022,
-    price: "€ 89.900",
-    mileage: "12.000 km",
-    fuel: "Benzina",
-    image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?q=80&w=2070&auto=format&fit=crop",
-    badge: null,
-  },
-]
+import { ArrowRight, Gauge, Calendar } from "lucide-react"
+import { getEvidenzaVetture } from "@/data/vetture"
 
 export function FeaturedCarsSection() {
+  const cars = getEvidenzaVetture()
+
   return (
     <section className="py-24 bg-background">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-16">
           <div>
-            <span className="text-sm font-medium tracking-widest uppercase text-accent">
+            <span className="text-xs tracking-[0.25em] uppercase text-accent/80">
               Selezione esclusiva
             </span>
             <h2 className="mt-3 font-serif text-4xl sm:text-5xl lg:text-6xl font-light text-foreground tracking-tight">
               Le vetture in evidenza
             </h2>
           </div>
-          <Button asChild variant="ghost" className="text-muted-foreground hover:text-foreground self-start sm:self-auto">
+          <Button asChild variant="ghost" className="text-muted-foreground hover:text-foreground self-start sm:self-auto shrink-0">
             <Link href="/vetture">
               Vedi tutte le vetture
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -60,19 +30,26 @@ export function FeaturedCarsSection() {
 
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {featuredCars.map((car) => (
+          {cars.map((car) => (
             <Link
-              key={car.id}
-              href={`/contatti?vettura=${encodeURIComponent(car.name)}`}
-              className="group block bg-card rounded-sm overflow-hidden border border-border hover:border-accent/50 transition-all duration-300 hover:shadow-xl"
+              key={car.slug}
+              href={`/vetture/${car.slug}`}
+              className="group block bg-card overflow-hidden border border-border hover:border-accent/40 transition-all duration-500"
             >
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <Image
-                  src={car.image}
-                  alt={car.name}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
+              <div className="relative aspect-[4/3] overflow-hidden bg-secondary">
+                {car.image ? (
+                  <Image
+                    src={car.image}
+                    alt={`${car.make} ${car.model} ${car.year}`}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="font-serif text-3xl text-muted-foreground/30">{car.make}</span>
+                  </div>
+                )}
                 {car.badge && (
                   <div className="absolute top-4 left-4 px-3 py-1 bg-accent text-accent-foreground text-xs font-medium tracking-wide">
                     {car.badge}
@@ -81,25 +58,30 @@ export function FeaturedCarsSection() {
               </div>
 
               <div className="p-6">
-                <h3 className="font-serif text-xl font-medium text-foreground group-hover:text-accent transition-colors">
-                  {car.name}
-                </h3>
-                <p className="mt-1 text-2xl font-semibold text-foreground">
-                  {car.price}
-                </p>
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <h3 className="font-serif text-xl font-medium text-foreground group-hover:text-accent transition-colors duration-300">
+                      {car.make} {car.model}
+                    </h3>
+                    <p className="mt-0.5 text-sm text-muted-foreground">{car.year} · {car.carburante}</p>
+                  </div>
+                  <p className="font-serif text-xl font-light text-foreground whitespace-nowrap">
+                    € {car.prezzo.toLocaleString("it-IT")}
+                  </p>
+                </div>
 
-                <div className="mt-6 pt-6 border-t border-border flex items-center gap-6 text-sm text-muted-foreground">
-                  <div className="flex items-center gap-2">
-                    <Calendar className="h-4 w-4" />
+                <div className="mt-5 pt-5 border-t border-border flex items-center gap-5 text-xs text-muted-foreground">
+                  <div className="flex items-center gap-1.5">
+                    <Calendar className="h-3.5 w-3.5" />
                     <span>{car.year}</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Gauge className="h-4 w-4" />
-                    <span>{car.mileage}</span>
+                  <div className="flex items-center gap-1.5">
+                    <Gauge className="h-3.5 w-3.5" />
+                    <span>{car.km.toLocaleString("it-IT")} km</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Fuel className="h-4 w-4" />
-                    <span>{car.fuel}</span>
+                  <div className="ml-auto flex items-center gap-1 text-accent text-xs font-medium">
+                    <span>Scopri</span>
+                    <ArrowRight className="h-3 w-3" />
                   </div>
                 </div>
               </div>
@@ -113,7 +95,7 @@ export function FeaturedCarsSection() {
             href="https://www.autoscout24.it/concessionari/bernabei-automobili-di-brando-bernabei"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-secondary hover:bg-secondary/80 rounded-sm transition-colors"
+            className="inline-flex items-center gap-3 px-8 py-4 border border-border hover:border-accent/50 transition-colors duration-300"
           >
             <span className="text-sm text-muted-foreground">Stock completo disponibile su</span>
             <span className="font-semibold text-foreground">AutoScout24</span>

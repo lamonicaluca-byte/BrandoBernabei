@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Menu, X, Phone } from "lucide-react"
 import { Button } from "@/components/ui/Button"
 
@@ -15,9 +15,20 @@ const navigation = [
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 40)
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border transition-shadow duration-300 ${
+        scrolled ? "shadow-sm" : "shadow-none"
+      }`}
+    >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3">
@@ -37,7 +48,7 @@ export function Header() {
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors tracking-wide"
+              className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors tracking-wide"
             >
               {item.name}
             </Link>
@@ -81,7 +92,7 @@ export function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="block text-base font-medium text-foreground/80 hover:text-primary transition-colors"
+                className="block text-base font-medium text-foreground/70 hover:text-primary transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}

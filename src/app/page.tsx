@@ -1,4 +1,11 @@
+import type { Metadata } from "next"
 import { Header } from "@/components/header"
+
+export const metadata: Metadata = {
+  title: "Bernabei Automobili | Auto Premium Selezionate a Roma",
+  description:
+    "Selezione esclusiva di auto premium e sportive usate a Roma. Porsche, Ferrari, BMW M, Mercedes-AMG. 97% recensioni positive su AutoScout24. Oltre 500 clienti soddisfatti.",
+}
 import { Footer } from "@/components/footer"
 import { HeroSection } from "@/components/sections/hero-section"
 import { FeaturedCarsSection } from "@/components/sections/featured-cars-section"
