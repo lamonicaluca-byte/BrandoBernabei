@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { useState, useEffect } from "react"
-import { Menu, X, Phone } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/Button"
 
 const navigation = [
@@ -10,7 +10,6 @@ const navigation = [
   { name: "Vetture", href: "/vetture" },
   { name: "Servizi", href: "/servizi" },
   { name: "Recensioni", href: "/recensioni" },
-  { name: "Contatti", href: "/contatti" },
 ]
 
 export function Header() {
@@ -24,95 +23,84 @@ export function Header() {
   }, [])
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border transition-shadow duration-300 ${
-        scrolled ? "shadow-sm" : "shadow-none"
-      }`}
-    >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-3">
-          <div className="flex flex-col">
-            <span className="font-serif text-3xl font-medium tracking-wide text-primary">
+    <div className="fixed top-5 left-0 right-0 z-50 px-4 sm:px-6">
+      <div className="relative mx-auto max-w-4xl">
+        {/* Pill navbar */}
+        <nav
+          className={`flex items-center justify-between gap-6 rounded-full border border-white/15 bg-black/65 backdrop-blur-md px-5 py-3 transition-all duration-300 ${
+            scrolled ? "shadow-xl shadow-black/30 border-white/20" : ""
+          }`}
+        >
+          {/* Logo */}
+          <Link href="/" className="flex items-baseline gap-2 shrink-0">
+            <span className="font-serif text-xl font-medium tracking-wide text-white">
               BERNABEI
             </span>
-            <span className="text-[11px] tracking-[0.3em] text-muted-foreground uppercase">
+            <span className="hidden sm:inline text-[9px] tracking-[0.25em] text-white/45 uppercase">
               Automobili
             </span>
-          </div>
-        </Link>
+          </Link>
 
-        {/* Desktop Navigation */}
-        <div className="hidden lg:flex lg:items-center lg:gap-8">
-          {navigation.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors tracking-wide"
-            >
-              {item.name}
-            </Link>
-          ))}
-        </div>
-
-        {/* Desktop CTA */}
-        <div className="hidden lg:flex lg:items-center lg:gap-4">
-          <a
-            href="tel:+393395027983"
-            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-          >
-            <Phone className="h-4 w-4" />
-            <span>+39 339 502 7983</span>
-          </a>
-          <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
-            <Link href="/contatti">Parla con Brando</Link>
-          </Button>
-        </div>
-
-        {/* Mobile menu button */}
-        <button
-          type="button"
-          className="lg:hidden p-2 text-foreground"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          <span className="sr-only">Apri menu</span>
-          {mobileMenuOpen ? (
-            <X className="h-6 w-6" />
-          ) : (
-            <Menu className="h-6 w-6" />
-          )}
-        </button>
-      </nav>
-
-      {/* Mobile menu */}
-      {mobileMenuOpen && (
-        <div className="lg:hidden bg-background border-b border-border">
-          <div className="px-6 py-4 space-y-4">
+          {/* Desktop nav links */}
+          <div className="hidden lg:flex items-center gap-7">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="block text-base font-medium text-foreground/70 hover:text-primary transition-colors"
+                className="text-sm font-medium text-white/65 hover:text-white transition-colors tracking-wide"
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+
+          {/* Desktop CTA */}
+          <div className="hidden lg:block shrink-0">
+            <Button
+              asChild
+              size="sm"
+              className="rounded-full bg-accent text-black hover:bg-accent/85 font-semibold px-5 text-sm"
+            >
+              <Link href="/contatti">Contattaci</Link>
+            </Button>
+          </div>
+
+          {/* Mobile hamburger */}
+          <button
+            type="button"
+            className="lg:hidden p-1 text-white/75 hover:text-white transition-colors"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            <span className="sr-only">Apri menu</span>
+            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </nav>
+
+        {/* Mobile dropdown */}
+        {mobileMenuOpen && (
+          <div className="lg:hidden absolute top-full mt-2 left-0 right-0 rounded-2xl border border-white/15 bg-black/80 backdrop-blur-md px-3 py-3 space-y-1">
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="block px-4 py-2.5 text-sm font-medium text-white/70 hover:text-white hover:bg-white/8 rounded-xl transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}
               </Link>
             ))}
-            <div className="pt-4 border-t border-border space-y-3">
-              <a
-                href="tel:+393395027983"
-                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+            <div className="pt-2 mt-1 border-t border-white/10">
+              <Button
+                asChild
+                className="w-full rounded-full bg-accent text-black hover:bg-accent/85 font-semibold"
+                onClick={() => setMobileMenuOpen(false)}
               >
-                <Phone className="h-4 w-4" />
-                +39 339 502 7983
-              </a>
-              <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
-                <Link href="/contatti">Parla con Brando</Link>
+                <Link href="/contatti">Contattaci</Link>
               </Button>
             </div>
           </div>
-        </div>
-      )}
-    </header>
+        )}
+      </div>
+    </div>
   )
 }
