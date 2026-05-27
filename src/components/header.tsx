@@ -23,14 +23,14 @@ export function Header() {
   }, [])
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-white/10">
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
-        {/* Flat navbar */}
-        <nav
-          className={`flex items-center justify-between gap-6 py-3 transition-all duration-300 ${
-            scrolled ? "shadow-xl shadow-black/30" : ""
-          }`}
-        >
+    <header className="fixed top-0 left-0 right-0 z-50 pt-3 px-3 sm:px-4">
+      <div
+        className={`max-w-7xl mx-auto transition-all duration-300 rounded-2xl border bg-black/80 backdrop-blur-sm border-white/15 ${
+          scrolled ? "shadow-xl shadow-black/40" : "shadow-md shadow-black/20"
+        }`}
+      >
+        {/* Main nav row */}
+        <div className="flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
           {/* Logo */}
           <Link href="/" className="flex items-baseline gap-1.5 shrink-0">
             <span className="font-serif text-base font-medium tracking-wide text-white">
@@ -75,11 +75,11 @@ export function Header() {
             <span className="sr-only">Apri menu</span>
             {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
-        </nav>
+        </div>
 
-        {/* Mobile dropdown */}
+        {/* Mobile dropdown — inside the rounded card */}
         {mobileMenuOpen && (
-          <div className="lg:hidden absolute top-full mt-2 left-0 right-0 rounded-2xl border border-white/15 bg-black/80 backdrop-blur-md px-3 py-3 space-y-1">
+          <div className="lg:hidden border-t border-white/10 px-3 py-3 space-y-1">
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -93,7 +93,8 @@ export function Header() {
             <div className="pt-2 mt-1 border-t border-white/10">
               <Button
                 asChild
-                className="w-full rounded-full bg-accent text-black hover:bg-accent/85 font-semibold"
+                className="w-full rounded-none border-0 text-[#0A0A0A] font-medium"
+                style={{ background: 'linear-gradient(135deg, #E8C97A 0%, #C9A96E 45%, #A07840 100%)' }}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <Link href="/contatti">Contattaci</Link>
@@ -102,6 +103,6 @@ export function Header() {
           </div>
         )}
       </div>
-    </div>
+    </header>
   )
 }
