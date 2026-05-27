@@ -23,12 +23,12 @@ export function Header() {
   }, [])
 
   return (
-    <div className="fixed top-5 left-0 right-0 z-50 px-4 sm:px-6">
-      <div className="relative mx-auto max-w-4xl">
-        {/* Pill navbar */}
+    <div className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
+        {/* Flat navbar */}
         <nav
-          className={`flex items-center justify-between gap-6 rounded-full border border-white/15 bg-black/65 backdrop-blur-md px-5 py-3 transition-all duration-300 ${
-            scrolled ? "shadow-xl shadow-black/30 border-white/20" : ""
+          className={`flex items-center justify-between gap-6 py-3 transition-all duration-300 ${
+            scrolled ? "shadow-sm" : ""
           }`}
         >
           {/* Logo */}

@@ -49,12 +49,14 @@ export function HeroSection() {
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 py-32 w-full text-center">
         {/* Eyebrow badge */}
-        <span
-          className="inline-flex items-center gap-2 px-4 py-2 border border-[#C9A96E]/30 backdrop-blur-sm mb-8 text-xs tracking-[0.3em] text-[#C9A96E] uppercase"
-          style={{ background: 'rgba(201,169,110,0.08)' }}
-        >
-          Roma · Auto Premium &amp; Sportive
-        </span>
+        <div className="flex justify-center mb-8">
+          <span
+            className="inline-flex items-center gap-2 px-4 py-2 border border-[#C9A96E]/30 backdrop-blur-sm text-xs tracking-[0.3em] text-[#C9A96E] uppercase w-auto"
+            style={{ background: 'rgba(201,169,110,0.08)' }}
+          >
+            Roma · Auto Premium &amp; Sportive
+          </span>
+        </div>
 
         {/* Headline */}
         <h1 className="mt-2 font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light tracking-tight text-white leading-[1.05]">
@@ -75,7 +77,7 @@ export function HeroSection() {
           <Button
             asChild
             size="lg"
-            className="px-8 py-6 text-base font-medium text-[#0A0A0A] rounded-none border-0"
+            className="px-8 py-6 text-base font-medium text-[#0A0A0A] rounded-none border-0 w-full sm:w-auto max-w-[320px]"
             style={{
               background: goldGradient,
               boxShadow: '0 4px 24px rgba(201,169,110,0.35)',
