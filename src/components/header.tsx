@@ -23,12 +23,12 @@ export function Header() {
   }, [])
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+    <div className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-white/10">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
         {/* Flat navbar */}
         <nav
           className={`flex items-center justify-between gap-6 py-3 transition-all duration-300 ${
-            scrolled ? "shadow-sm" : ""
+            scrolled ? "shadow-xl shadow-black/30" : ""
           }`}
         >
           {/* Logo */}
