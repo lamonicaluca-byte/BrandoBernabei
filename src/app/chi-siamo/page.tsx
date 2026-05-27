@@ -58,7 +58,7 @@ export default function ChiSiamoPage() {
               <br />
               <em className="text-gold">Le conosciamo da sempre.</em>
             </h1>
-            <p className="font-sans font-light text-[#666] text-sm leading-relaxed max-w-2xl mx-auto mt-6">
+            <p className="font-sans text-[#AAAAAA] text-sm leading-relaxed max-w-2xl mx-auto mt-6">
               Bernabei Automobili nasce dalla pista. Da una passione ereditata,
               non imparata.
             </p>
@@ -110,7 +110,7 @@ export default function ChiSiamoPage() {
                     <div className="font-sans text-[#F5F0E8] text-[10px] uppercase tracking-[.18em] mb-0.5">
                       {item.gara}
                     </div>
-                    <div className="font-sans text-[#5A5A5A] text-[10px]">
+                    <div className="font-sans text-[#888888] text-[10px]">
                       {item.auto}
                     </div>
                     {item.risultato && (
@@ -130,7 +130,7 @@ export default function ChiSiamoPage() {
         <section className="bg-[#0A0A0A] py-20 px-8">
           <div className="max-w-3xl mx-auto text-center">
             <div className="w-16 h-px bg-[#C9A96E] mx-auto mb-8" />
-            <blockquote className="font-serif italic text-3xl font-light text-[#F5F0E8] leading-[1.4] mb-6">
+            <blockquote className="font-serif italic text-3xl text-[#F5F0E8] leading-[1.4] mb-6">
               &ldquo;Le gare ti insegnano una cosa sola:
               <br />
               la differenza tra chi prepara bene
@@ -211,7 +211,7 @@ export default function ChiSiamoPage() {
                   <div className="font-sans text-[10px] uppercase tracking-[.18em] text-[#C9A96E] mb-3">
                     {v.titolo}
                   </div>
-                  <p className="font-sans font-light text-[#5A5A5A] text-xs leading-relaxed">
+                  <p className="font-sans text-[#999999] text-xs leading-relaxed">
                     {v.testo}
                   </p>
                 </div>
