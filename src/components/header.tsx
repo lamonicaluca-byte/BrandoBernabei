@@ -32,11 +32,11 @@ export function Header() {
           }`}
         >
           {/* Logo */}
-          <Link href="/" className="flex items-baseline gap-2 shrink-0">
-            <span className="font-serif text-xl font-medium tracking-wide text-white">
+          <Link href="/" className="flex items-baseline gap-1.5 shrink-0">
+            <span className="font-serif text-base font-medium tracking-wide text-white">
               BERNABEI
             </span>
-            <span className="hidden sm:inline text-[9px] tracking-[0.25em] text-white uppercase">
+            <span className="text-[8px] tracking-[0.25em] text-white uppercase">
               Automobili
             </span>
           </Link>
