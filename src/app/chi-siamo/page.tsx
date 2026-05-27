@@ -1,41 +1,43 @@
-import { Metadata } from "next"
-import Image from "next/image"
+import type { Metadata } from "next"
 import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { Button } from "@/components/ui/Button"
-import { ArrowRight, Award, Users, Shield, Heart } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Chi Siamo | Bernabei Automobili",
+  title: "Chi Siamo | Bernabei Automobili Roma",
   description:
-    "La storia di Bernabei Automobili: oltre 25 anni di esperienza nel settore delle auto premium a Roma. Brando Bernabei seleziona personalmente ogni vettura.",
+    "La storia di Bernabei Automobili nasce dalla pista. Franco Bernabei, pilota professionista alla 24 Ore di Le Mans e Targa Florio, ha trasmesso a suo figlio Brando la passione vera per le automobili.",
 }
 
-const values = [
+const timeline = [
+  { anno: "1961", gara: "Targa Florio", auto: "Maserati 200S", risultato: null },
+  { anno: "1966", gara: "12 Ore di Sebring", auto: "De Tomaso Sport 5000", risultato: null },
+  { anno: "1966", gara: "24 Ore di Le Mans", auto: "De Tomaso Sport 5000", risultato: null },
+  { anno: "1976", gara: "Targa Florio", auto: "Porsche 911 Carrera", risultato: "3° posto" },
+  { anno: "1976", gara: "Pergusa", auto: "Porsche 911 Carrera", risultato: "1° VITTORIA" },
+  { anno: "1976", gara: "Giro d'Italia", auto: "Porsche 911 Carrera", risultato: "2° posto" },
+]
+
+const valori = [
   {
-    icon: Shield,
-    title: "Trasparenza",
-    description:
-      "Nessuna sorpresa. Ogni difetto, ogni intervento, ogni storia della vettura viene comunicata prima della trattativa.",
+    numero: "01",
+    titolo: "TRASPARENZA",
+    testo: "Nessun costo nascosto, nessuna sorpresa. Il prezzo che vedi è quello che paghi.",
   },
   {
-    icon: Award,
-    title: "Competenza",
-    description:
-      "25 anni di esperienza diretta nel mercato premium e sportivo. Conoscere le vetture significa riconoscere quelle che meritano.",
+    numero: "02",
+    titolo: "COMPETENZA",
+    testo: "Oltre 25 anni di esperienza nel settore premium. Sappiamo cosa cercare e cosa evitare.",
   },
   {
-    icon: Heart,
-    title: "Passione",
-    description:
-      "Non è solo lavoro: è una passione. Ogni vettura che entra nel nostro stock risponde a criteri precisi di qualità.",
+    numero: "03",
+    titolo: "SELEZIONE",
+    testo: "Stock piccolo per scelta. Ogni vettura è lì perché la riteniamo davvero degna di essere proposta.",
   },
   {
-    icon: Users,
-    title: "Relazione",
-    description:
-      "La vendita non è la fine del rapporto. Assistiamo i clienti anche dopo la consegna, per anni.",
+    numero: "04",
+    titolo: "ASSISTENZA",
+    testo: "Il nostro lavoro non finisce alla firma. Siamo disponibili anche dopo la consegna.",
   },
 ]
 
@@ -43,97 +45,174 @@ export default function ChiSiamoPage() {
   return (
     <>
       <Header />
-      <main className="pt-20">
-        {/* Hero */}
-        <section className="relative py-24 lg:py-32 bg-primary text-primary-foreground">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="max-w-3xl">
-              <span className="text-sm font-medium tracking-widest uppercase text-accent">
-                Chi Siamo
+      <main>
+
+        {/* SEZIONE 1 — Hero dark */}
+        <section className="bg-[#080808] pt-32 pb-20 px-8">
+          <div className="max-w-3xl mx-auto text-center">
+            <span className="font-sans font-light text-[10px] uppercase tracking-[.25em] text-[#C9A96E]">
+              La nostra storia
+            </span>
+            <h1 className="font-serif font-light text-5xl text-[#F5F0E8] mt-6 leading-[1.2]">
+              Non vendiamo auto.
+              <br />
+              <em className="text-gold">Le conosciamo da sempre.</em>
+            </h1>
+            <p className="font-sans font-light text-[#666] text-sm leading-relaxed max-w-2xl mx-auto mt-6">
+              Bernabei Automobili nasce dalla pista. Da una passione ereditata,
+              non imparata.
+            </p>
+          </div>
+        </section>
+
+        {/* SEZIONE 2 — Storia di Franco */}
+        <section className="bg-[#F5F0E8] py-24 px-8">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
+            {/* Colonna sx — testo */}
+            <div>
+              <span className="font-sans font-light text-[10px] uppercase tracking-[.25em] text-[#C9A96E]">
+                Il fondatore
               </span>
-              <h1 className="mt-4 font-serif text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight">
-                Una passione che diventa professione
-              </h1>
-              <p className="mt-6 text-xl text-primary-foreground/80 leading-relaxed">
-                Dal 1998 accompagniamo i nostri clienti nella scelta della vettura perfetta,
-                con competenza, trasparenza e dedizione personale.
+              <h2 className="font-serif font-light text-4xl text-[#1C1C1C] mt-6 mb-6 leading-[1.2]">
+                Franco Bernabei.
+                <br />
+                <em className="text-[#C9A96E]">Pilota. Fondatore. Padre.</em>
+              </h2>
+              <p className="font-sans font-light text-sm text-[#4A4A4A] leading-[1.9] mb-5">
+                Franco Bernabei nasce a Roma il 17 maggio 1940. La sua vita è
+                le corse automobilistiche — non come spettatore, ma come
+                protagonista sui circuiti più importanti del mondo.
+              </p>
+              <p className="font-sans font-light text-sm text-[#4A4A4A] leading-[1.9] mb-5">
+                Nel 1961 corre la Targa Florio su Maserati. Nel 1966 sale su
+                una De Tomaso Sport 5000 per le 12 Ore di Sebring e la 24 Ore
+                di Le Mans — la gara più leggendaria al mondo. Nel 1976 domina
+                il campionato italiano su Porsche 911 Carrera, vincendo a
+                Pergusa e salendo sul podio alla Targa Florio e al Giro
+                d&apos;Italia.
+              </p>
+              <p className="font-sans font-light text-sm text-[#4A4A4A] leading-[1.9]">
+                Quando smette di correre, Franco porta quella stessa competenza
+                nell&apos;unica cosa che conosce meglio delle gare: le
+                automobili. Nasce così Bernabei Automobili.
               </p>
             </div>
-          </div>
-        </section>
 
-        {/* Story */}
-        <section className="py-24 bg-background">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <div>
-                <span className="text-sm font-medium tracking-widest uppercase text-accent">
-                  La nostra storia
-                </span>
-                <h2 className="mt-4 font-serif text-4xl sm:text-5xl font-light text-foreground tracking-tight">
-                  Tutto è iniziato con una passione vera
-                </h2>
-                <div className="mt-8 space-y-6 text-muted-foreground leading-relaxed">
-                  <p>
-                    Bernabei Automobili nasce dalla passione di Brando per il mondo automotive.
-                    Quello che è iniziato come una vocazione si è trasformato in una missione:
-                    offrire un&apos;esperienza di acquisto completamente diversa da quella
-                    della concessionaria tradizionale.
-                  </p>
-                  <p>
-                    Il principio è semplice: trattare ogni cliente come vorremmo essere trattati
-                    noi. Nessuna pressione commerciale, nessuna mezza verità. Solo competenza
-                    e onestà. Uno stock piccolo non è una limitazione: è una scelta. Ogni
-                    vettura deve superare criteri precisi prima di entrare da noi.
-                  </p>
-                  <p>
-                    Oggi, con oltre 500 clienti soddisfatti e un tasso di recensioni positive
-                    del 97% su AutoScout24, possiamo dire con orgoglio che la nostra filosofia
-                    funziona.
-                  </p>
-                </div>
-              </div>
-              <div className="relative">
-                <div className="aspect-[4/5] rounded-sm overflow-hidden">
-                  <Image
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop"
-                    alt="Brando Bernabei"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="absolute -bottom-6 -left-6 bg-accent px-8 py-6 rounded-sm">
-                  <div className="font-serif text-3xl font-light text-accent-foreground">25+</div>
-                  <div className="text-sm text-accent-foreground/80">Anni di esperienza</div>
-                </div>
+            {/* Colonna dx — timeline */}
+            <div className="bg-[#0A0A0A] p-10">
+              <div className="border-l border-[#C9A96E]/30 pl-6 space-y-8">
+                {timeline.map((item, i) => (
+                  <div key={i}>
+                    <div className="font-serif text-[#C9A96E] text-2xl font-light leading-none mb-1">
+                      {item.anno}
+                    </div>
+                    <div className="font-sans text-[#F5F0E8] text-[10px] uppercase tracking-[.18em] mb-0.5">
+                      {item.gara}
+                    </div>
+                    <div className="font-sans text-[#5A5A5A] text-[10px]">
+                      {item.auto}
+                    </div>
+                    {item.risultato && (
+                      <div className="font-sans text-[#C9A96E] text-[10px] mt-0.5">
+                        {item.risultato}
+                      </div>
+                    )}
+                  </div>
+                ))}
               </div>
             </div>
+
           </div>
         </section>
 
-        {/* Values */}
-        <section className="py-24 bg-secondary">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="text-sm font-medium tracking-widest uppercase text-accent">
-                I nostri valori
+        {/* SEZIONE 3 — Quote di transizione */}
+        <section className="bg-[#0A0A0A] py-20 px-8">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="w-16 h-px bg-[#C9A96E] mx-auto mb-8" />
+            <blockquote className="font-serif italic text-3xl font-light text-[#F5F0E8] leading-[1.4] mb-6">
+              &ldquo;Le gare ti insegnano una cosa sola:
+              <br />
+              la differenza tra chi prepara bene
+              <br />
+              e chi improvvisa si vede sempre.&rdquo;
+            </blockquote>
+            <p className="font-sans text-[10px] uppercase tracking-[.25em] text-[#C9A96E]">
+              — Franco Bernabei
+            </p>
+          </div>
+        </section>
+
+        {/* SEZIONE 4 — Brando */}
+        <section className="bg-[#F5F0E8] py-24 px-8">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
+            {/* Colonna sx — placeholder foto */}
+            <div className="bg-[#1C1C1C] min-h-[420px] flex items-center justify-center">
+              <span className="font-serif text-[#333] text-sm tracking-[.2em]">
+                [ FOTO BRANDO ]
               </span>
-              <h2 className="mt-4 font-serif text-4xl sm:text-5xl font-light text-foreground tracking-tight">
-                Perché scegliere Bernabei Automobili
+            </div>
+
+            {/* Colonna dx — testo */}
+            <div>
+              <span className="font-sans font-light text-[10px] uppercase tracking-[.25em] text-[#C9A96E]">
+                Chi siamo oggi
+              </span>
+              <h2 className="font-serif font-light text-4xl text-[#1C1C1C] mt-6 mb-6 leading-[1.2]">
+                Brando Bernabei.
+                <br />
+                <em className="text-[#C9A96E]">La stessa passione. Un approccio nuovo.</em>
+              </h2>
+              <p className="font-sans font-light text-sm text-[#4A4A4A] leading-[1.9] mb-5">
+                Brando cresce circondato da automobili vere — non come oggetti
+                di consumo, ma come macchine con una storia, un carattere,
+                un&apos;anima. Impara a guardarle con gli occhi di chi le ha
+                guidate in gara.
+              </p>
+              <p className="font-sans font-light text-sm text-[#4A4A4A] leading-[1.9] mb-8">
+                Oggi Bernabei Automobili è la sua concessionaria. Ogni vettura
+                in stock è stata scelta personalmente da Brando, con criteri
+                precisi e nessuna scorciatoia. Non vendiamo tutto — vendiamo
+                solo quello di cui siamo convinti.
+              </p>
+              <blockquote className="border-l-2 border-[#C9A96E] pl-5 font-serif italic text-xl text-[#1C1C1C] mb-8 leading-[1.4]">
+                &ldquo;Non vendo auto. Aiuto le persone a trovare quella
+                giusta.&rdquo;
+              </blockquote>
+              <Link
+                href="/contatti"
+                className="inline-block border-[0.5px] border-[#1C1C1C] text-[#1C1C1C] text-[10px] uppercase tracking-[.18em] px-6 py-3 hover:bg-[#1C1C1C] hover:text-[#F5F0E8] transition-colors"
+              >
+                Parla con Brando
+              </Link>
+            </div>
+
+          </div>
+        </section>
+
+        {/* SEZIONE 5 — I valori */}
+        <section className="bg-[#080808] py-20 px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <span className="font-sans font-light text-[10px] uppercase tracking-[.25em] text-[#C9A96E]">
+                Perché scegliere Bernabei
+              </span>
+              <h2 className="font-serif font-light text-4xl text-[#F5F0E8] mt-6">
+                Quello che non cambia.
               </h2>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {values.map((value, index) => (
-                <div
-                  key={index}
-                  className="p-8 bg-card rounded-sm border border-border hover:border-accent/50 transition-colors"
-                >
-                  <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-6">
-                    <value.icon className="h-6 w-6 text-accent" />
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+              {valori.map((v) => (
+                <div key={v.numero}>
+                  <div className="font-serif text-6xl text-[#1A1A1A] font-light leading-none mb-4 select-none">
+                    {v.numero}
                   </div>
-                  <h3 className="font-semibold text-lg text-foreground mb-3">{value.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {value.description}
+                  <div className="font-sans text-[10px] uppercase tracking-[.18em] text-[#C9A96E] mb-3">
+                    {v.titolo}
+                  </div>
+                  <p className="font-sans font-light text-[#5A5A5A] text-xs leading-relaxed">
+                    {v.testo}
                   </p>
                 </div>
               ))}
@@ -141,30 +220,39 @@ export default function ChiSiamoPage() {
           </div>
         </section>
 
-        {/* Philosophy */}
-        <section className="py-24 bg-background">
-          <div className="mx-auto max-w-3xl mx-auto text-center px-6">
-            <span className="text-sm font-medium tracking-widest uppercase text-accent">
-              La nostra filosofia
-            </span>
-            <h2 className="mt-4 font-serif text-4xl sm:text-5xl font-light text-foreground tracking-tight">
-              Non vendiamo auto. Costruiamo relazioni.
+        {/* SEZIONE 6 — CTA finale */}
+        <section className="bg-[#F5F0E8] py-20 px-8">
+          <div className="max-w-xl mx-auto text-center">
+            <h2 className="font-serif font-light text-4xl text-[#1C1C1C] mb-4">
+              Vieni a trovarci.
             </h2>
-            <blockquote className="mt-8 font-serif text-xl text-muted-foreground leading-relaxed italic">
-              &ldquo;Quando un cliente entra nel nostro showroom, non vedo una vendita. Vedo
-              una persona che sta per fare un investimento importante e merita tutta la mia
-              attenzione e onestà. È così che ho sempre lavorato.&rdquo;
-            </blockquote>
-            <p className="mt-6 font-semibold text-foreground">Brando Bernabei</p>
-            <div className="mt-12">
-              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-                <Link href="/contatti">
-                  Prenota un appuntamento
-                </Link>
-              </Button>
+            <p className="font-sans font-light text-sm text-[#6A6A6A] mb-10 leading-relaxed">
+              Via Flaminia, 318/a — Roma.
+              <br />
+              Oppure scrivici su WhatsApp.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Link
+                href="/vetture"
+                className="inline-block border-[0.5px] border-[#1C1C1C] text-[#1C1C1C] text-[10px] uppercase tracking-[.18em] px-6 py-3 hover:bg-[#1C1C1C] hover:text-[#F5F0E8] transition-colors text-center"
+              >
+                Vedi le vetture disponibili
+              </Link>
+              <a
+                href="https://wa.me/393395027983"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block text-[#0A0A0A] text-[10px] uppercase tracking-[.18em] px-6 py-3 text-center hover:opacity-80 transition-opacity"
+                style={{
+                  background: "linear-gradient(135deg, #E8C97A 0%, #C9A96E 45%, #A07840 100%)",
+                }}
+              >
+                Scrivici su WhatsApp
+              </a>
             </div>
           </div>
         </section>
+
       </main>
       <Footer />
     </>
