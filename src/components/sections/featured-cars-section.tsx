@@ -1,7 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/Button"
-import { ArrowRight, Gauge, Calendar } from "lucide-react"
+import { Gauge, Calendar } from "lucide-react"
 import { getEvidenzaVetture } from "@/data/vetture"
 
 export function FeaturedCarsSection() {
@@ -23,7 +23,6 @@ export function FeaturedCarsSection() {
           <Button asChild variant="ghost" className="text-muted-foreground hover:text-foreground self-start sm:self-auto shrink-0">
             <Link href="/vetture">
               Vedi tutte le vetture
-              <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
         </div>
@@ -81,7 +80,6 @@ export function FeaturedCarsSection() {
                   </div>
                   <div className="ml-auto flex items-center gap-1 text-accent text-xs font-medium">
                     <span>Scopri</span>
-                    <ArrowRight className="h-3 w-3" />
                   </div>
                 </div>
               </div>
@@ -99,7 +97,6 @@ export function FeaturedCarsSection() {
           >
             <span className="text-sm text-muted-foreground">Stock completo disponibile su</span>
             <span className="font-semibold text-foreground">AutoScout24</span>
-            <ArrowRight className="h-4 w-4 text-accent" />
           </a>
         </div>
       </div>

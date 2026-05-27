@@ -2,7 +2,6 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/Button"
-import { ArrowRight } from "lucide-react"
 import { useState, useEffect } from "react"
 
 const heroImages = [
@@ -67,7 +66,6 @@ export function HeroSection() {
           >
             <Link href="/vetture">
               Scopri le vetture disponibili
-              <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
           <Link
@@ -81,7 +79,7 @@ export function HeroSection() {
         {/* Trust Stats */}
         <div className="mt-24 flex flex-wrap items-center justify-center gap-10 sm:gap-16">
           <div>
-            <div className="font-serif text-3xl font-light text-accent">97%</div>
+            <div className="font-serif text-xl font-light text-accent">97%</div>
             <div className="text-[11px] text-white/45 mt-1 tracking-[0.15em] uppercase">Recensioni positive</div>
           </div>
           <div className="w-px h-10 bg-white/15 hidden sm:block" />

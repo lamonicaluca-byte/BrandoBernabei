@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/Button"
-import { ArrowRight, ExternalLink, Star } from "lucide-react"
+import { ExternalLink, Star } from "lucide-react"
 
 export function AutoScoutSection() {
   return (
@@ -58,7 +58,6 @@ export function AutoScoutSection() {
                   rel="noopener noreferrer"
                 >
                   Leggi le recensioni
-                  <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
               </Button>
             </div>

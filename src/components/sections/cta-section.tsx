@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/Button"
-import { Phone, MessageCircle, ArrowRight } from "lucide-react"
+import { Phone, MessageCircle } from "lucide-react"
 
 export function CTASection() {
   return (
@@ -56,7 +56,6 @@ export function CTASection() {
               >
                 <Link href="/contatti">
                   Invia un messaggio
-                  <ArrowRight className="ml-auto h-4 w-4" />
                 </Link>
               </Button>
             </div>

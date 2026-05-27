@@ -160,7 +160,6 @@ export default function ChiSiamoPage() {
               <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
                 <Link href="/contatti">
                   Prenota un appuntamento
-                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
             </div>

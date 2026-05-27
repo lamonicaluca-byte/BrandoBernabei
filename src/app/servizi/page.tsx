@@ -3,7 +3,7 @@ import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/Button"
-import { Search, RefreshCw, CreditCard, Shield, Truck, Wrench, ArrowRight, Check } from "lucide-react"
+import { Search, RefreshCw, CreditCard, Shield, Truck, Wrench, Check } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Servizi | Bernabei Automobili",
@@ -156,7 +156,6 @@ export default function ServiziPage() {
                       >
                         <Link href={`/contatti?servizio=${encodeURIComponent(service.title)}`}>
                           Richiedi informazioni
-                          <ArrowRight className="ml-2 h-4 w-4" />
                         </Link>
                       </Button>
                     </div>
@@ -198,7 +197,6 @@ export default function ServiziPage() {
                 >
                   <Link href="/contatti">
                     Contattaci ora
-                    <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
                 <Button

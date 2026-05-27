@@ -5,7 +5,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/Button"
 import { vetture } from "@/data/vetture"
-import { Calendar, Gauge, Settings, ArrowRight, ExternalLink } from "lucide-react"
+import { Calendar, Gauge, Settings, ExternalLink } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Vetture Disponibili | Bernabei Automobili",
@@ -112,7 +112,6 @@ export default function VetturePage() {
                     <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
                       <Link href={`/vetture/${car.slug}`}>
                         Scopri questa vettura
-                        <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
                     </Button>
                   </div>
