@@ -77,7 +77,7 @@ export function Header() {
           </button>
         </div>
 
-        {/* Mobile dropdown — inside the rounded card */}
+        {/* Mobile dropdown inside the rounded card */}
         {mobileMenuOpen && (
           <div className="lg:hidden border-t border-white/10 px-3 py-3 space-y-1">
             {navigation.map((item) => (

@@ -47,7 +47,7 @@ export default function ChiSiamoPage() {
       <Header />
       <main>
 
-        {/* SEZIONE 1 — Hero dark */}
+        {/* SEZIONE 1 Hero dark */}
         <section className="bg-[#080808] pt-32 pb-20 px-8">
           <div className="max-w-3xl mx-auto text-center">
             <span className="font-sans font-light text-[10px] uppercase tracking-[.25em] text-[#C9A96E]">
@@ -65,11 +65,11 @@ export default function ChiSiamoPage() {
           </div>
         </section>
 
-        {/* SEZIONE 2 — Storia di Franco */}
+        {/* SEZIONE 2 Storia di Franco */}
         <section className="bg-[#F5F0E8] py-24 px-8">
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
-            {/* Colonna sx — testo */}
+            {/* Colonna sx testo */}
             <div>
               <span className="font-sans font-light text-[10px] uppercase tracking-[.25em] text-[#C9A96E]">
                 Il fondatore
@@ -81,13 +81,13 @@ export default function ChiSiamoPage() {
               </h2>
               <p className="font-sans font-light text-sm text-[#4A4A4A] leading-[1.9] mb-5">
                 Franco Bernabei nasce a Roma il 17 maggio 1940. La sua vita è
-                le corse automobilistiche — non come spettatore, ma come
+                le corse automobilistiche non come spettatore, ma come
                 protagonista sui circuiti più importanti del mondo.
               </p>
               <p className="font-sans font-light text-sm text-[#4A4A4A] leading-[1.9] mb-5">
                 Nel 1961 corre la Targa Florio su Maserati. Nel 1966 sale su
                 una De Tomaso Sport 5000 per le 12 Ore di Sebring e la 24 Ore
-                di Le Mans — la gara più leggendaria al mondo. Nel 1976 domina
+                di Le Mans la gara più leggendaria al mondo. Nel 1976 domina
                 il campionato italiano su Porsche 911 Carrera, vincendo a
                 Pergusa e salendo sul podio alla Targa Florio e al Giro
                 d&apos;Italia.
@@ -99,7 +99,7 @@ export default function ChiSiamoPage() {
               </p>
             </div>
 
-            {/* Colonna dx — timeline */}
+            {/* Colonna dx timeline */}
             <div className="bg-[#0A0A0A] p-10">
               <div className="border-l border-[#C9A96E]/30 pl-6 space-y-8">
                 {timeline.map((item, i) => (
@@ -126,7 +126,7 @@ export default function ChiSiamoPage() {
           </div>
         </section>
 
-        {/* SEZIONE 3 — Quote di transizione */}
+        {/* SEZIONE 3 Quote di transizione */}
         <section className="bg-[#0A0A0A] py-20 px-8">
           <div className="max-w-3xl mx-auto text-center">
             <div className="w-16 h-px bg-[#C9A96E] mx-auto mb-8" />
@@ -138,23 +138,23 @@ export default function ChiSiamoPage() {
               e chi improvvisa si vede sempre.&rdquo;
             </blockquote>
             <p className="font-sans text-[10px] uppercase tracking-[.25em] text-[#C9A96E]">
-              — Franco Bernabei
+              Franco Bernabei
             </p>
           </div>
         </section>
 
-        {/* SEZIONE 4 — Brando */}
+        {/* SEZIONE 4 Brando */}
         <section className="bg-[#F5F0E8] py-24 px-8">
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
-            {/* Colonna sx — placeholder foto */}
+            {/* Colonna sx placeholder foto */}
             <div className="bg-[#1C1C1C] min-h-[420px] flex items-center justify-center">
               <span className="font-serif text-[#333] text-sm tracking-[.2em]">
                 [ FOTO BRANDO ]
               </span>
             </div>
 
-            {/* Colonna dx — testo */}
+            {/* Colonna dx testo */}
             <div>
               <span className="font-sans font-light text-[10px] uppercase tracking-[.25em] text-[#C9A96E]">
                 Chi siamo oggi
@@ -165,7 +165,7 @@ export default function ChiSiamoPage() {
                 <em className="text-[#C9A96E]">La stessa passione. Un approccio nuovo.</em>
               </h2>
               <p className="font-sans font-light text-sm text-[#4A4A4A] leading-[1.9] mb-5">
-                Brando cresce circondato da automobili vere — non come oggetti
+                Brando cresce circondato da automobili vere non come oggetti
                 di consumo, ma come macchine con una storia, un carattere,
                 un&apos;anima. Impara a guardarle con gli occhi di chi le ha
                 guidate in gara.
@@ -173,7 +173,7 @@ export default function ChiSiamoPage() {
               <p className="font-sans font-light text-sm text-[#4A4A4A] leading-[1.9] mb-8">
                 Oggi Bernabei Automobili è la sua concessionaria. Ogni vettura
                 in stock è stata scelta personalmente da Brando, con criteri
-                precisi e nessuna scorciatoia. Non vendiamo tutto — vendiamo
+                precisi e nessuna scorciatoia. Non vendiamo tutto vendiamo
                 solo quello di cui siamo convinti.
               </p>
               <blockquote className="border-l-2 border-[#C9A96E] pl-5 font-serif italic text-xl text-[#1C1C1C] mb-8 leading-[1.4]">
@@ -191,7 +191,7 @@ export default function ChiSiamoPage() {
           </div>
         </section>
 
-        {/* SEZIONE 5 — I valori */}
+        {/* SEZIONE 5 I valori */}
         <section className="bg-[#080808] py-20 px-8">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -220,14 +220,14 @@ export default function ChiSiamoPage() {
           </div>
         </section>
 
-        {/* SEZIONE 6 — CTA finale */}
+        {/* SEZIONE 6 CTA finale */}
         <section className="bg-[#F5F0E8] py-20 px-8">
           <div className="max-w-xl mx-auto text-center">
             <h2 className="font-serif font-light text-4xl text-[#1C1C1C] mb-4">
               Vieni a trovarci.
             </h2>
             <p className="font-sans font-light text-sm text-[#6A6A6A] mb-10 leading-relaxed">
-              Via Flaminia, 318/a — Roma.
+              Via Flaminia, 318/a Roma.
               <br />
               Oppure scrivici su WhatsApp.
             </p>
