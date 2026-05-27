@@ -10,6 +10,14 @@ const heroImages = [
   '/911_4.jpg',
 ]
 
+const goldGradient = 'linear-gradient(135deg, #E8C97A 0%, #C9A96E 45%, #A07840 100%)'
+const goldTextStyle = {
+  background: goldGradient,
+  WebkitBackgroundClip: 'text' as const,
+  WebkitTextFillColor: 'transparent' as const,
+  backgroundClip: 'text' as const,
+}
+
 export function HeroSection() {
   const [current, setCurrent] = useState(0)
 
@@ -40,16 +48,21 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 py-32 w-full text-center">
-        {/* Eyebrow */}
-        <span className="text-xs tracking-[0.3em] text-accent/80 uppercase">
+        {/* Eyebrow badge */}
+        <span
+          className="inline-flex items-center gap-2 px-4 py-2 border border-[#C9A96E]/30 backdrop-blur-sm mb-8 text-xs tracking-[0.3em] text-[#C9A96E] uppercase"
+          style={{ background: 'rgba(201,169,110,0.08)' }}
+        >
           Roma · Auto Premium &amp; Sportive
         </span>
 
         {/* Headline */}
-        <h1 className="mt-6 font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light tracking-tight text-white leading-[1.05]">
+        <h1 className="mt-2 font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light tracking-tight text-white leading-[1.05]">
           Auto selezionate.
           <br />
-          <em className="not-italic text-accent">Fiducia garantita.</em>
+          <span className="block" style={goldTextStyle}>
+            Fiducia garantita.
+          </span>
         </h1>
 
         {/* Subheadline */}
@@ -62,7 +75,11 @@ export function HeroSection() {
           <Button
             asChild
             size="lg"
-            className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 text-base font-medium"
+            className="px-8 py-6 text-base font-medium text-[#0A0A0A] rounded-none border-0"
+            style={{
+              background: goldGradient,
+              boxShadow: '0 4px 24px rgba(201,169,110,0.35)',
+            }}
           >
             <Link href="/vetture">
               Scopri le vetture disponibili
@@ -79,17 +96,17 @@ export function HeroSection() {
         {/* Trust Stats */}
         <div className="mt-24 flex flex-wrap items-center justify-center gap-10 sm:gap-16">
           <div>
-            <div className="font-serif text-xl font-light text-accent">97%</div>
+            <div className="font-serif text-3xl sm:text-4xl font-semibold" style={goldTextStyle}>97%</div>
             <div className="text-[11px] text-white/45 mt-1 tracking-[0.15em] uppercase">Recensioni positive</div>
           </div>
           <div className="w-px h-10 bg-white/15 hidden sm:block" />
           <div>
-            <div className="font-serif text-3xl font-light text-accent">25+</div>
+            <div className="font-serif text-3xl sm:text-4xl font-semibold" style={goldTextStyle}>25+</div>
             <div className="text-[11px] text-white/45 mt-1 tracking-[0.15em] uppercase">Anni di esperienza</div>
           </div>
           <div className="w-px h-10 bg-white/15 hidden sm:block" />
           <div>
-            <div className="font-serif text-3xl font-light text-accent">500+</div>
+            <div className="font-serif text-3xl sm:text-4xl font-semibold" style={goldTextStyle}>500+</div>
             <div className="text-[11px] text-white/45 mt-1 tracking-[0.15em] uppercase">Clienti soddisfatti</div>
           </div>
         </div>
@@ -108,8 +125,9 @@ export function HeroSection() {
             key={i}
             onClick={() => setCurrent(i)}
             className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
-              i === current ? 'bg-accent w-4' : 'bg-white/30'
+              i === current ? 'w-4' : 'bg-white/30'
             }`}
+            style={i === current ? { background: goldGradient } : {}}
           />
         ))}
       </div>

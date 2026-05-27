@@ -59,7 +59,8 @@ export function Header() {
             <Button
               asChild
               size="sm"
-              className="rounded-full border border-accent bg-transparent text-accent hover:bg-accent hover:text-black font-medium px-5 text-sm transition-colors"
+              className="rounded-none border-0 text-[#0A0A0A] font-medium px-5 text-sm"
+              style={{ background: 'linear-gradient(135deg, #E8C97A 0%, #C9A96E 45%, #A07840 100%)' }}
             >
               <Link href="/contatti">Contattaci</Link>
             </Button>

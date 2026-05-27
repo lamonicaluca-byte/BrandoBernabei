@@ -7,7 +7,11 @@
   /* Bernabei Automobili â€” Luxury Automotive Palette */
   --luxury-black: oklch(0.15 0 0);
   --anthracite: oklch(0.35 0.005 250);
-  --champagne: #D4A843;
+  --champagne: oklch(0.72 0.08 78);
+  --gold-light: #E8C97A;
+  --gold-mid: #C9A96E;
+  --gold-dark: #A07840;
+  --gold-gradient: linear-gradient(135deg, #E8C97A 0%, #C9A96E 40%, #A07840 100%);
   --warm-white: oklch(0.98 0.005 90);
   --graphite: oklch(0.25 0.005 250);
 
@@ -23,7 +27,7 @@
   --secondary-foreground: var(--graphite);
   --muted: oklch(0.94 0.005 90);
   --muted-foreground: var(--anthracite);
-  --accent: var(--champagne);
+  --accent: #C9A96E;
   --accent-foreground: var(--luxury-black);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
@@ -64,6 +68,15 @@
   --radius-md: var(--radius);
   --radius-lg: calc(var(--radius) + 2px);
   --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer utilities {
+  .text-gold {
+    background: linear-gradient(135deg, #E8C97A 0%, #C9A96E 45%, #A07840 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 }
 
 @layer base {
