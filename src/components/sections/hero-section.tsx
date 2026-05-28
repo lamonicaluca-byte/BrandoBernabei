@@ -69,8 +69,8 @@ export function HeroSection() {
         </h1>
 
         {/* Subheadline */}
-        <p className="mt-6 text-sm tracking-[.12em] text-white/50 uppercase">
-          Roma · Auto premium selezionate a mano
+        <p className="mt-6 text-sm tracking-[.18em] text-white/55 uppercase">
+          Poche.&nbsp;&nbsp;Scelte.&nbsp;&nbsp;Garantite.
         </p>
 
         {/* CTAs */}
