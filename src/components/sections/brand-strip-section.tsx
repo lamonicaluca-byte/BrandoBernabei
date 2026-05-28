@@ -9,7 +9,6 @@ const brands = [
   'Aston Martin',
   'McLaren',
   'Pagani',
-  'Alfa Romeo',
 ]
 
 export function BrandStripSection() {
