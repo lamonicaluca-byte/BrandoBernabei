@@ -5,9 +5,11 @@ import { Button } from "@/components/ui/Button"
 import { useState, useEffect } from "react"
 
 const heroImages = [
-  '/911_2.avif',
   '/911_3.jpg',
   '/911_4.jpg',
+  '/911_5.jpg',
+  '/911_6.jpg',
+  '/911_7.jpg',
 ]
 
 const goldGradient = 'linear-gradient(135deg, #E8C97A 0%, #C9A96E 45%, #A07840 100%)'
