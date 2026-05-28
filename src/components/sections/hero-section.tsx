@@ -63,7 +63,7 @@ export function HeroSection() {
         <h1 className="mt-2 font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light tracking-tight text-white leading-[1.05]">
           <span className="italic">Auto selezionate.</span>
           <br />
-          <span className="block italic" style={goldTextStyle}>
+          <span className="block italic" style={{ ...goldTextStyle, paddingBottom: '0.15em' }}>
             Fiducia garantita.
           </span>
         </h1>
