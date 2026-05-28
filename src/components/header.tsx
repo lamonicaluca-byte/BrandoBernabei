@@ -85,10 +85,10 @@ export function Header() {
             >
               BERNABEI
             </span>
-            <div style={{ height: '0.5px', backgroundColor: 'rgba(255,255,255,0.4)', margin: '5px 0', width: '100%' }} />
+            <div style={{ height: '0.5px', backgroundColor: 'rgba(255,255,255,0.65)', margin: '5px 0', width: '100%' }} />
             <span
               ref={automobiliRef}
-              className="font-serif text-white/85 leading-none"
+              className="font-serif text-white leading-none"
               style={{ fontSize: '11px', fontWeight: 400, letterSpacing: '0.45em' }}
             >
               A U T O M O B I L I
