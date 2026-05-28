@@ -7,39 +7,39 @@ import { Button } from "@/components/ui/Button"
 const testimonials = [
   {
     id: 1,
-    name: "Marco R.",
-    location: "Roma",
+    name: "Adriano",
+    location: "Bari",
     rating: 5,
-    text: "Esperienza eccellente dall'inizio alla fine. Brando è una persona estremamente professionale e trasparente. L'auto era esattamente come descritta, senza sorprese. Consiglio vivamente!",
-    car: "Porsche 911 Carrera",
-    date: "Marzo 2024",
+    text: "Ho acquistato a distanza, pagata anticipatamente e consegnata a domicilio a Bari. L'auto era meglio di quanto descritta. Oggi la fiducia è difficile da trovare, ma loro ne hanno da vendere.",
+    car: "",
+    date: "",
   },
   {
     id: 2,
-    name: "Giulia M.",
-    location: "Milano",
+    name: "Giorgio",
+    location: "Torino",
     rating: 5,
-    text: "Ho acquistato la mia Mercedes a distanza, ricevendo assistenza impeccabile durante tutto il processo. La consegna è stata puntuale e l'auto in condizioni perfette. Servizio di alto livello.",
-    car: "Mercedes-AMG C63",
-    date: "Febbraio 2024",
+    text: "Ho acquistato una Porsche 997 da Torino in totale serenità. Brando ha gestito ogni mia richiesta con video e perizia meccanica indipendente. Ne sono felicissimo.",
+    car: "Porsche 997",
+    date: "",
   },
   {
     id: 3,
-    name: "Alessandro P.",
-    location: "Firenze",
+    name: "Alessandra",
+    location: "Roma",
     rating: 5,
-    text: "Finalmente un concessionario serio! Nessuna pressione commerciale, solo competenza e onestà. Brando mi ha aiutato a trovare esattamente l'auto che cercavo al giusto prezzo.",
-    car: "BMW M4 Competition",
-    date: "Gennaio 2024",
+    text: "Prima di essere venditori di auto sono persone. Qualità rarissima in questo settore.",
+    car: "",
+    date: "",
   },
   {
     id: 4,
-    name: "Francesca L.",
-    location: "Napoli",
+    name: "Prof. Dr. A.K.",
+    location: "Germania",
     rating: 5,
-    text: "Assistenza post-vendita eccezionale. Anche dopo mesi dall'acquisto, Brando è sempre disponibile per qualsiasi domanda. Questo è ciò che fa la differenza.",
-    car: "Audi RS5 Sportback",
-    date: "Dicembre 2023",
+    text: "Ein besonders vertrauenswürdiger Händler — ein junges Team der alten Schule, das die Leidenschaft spürt.",
+    car: "",
+    date: "",
   },
 ]
 
@@ -84,10 +84,9 @@ export function TestimonialsSection() {
                 <div>
                   <div className="font-semibold text-foreground">{current.name}</div>
                   <div className="text-sm text-muted-foreground">
-                    {current.location} · {current.car}
+                    {[current.location, current.car].filter(Boolean).join(' · ')}
                   </div>
                 </div>
-                <div className="text-sm text-muted-foreground">{current.date}</div>
               </div>
             </div>
           </div>
