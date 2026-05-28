@@ -30,7 +30,7 @@ export function HeroSection() {
   }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-screen lg:min-h-[calc(100vh-60px)] flex items-center overflow-hidden">
       {/* Background slideshow */}
       <div className="absolute inset-0 z-0">
         {heroImages.map((url, i) => (
