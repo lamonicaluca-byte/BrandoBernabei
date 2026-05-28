@@ -2,6 +2,8 @@ import Link from "next/link"
 import { Button } from "@/components/ui/Button"
 import { Phone, MessageCircle } from "lucide-react"
 
+const goldGradient = 'linear-gradient(135deg, #E8C97A 0%, #C9A96E 45%, #A07840 100%)'
+
 export function CTASection() {
   return (
     <section className="py-24 bg-background">
@@ -26,7 +28,8 @@ export function CTASection() {
               <Button
                 asChild
                 size="lg"
-                className="bg-accent hover:bg-accent/90 text-accent-foreground justify-start px-6"
+                className="border-0 text-[#0A0A0A] font-medium justify-start px-6 hover:opacity-90"
+                style={{ background: goldGradient }}
               >
                 <a href="tel:+393395027983">
                   <Phone className="mr-3 h-5 w-5 shrink-0" />
@@ -36,8 +39,8 @@ export function CTASection() {
               <Button
                 asChild
                 size="lg"
-                variant="outline"
-                className="border-border hover:border-accent justify-start px-6"
+                className="border-0 text-[#0A0A0A] font-medium justify-start px-6 hover:opacity-90"
+                style={{ background: goldGradient }}
               >
                 <a
                   href="https://wa.me/393395027983"
@@ -50,9 +53,9 @@ export function CTASection() {
               </Button>
               <Button
                 asChild
-                variant="ghost"
                 size="lg"
-                className="text-muted-foreground hover:text-foreground justify-start px-6"
+                className="border-0 text-[#0A0A0A] font-medium justify-start px-6 hover:opacity-90"
+                style={{ background: goldGradient }}
               >
                 <Link href="/contatti">
                   Invia un messaggio
