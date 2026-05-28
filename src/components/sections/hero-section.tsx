@@ -61,16 +61,16 @@ export function HeroSection() {
 
         {/* Headline */}
         <h1 className="mt-2 font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light tracking-tight text-white leading-[1.05]">
-          Auto selezionate.
+          <span className="italic">Auto selezionate.</span>
           <br />
-          <span className="block" style={goldTextStyle}>
+          <span className="block italic" style={goldTextStyle}>
             Fiducia garantita.
           </span>
         </h1>
 
         {/* Subheadline */}
-        <p className="mt-8 text-lg sm:text-xl text-white/70 max-w-xl mx-auto leading-relaxed">
-          Trovare l&apos;auto giusta è una cosa. Trovare qualcuno di cui fidarsi per farlo è un&apos;altra.
+        <p className="mt-6 text-sm tracking-[.12em] text-white/50 uppercase">
+          Roma · Auto premium selezionate a mano
         </p>
 
         {/* CTAs */}
@@ -90,7 +90,7 @@ export function HeroSection() {
           </Button>
           <Link
             href="/contatti"
-            className="text-sm text-white font-normal opacity-70 hover:opacity-100 hover:underline underline-offset-4 transition-all"
+            className="inline-flex items-center justify-center text-sm font-medium text-white border border-white/30 rounded-md px-8 py-3 hover:border-white/70 hover:bg-white/10 transition-all w-full sm:w-auto max-w-[320px]"
           >
             Contattaci
           </Link>

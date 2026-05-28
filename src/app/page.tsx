@@ -14,6 +14,7 @@ import { TestimonialsSection } from "@/components/sections/testimonials-section"
 import { MethodSection } from "@/components/sections/method-section"
 import { AutoScoutSection } from "@/components/sections/autoscout-section"
 import { CTASection } from "@/components/sections/cta-section"
+import { BrandStripSection } from "@/components/sections/brand-strip-section"
 
 export default function HomePage() {
   return (
@@ -21,6 +22,7 @@ export default function HomePage() {
       <Header />
       <main>
         <HeroSection />
+        <BrandStripSection />
         <FeaturedCarsSection />
         <WhyChooseUsSection />
         <TestimonialsSection />
