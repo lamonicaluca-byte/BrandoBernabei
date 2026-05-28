@@ -90,19 +90,19 @@ export function HeroSection() {
 
         {/* CTAs */}
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-5">
-          <Link
-            href="/vetture"
-            className="inline-block font-sans font-medium uppercase hover:opacity-85 transition-opacity"
+          <Button
+            asChild
+            size="lg"
+            className="px-8 py-6 text-base font-medium text-[#0A0A0A] border-0 w-full sm:w-auto max-w-[320px] uppercase tracking-[.08em]"
             style={{
-              background: '#C9A96E',
-              color: '#0d0d0d',
-              padding: '13px 32px',
-              fontSize: '11px',
-              letterSpacing: '0.15em',
+              background: goldGradient,
+              boxShadow: '0 4px 24px rgba(201,169,110,0.35)',
             }}
           >
-            Scopri le vetture
-          </Link>
+            <Link href="/vetture">
+              Scopri le vetture
+            </Link>
+          </Button>
           <Link
             href="/recensioni"
             className="font-sans hover:opacity-70 transition-opacity"
