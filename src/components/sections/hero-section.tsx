@@ -107,7 +107,7 @@ export function HeroSection() {
             href="/recensioni"
             className="font-sans hover:opacity-70 transition-opacity"
             style={{
-              color: 'rgba(255,255,255,0.35)',
+              color: 'rgba(255,255,255,0.80)',
               fontSize: '12px',
               letterSpacing: '0.08em',
             }}
