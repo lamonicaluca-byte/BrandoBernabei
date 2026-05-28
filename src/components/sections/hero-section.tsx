@@ -60,17 +60,21 @@ export function HeroSection() {
         </div>
 
         {/* Headline */}
-        <h1 className="mt-2 font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light tracking-tight text-white leading-[1.05]">
-          <span className="italic">Auto selezionate.</span>
-          <br />
-          <span className="block italic" style={{ ...goldTextStyle, paddingBottom: '0.15em' }}>
-            Fiducia garantita.
-          </span>
+        <h1 className="mt-2 font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light tracking-tight leading-[1.1]">
+          <span className="block text-white">La fiducia</span>
+          <span className="block italic" style={{ color: '#C9A96E' }}>è difficile</span>
+          <span className="block" style={{ color: 'rgba(255,255,255,0.35)', paddingBottom: '0.15em' }}>da trovare.</span>
         </h1>
 
         {/* Subheadline */}
-        <p className="mt-6 text-sm tracking-[.18em] text-white/55 uppercase">
-          Poche.&nbsp;&nbsp;Scelte.&nbsp;&nbsp;Garantite.
+        <p className="mt-8 text-sm sm:text-base leading-[1.9] max-w-xl mx-auto" style={{ color: 'rgba(255,255,255,0.45)' }}>
+          C&apos;è chi l&apos;ha comprata da Bari senza vederla, pagata in anticipo.
+          <br />
+          Chi da Torino, da Berlino, senza stringerci la mano.
+          <br />
+          <span className="font-normal" style={{ color: 'rgba(255,255,255,0.85)' }}>
+            Dal 1946, la nostra parola vale più di qualsiasi garanzia scritta.
+          </span>
         </p>
 
         {/* CTAs */}
@@ -78,39 +82,41 @@ export function HeroSection() {
           <Button
             asChild
             size="lg"
-            className="px-8 py-6 text-base font-medium text-[#0A0A0A] border-0 w-full sm:w-auto max-w-[320px]"
+            className="px-8 py-6 text-base font-medium text-[#0A0A0A] border-0 w-full sm:w-auto max-w-[320px] uppercase tracking-[.08em]"
             style={{
               background: goldGradient,
               boxShadow: '0 4px 24px rgba(201,169,110,0.35)',
             }}
           >
             <Link href="/vetture">
-              Scopri le vetture disponibili
+              Scopri le vetture
             </Link>
           </Button>
           <Link
-            href="/contatti"
-            className="inline-flex items-center justify-center text-sm font-medium text-white border border-white/30 rounded-md px-8 py-3 hover:border-white/70 hover:bg-white/10 transition-all w-full sm:w-auto max-w-[320px]"
+            href="/recensioni"
+            className="text-sm font-light hover:opacity-100 transition-opacity"
+            style={{ color: 'rgba(255,255,255,0.55)' }}
           >
-            Contattaci
+            Leggi le recensioni →
           </Link>
         </div>
 
-        {/* Trust Stats */}
-        <div className="mt-24 flex flex-wrap items-center justify-center gap-10 sm:gap-16">
-          <div>
-            <div className="font-serif text-3xl sm:text-4xl font-semibold" style={goldTextStyle}>97%</div>
-            <div className="text-[11px] text-white/45 mt-1 tracking-[0.15em] uppercase">Recensioni positive</div>
+        {/* Proof strip */}
+        <div
+          className="mt-14 pt-6 border-t flex flex-wrap items-end justify-center gap-10"
+          style={{ borderColor: 'rgba(255,255,255,0.07)' }}
+        >
+          <div className="text-center">
+            <div className="font-serif text-white font-light" style={{ fontSize: '22px' }}>4.9 ★</div>
+            <div className="font-sans uppercase mt-1" style={{ fontSize: '10px', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.3)' }}>Su AutoScout24</div>
           </div>
-          <div className="w-px h-10 bg-white/15 hidden sm:block" />
-          <div>
-            <div className="font-serif text-3xl sm:text-4xl font-semibold" style={goldTextStyle}>25+</div>
-            <div className="text-[11px] text-white/45 mt-1 tracking-[0.15em] uppercase">Anni di esperienza</div>
+          <div className="text-center">
+            <div className="font-serif text-white font-light" style={{ fontSize: '22px' }}>94</div>
+            <div className="font-sans uppercase mt-1" style={{ fontSize: '10px', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.3)' }}>Recensioni verificate</div>
           </div>
-          <div className="w-px h-10 bg-white/15 hidden sm:block" />
-          <div>
-            <div className="font-serif text-3xl sm:text-4xl font-semibold" style={goldTextStyle}>500+</div>
-            <div className="text-[11px] text-white/45 mt-1 tracking-[0.15em] uppercase">Clienti soddisfatti</div>
+          <div className="text-center">
+            <div className="font-serif text-white font-light" style={{ fontSize: '22px' }}>Dal 1946</div>
+            <div className="font-sans uppercase mt-1" style={{ fontSize: '10px', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.3)' }}>Tre generazioni</div>
           </div>
         </div>
       </div>
