@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { useState, useEffect, useCallback, useRef } from "react"
+import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/Button"
 
@@ -15,6 +16,8 @@ const navigation = [
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const pathname = usePathname()
+  const isHome = pathname === '/'
 
   const bernabeiRef = useRef<HTMLSpanElement>(null)
   const automobiliRef = useRef<HTMLSpanElement>(null)
@@ -68,7 +71,7 @@ export function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
+        scrolled || !isHome
           ? "bg-[#0A0A0A]/90 backdrop-blur-md border-b border-white/8"
           : "bg-transparent"
       }`}
