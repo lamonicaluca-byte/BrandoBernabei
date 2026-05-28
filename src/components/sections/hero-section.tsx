@@ -78,12 +78,11 @@ export function HeroSection() {
 
         {/* Sottotitolo */}
         <p
-          className="font-sans font-light mx-auto mt-6"
+          className="font-sans font-light mx-auto mt-6 whitespace-nowrap"
           style={{
             fontSize: '15px',
             lineHeight: 1.9,
-            color: 'rgba(255,255,255,0.55)',
-            maxWidth: '520px',
+            color: 'rgba(255,255,255,0.80)',
           }}
         >
           Chi entra da Bernabei non cerca solo un&apos;auto, cerca qualcuno di cui fidarsi.
