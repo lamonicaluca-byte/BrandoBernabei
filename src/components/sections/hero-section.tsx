@@ -49,53 +49,77 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 pt-24 pb-12 w-full text-center">
-        {/* Eyebrow badge */}
-        <div className="flex justify-center mb-6">
+
+        {/* Badge overline */}
+        <div className="flex justify-center mb-7">
           <span
-            className="inline-flex items-center gap-2 px-4 py-2 border border-[#C9A96E]/30 backdrop-blur-sm text-xs tracking-[0.3em] text-[#C9A96E] uppercase w-auto"
-            style={{ background: 'rgba(201,169,110,0.08)' }}
+            className="font-sans uppercase"
+            style={{
+              fontSize: '10px',
+              letterSpacing: '0.2em',
+              color: '#C9A96E',
+              border: '0.5px solid rgba(192,160,96,0.4)',
+              padding: '5px 14px',
+            }}
           >
-            Roma · Auto Premium &amp; Sportive
+            Via Flaminia 318 · Roma · Dal 1946
           </span>
         </div>
 
-        {/* Headline */}
-        <h1 className="mt-2 font-serif text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-light tracking-tight leading-[1.08]">
-          <span className="block text-white">La fiducia</span>
-          <span className="block italic" style={{ color: '#C9A96E' }}>è difficile</span>
-          <span className="block" style={{ color: 'rgba(255,255,255,0.35)', paddingBottom: '0.15em' }}>da trovare.</span>
+        {/* Headline — 4 righe */}
+        <h1
+          className="font-serif font-normal"
+          style={{ fontSize: 'clamp(32px, 4vw, 52px)', lineHeight: 1.15 }}
+        >
+          <span className="block text-white">L&apos;auto dei tuoi sogni</span>
+          <span className="block text-white">merita qualcuno</span>
+          <span className="block italic" style={{ color: '#C9A96E' }}>che la conosca</span>
+          <span className="block italic" style={{ color: '#C9A96E', paddingBottom: '0.1em' }}>quanto te.</span>
         </h1>
 
-        {/* Subheadline */}
-        <p className="mt-5 text-sm sm:text-base leading-[1.75] max-w-xl mx-auto" style={{ color: 'rgba(255,255,255,0.45)' }}>
-          C&apos;è chi l&apos;ha comprata da Bari senza vederla, pagata in anticipo.
-          <br />
-          Chi da Torino, da Berlino, senza stringerci la mano.
-          <br />
-          <span className="font-normal" style={{ color: 'rgba(255,255,255,0.85)' }}>
-            Dal 1946, la nostra parola vale più di qualsiasi garanzia scritta.
+        {/* Sottotitolo */}
+        <p
+          className="font-sans font-light mx-auto mt-6"
+          style={{
+            fontSize: '15px',
+            lineHeight: 1.9,
+            color: 'rgba(255,255,255,0.52)',
+            maxWidth: '520px',
+          }}
+        >
+          In Via Flaminia dal 1946,{' '}
+          <span className="font-normal" style={{ color: 'rgba(255,255,255,0.88)' }}>
+            tre generazioni di appassionati
           </span>
+          <br />
+          selezionano ogni vettura come se fosse la propria.
+          <br />
+          Perché da noi, l&apos;acquisto non finisce con la firma.
         </p>
 
         {/* CTAs */}
-        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button
-            asChild
-            size="lg"
-            className="px-8 py-6 text-base font-medium text-[#0A0A0A] border-0 w-full sm:w-auto max-w-[320px] uppercase tracking-[.08em]"
+        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-5">
+          <Link
+            href="/vetture"
+            className="inline-block font-sans font-medium uppercase hover:opacity-85 transition-opacity"
             style={{
-              background: goldGradient,
-              boxShadow: '0 4px 24px rgba(201,169,110,0.35)',
+              background: '#C9A96E',
+              color: '#0d0d0d',
+              padding: '13px 32px',
+              fontSize: '11px',
+              letterSpacing: '0.15em',
             }}
           >
-            <Link href="/vetture">
-              Scopri le vetture
-            </Link>
-          </Button>
+            Scopri le vetture
+          </Link>
           <Link
             href="/recensioni"
-            className="text-sm font-light hover:opacity-100 transition-opacity"
-            style={{ color: 'rgba(255,255,255,0.55)' }}
+            className="font-sans hover:opacity-70 transition-opacity"
+            style={{
+              color: 'rgba(255,255,255,0.35)',
+              fontSize: '12px',
+              letterSpacing: '0.08em',
+            }}
           >
             Leggi le recensioni →
           </Link>
@@ -103,22 +127,23 @@ export function HeroSection() {
 
         {/* Proof strip */}
         <div
-          className="mt-10 pt-5 border-t flex flex-wrap items-end justify-center gap-10"
-          style={{ borderColor: 'rgba(255,255,255,0.07)' }}
+          className="mt-12 pt-5 flex flex-wrap items-end justify-center gap-10"
+          style={{ borderTop: '0.5px solid rgba(255,255,255,0.07)' }}
         >
           <div className="text-center">
-            <div className="font-serif text-white font-light" style={{ fontSize: '22px' }}>4.9 ★</div>
-            <div className="font-sans uppercase mt-1" style={{ fontSize: '10px', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.3)' }}>Su AutoScout24</div>
+            <div className="font-serif font-normal text-white" style={{ fontSize: '20px' }}>4.9 ★</div>
+            <div className="font-sans uppercase mt-1" style={{ fontSize: '10px', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.28)' }}>AutoScout24</div>
           </div>
           <div className="text-center">
-            <div className="font-serif text-white font-light" style={{ fontSize: '22px' }}>94</div>
-            <div className="font-sans uppercase mt-1" style={{ fontSize: '10px', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.3)' }}>Recensioni verificate</div>
+            <div className="font-serif font-normal text-white" style={{ fontSize: '20px' }}>94</div>
+            <div className="font-sans uppercase mt-1" style={{ fontSize: '10px', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.28)' }}>Recensioni</div>
           </div>
           <div className="text-center">
-            <div className="font-serif text-white font-light" style={{ fontSize: '22px' }}>Dal 1946</div>
-            <div className="font-sans uppercase mt-1" style={{ fontSize: '10px', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.3)' }}>Tre generazioni</div>
+            <div className="font-serif font-normal text-white" style={{ fontSize: '20px' }}>Dal 1946</div>
+            <div className="font-sans uppercase mt-1" style={{ fontSize: '10px', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.28)' }}>Tre generazioni</div>
           </div>
         </div>
+
       </div>
 
       {/* Scroll indicator */}
