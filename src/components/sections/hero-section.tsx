@@ -78,7 +78,7 @@ export function HeroSection() {
           <Button
             asChild
             size="lg"
-            className="px-8 py-6 text-base font-medium text-[#0A0A0A] rounded-none border-0 w-full sm:w-auto max-w-[320px]"
+            className="px-8 py-6 text-base font-medium text-[#0A0A0A] border-0 w-full sm:w-auto max-w-[320px]"
             style={{
               background: goldGradient,
               boxShadow: '0 4px 24px rgba(201,169,110,0.35)',

@@ -182,7 +182,7 @@ export default function ChiSiamoPage() {
               </blockquote>
               <Link
                 href="/contatti"
-                className="inline-block border-[0.5px] border-[#1C1C1C] text-[#1C1C1C] text-[10px] uppercase tracking-[.18em] px-6 py-3 hover:bg-[#1C1C1C] hover:text-[#F5F0E8] transition-colors"
+                className="inline-block rounded-md border-[0.5px] border-[#1C1C1C] text-[#1C1C1C] text-[10px] uppercase tracking-[.18em] px-6 py-3 hover:bg-[#1C1C1C] hover:text-[#F5F0E8] transition-colors"
               >
                 Parla con Brando
               </Link>
@@ -205,7 +205,7 @@ export default function ChiSiamoPage() {
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
               {valori.map((v) => (
                 <div key={v.numero}>
-                  <div className="font-serif text-6xl text-[#1A1A1A] font-light leading-none mb-4 select-none">
+                  <div className="font-serif text-6xl text-[#363636] font-light leading-none mb-4 select-none">
                     {v.numero}
                   </div>
                   <div className="font-sans text-[10px] uppercase tracking-[.18em] text-[#C9A96E] mb-3">
@@ -234,7 +234,7 @@ export default function ChiSiamoPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link
                 href="/vetture"
-                className="inline-block border-[0.5px] border-[#1C1C1C] text-[#1C1C1C] text-[10px] uppercase tracking-[.18em] px-6 py-3 hover:bg-[#1C1C1C] hover:text-[#F5F0E8] transition-colors text-center"
+                className="inline-block rounded-md border-[0.5px] border-[#1C1C1C] text-[#1C1C1C] text-[10px] uppercase tracking-[.18em] px-6 py-3 hover:bg-[#1C1C1C] hover:text-[#F5F0E8] transition-colors text-center"
               >
                 Vedi le vetture disponibili
               </Link>
@@ -242,7 +242,7 @@ export default function ChiSiamoPage() {
                 href="https://wa.me/393395027983"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block text-[#0A0A0A] text-[10px] uppercase tracking-[.18em] px-6 py-3 text-center hover:opacity-80 transition-opacity"
+                className="inline-block rounded-md text-[#0A0A0A] text-[10px] uppercase tracking-[.18em] px-6 py-3 text-center hover:opacity-80 transition-opacity"
                 style={{
                   background: "linear-gradient(135deg, #E8C97A 0%, #C9A96E 45%, #A07840 100%)",
                 }}

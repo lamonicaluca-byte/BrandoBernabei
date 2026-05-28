@@ -59,7 +59,7 @@ export function Header() {
             <Button
               asChild
               size="sm"
-              className="rounded-none border-0 text-[#0A0A0A] font-medium px-5 text-sm"
+              className="border-0 text-[#0A0A0A] font-medium px-5 text-sm"
               style={{ background: 'linear-gradient(135deg, #E8C97A 0%, #C9A96E 45%, #A07840 100%)' }}
             >
               <Link href="/contatti">Contattaci</Link>
@@ -93,7 +93,7 @@ export function Header() {
             <div className="pt-2 mt-1 border-t border-white/10">
               <Button
                 asChild
-                className="w-full rounded-none border-0 text-[#0A0A0A] font-medium"
+                className="w-full border-0 text-[#0A0A0A] font-medium"
                 style={{ background: 'linear-gradient(135deg, #E8C97A 0%, #C9A96E 45%, #A07840 100%)' }}
                 onClick={() => setMobileMenuOpen(false)}
               >
