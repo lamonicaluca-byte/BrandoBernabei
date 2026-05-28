@@ -34,12 +34,19 @@ export function Header() {
         {/* Main nav row */}
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-baseline gap-1.5 shrink-0">
-            <span className="font-serif text-base font-medium tracking-wide text-white">
+          <Link href="/" className="flex flex-col items-start shrink-0">
+            <span
+              className="font-serif text-white leading-none"
+              style={{ fontSize: '22px', fontWeight: 400, letterSpacing: '0.18em' }}
+            >
               BERNABEI
             </span>
-            <span className="text-[8px] tracking-[0.25em] text-white/70 uppercase">
-              Automobili
+            <div style={{ height: '0.5px', backgroundColor: 'rgba(255,255,255,0.4)', margin: '5px 0', width: '100%' }} />
+            <span
+              className="font-serif text-white/60 leading-none"
+              style={{ fontSize: '10px', fontWeight: 400, letterSpacing: '0.45em' }}
+            >
+              A U T O M O B I L I
             </span>
           </Link>
 
