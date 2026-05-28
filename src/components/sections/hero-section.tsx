@@ -50,22 +50,6 @@ export function HeroSection() {
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 pt-24 pb-12 w-full text-center">
 
-        {/* Badge overline */}
-        <div className="flex justify-center mb-7">
-          <span
-            className="font-sans uppercase"
-            style={{
-              fontSize: '10px',
-              letterSpacing: '0.2em',
-              color: '#C9A96E',
-              border: '0.5px solid rgba(192,160,96,0.4)',
-              padding: '5px 14px',
-            }}
-          >
-            VIA FLAMINIA 318 · ROMA · DAL 1946
-          </span>
-        </div>
-
         {/* Headline — 4 righe */}
         <h1
           className="font-serif font-normal"
