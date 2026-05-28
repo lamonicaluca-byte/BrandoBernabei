@@ -9,7 +9,6 @@ const heroImages = [
   '/911_4.jpg',
   '/911_5.jpg',
   '/911_6.jpg',
-  '/911_7.jpg',
 ]
 
 const goldGradient = 'linear-gradient(135deg, #E8C97A 0%, #C9A96E 45%, #A07840 100%)'
