@@ -23,7 +23,7 @@ export function BrandStripSection() {
           {brands.map((brand) => (
             <span
               key={brand}
-              className="font-sans text-[10px] uppercase tracking-[.22em] text-[#BBBBBB] whitespace-nowrap hover:text-[#C9A96E] transition-colors"
+              className="font-sans text-[10px] uppercase tracking-[.22em] text-white whitespace-nowrap hover:text-[#C9A96E] transition-colors"
             >
               {brand}
             </span>
