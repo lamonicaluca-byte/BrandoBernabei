@@ -48,9 +48,9 @@ export function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 py-32 w-full text-center">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 pt-24 pb-12 w-full text-center">
         {/* Eyebrow badge */}
-        <div className="flex justify-center mb-8">
+        <div className="flex justify-center mb-6">
           <span
             className="inline-flex items-center gap-2 px-4 py-2 border border-[#C9A96E]/30 backdrop-blur-sm text-xs tracking-[0.3em] text-[#C9A96E] uppercase w-auto"
             style={{ background: 'rgba(201,169,110,0.08)' }}
@@ -60,14 +60,14 @@ export function HeroSection() {
         </div>
 
         {/* Headline */}
-        <h1 className="mt-2 font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light tracking-tight leading-[1.1]">
+        <h1 className="mt-2 font-serif text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-light tracking-tight leading-[1.08]">
           <span className="block text-white">La fiducia</span>
           <span className="block italic" style={{ color: '#C9A96E' }}>è difficile</span>
           <span className="block" style={{ color: 'rgba(255,255,255,0.35)', paddingBottom: '0.15em' }}>da trovare.</span>
         </h1>
 
         {/* Subheadline */}
-        <p className="mt-8 text-sm sm:text-base leading-[1.9] max-w-xl mx-auto" style={{ color: 'rgba(255,255,255,0.45)' }}>
+        <p className="mt-5 text-sm sm:text-base leading-[1.75] max-w-xl mx-auto" style={{ color: 'rgba(255,255,255,0.45)' }}>
           C&apos;è chi l&apos;ha comprata da Bari senza vederla, pagata in anticipo.
           <br />
           Chi da Torino, da Berlino, senza stringerci la mano.
@@ -78,7 +78,7 @@ export function HeroSection() {
         </p>
 
         {/* CTAs */}
-        <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button
             asChild
             size="lg"
@@ -103,7 +103,7 @@ export function HeroSection() {
 
         {/* Proof strip */}
         <div
-          className="mt-14 pt-6 border-t flex flex-wrap items-end justify-center gap-10"
+          className="mt-10 pt-5 border-t flex flex-wrap items-end justify-center gap-10"
           style={{ borderColor: 'rgba(255,255,255,0.07)' }}
         >
           <div className="text-center">
