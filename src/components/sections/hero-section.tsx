@@ -62,7 +62,7 @@ export function HeroSection() {
 
         {/* Sottotitolo */}
         <p
-          className="font-sans font-light mx-auto mt-6 whitespace-nowrap"
+          className="font-sans font-light mx-auto mt-6 sm:whitespace-nowrap"
           style={{
             fontSize: '15px',
             lineHeight: 1.9,
