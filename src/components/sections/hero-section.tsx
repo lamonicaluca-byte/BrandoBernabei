@@ -89,14 +89,16 @@ export function HeroSection() {
           </Button>
           <Link
             href="/recensioni"
-            className="font-sans hover:opacity-70 transition-opacity"
+            className="font-sans font-medium uppercase inline-flex items-center justify-center hover:bg-white/10 transition-all w-full sm:w-auto max-w-[280px]"
             style={{
-              color: 'rgba(255,255,255,0.80)',
+              color: 'rgba(255,255,255,0.85)',
               fontSize: '12px',
-              letterSpacing: '0.08em',
+              letterSpacing: '0.1em',
+              border: '0.5px solid rgba(255,255,255,0.35)',
+              padding: '11px 28px',
             }}
           >
-            Leggi le recensioni →
+            Leggi le recensioni
           </Link>
         </div>
 
