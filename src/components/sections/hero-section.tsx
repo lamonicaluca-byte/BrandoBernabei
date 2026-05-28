@@ -62,7 +62,7 @@ export function HeroSection() {
               padding: '5px 14px',
             }}
           >
-            Via Flaminia 318 · Roma · Dal 1946
+            VIA FLAMINIA 318 · ROMA · DAL 1946
           </span>
         </div>
 
@@ -71,10 +71,9 @@ export function HeroSection() {
           className="font-serif font-normal"
           style={{ fontSize: 'clamp(32px, 4vw, 52px)', lineHeight: 1.15 }}
         >
-          <span className="block text-white">L&apos;auto dei tuoi sogni</span>
-          <span className="block text-white">merita qualcuno</span>
-          <span className="block italic" style={{ color: '#C9A96E' }}>che la conosca</span>
-          <span className="block italic" style={{ color: '#C9A96E', paddingBottom: '0.1em' }}>quanto te.</span>
+          <span className="block text-white">Dal 1946, scegliamo</span>
+          <span className="block italic" style={{ color: '#C9A96E' }}>ogni auto come</span>
+          <span className="block italic" style={{ color: '#C9A96E', paddingBottom: '0.1em' }}>fosse la nostra.</span>
         </h1>
 
         {/* Sottotitolo */}
@@ -83,18 +82,11 @@ export function HeroSection() {
           style={{
             fontSize: '15px',
             lineHeight: 1.9,
-            color: 'rgba(255,255,255,0.52)',
+            color: 'rgba(255,255,255,0.55)',
             maxWidth: '520px',
           }}
         >
-          In Via Flaminia dal 1946,{' '}
-          <span className="font-normal" style={{ color: 'rgba(255,255,255,0.88)' }}>
-            tre generazioni di appassionati
-          </span>
-          <br />
-          selezionano ogni vettura come se fosse la propria.
-          <br />
-          Perché da noi, l&apos;acquisto non finisce con la firma.
+          Chi entra da Bernabei non cerca solo un&apos;auto, cerca qualcuno di cui fidarsi.
         </p>
 
         {/* CTAs */}
