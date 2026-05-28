@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback, useRef } from "react"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/Button"
 
@@ -16,11 +16,54 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
+  const bernabeiRef = useRef<HTMLSpanElement>(null)
+  const automobiliRef = useRef<HTMLSpanElement>(null)
+
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40)
     window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
+
+  const adjustWidth = useCallback(() => {
+    const bernabei = bernabeiRef.current
+    const automobili = automobiliRef.current
+    if (!bernabei || !automobili) return
+
+    const target = bernabei.getBoundingClientRect().width
+
+    let size = 11
+    automobili.style.fontSize = `${size}px`
+    let current = automobili.getBoundingClientRect().width
+    if (Math.abs(current - target) < 0.05) return
+
+    const step = current < target ? 0.05 : -0.05
+
+    while (size > 1 && size < 60) {
+      const next = +(size + step).toFixed(4)
+      automobili.style.fontSize = `${next}px`
+      const nextW = automobili.getBoundingClientRect().width
+      if (step > 0 ? nextW >= target : nextW <= target) {
+        if (Math.abs(nextW - target) < Math.abs(current - target)) size = next
+        break
+      }
+      size = next
+      current = nextW
+    }
+
+    automobili.style.fontSize = `${size}px`
+  }, [])
+
+  useEffect(() => {
+    adjustWidth()
+    const ro = new ResizeObserver(adjustWidth)
+    if (bernabeiRef.current) ro.observe(bernabeiRef.current)
+    window.addEventListener("resize", adjustWidth)
+    return () => {
+      ro.disconnect()
+      window.removeEventListener("resize", adjustWidth)
+    }
+  }, [adjustWidth])
 
   return (
     <header
@@ -36,6 +79,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex flex-col items-start shrink-0">
             <span
+              ref={bernabeiRef}
               className="font-serif text-white leading-none"
               style={{ fontSize: '22px', fontWeight: 400, letterSpacing: '0.18em' }}
             >
@@ -43,8 +87,9 @@ export function Header() {
             </span>
             <div style={{ height: '0.5px', backgroundColor: 'rgba(255,255,255,0.4)', margin: '5px 0', width: '100%' }} />
             <span
+              ref={automobiliRef}
               className="font-serif text-white/60 leading-none"
-              style={{ fontSize: '10px', fontWeight: 400, letterSpacing: '0.45em' }}
+              style={{ fontSize: '11px', fontWeight: 400, letterSpacing: '0.45em' }}
             >
               A U T O M O B I L I
             </span>
