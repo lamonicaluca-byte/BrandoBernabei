@@ -47,7 +47,7 @@ const reviews = [
     author: "GIORGIO · TORINO",
   },
   {
-    text: "Ein besonders vertrauenswürdiger Händler — ein junges Team der alten Schule, das die Leidenschaft spürt.",
+    text: "Ein besonders vertrauenswürdiger Händler, ein junges Team der alten Schule, das die Leidenschaft spürt.",
     author: "PROF. DR. A.K. · GERMANIA",
   },
 ]
@@ -99,7 +99,7 @@ export default function RecensioniPage() {
             {/* Griglia recensioni */}
             <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-6">
 
-              {/* Card featured — full width */}
+              {/* Card featured, full width */}
               <div
                 className="col-span-full rounded-[4px] p-6"
                 style={{

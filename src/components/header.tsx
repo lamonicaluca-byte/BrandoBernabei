@@ -132,7 +132,7 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile dropdown — full width, dark bg */}
+      {/* Mobile dropdown, full width, dark bg */}
       {mobileMenuOpen && (
         <div className="lg:hidden bg-[#0A0A0A]/95 backdrop-blur-md border-t border-white/10 px-4 py-3 space-y-1">
           {navigation.map((item) => (

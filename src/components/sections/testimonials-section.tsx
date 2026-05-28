@@ -37,7 +37,7 @@ const testimonials = [
     name: "Prof. Dr. A.K.",
     location: "Germania",
     rating: 5,
-    text: "Ein besonders vertrauenswürdiger Händler — ein junges Team der alten Schule, das die Leidenschaft spürt.",
+    text: "Ein besonders vertrauenswürdiger Händler, ein junges Team der alten Schule, das die Leidenschaft spürt.",
     car: "",
     date: "",
   },
