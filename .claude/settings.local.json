@@ -18,7 +18,12 @@
       "Bash(git push *)",
       "Bash(git add *)",
       "Bash(powershell -Command \"\\(Get-Content src/app/globals.css -Raw\\) -replace 'oklch\\\\\\(0\\\\.78 0\\\\.06 85\\\\\\)', '#C9A96E' | Set-Content src/app/globals.css -Encoding utf8\")",
-      "WebFetch(domain:unsplash.com)"
+      "WebFetch(domain:unsplash.com)",
+      "Bash(mkdir -p '/c/Users/llamonica.ISAIA/OneDrive - ISAIA e ISAIA/Documenti/GitHub/BrandoBernabei/.claude/worktrees/agent-af10b53aa128b16f8/src/app/dictionaries')",
+      "Bash(mkdir -p '/c/Users/llamonica.ISAIA/OneDrive - ISAIA e ISAIA/Documenti/GitHub/BrandoBernabei/.claude/worktrees/agent-af10b53aa128b16f8/src/app/[lang]')",
+      "Bash(mkdir -p '/c/Users/llamonica.ISAIA/OneDrive - ISAIA e ISAIA/Documenti/GitHub/BrandoBernabei/.claude/worktrees/agent-af10b53aa128b16f8/src/app/[lang]/chi-siamo')",
+      "Bash(mkdir -p '/c/Users/llamonica.ISAIA/OneDrive - ISAIA e ISAIA/Documenti/GitHub/BrandoBernabei/.claude/worktrees/agent-af10b53aa128b16f8/src/app/[lang]/vetture/[slug]')",
+      "Bash(mkdir -p '/c/Users/llamonica.ISAIA/OneDrive - ISAIA e ISAIA/Documenti/GitHub/BrandoBernabei/.claude/worktrees/agent-af10b53aa128b16f8/src/app/[lang]/servizi')"
     ]
   }
 }
