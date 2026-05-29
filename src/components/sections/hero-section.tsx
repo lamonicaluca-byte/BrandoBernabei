@@ -105,7 +105,7 @@ export function HeroSection() {
             style={{
               fontSize: '13px',
               letterSpacing: '0.08em',
-              color: 'rgba(255,255,255,0.45)',
+              color: 'rgba(255,255,255,0.80)',
               padding: '8px 0',
             }}
           >
@@ -134,15 +134,15 @@ export function HeroSection() {
         >
           <div className="text-center">
             <div className="font-serif font-normal text-white text-base sm:text-[20px]">4.9 ★</div>
-            <div className="font-sans uppercase mt-1 text-[9px] sm:text-[10px]" style={{ letterSpacing: '0.1em', color: 'rgba(255,255,255,0.28)' }}>AutoScout24</div>
+            <div className="font-sans uppercase mt-1 text-[9px] sm:text-[10px]" style={{ letterSpacing: '0.1em', color: 'rgba(255,255,255,0.65)' }}>AutoScout24</div>
           </div>
           <div className="text-center">
             <div className="font-serif font-normal text-white text-base sm:text-[20px]">94</div>
-            <div className="font-sans uppercase mt-1 text-[9px] sm:text-[10px]" style={{ letterSpacing: '0.1em', color: 'rgba(255,255,255,0.28)' }}>Recensioni</div>
+            <div className="font-sans uppercase mt-1 text-[9px] sm:text-[10px]" style={{ letterSpacing: '0.1em', color: 'rgba(255,255,255,0.65)' }}>Recensioni</div>
           </div>
           <div className="text-center">
             <div className="font-serif font-normal text-white text-base sm:text-[20px]">Dal 1946</div>
-            <div className="font-sans uppercase mt-1 text-[9px] sm:text-[10px]" style={{ letterSpacing: '0.1em', color: 'rgba(255,255,255,0.28)' }}>Tre generazioni</div>
+            <div className="font-sans uppercase mt-1 text-[9px] sm:text-[10px]" style={{ letterSpacing: '0.1em', color: 'rgba(255,255,255,0.65)' }}>Tre generazioni</div>
           </div>
         </div>
 
