@@ -34,15 +34,26 @@ export function HeroSection() {
       {/* Background slideshow */}
       <div className="absolute inset-0 z-0">
         {heroImages.map((url, i) => (
-          <div
-            key={url}
-            className="absolute inset-0 bg-cover bg-no-repeat transition-opacity duration-1000"
-            style={{
-              backgroundImage: `url('${url}')`,
-              backgroundPosition: 'center center',
-              opacity: i === current ? 1 : 0,
-            }}
-          />
+          <div key={url}>
+            {/* Mobile: mostra il muso dell'auto */}
+            <div
+              className="sm:hidden absolute inset-0 bg-cover bg-no-repeat transition-opacity duration-1000"
+              style={{
+                backgroundImage: `url('${url}')`,
+                backgroundPosition: '30% center',
+                opacity: i === current ? 1 : 0,
+              }}
+            />
+            {/* Desktop */}
+            <div
+              className="hidden sm:block absolute inset-0 bg-cover bg-no-repeat transition-opacity duration-1000"
+              style={{
+                backgroundImage: `url('${url}')`,
+                backgroundPosition: 'center center',
+                opacity: i === current ? 1 : 0,
+              }}
+            />
+          </div>
         ))}
         <div className="absolute inset-0 bg-gradient-to-b from-primary/85 via-primary/65 to-primary/80" />
       </div>
@@ -87,9 +98,23 @@ export function HeroSection() {
               Scopri le vetture
             </Link>
           </Button>
+          {/* Mobile: testo puro */}
           <Link
             href="/recensioni"
-            className="font-sans font-medium uppercase inline-flex items-center justify-center hover:bg-white/10 transition-all w-full sm:w-auto max-w-[280px]"
+            className="sm:hidden font-sans text-center"
+            style={{
+              fontSize: '13px',
+              letterSpacing: '0.08em',
+              color: 'rgba(255,255,255,0.45)',
+              padding: '8px 0',
+            }}
+          >
+            Leggi le recensioni
+          </Link>
+          {/* Desktop: outline */}
+          <Link
+            href="/recensioni"
+            className="hidden sm:inline-flex font-sans font-medium uppercase items-center justify-center hover:bg-white/10 transition-all"
             style={{
               color: 'rgba(255,255,255,0.85)',
               fontSize: '12px',
@@ -104,20 +129,20 @@ export function HeroSection() {
 
         {/* Proof strip */}
         <div
-          className="mt-12 pt-5 flex flex-wrap items-end justify-center gap-10"
+          className="mt-12 pt-5 flex items-end justify-center gap-6 sm:gap-10"
           style={{ borderTop: '0.5px solid rgba(255,255,255,0.07)' }}
         >
           <div className="text-center">
-            <div className="font-serif font-normal text-white" style={{ fontSize: '20px' }}>4.9 ★</div>
-            <div className="font-sans uppercase mt-1" style={{ fontSize: '10px', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.28)' }}>AutoScout24</div>
+            <div className="font-serif font-normal text-white text-base sm:text-[20px]">4.9 ★</div>
+            <div className="font-sans uppercase mt-1 text-[9px] sm:text-[10px]" style={{ letterSpacing: '0.1em', color: 'rgba(255,255,255,0.28)' }}>AutoScout24</div>
           </div>
           <div className="text-center">
-            <div className="font-serif font-normal text-white" style={{ fontSize: '20px' }}>94</div>
-            <div className="font-sans uppercase mt-1" style={{ fontSize: '10px', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.28)' }}>Recensioni</div>
+            <div className="font-serif font-normal text-white text-base sm:text-[20px]">94</div>
+            <div className="font-sans uppercase mt-1 text-[9px] sm:text-[10px]" style={{ letterSpacing: '0.1em', color: 'rgba(255,255,255,0.28)' }}>Recensioni</div>
           </div>
           <div className="text-center">
-            <div className="font-serif font-normal text-white" style={{ fontSize: '20px' }}>Dal 1946</div>
-            <div className="font-sans uppercase mt-1" style={{ fontSize: '10px', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.28)' }}>Tre generazioni</div>
+            <div className="font-serif font-normal text-white text-base sm:text-[20px]">Dal 1946</div>
+            <div className="font-sans uppercase mt-1 text-[9px] sm:text-[10px]" style={{ letterSpacing: '0.1em', color: 'rgba(255,255,255,0.28)' }}>Tre generazioni</div>
           </div>
         </div>
 
