@@ -9,13 +9,13 @@ import { MethodSection } from "@/components/sections/method-section"
 import { AutoScoutSection } from "@/components/sections/autoscout-section"
 import { CTASection } from "@/components/sections/cta-section"
 import { BrandStripSection } from "@/components/sections/brand-strip-section"
-import { getDictionary } from "../i18n"
+import { getDictionary, getAlternates } from "../i18n"
 import type { Locale } from "./layout"
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: Locale }> }): Promise<Metadata> {
   const { lang } = await params
   const dict = await getDictionary(lang)
-  return { title: dict.meta.home.title, description: dict.meta.home.description }
+  return { title: dict.meta.home.title, description: dict.meta.home.description, alternates: getAlternates('') }
 }
 
 export default async function HomePage({ params }: { params: Promise<{ lang: Locale }> }) {

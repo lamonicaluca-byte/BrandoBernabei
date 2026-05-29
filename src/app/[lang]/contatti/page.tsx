@@ -3,13 +3,13 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react"
 import { ContactForm } from "./ContactForm"
-import { getDictionary } from "../../i18n"
+import { getDictionary, getAlternates } from "../../i18n"
 import type { Locale } from "../layout"
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: Locale }> }): Promise<Metadata> {
   const { lang } = await params
   const dict = await getDictionary(lang)
-  return { title: dict.meta.contatti.title, description: dict.meta.contatti.description }
+  return { title: dict.meta.contatti.title, description: dict.meta.contatti.description, alternates: getAlternates('/contatti') }
 }
 
 export default async function ContattiPage({ params }: { params: Promise<{ lang: Locale }> }) {

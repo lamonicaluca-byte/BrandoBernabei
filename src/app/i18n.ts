@@ -7,3 +7,17 @@ const dictionaries = {
 }
 
 export const getDictionary = async (locale: Locale) => dictionaries[locale]()
+
+const BASE = 'https://www.bernabeiautomobili.com'
+
+export function getAlternates(path: string) {
+  return {
+    canonical: `${BASE}/it${path}`,
+    languages: {
+      'it':        `${BASE}/it${path}`,
+      'en':        `${BASE}/en${path}`,
+      'fr':        `${BASE}/fr${path}`,
+      'x-default': `${BASE}/it${path}`,
+    },
+  }
+}

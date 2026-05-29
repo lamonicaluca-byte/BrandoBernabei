@@ -6,13 +6,13 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/Button"
 import { vetture } from "@/data/vetture"
 import { Calendar, Gauge, Settings, ExternalLink } from "lucide-react"
-import { getDictionary } from "../../i18n"
+import { getDictionary, getAlternates } from "../../i18n"
 import type { Locale } from "../layout"
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: Locale }> }): Promise<Metadata> {
   const { lang } = await params
   const dict = await getDictionary(lang)
-  return { title: dict.meta.vetture.title, description: dict.meta.vetture.description }
+  return { title: dict.meta.vetture.title, description: dict.meta.vetture.description, alternates: getAlternates('/vetture') }
 }
 
 export default async function VetturePage({ params }: { params: Promise<{ lang: Locale }> }) {
