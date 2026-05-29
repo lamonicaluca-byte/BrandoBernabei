@@ -166,10 +166,21 @@
     "faqTitle": "Questions about our services?",
     "faqSub": "We're available for any clarification. Contact us with no obligation.",
     "ctaPrimary": "Contact us now",
-    "ctaPhone": "Call us: +39 339 502 7983"
+    "ctaPhone": "Call us: +39 339 502 7983",
+    "services": [
+      { "id": "ricerca", "title": "Custom Search", "description": "Can't find the car of your dreams? Trust us. We search for the perfect car across the entire European market, with a personal inspection before purchase.", "features": ["Search tailored to your needs", "Provenance and history verification", "Personal inspection before purchase", "Detailed report with photos and video", "No cost if you don't find the right car"] },
+      { "id": "permuta", "title": "Trade-in", "description": "Already have a car? We evaluate it seriously and transparently. Clear quote, complete transfer management. No surprises.", "features": ["Free evaluation with no obligation", "Transparent and competitive quote", "Complete transfer management", "Collection even without purchase", "Immediate payment"] },
+      { "id": "finanziamenti", "title": "Financing & Leasing", "description": "Personalised financing solutions with selected institutions. We manage the process directly, from application to signing.", "features": ["Free instant quote", "Competitive rates from 3.99%", "Flexible term up to 84 months", "Final balloon payment option", "Fast approval in 24h"] },
+      { "id": "garanzia", "title": "Warranty", "description": "All our cars come with a warranty. Not because the law requires it, but because it's the minimum you can expect from a serious professional.", "features": ["Minimum 12-month warranty included", "Extension available up to 36 months", "Full engine coverage", "24/7 roadside assistance", "No excess"] },
+      { "id": "consegna", "title": "Italy-wide Delivery", "description": "Wherever you are, we'll reach you. We deliver your new car directly to your door anywhere in Italy, with trusted transporters.", "features": ["Home delivery", "Enclosed transporter", "Insurance during transport", "Guaranteed delivery times", "Documentation handled remotely"] },
+      { "id": "assistenza", "title": "After-Sales Support", "description": "Our relationship doesn't end with the sale. We're always available for any need, months after purchase.", "features": ["Dedicated post-purchase support", "Network of partner workshops", "Maintenance advice", "Priority for Bernabei clients", "Direct contact with Brando"] }
+    ]
   },
   "recensioni": {
     "overline": "Reviews",
+    "stat1Label": "On AutoScout24",
+    "stat2Label": "Verified reviews",
+    "stat3Label": "Positive reviews",
     "ctaPrimary": "Read all reviews",
     "ctaSecondary": "94 verified reviews on AutoScout24 →"
   },

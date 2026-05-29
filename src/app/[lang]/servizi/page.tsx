@@ -15,81 +15,6 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Loc
 
 const serviceIcons = [Search, RefreshCw, CreditCard, Shield, Truck, Wrench]
 
-const servicesIT = [
-  {
-    id: "ricerca",
-    title: "Ricerca Personalizzata",
-    description: "Non trovi l'auto dei tuoi sogni? Affidati a noi. Cerchiamo per te la vettura perfetta su tutto il mercato europeo, con ispezione personale prima dell'acquisto.",
-    features: [
-      "Ricerca su misura delle tue esigenze",
-      "Verifica della provenienza e storico",
-      "Ispezione personale prima dell'acquisto",
-      "Report dettagliato con foto e video",
-      "Nessun costo se non trovi l'auto giusta",
-    ],
-  },
-  {
-    id: "permuta",
-    title: "Permuta",
-    description: "Hai già un'auto? La valutiamo con serietà e trasparenza. Quotazione chiara, gestione completa del passaggio. Senza sorprese.",
-    features: [
-      "Valutazione gratuita e senza impegno",
-      "Quotazione trasparente e competitiva",
-      "Gestione completa del passaggio",
-      "Ritiro anche senza acquisto",
-      "Pagamento immediato",
-    ],
-  },
-  {
-    id: "finanziamenti",
-    title: "Finanziamenti e Leasing",
-    description: "Soluzioni di finanziamento personalizzate con istituti selezionati. Gestiamo la pratica direttamente, dall'istruttoria alla firma.",
-    features: [
-      "Preventivo gratuito immediato",
-      "Tassi competitivi dal 3,99%",
-      "Durata flessibile fino a 84 mesi",
-      "Possibilità di maxirata finale",
-      "Approvazione rapida in 24h",
-    ],
-  },
-  {
-    id: "garanzia",
-    title: "Garanzia",
-    description: "Tutte le nostre vetture sono coperte da garanzia. Non perché lo impone la legge, ma perché è il minimo che puoi aspettarti da un professionista serio.",
-    features: [
-      "Garanzia minima 12 mesi inclusa",
-      "Estensione disponibile fino a 36 mesi",
-      "Copertura completa del motore",
-      "Assistenza stradale 24/7",
-      "Nessuna franchigia",
-    ],
-  },
-  {
-    id: "consegna",
-    title: "Consegna in tutta Italia",
-    description: "Dovunque tu sia, ti raggiungiamo. Consegniamo la tua nuova auto direttamente a casa tua in tutta Italia, con trasportatori di fiducia.",
-    features: [
-      "Consegna a domicilio",
-      "Trasporto su bisarca coperta",
-      "Assicurazione durante il trasporto",
-      "Tempi certi di consegna",
-      "Documentazione gestita da remoto",
-    ],
-  },
-  {
-    id: "assistenza",
-    title: "Assistenza Post-Vendita",
-    description: "Il nostro rapporto non finisce con la vendita. Siamo sempre a tua disposizione per qualsiasi necessità, mesi dopo l'acquisto.",
-    features: [
-      "Supporto dedicato post-acquisto",
-      "Rete di officine convenzionate",
-      "Consulenza per manutenzioni",
-      "Priorità per clienti Bernabei",
-      "Contatto diretto con Brando",
-    ],
-  },
-]
-
 export default async function ServiziPage({ params }: { params: Promise<{ lang: Locale }> }) {
   const { lang } = await params
   const dict = await getDictionary(lang)
@@ -120,7 +45,7 @@ export default async function ServiziPage({ params }: { params: Promise<{ lang: 
         <section className="py-16 bg-background">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="space-y-16">
-              {servicesIT.map((service, index) => {
+              {(d.services as Array<{ id: string; title: string; description: string; features: string[] }>).map((service, index) => {
                 const Icon = serviceIcons[index]
                 return (
                   <div

@@ -14,20 +14,10 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Loc
 const AUTOSCOUT_URL =
   "https://www.autoscout24.it/concessionari/bernabei-automobili-di-brando-bernabei/recensioni"
 
-const stats = [
-  {
-    value: "4.9",
-    stars: true,
-    label: "SU AUTOSCOUT24",
-  },
-  {
-    value: "94",
-    label: "RECENSIONI VERIFICATE",
-  },
-  {
-    value: "97%",
-    label: "RECENSIONI POSITIVE",
-  },
+const statsValues = [
+  { value: "4.9", stars: true, key: "stat1Label" as const },
+  { value: "94", stars: false, key: "stat2Label" as const },
+  { value: "97%", stars: false, key: "stat3Label" as const },
 ]
 
 const featuredReview = {
@@ -79,8 +69,8 @@ export default async function RecensioniPage({ params }: { params: Promise<{ lan
               className="mt-10 grid grid-cols-3 divide-x"
               style={{ borderColor: 'rgba(255,255,255,0.08)' }}
             >
-              {stats.map((s) => (
-                <div key={s.label} className="pr-8 first:pl-0 pl-8">
+              {statsValues.map((s) => (
+                <div key={s.key} className="pr-8 first:pl-0 pl-8">
                   <div
                     className="font-serif font-normal text-white"
                     style={{ fontSize: '52px', lineHeight: 1 }}
@@ -96,7 +86,7 @@ export default async function RecensioniPage({ params }: { params: Promise<{ lan
                     className="font-sans font-light mt-2"
                     style={{ fontSize: '11px', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.4)' }}
                   >
-                    {s.label}
+                    {d[s.key]}
                   </div>
                 </div>
               ))}

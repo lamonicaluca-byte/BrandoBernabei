@@ -168,10 +168,21 @@
     "faqTitle": "Hai domande sui nostri servizi?",
     "faqSub": "Siamo a tua disposizione per qualsiasi chiarimento. Contattaci senza impegno.",
     "ctaPrimary": "Contattaci ora",
-    "ctaPhone": "Chiamaci: +39 339 502 7983"
+    "ctaPhone": "Chiamaci: +39 339 502 7983",
+    "services": [
+      { "id": "ricerca", "title": "Ricerca Personalizzata", "description": "Non trovi l'auto dei tuoi sogni? Affidati a noi. Cerchiamo per te la vettura perfetta su tutto il mercato europeo, con ispezione personale prima dell'acquisto.", "features": ["Ricerca su misura delle tue esigenze", "Verifica della provenienza e storico", "Ispezione personale prima dell'acquisto", "Report dettagliato con foto e video", "Nessun costo se non trovi l'auto giusta"] },
+      { "id": "permuta", "title": "Permuta", "description": "Hai già un'auto? La valutiamo con serietà e trasparenza. Quotazione chiara, gestione completa del passaggio. Senza sorprese.", "features": ["Valutazione gratuita e senza impegno", "Quotazione trasparente e competitiva", "Gestione completa del passaggio", "Ritiro anche senza acquisto", "Pagamento immediato"] },
+      { "id": "finanziamenti", "title": "Finanziamenti e Leasing", "description": "Soluzioni di finanziamento personalizzate con istituti selezionati. Gestiamo la pratica direttamente, dall'istruttoria alla firma.", "features": ["Preventivo gratuito immediato", "Tassi competitivi dal 3,99%", "Durata flessibile fino a 84 mesi", "Possibilità di maxirata finale", "Approvazione rapida in 24h"] },
+      { "id": "garanzia", "title": "Garanzia", "description": "Tutte le nostre vetture sono coperte da garanzia. Non perché lo impone la legge, ma perché è il minimo che puoi aspettarti da un professionista serio.", "features": ["Garanzia minima 12 mesi inclusa", "Estensione disponibile fino a 36 mesi", "Copertura completa del motore", "Assistenza stradale 24/7", "Nessuna franchigia"] },
+      { "id": "consegna", "title": "Consegna in tutta Italia", "description": "Dovunque tu sia, ti raggiungiamo. Consegniamo la tua nuova auto direttamente a casa tua in tutta Italia, con trasportatori di fiducia.", "features": ["Consegna a domicilio", "Trasporto su bisarca coperta", "Assicurazione durante il trasporto", "Tempi certi di consegna", "Documentazione gestita da remoto"] },
+      { "id": "assistenza", "title": "Assistenza Post-Vendita", "description": "Il nostro rapporto non finisce con la vendita. Siamo sempre a tua disposizione per qualsiasi necessità, mesi dopo l'acquisto.", "features": ["Supporto dedicato post-acquisto", "Rete di officine convenzionate", "Consulenza per manutenzioni", "Priorità per clienti Bernabei", "Contatto diretto con Brando"] }
+    ]
   },
   "recensioni": {
     "overline": "Recensioni",
+    "stat1Label": "Su AutoScout24",
+    "stat2Label": "Recensioni verificate",
+    "stat3Label": "Recensioni positive",
     "ctaPrimary": "Leggi tutte le recensioni",
     "ctaSecondary": "94 recensioni verificate su AutoScout24 →"
   },
