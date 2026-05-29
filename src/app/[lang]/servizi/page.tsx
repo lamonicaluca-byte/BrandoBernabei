@@ -4,13 +4,13 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/Button"
 import { Search, RefreshCw, CreditCard, Shield, Truck, Wrench, Check } from "lucide-react"
-import { getDictionary, getAlternates } from "../../i18n"
+import { getDictionary, buildMetadata } from "../../i18n"
 import type { Locale } from "../layout"
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: Locale }> }): Promise<Metadata> {
   const { lang } = await params
   const dict = await getDictionary(lang)
-  return { title: dict.meta.servizi.title, description: dict.meta.servizi.description, alternates: getAlternates('/servizi') }
+  return buildMetadata({ title: dict.meta.servizi.title, description: dict.meta.servizi.description, path: '/servizi', lang })
 }
 
 const serviceIcons = [Search, RefreshCw, CreditCard, Shield, Truck, Wrench]

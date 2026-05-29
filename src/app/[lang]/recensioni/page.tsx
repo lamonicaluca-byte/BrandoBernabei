@@ -2,13 +2,13 @@ import { Metadata } from "next"
 import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { getDictionary, getAlternates } from "../../i18n"
+import { getDictionary, buildMetadata } from "../../i18n"
 import type { Locale } from "../layout"
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: Locale }> }): Promise<Metadata> {
   const { lang } = await params
   const dict = await getDictionary(lang)
-  return { title: dict.meta.recensioni.title, description: dict.meta.recensioni.description, alternates: getAlternates('/recensioni') }
+  return buildMetadata({ title: dict.meta.recensioni.title, description: dict.meta.recensioni.description, path: '/recensioni', lang })
 }
 
 const AUTOSCOUT_URL =

@@ -6,7 +6,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/Button"
 import { ArrowLeft, MessageCircle, Phone, Gauge, Fuel, Calendar, Settings } from "lucide-react"
-import { getDictionary, getAlternates } from "../../../i18n"
+import { getDictionary, buildMetadata } from "../../../i18n"
 import type { Locale } from "../../layout"
 
 interface Props {
@@ -22,11 +22,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const vettura = getVetturaBySlug(slug)
   if (!vettura) return {}
-  return {
-    title: `${vettura.make} ${vettura.model} ${vettura.year} | Bernabei Automobili`,
-    description: vettura.descrizione ?? `${vettura.make} ${vettura.model} ${vettura.year}, ${vettura.km.toLocaleString("it-IT")} km, ${vettura.cv} CV. Disponibile da Bernabei Automobili Roma.`,
-    alternates: getAlternates(`/vetture/${slug}`),
-  }
+  const { lang } = await params
+  const title = `${vettura.make} ${vettura.model} ${vettura.year}`
+  const description = vettura.descrizione ?? `${vettura.make} ${vettura.model} ${vettura.year}, ${vettura.km.toLocaleString("it-IT")} km, ${vettura.cv} CV. Disponibile da Bernabei Automobili Roma.`
+  return buildMetadata({ title, description, path: `/vetture/${slug}`, lang })
 }
 
 export default async function VetturaPage({ params }: Props) {

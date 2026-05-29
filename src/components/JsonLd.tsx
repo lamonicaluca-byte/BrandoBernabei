@@ -1,4 +1,4 @@
-// Inserisci <JsonLd /> nel [lang]/layout.tsx — si carica su tutte le pagine
+// Inserito nel [lang]/layout.tsx — attivo su tutte le pagine
 export function JsonLd() {
   const schema = {
     "@context": "https://schema.org",
@@ -10,9 +10,12 @@ export function JsonLd() {
         "name": "Bernabei Automobili",
         "legalName": "Bernabei Automobili di Brando Bernabei",
         "url": "https://www.bernabeiautomobili.com",
-        "logo": "https://www.bernabeiautomobili.com/favicon.svg",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.bernabeiautomobili.com/favicon.svg"
+        },
         "foundingDate": "1946",
-        "description": "Concessionaria di auto sportive e premium usate a Roma. Dal 1946, tre generazioni di appassionati selezionano ogni vettura con cura.",
+        "description": "Concessionaria di auto sportive e premium usate a Roma dal 1946. Tre generazioni di famiglia: il nonno fu il primo concessionario Ferrari del Centro-Sud Italia e arrivò secondo alla Mille Miglia. Franco fu concessionario Maserati e De Tomaso, 3× campione italiano F3 con partecipazioni in Formula 1. Brando è la terza generazione, attivo in Via Flaminia 318, Roma.",
         "vatID": "15074791003",
         "telephone": "+393395027983",
         "email": "info@bernabeiautomobili.it",
@@ -29,6 +32,7 @@ export function JsonLd() {
           "latitude": 41.9234,
           "longitude": 12.4767
         },
+        "hasMap": "https://maps.app.goo.gl/EhJjdfo2syPRQTgKA",
         "openingHoursSpecification": [
           {
             "@type": "OpeningHoursSpecification",
@@ -43,6 +47,17 @@ export function JsonLd() {
             "closes": "13:00"
           }
         ],
+        "makesOffer": [
+          "Porsche", "Ferrari", "BMW M", "Mercedes-AMG",
+          "Lamborghini", "Maserati", "Bentley", "Aston Martin",
+          "McLaren", "Pagani"
+        ].map(brand => ({
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "brand": { "@type": "Brand", "name": brand }
+          }
+        })),
         "sameAs": [
           "https://www.autoscout24.it/concessionari/bernabei-automobili-di-brando-bernabei"
         ],
@@ -52,11 +67,35 @@ export function JsonLd() {
           "ratingValue": "4.9",
           "bestRating": "5",
           "worstRating": "1",
-          "reviewCount": "94",
-          "ratingCount": "94"
+          "reviewCount": "100",
+          "ratingCount": "100"
+        },
+        // 3. Employee / founder
+        "founder": {
+          "@id": "https://www.bernabeiautomobili.com/#brando"
         }
       },
-      // 3. BreadcrumbList
+
+      // 4. Person — Brando Bernabei
+      {
+        "@type": "Person",
+        "@id": "https://www.bernabeiautomobili.com/#brando",
+        "name": "Brando Bernabei",
+        "jobTitle": "Titolare",
+        "worksFor": { "@id": "https://www.bernabeiautomobili.com/#organization" },
+        "knowsLanguage": ["it", "en", "fr", "de"],
+        "email": "info@bernabeiautomobili.it",
+        "telephone": "+393395027983",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Via Flaminia, 318/a",
+          "postalCode": "00196",
+          "addressLocality": "Roma",
+          "addressCountry": "IT"
+        }
+      },
+
+      // 5. BreadcrumbList (home)
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
@@ -78,23 +117,28 @@ export function JsonLd() {
   )
 }
 
-// Esempio schema Vehicle — da inserire in [lang]/vetture/[slug]/page.tsx
-// per ogni scheda vettura individuale:
+// ─── Uso in [lang]/vetture/[slug]/page.tsx ───────────────────────────────────
+// Importa e renderizza <VehicleJsonLd vettura={vettura} /> dentro il JSX della page
 //
-// function VehicleJsonLd({ vettura }: { vettura: Vettura }) {
+// import type { Vettura } from '@/data/vetture'
+// export function VehicleJsonLd({ vettura }: { vettura: Vettura }) {
 //   const schema = {
 //     "@context": "https://schema.org",
 //     "@type": "Vehicle",
 //     "name": `${vettura.make} ${vettura.model} ${vettura.year}`,
 //     "brand": { "@type": "Brand", "name": vettura.make },
+//     "model": vettura.model,
 //     "modelDate": vettura.year.toString(),
+//     "vehicleEngine": {
+//       "@type": "EngineSpecification",
+//       "enginePower": { "@type": "QuantitativeValue", "value": vettura.cv, "unitCode": "BHP" }
+//     },
 //     "mileageFromOdometer": {
-//       "@type": "QuantitativeValue",
-//       "value": vettura.km,
-//       "unitCode": "KMT"
+//       "@type": "QuantitativeValue", "value": vettura.km, "unitCode": "KMT"
 //     },
 //     "fuelType": vettura.carburante,
 //     "vehicleTransmission": vettura.cambio,
+//     "color": vettura.colore,
 //     "offers": {
 //       "@type": "Offer",
 //       "price": vettura.prezzo,

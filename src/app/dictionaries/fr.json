@@ -1,11 +1,11 @@
 {
   "meta": {
     "home": { "title": "Bernabei Automobili | Voitures Premium à Rome", "description": "Sélection exclusive de voitures premium et sportives à Rome. Depuis 1946, trois générations de passionnés." },
-    "chiSiamo": { "title": "À Propos | Bernabei Automobili Rome", "description": "Trois générations de passion pour les automobiles. Du grand-père, premier concessionnaire Ferrari du Centre-Sud de l'Italie, à Brando aujourd'hui au Via Flaminia 318, Rome." },
-    "vetture": { "title": "Voitures Disponibles | Bernabei Automobili", "description": "Sélection de voitures premium et sportives à Rome. Chaque voiture vérifiée, garantie, avec historique documenté." },
-    "servizi": { "title": "Services | Bernabei Automobili", "description": "Conseil personnalisé, reprise, financement, garantie et livraison dans toute l'Italie." },
-    "recensioni": { "title": "Avis | Bernabei Automobili", "description": "4.9 sur AutoScout24, 94 avis vérifiés, 97% positifs." },
-    "contatti": { "title": "Contact | Bernabei Automobili", "description": "Contactez Bernabei Automobili: téléphone, WhatsApp, email ou formulaire de contact. Via Flaminia 318/a, Rome." }
+    "chiSiamo": { "title": "Depuis 1946, Trois Générations — À Propos", "description": "Trois générations de passion pour les automobiles. Du grand-père, premier concessionnaire Ferrari du Centre-Sud de l'Italie, à Brando aujourd'hui au Via Flaminia 318, Rome." },
+    "vetture": { "title": "Voitures Premium et Sportives à Rome", "description": "Sélection de voitures premium et sportives à Rome. Chaque voiture vérifiée, garantie, avec historique documenté." },
+    "servizi": { "title": "Reprise, Garantie, Financement — Services", "description": "Conseil personnalisé, reprise, financement, garantie et livraison dans toute l'Italie." },
+    "recensioni": { "title": "Avis — 4.9★ sur AutoScout24", "description": "4.9 sur AutoScout24, 94 avis vérifiés, 97% positifs." },
+    "contatti": { "title": "Contact — Via Flaminia 318, Rome", "description": "Contactez Bernabei Automobili: téléphone, WhatsApp, email ou formulaire de contact. Via Flaminia 318/a, Rome." }
   },
   "nav": {
     "chiSiamo": "À Propos",

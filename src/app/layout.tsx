@@ -18,6 +18,7 @@ const cormorant = Cormorant_Garamond({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.bernabeiautomobili.com'),
   title: {
     default: 'Bernabei Automobili | Auto Premium Selezionate a Roma',
     template: '%s | Bernabei Automobili',

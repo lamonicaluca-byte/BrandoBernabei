@@ -1,11 +1,11 @@
 {
   "meta": {
     "home": { "title": "Auto Sportive Usate Roma | Bernabei Automobili", "description": "Concessionaria auto lusso usate a Roma dal 1946. Porsche, Ferrari, BMW M, Mercedes-AMG. 97% recensioni positive. Selezionate da Brando Bernabei." },
-    "chiSiamo": { "title": "Chi Siamo | Bernabei Automobili Roma", "description": "Tre generazioni di passione per le automobili. Dal nonno, primo concessionario Ferrari del Centro-Sud Italia, fino a Brando oggi in Via Flaminia 318, Roma." },
-    "vetture": { "title": "Auto Premium Usate Roma | Bernabei Automobili", "description": "Auto sportive e di lusso usate a Roma: Porsche, Ferrari, BMW M, Mercedes-AMG, Lamborghini. Verificate, garantite, con storico documentato." },
-    "servizi": { "title": "Servizi | Bernabei Automobili", "description": "Consulenza personalizzata, permuta, finanziamenti, garanzia e consegna in tutta Italia." },
-    "recensioni": { "title": "Recensioni | Bernabei Automobili", "description": "4.9 su AutoScout24, 94 recensioni verificate, 97% positive." },
-    "contatti": { "title": "Contatti | Bernabei Automobili", "description": "Contatta Bernabei Automobili: telefono, WhatsApp, email o modulo di contatto. Via Flaminia 318/a, Roma." }
+    "chiSiamo": { "title": "Dal 1946, Tre Generazioni — Chi Siamo", "description": "Tre generazioni di passione per le automobili. Dal nonno, primo concessionario Ferrari del Centro-Sud Italia, fino a Brando oggi in Via Flaminia 318, Roma." },
+    "vetture": { "title": "Auto Premium e Sportive Usate Roma", "description": "Auto sportive e di lusso usate a Roma: Porsche, Ferrari, BMW M, Mercedes-AMG, Lamborghini. Verificate, garantite, con storico documentato." },
+    "servizi": { "title": "Permuta, Garanzia, Consegna — Servizi", "description": "Consulenza personalizzata, permuta, finanziamenti, garanzia e consegna in tutta Italia." },
+    "recensioni": { "title": "Recensioni — 4.9★ su AutoScout24", "description": "4.9 su AutoScout24, 94 recensioni verificate, 97% positive." },
+    "contatti": { "title": "Contatti — Via Flaminia 318, Roma", "description": "Contatta Bernabei Automobili: telefono, WhatsApp, email o modulo di contatto. Via Flaminia 318/a, Roma." }
   },
   "nav": {
     "chiSiamo": "Chi Siamo",

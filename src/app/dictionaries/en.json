@@ -1,11 +1,11 @@
 {
   "meta": {
     "home": { "title": "Bernabei Automobili | Premium Cars in Rome", "description": "Exclusive selection of premium and sports cars in Rome. Since 1946, three generations of enthusiasts." },
-    "chiSiamo": { "title": "About Us | Bernabei Automobili Rome", "description": "Three generations of passion for cars. From our grandfather, first Ferrari dealer in Central-Southern Italy, to Brando today at Via Flaminia 318, Rome." },
-    "vetture": { "title": "Available Cars | Bernabei Automobili", "description": "Selection of premium and sports cars in Rome. Every car verified, guaranteed, with documented history." },
-    "servizi": { "title": "Services | Bernabei Automobili", "description": "Personalised consultation, trade-in, financing, warranty and delivery throughout Italy." },
-    "recensioni": { "title": "Reviews | Bernabei Automobili", "description": "4.9 on AutoScout24, 94 verified reviews, 97% positive." },
-    "contatti": { "title": "Contact | Bernabei Automobili", "description": "Contact Bernabei Automobili: phone, WhatsApp, email or contact form. Via Flaminia 318/a, Rome." }
+    "chiSiamo": { "title": "Since 1946, Three Generations — About Us", "description": "Three generations of passion for cars. From our grandfather, first Ferrari dealer in Central-Southern Italy, to Brando today at Via Flaminia 318, Rome." },
+    "vetture": { "title": "Premium & Sports Cars Rome — Available Now", "description": "Selection of premium and sports cars in Rome. Every car verified, guaranteed, with documented history." },
+    "servizi": { "title": "Trade-in, Warranty, Financing — Services", "description": "Personalised consultation, trade-in, financing, warranty and delivery throughout Italy." },
+    "recensioni": { "title": "Reviews — 4.9★ on AutoScout24", "description": "4.9 on AutoScout24, 94 verified reviews, 97% positive." },
+    "contatti": { "title": "Contact — Via Flaminia 318, Rome", "description": "Contact Bernabei Automobili: phone, WhatsApp, email or contact form. Via Flaminia 318/a, Rome." }
   },
   "nav": {
     "chiSiamo": "About Us",

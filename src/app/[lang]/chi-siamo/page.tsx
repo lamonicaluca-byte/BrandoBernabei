@@ -2,13 +2,13 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { getDictionary, getAlternates } from "../../i18n"
+import { getDictionary, buildMetadata } from "../../i18n"
 import type { Locale } from "../layout"
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: Locale }> }): Promise<Metadata> {
   const { lang } = await params
   const dict = await getDictionary(lang)
-  return { title: dict.meta.chiSiamo.title, description: dict.meta.chiSiamo.description, alternates: getAlternates('/chi-siamo') }
+  return buildMetadata({ title: dict.meta.chiSiamo.title, description: dict.meta.chiSiamo.description, path: '/chi-siamo', lang })
 }
 
 export default async function ChiSiamoPage({ params }: { params: Promise<{ lang: Locale }> }) {
