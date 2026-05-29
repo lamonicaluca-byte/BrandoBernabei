@@ -1,6 +1,7 @@
 import type { Locale } from '../i18n'
 import { Inter, Cormorant_Garamond } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { JsonLd } from '@/components/JsonLd'
 import '../globals.css'
 
 export type { Locale }
@@ -30,6 +31,7 @@ export default async function LangLayout({
   return (
     <html lang={lang} className={`${inter.variable} ${cormorant.variable} bg-background`}>
       <body className="font-sans antialiased">
+        <JsonLd />
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

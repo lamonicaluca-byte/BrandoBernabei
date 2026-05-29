@@ -43,13 +43,13 @@
     "pillars": [
       { "number": "01", "title": "Selection", "description": "Every car enters our stock only after a personal inspection. We never buy sight unseen: quality is verified in person." },
       { "number": "02", "title": "Transparency", "description": "Every defect, every service, every history of the car is communicated before negotiation. No surprises, ever." },
-      { "number": "03", "title": "Expertise", "description": "Over 25 years in the premium and sports market. We know how to recognise cars that deserve attention, and those to avoid." },
+      { "number": "03", "title": "Expertise", "description": "Over 80 years of family history in the luxury car sector, three generations of hands-on expertise." },
       { "number": "04", "title": "Relationship", "description": "We don't sell you a car. We help you choose one. And we remain available long after delivery." }
     ],
     "stats": [
       { "value": "97%", "label": "Positive reviews on AutoScout24" },
       { "value": "500+", "label": "Satisfied clients over the years" },
-      { "value": "25+", "label": "Years of experience in the sector" },
+      { "value": "80+", "label": "Years in the sector since 1946" },
       { "value": "100%", "label": "Guaranteed cars with included coverage" }
     ]
   },

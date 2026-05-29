@@ -1,8 +1,8 @@
 {
   "meta": {
-    "home": { "title": "Bernabei Automobili | Auto Premium Selezionate a Roma", "description": "Selezione esclusiva di auto premium e sportive usate a Roma. Dal 1946, tre generazioni di appassionati." },
+    "home": { "title": "Auto Sportive Usate Roma | Bernabei Automobili", "description": "Concessionaria auto lusso usate a Roma dal 1946. Porsche, Ferrari, BMW M, Mercedes-AMG. 97% recensioni positive. Selezionate da Brando Bernabei." },
     "chiSiamo": { "title": "Chi Siamo | Bernabei Automobili Roma", "description": "Tre generazioni di passione per le automobili. Dal nonno, primo concessionario Ferrari del Centro-Sud Italia, fino a Brando oggi in Via Flaminia 318, Roma." },
-    "vetture": { "title": "Vetture Disponibili | Bernabei Automobili", "description": "Selezione di auto premium e sportive usate a Roma. Ogni vettura verificata, garantita, con storico documentato." },
+    "vetture": { "title": "Auto Premium Usate Roma | Bernabei Automobili", "description": "Auto sportive e di lusso usate a Roma: Porsche, Ferrari, BMW M, Mercedes-AMG, Lamborghini. Verificate, garantite, con storico documentato." },
     "servizi": { "title": "Servizi | Bernabei Automobili", "description": "Consulenza personalizzata, permuta, finanziamenti, garanzia e consegna in tutta Italia." },
     "recensioni": { "title": "Recensioni | Bernabei Automobili", "description": "4.9 su AutoScout24, 94 recensioni verificate, 97% positive." },
     "contatti": { "title": "Contatti | Bernabei Automobili", "description": "Contatta Bernabei Automobili: telefono, WhatsApp, email o modulo di contatto. Via Flaminia 318/a, Roma." }
@@ -45,13 +45,13 @@
     "pillars": [
       { "number": "01", "title": "Selezione", "description": "Ogni vettura entra nel nostro stock solo dopo un'ispezione personale. Non acquistiamo a scatola chiusa: la qualità si verifica dal vivo." },
       { "number": "02", "title": "Trasparenza", "description": "Ogni difetto, ogni intervento, ogni storia della vettura viene comunicata prima della trattativa. Nessuna sorpresa, mai." },
-      { "number": "03", "title": "Competenza", "description": "Oltre 25 anni nel mercato premium e sportivo. Sappiamo riconoscere le vetture che meritano, e quelle da evitare." },
+      { "number": "03", "title": "Competenza", "description": "Oltre 80 anni di storia familiare nel settore auto di lusso, tre generazioni di expertise diretta sul campo." },
       { "number": "04", "title": "Relazione", "description": "Non ti vendiamo un'auto. Ti aiutiamo a sceglierla. E restiamo a disposizione ben oltre la consegna." }
     ],
     "stats": [
       { "value": "97%", "label": "Recensioni positive su AutoScout24" },
       { "value": "500+", "label": "Clienti soddisfatti negli anni" },
-      { "value": "25+", "label": "Anni di esperienza nel settore" },
+      { "value": "80+", "label": "Anni nel settore dal 1946" },
       { "value": "100%", "label": "Vetture garantite con copertura inclusa" }
     ]
   },
