@@ -1,0 +1,199 @@
+{
+  "meta": {
+    "home": { "title": "Bernabei Automobili | Premium Cars in Rome", "description": "Exclusive selection of premium and sports cars in Rome. Since 1946, three generations of enthusiasts." },
+    "chiSiamo": { "title": "About Us | Bernabei Automobili Rome", "description": "Three generations of passion for cars. From our grandfather, first Ferrari dealer in Central-Southern Italy, to Brando today at Via Flaminia 318, Rome." },
+    "vetture": { "title": "Available Cars | Bernabei Automobili", "description": "Selection of premium and sports cars in Rome. Every car verified, guaranteed, with documented history." },
+    "servizi": { "title": "Services | Bernabei Automobili", "description": "Personalised consultation, trade-in, financing, warranty and delivery throughout Italy." },
+    "recensioni": { "title": "Reviews | Bernabei Automobili", "description": "4.9 on AutoScout24, 94 verified reviews, 97% positive." },
+    "contatti": { "title": "Contact | Bernabei Automobili", "description": "Contact Bernabei Automobili: phone, WhatsApp, email or contact form. Via Flaminia 318/a, Rome." }
+  },
+  "nav": {
+    "chiSiamo": "About Us",
+    "vetture": "Cars",
+    "servizi": "Services",
+    "recensioni": "Reviews",
+    "contattaci": "Contact Us"
+  },
+  "hero": {
+    "headline1": "Since 1946, we choose",
+    "headline2": "every car as if",
+    "headline3": "it were our own.",
+    "subtitle": "Those who come to Bernabei aren't just looking for a car — they're looking for someone they can trust.",
+    "cta1": "Discover our cars",
+    "cta2": "Read reviews",
+    "proof1Value": "4.9 ★",
+    "proof1Label": "AutoScout24",
+    "proof2Value": "94",
+    "proof2Label": "Reviews",
+    "proof3Value": "Since 1946",
+    "proof3Label": "Three generations",
+    "scrollLabel": "Scroll"
+  },
+  "brandStrip": { "label": "The brands" },
+  "featuredCars": {
+    "overline": "Exclusive selection",
+    "title": "Featured cars",
+    "viewAll": "View all cars",
+    "discover": "Discover",
+    "autoscoutCta": "Full stock available on"
+  },
+  "whyChooseUs": {
+    "overline": "Our difference",
+    "title": "Why clients choose us",
+    "pillars": [
+      { "number": "01", "title": "Selection", "description": "Every car enters our stock only after a personal inspection. We never buy sight unseen: quality is verified in person." },
+      { "number": "02", "title": "Transparency", "description": "Every defect, every service, every history of the car is communicated before negotiation. No surprises, ever." },
+      { "number": "03", "title": "Expertise", "description": "Over 25 years in the premium and sports market. We know how to recognise cars that deserve attention, and those to avoid." },
+      { "number": "04", "title": "Relationship", "description": "We don't sell you a car. We help you choose one. And we remain available long after delivery." }
+    ],
+    "stats": [
+      { "value": "97%", "label": "Positive reviews on AutoScout24" },
+      { "value": "500+", "label": "Satisfied clients over the years" },
+      { "value": "25+", "label": "Years of experience in the sector" },
+      { "value": "100%", "label": "Guaranteed cars with included coverage" }
+    ]
+  },
+  "testimonials": {
+    "overline": "Testimonials",
+    "title": "What our clients say",
+    "autoscoutLink": "Read all reviews on",
+    "autoscoutPositive": "97% positive",
+    "prevLabel": "Previous",
+    "nextLabel": "Next"
+  },
+  "method": {
+    "overline": "Our process",
+    "title": "The Bernabei Method",
+    "subtitle": "A rigorous process that guarantees quality and transparency at every stage.",
+    "steps": [
+      { "number": "01", "title": "Selection", "description": "Every car is personally evaluated. Documented history, verified provenance, mechanical conditions assessed." },
+      { "number": "02", "title": "Verification", "description": "In-depth technical inspection by specialists. Certified mileage, bodywork, systems, service history." },
+      { "number": "03", "title": "Preparation", "description": "Professional detailing, service if needed, complete sanitisation. The car is delivered as it should be." },
+      { "number": "04", "title": "Delivery", "description": "Detailed explanation of the car, documents in order, warranty active. After-sales support starts here." }
+    ]
+  },
+  "autoscout": {
+    "overline": "Guaranteed transparency",
+    "title": "Follow us on AutoScout24",
+    "subtitle": "Browse our complete inventory, read verified client reviews and discover available cars in real time.",
+    "ratingText": "Based on",
+    "ratingStrong": "100+",
+    "ratingLabel": "verified reviews",
+    "ctaPrimary": "View stock on AutoScout24",
+    "ctaSecondary": "Read reviews",
+    "statLabel1": "of AutoScout24 reviews are positive",
+    "statLabel2": "Verified reviews",
+    "statLabel3": "Average rating",
+    "quote": "Finally a serious dealer. Total transparency, no pressure.",
+    "quoteAuthor": "Alessandro P., verified client"
+  },
+  "cta": {
+    "quote": "When a client contacts me, I don't see a sale. I see a person about to make an important investment who deserves my full attention.",
+    "quoteAuthor": "Brando Bernabei, founder",
+    "subtitle": "Found the right car or want advice? Contact me directly. No intermediaries, no commercial pressure.",
+    "cta1": "Call me: +39 339 502 7983",
+    "cta2": "Message on WhatsApp",
+    "cta3": "Send a message"
+  },
+  "footer": {
+    "description": "Careful selection of premium and sports cars. Transparency, expertise and personalised assistance.",
+    "navTitle": "Navigation",
+    "servicesTitle": "Services",
+    "contactTitle": "Contact",
+    "autoscoutLabel": "Follow us on",
+    "autoscoutPositive": "positive",
+    "copyright": "All rights reserved.",
+    "services": [
+      { "name": "Custom Search", "hash": "ricerca" },
+      { "name": "Trade-in", "hash": "permuta" },
+      { "name": "Financing", "hash": "finanziamenti" },
+      { "name": "Warranty", "hash": "garanzia" },
+      { "name": "Italy Delivery", "hash": "consegna" }
+    ]
+  },
+  "chiSiamo": {
+    "overline": "About Us",
+    "title1": "Not just salespeople.",
+    "title2": "Car enthusiasts",
+    "title3": "for three generations.",
+    "p1pre": "The story of Bernabei Automobili begins in",
+    "p1year": "1946",
+    "p1strong": "first Ferrari dealer in Central-Southern Italy",
+    "p1post": ", finishing second at the Mille Miglia, behind only Nuvolari, a close friend.",
+    "p2pre": "His son Franco carried on with the same passion: Maserati and De Tomaso dealer,",
+    "p2strong": "three-time Italian Formula 3 champion",
+    "p2post": ", with several Formula 1 appearances. Cars weren't just a trade — they were a vocation.",
+    "p3pre": "Today Brando, third generation, carries forward that same identity at Via Flaminia 318, Rome.",
+    "p3strong": "Before being a salesman, he's an enthusiast.",
+    "p3post": "That's why every car is selected, verified and presented with the care it deserves — and why our clients come from all over Italy and Europe.",
+    "cta": "Talk to Brando",
+    "timeline": [
+      { "anno": "1946", "nome": "The Grandfather", "desc": "First Ferrari dealer in Central-Southern Italy. Mille Miglia driver, friend of Nuvolari." },
+      { "anno": "1970s", "nome": "Franco", "desc": "Maserati and De Tomaso dealer. 3× Italian Formula 3 champion. Formula 1 appearances." },
+      { "anno": "Today", "nome": "Brando", "desc": "Economics degree, MBA, 4 languages. Via Flaminia 318, Rome. Clients across Europe." }
+    ]
+  },
+  "vetture": {
+    "overline": "Our selection",
+    "title": "Available cars",
+    "subtitle": "Every car is personally selected, verified and prepared. Quality without compromise.",
+    "availablePre": "",
+    "availablePost": "cars available",
+    "autoscoutCta": "Full stock on AutoScout24",
+    "discoverCar": "Discover this car",
+    "notFound": "Can't find what you're looking for?",
+    "notFoundSub": "Browse our complete inventory on AutoScout24, or contact us for a personalised search across the European market.",
+    "autoscoutFull": "View stock on AutoScout24",
+    "customSearch": "Custom search",
+    "backToAll": "All cars",
+    "specs": "Technical specifications",
+    "description": "Description",
+    "contactWhatsapp": "Contact Brando on WhatsApp",
+    "sendMessage": "Send a message",
+    "year": "Year",
+    "km": "Mileage",
+    "power": "Power",
+    "gearbox": "Gearbox",
+    "fuel": "Fuel",
+    "color": "Colour",
+    "displacement": "Displacement"
+  },
+  "servizi": {
+    "overline": "Our services",
+    "title": "Everything you need",
+    "subtitle": "Complete assistance that accompanies you before, during and after purchase. Choosing Bernabei means choosing peace of mind.",
+    "requestInfo": "Request information",
+    "faqTitle": "Questions about our services?",
+    "faqSub": "We're available for any clarification. Contact us with no obligation.",
+    "ctaPrimary": "Contact us now",
+    "ctaPhone": "Call us: +39 339 502 7983"
+  },
+  "recensioni": {
+    "overline": "Reviews",
+    "ctaPrimary": "Read all reviews",
+    "ctaSecondary": "94 verified reviews on AutoScout24 →"
+  },
+  "contatti": {
+    "overline": "Contact",
+    "title": "Let's talk about your next car",
+    "subtitle": "I'm available for any questions. Contact me with no obligation, I'll be happy to help.",
+    "howTitle": "How to contact me",
+    "formTitle": "Send me a message",
+    "hoursTitle": "Opening hours",
+    "weekdays": "Monday – Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday",
+    "closed": "Closed",
+    "appointmentNote": "* Visits by appointment also outside hours",
+    "formName": "Full Name *",
+    "formPhone": "Phone *",
+    "formEmail": "Email *",
+    "formMessage": "Message *",
+    "formPrivacy": "* Required fields. Your data will be processed in accordance with privacy regulations.",
+    "formSubmit": "Send message",
+    "formSubmitting": "Sending...",
+    "formSuccess": "Message sent!",
+    "formSuccessMsg": "Thank you for contacting me. I'll reply as soon as possible.",
+    "mapTitle": "Bernabei Automobili, Via Flaminia 318/a, Rome"
+  }
+}

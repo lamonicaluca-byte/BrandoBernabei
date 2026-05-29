@@ -12,14 +12,29 @@ const heroImages = [
 ]
 
 const goldGradient = 'linear-gradient(135deg, #E8C97A 0%, #C9A96E 45%, #A07840 100%)'
-const goldTextStyle = {
-  background: goldGradient,
-  WebkitBackgroundClip: 'text' as const,
-  WebkitTextFillColor: 'transparent' as const,
-  backgroundClip: 'text' as const,
+
+interface HeroDict {
+  headline1: string
+  headline2: string
+  headline3: string
+  subtitle: string
+  cta1: string
+  cta2: string
+  proof1Value: string
+  proof1Label: string
+  proof2Value: string
+  proof2Label: string
+  proof3Value: string
+  proof3Label: string
+  scrollLabel: string
 }
 
-export function HeroSection() {
+interface HeroSectionProps {
+  dict: HeroDict
+  lang: string
+}
+
+export function HeroSection({ dict, lang }: HeroSectionProps) {
   const [current, setCurrent] = useState(0)
 
   useEffect(() => {
@@ -61,14 +76,14 @@ export function HeroSection() {
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 pt-24 pb-12 w-full text-center">
 
-        {/* Headline — 4 righe */}
+        {/* Headline */}
         <h1
           className="font-serif font-normal"
           style={{ fontSize: 'clamp(32px, 4vw, 52px)', lineHeight: 1.15 }}
         >
-          <span className="block text-white">Dal 1946, scegliamo</span>
-          <span className="block italic" style={{ color: '#C9A96E' }}>ogni auto come</span>
-          <span className="block italic" style={{ color: '#C9A96E', paddingBottom: '0.1em' }}>fosse la nostra.</span>
+          <span className="block text-white">{dict.headline1}</span>
+          <span className="block italic" style={{ color: '#C9A96E' }}>{dict.headline2}</span>
+          <span className="block italic" style={{ color: '#C9A96E', paddingBottom: '0.1em' }}>{dict.headline3}</span>
         </h1>
 
         {/* Sottotitolo */}
@@ -80,7 +95,7 @@ export function HeroSection() {
             color: 'rgba(255,255,255,0.80)',
           }}
         >
-          Chi entra da Bernabei non cerca solo un&apos;auto, cerca qualcuno di cui fidarsi.
+          {dict.subtitle}
         </p>
 
         {/* CTAs */}
@@ -94,13 +109,13 @@ export function HeroSection() {
               boxShadow: '0 4px 24px rgba(201,169,110,0.35)',
             }}
           >
-            <Link href="/vetture">
-              Scopri le vetture
+            <Link href={`/${lang}/vetture`}>
+              {dict.cta1}
             </Link>
           </Button>
           {/* Mobile: testo puro */}
           <Link
-            href="/recensioni"
+            href={`/${lang}/recensioni`}
             className="sm:hidden font-sans text-center"
             style={{
               fontSize: '13px',
@@ -109,11 +124,11 @@ export function HeroSection() {
               padding: '8px 0',
             }}
           >
-            Leggi le recensioni
+            {dict.cta2}
           </Link>
           {/* Desktop: outline */}
           <Link
-            href="/recensioni"
+            href={`/${lang}/recensioni`}
             className="hidden sm:inline-flex font-sans font-medium uppercase items-center justify-center hover:bg-white/10 transition-all"
             style={{
               color: 'rgba(255,255,255,0.85)',
@@ -123,7 +138,7 @@ export function HeroSection() {
               padding: '11px 28px',
             }}
           >
-            Leggi le recensioni
+            {dict.cta2}
           </Link>
         </div>
 
@@ -133,25 +148,19 @@ export function HeroSection() {
           style={{ borderTop: '0.5px solid rgba(255,255,255,0.07)' }}
         >
           <div className="text-center">
-            <div className="font-serif font-normal text-white text-base sm:text-[20px]">4.9 ★</div>
-            <div className="font-sans uppercase mt-1 text-[9px] sm:text-[10px]" style={{ letterSpacing: '0.1em', color: 'rgba(255,255,255,0.65)' }}>AutoScout24</div>
+            <div className="font-serif font-normal text-white text-base sm:text-[20px]">{dict.proof1Value}</div>
+            <div className="font-sans uppercase mt-1 text-[9px] sm:text-[10px]" style={{ letterSpacing: '0.1em', color: 'rgba(255,255,255,0.65)' }}>{dict.proof1Label}</div>
           </div>
           <div className="text-center">
-            <div className="font-serif font-normal text-white text-base sm:text-[20px]">94</div>
-            <div className="font-sans uppercase mt-1 text-[9px] sm:text-[10px]" style={{ letterSpacing: '0.1em', color: 'rgba(255,255,255,0.65)' }}>Recensioni</div>
+            <div className="font-serif font-normal text-white text-base sm:text-[20px]">{dict.proof2Value}</div>
+            <div className="font-sans uppercase mt-1 text-[9px] sm:text-[10px]" style={{ letterSpacing: '0.1em', color: 'rgba(255,255,255,0.65)' }}>{dict.proof2Label}</div>
           </div>
           <div className="text-center">
-            <div className="font-serif font-normal text-white text-base sm:text-[20px]">Dal 1946</div>
-            <div className="font-sans uppercase mt-1 text-[9px] sm:text-[10px]" style={{ letterSpacing: '0.1em', color: 'rgba(255,255,255,0.65)' }}>Tre generazioni</div>
+            <div className="font-serif font-normal text-white text-base sm:text-[20px]">{dict.proof3Value}</div>
+            <div className="font-sans uppercase mt-1 text-[9px] sm:text-[10px]" style={{ letterSpacing: '0.1em', color: 'rgba(255,255,255,0.65)' }}>{dict.proof3Label}</div>
           </div>
         </div>
 
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-3">
-        <span className="text-[9px] tracking-[0.25em] text-white/30 uppercase">Scorri</span>
-        <div className="w-px h-14 bg-gradient-to-b from-white/30 to-transparent" />
       </div>
 
       {/* Slide dots */}

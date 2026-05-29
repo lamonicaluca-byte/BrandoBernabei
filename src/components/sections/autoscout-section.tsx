@@ -1,7 +1,23 @@
 import { Button } from "@/components/ui/Button"
 import { ExternalLink, Star } from "lucide-react"
 
-export function AutoScoutSection() {
+interface AutoScoutDict {
+  overline: string
+  title: string
+  subtitle: string
+  ratingText: string
+  ratingStrong: string
+  ratingLabel: string
+  ctaPrimary: string
+  ctaSecondary: string
+  statLabel1: string
+  statLabel2: string
+  statLabel3: string
+  quote: string
+  quoteAuthor: string
+}
+
+export function AutoScoutSection({ dict }: { dict: AutoScoutDict }) {
   return (
     <section className="py-24 bg-secondary">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -9,13 +25,13 @@ export function AutoScoutSection() {
           {/* Content */}
           <div>
             <span className="text-xs tracking-[0.25em] uppercase text-accent/80">
-              Trasparenza garantita
+              {dict.overline}
             </span>
             <h2 className="mt-3 font-serif text-4xl sm:text-5xl lg:text-6xl font-light text-foreground tracking-tight">
-              Seguici su AutoScout24
+              {dict.title}
             </h2>
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-              Consulta il nostro inventario completo, leggi le recensioni verificate dei clienti e scopri le vetture disponibili in tempo reale.
+              {dict.subtitle}
             </p>
 
             <div className="mt-8 flex items-center gap-3">
@@ -27,7 +43,7 @@ export function AutoScoutSection() {
               <span className="font-semibold text-foreground">4.9 / 5</span>
               <span className="text-sm text-muted-foreground">·</span>
               <span className="text-sm text-muted-foreground">
-                Basato su <strong className="text-foreground">100+</strong> recensioni verificate
+                {dict.ratingText} <strong className="text-foreground">{dict.ratingStrong}</strong> {dict.ratingLabel}
               </span>
             </div>
 
@@ -42,7 +58,7 @@ export function AutoScoutSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Vedi stock su AutoScout24
+                  {dict.ctaPrimary}
                   <ExternalLink className="ml-2 h-4 w-4" />
                 </a>
               </Button>
@@ -57,7 +73,7 @@ export function AutoScoutSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Leggi le recensioni
+                  {dict.ctaSecondary}
                 </a>
               </Button>
             </div>
@@ -70,21 +86,21 @@ export function AutoScoutSection() {
                 97%
               </div>
               <p className="mt-4 text-muted-foreground">
-                delle recensioni su AutoScout24 sono positive
+                {dict.statLabel1}
               </p>
               <p className="mt-6 font-serif text-lg italic text-foreground/70 leading-relaxed border-t border-border pt-6">
-                &ldquo;Finalmente un concessionario serio. Trasparenza totale, nessuna pressione.&rdquo;
+                &ldquo;{dict.quote}&rdquo;
               </p>
-              <p className="mt-2 text-xs text-muted-foreground">Alessandro P., cliente verificato</p>
+              <p className="mt-2 text-xs text-muted-foreground">{dict.quoteAuthor}</p>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-card border border-border p-6 text-center">
                 <div className="font-serif text-3xl font-light text-foreground">100+</div>
-                <div className="text-xs text-muted-foreground mt-2">Recensioni verificate</div>
+                <div className="text-xs text-muted-foreground mt-2">{dict.statLabel2}</div>
               </div>
               <div className="bg-card border border-border p-6 text-center">
                 <div className="font-serif text-3xl font-light text-foreground">4.9</div>
-                <div className="text-xs text-muted-foreground mt-2">Valutazione media</div>
+                <div className="text-xs text-muted-foreground mt-2">{dict.statLabel3}</div>
               </div>
             </div>
           </div>

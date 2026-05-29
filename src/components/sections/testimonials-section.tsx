@@ -43,7 +43,16 @@ const testimonials = [
   },
 ]
 
-export function TestimonialsSection() {
+interface TestimonialsDict {
+  overline: string
+  title: string
+  autoscoutLink: string
+  autoscoutPositive: string
+  prevLabel: string
+  nextLabel: string
+}
+
+export function TestimonialsSection({ dict }: { dict: TestimonialsDict }) {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const next = () => setCurrentIndex((prev) => (prev + 1) % testimonials.length)
@@ -57,10 +66,10 @@ export function TestimonialsSection() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-sm font-medium tracking-widest uppercase text-accent">
-            Testimonianze
+            {dict.overline}
           </span>
           <h2 className="mt-3 font-serif text-4xl sm:text-5xl lg:text-6xl font-light text-foreground tracking-tight">
-            Le parole dei nostri clienti
+            {dict.title}
           </h2>
         </div>
 
@@ -100,7 +109,7 @@ export function TestimonialsSection() {
               className="border-border hover:border-accent hover:bg-accent/10"
             >
               <ChevronLeft className="h-5 w-5" />
-              <span className="sr-only">Precedente</span>
+              <span className="sr-only">{dict.prevLabel}</span>
             </Button>
 
             <div className="flex items-center gap-2">
@@ -124,7 +133,7 @@ export function TestimonialsSection() {
               className="border-border hover:border-accent hover:bg-accent/10"
             >
               <ChevronRight className="h-5 w-5" />
-              <span className="sr-only">Successivo</span>
+              <span className="sr-only">{dict.nextLabel}</span>
             </Button>
           </div>
         </div>
@@ -137,9 +146,9 @@ export function TestimonialsSection() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
-            <span>Leggi tutte le recensioni su</span>
+            <span>{dict.autoscoutLink}</span>
             <span className="font-semibold">AutoScout24</span>
-            <span className="text-accent font-semibold">97% positive</span>
+            <span className="text-accent font-semibold">{dict.autoscoutPositive}</span>
           </a>
         </div>
       </div>

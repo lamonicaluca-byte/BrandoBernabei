@@ -6,7 +6,19 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Send } from "lucide-react"
 
-export function ContactForm() {
+interface ContactFormDict {
+  formName: string
+  formPhone: string
+  formEmail: string
+  formMessage: string
+  formPrivacy: string
+  formSubmit: string
+  formSubmitting: string
+  formSuccess: string
+  formSuccessMsg: string
+}
+
+export function ContactForm({ dict }: { dict: ContactFormDict }) {
   const [formData, setFormData] = useState({
     nome: "",
     email: "",
@@ -30,9 +42,9 @@ export function ContactForm() {
         <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
           <Send className="h-8 w-8 text-green-600" />
         </div>
-        <h3 className="text-xl font-semibold text-green-800 mb-2">Messaggio inviato!</h3>
+        <h3 className="text-xl font-semibold text-green-800 mb-2">{dict.formSuccess}</h3>
         <p className="text-green-700">
-          Grazie per avermi contattato. Ti risponderò il prima possibile.
+          {dict.formSuccessMsg}
         </p>
       </div>
     )
@@ -43,7 +55,7 @@ export function ContactForm() {
       <div className="grid sm:grid-cols-2 gap-6">
         <div>
           <label htmlFor="nome" className="block text-sm font-medium text-foreground mb-2">
-            Nome e Cognome *
+            {dict.formName}
           </label>
           <Input
             id="nome"
@@ -57,7 +69,7 @@ export function ContactForm() {
         </div>
         <div>
           <label htmlFor="telefono" className="block text-sm font-medium text-foreground mb-2">
-            Telefono *
+            {dict.formPhone}
           </label>
           <Input
             id="telefono"
@@ -73,7 +85,7 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-          Email *
+          {dict.formEmail}
         </label>
         <Input
           id="email"
@@ -88,7 +100,7 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="messaggio" className="block text-sm font-medium text-foreground mb-2">
-          Messaggio *
+          {dict.formMessage}
         </label>
         <Textarea
           id="messaggio"
@@ -102,7 +114,7 @@ export function ContactForm() {
       </div>
 
       <p className="text-xs text-muted-foreground">
-        * Campi obbligatori. I tuoi dati saranno trattati nel rispetto della privacy.
+        {dict.formPrivacy}
       </p>
 
       <Button
@@ -111,10 +123,10 @@ export function ContactForm() {
         className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-6"
       >
         {isSubmitting ? (
-          "Invio in corso..."
+          dict.formSubmitting
         ) : (
           <>
-            Invia messaggio
+            {dict.formSubmit}
             <Send className="ml-2 h-4 w-4" />
           </>
         )}

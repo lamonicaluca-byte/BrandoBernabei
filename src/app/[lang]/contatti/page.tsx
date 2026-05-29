@@ -3,62 +3,67 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react"
 import { ContactForm } from "./ContactForm"
+import { getDictionary } from "../../i18n"
+import type { Locale } from "../layout"
 
-export const metadata: Metadata = {
-  title: "Contatti | Bernabei Automobili",
-  description:
-    "Contatta Bernabei Automobili: telefono, WhatsApp, email o modulo di contatto. Via Flaminia 318/a, Roma. Risposta entro poche ore.",
+export async function generateMetadata({ params }: { params: Promise<{ lang: Locale }> }): Promise<Metadata> {
+  const { lang } = await params
+  const dict = await getDictionary(lang)
+  return { title: dict.meta.contatti.title, description: dict.meta.contatti.description }
 }
 
-const contactInfo = [
-  {
-    icon: Phone,
-    title: "Telefono",
-    value: "+39 339 502 7983",
-    href: "tel:+393395027983",
-    description: "Lun–Sab: 9:00–19:00",
-  },
-  {
-    icon: MessageCircle,
-    title: "WhatsApp",
-    value: "+39 339 502 7983",
-    href: "https://wa.me/393395027983",
-    description: "Risposta rapida",
-  },
-  {
-    icon: Mail,
-    title: "Email",
-    value: "info@bernabeiautomobili.it",
-    href: "mailto:info@bernabeiautomobili.it",
-    description: "Risposta entro 24h",
-  },
-  {
-    icon: MapPin,
-    title: "Indirizzo",
-    value: "Via Flaminia, 318/a, Roma",
-    href: "https://maps.app.goo.gl/EhJjdfo2syPRQTgKA",
-    description: "Visite su appuntamento",
-  },
-]
+export default async function ContattiPage({ params }: { params: Promise<{ lang: Locale }> }) {
+  const { lang } = await params
+  const dict = await getDictionary(lang)
+  const d = dict.contatti
 
-export default function ContattiPage() {
+  const contactInfo = [
+    {
+      icon: Phone,
+      title: "Telefono",
+      value: "+39 339 502 7983",
+      href: "tel:+393395027983",
+      description: "Lun–Sab: 9:00–19:00",
+    },
+    {
+      icon: MessageCircle,
+      title: "WhatsApp",
+      value: "+39 339 502 7983",
+      href: "https://wa.me/393395027983",
+      description: "Risposta rapida",
+    },
+    {
+      icon: Mail,
+      title: "Email",
+      value: "info@bernabeiautomobili.it",
+      href: "mailto:info@bernabeiautomobili.it",
+      description: "Risposta entro 24h",
+    },
+    {
+      icon: MapPin,
+      title: "Indirizzo",
+      value: "Via Flaminia, 318/a, Roma",
+      href: "https://maps.app.goo.gl/EhJjdfo2syPRQTgKA",
+      description: "Visite su appuntamento",
+    },
+  ]
+
   return (
     <>
-      <Header />
+      <Header lang={lang} dict={dict} />
       <main className="pt-20">
         {/* Hero */}
         <section className="py-16 lg:py-24 bg-primary text-primary-foreground">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="max-w-3xl">
               <span className="text-sm font-medium tracking-widest uppercase text-accent">
-                Contatti
+                {d.overline}
               </span>
               <h1 className="mt-4 font-serif text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight">
-                Parliamo della tua prossima auto
+                {d.title}
               </h1>
               <p className="mt-6 text-xl text-primary-foreground/80 leading-relaxed">
-                Sono a tua disposizione per qualsiasi domanda. Contattami senza impegno,
-                sarò felice di aiutarti.
+                {d.subtitle}
               </p>
             </div>
           </div>
@@ -71,7 +76,7 @@ export default function ContattiPage() {
               {/* Left: Contact info */}
               <div>
                 <h2 className="font-serif text-2xl font-medium text-foreground mb-8">
-                  Come contattarmi
+                  {d.howTitle}
                 </h2>
                 <div className="grid sm:grid-cols-2 gap-6">
                   {contactInfo.map((item, index) => (
@@ -98,24 +103,24 @@ export default function ContattiPage() {
                 <div className="mt-8 p-6 bg-secondary rounded-sm">
                   <div className="flex items-center gap-3 mb-4">
                     <Clock className="h-5 w-5 text-accent" />
-                    <h3 className="font-semibold text-foreground">Orari di apertura</h3>
+                    <h3 className="font-semibold text-foreground">{d.hoursTitle}</h3>
                   </div>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
-                      <span className="text-muted-foreground">Lunedì – Venerdì</span>
+                      <span className="text-muted-foreground">{d.weekdays}</span>
                       <span className="text-foreground">9:00 – 19:00</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-muted-foreground">Sabato</span>
+                      <span className="text-muted-foreground">{d.saturday}</span>
                       <span className="text-foreground">9:00 – 13:00</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-muted-foreground">Domenica</span>
-                      <span className="text-foreground">Chiuso</span>
+                      <span className="text-muted-foreground">{d.sunday}</span>
+                      <span className="text-foreground">{d.closed}</span>
                     </div>
                   </div>
                   <p className="mt-4 text-xs text-muted-foreground">
-                    * Visite su appuntamento anche fuori orario
+                    {d.appointmentNote}
                   </p>
                 </div>
               </div>
@@ -123,9 +128,9 @@ export default function ContattiPage() {
               {/* Right: Form */}
               <div>
                 <h2 className="font-serif text-2xl font-medium text-foreground mb-8">
-                  Inviami un messaggio
+                  {d.formTitle}
                 </h2>
-                <ContactForm />
+                <ContactForm dict={dict.contatti} />
               </div>
             </div>
           </div>
@@ -141,11 +146,11 @@ export default function ContattiPage() {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Bernabei Automobili, Via Flaminia 318/a, Roma"
+            title={d.mapTitle}
           />
         </section>
       </main>
-      <Footer />
+      <Footer lang={lang} dict={dict} />
     </>
   )
 }

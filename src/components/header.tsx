@@ -6,21 +6,36 @@ import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/Button"
 
-const navigation = [
-  { name: "Chi Siamo", href: "/chi-siamo" },
-  { name: "Vetture", href: "/vetture" },
-  { name: "Servizi", href: "/servizi" },
-  { name: "Recensioni", href: "/recensioni" },
-]
+interface HeaderDict {
+  nav: {
+    chiSiamo: string
+    vetture: string
+    servizi: string
+    recensioni: string
+    contattaci: string
+  }
+}
 
-export function Header() {
+interface HeaderProps {
+  lang: string
+  dict: HeaderDict
+}
+
+export function Header({ lang, dict }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
-  const isHome = pathname === '/'
+  const isHome = pathname === `/${lang}` || pathname === `/${lang}/`
 
   const bernabeiRef = useRef<HTMLSpanElement>(null)
   const automobiliRef = useRef<HTMLSpanElement>(null)
+
+  const navigation = [
+    { name: dict.nav.chiSiamo, href: `/${lang}/chi-siamo` },
+    { name: dict.nav.vetture, href: `/${lang}/vetture` },
+    { name: dict.nav.servizi, href: `/${lang}/servizi` },
+    { name: dict.nav.recensioni, href: `/${lang}/recensioni` },
+  ]
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40)
@@ -80,7 +95,7 @@ export function Header() {
         {/* Main nav row */}
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex flex-col items-start shrink-0">
+          <Link href={`/${lang}`} className="flex flex-col items-start shrink-0">
             <span
               ref={bernabeiRef}
               className="font-serif text-white leading-none"
@@ -109,6 +124,24 @@ export function Header() {
                 {item.name}
               </Link>
             ))}
+
+            {/* Language switcher desktop */}
+            <div className="flex items-center gap-2 ml-4 pl-4 border-l border-white/15">
+              {(['it', 'en', 'fr'] as const).map((l) => (
+                <Link
+                  key={l}
+                  href={pathname.replace(`/${lang}`, `/${l}`)}
+                  className="font-sans uppercase transition-colors"
+                  style={{
+                    fontSize: '11px',
+                    letterSpacing: '0.1em',
+                    color: l === lang ? '#C9A96E' : 'rgba(255,255,255,0.45)',
+                  }}
+                >
+                  {l}
+                </Link>
+              ))}
+            </div>
           </div>
 
           {/* Desktop CTA */}
@@ -119,7 +152,7 @@ export function Header() {
               className="border-0 text-[#0A0A0A] font-medium px-5 text-sm"
               style={{ background: "linear-gradient(135deg, #E8C97A 0%, #C9A96E 45%, #A07840 100%)" }}
             >
-              <Link href="/contatti">Contattaci</Link>
+              <Link href={`/${lang}/contatti`}>{dict.nav.contattaci}</Link>
             </Button>
           </div>
 
@@ -148,6 +181,26 @@ export function Header() {
               {item.name}
             </Link>
           ))}
+
+          {/* Language switcher mobile */}
+          <div className="flex items-center gap-3 px-4 py-2">
+            {(['it', 'en', 'fr'] as const).map((l) => (
+              <Link
+                key={l}
+                href={pathname.replace(`/${lang}`, `/${l}`)}
+                className="font-sans uppercase transition-colors"
+                style={{
+                  fontSize: '11px',
+                  letterSpacing: '0.1em',
+                  color: l === lang ? '#C9A96E' : 'rgba(255,255,255,0.45)',
+                }}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {l}
+              </Link>
+            ))}
+          </div>
+
           <div className="pt-2 mt-1 border-t border-white/10">
             <Button
               asChild
@@ -155,7 +208,7 @@ export function Header() {
               style={{ background: "linear-gradient(135deg, #E8C97A 0%, #C9A96E 45%, #A07840 100%)" }}
               onClick={() => setMobileMenuOpen(false)}
             >
-              <Link href="/contatti">Contattaci</Link>
+              <Link href={`/${lang}/contatti`}>{dict.nav.contattaci}</Link>
             </Button>
           </div>
         </div>

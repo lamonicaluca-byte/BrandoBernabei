@@ -6,30 +6,36 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/Button"
 import { vetture } from "@/data/vetture"
 import { Calendar, Gauge, Settings, ExternalLink } from "lucide-react"
+import { getDictionary } from "../../i18n"
+import type { Locale } from "../layout"
 
-export const metadata: Metadata = {
-  title: "Vetture Disponibili | Bernabei Automobili",
-  description:
-    "Selezione di auto premium e sportive usate a Roma. Porsche, Ferrari, Mercedes-AMG, BMW M, Lamborghini. Ogni vettura verificata, garantita, con storico documentato.",
+export async function generateMetadata({ params }: { params: Promise<{ lang: Locale }> }): Promise<Metadata> {
+  const { lang } = await params
+  const dict = await getDictionary(lang)
+  return { title: dict.meta.vetture.title, description: dict.meta.vetture.description }
 }
 
-export default function VetturePage() {
+export default async function VetturePage({ params }: { params: Promise<{ lang: Locale }> }) {
+  const { lang } = await params
+  const dict = await getDictionary(lang)
+  const d = dict.vetture
+
   return (
     <>
-      <Header />
+      <Header lang={lang} dict={dict} />
       <main className="pt-20">
         {/* Hero */}
         <section className="py-16 lg:py-24 bg-primary text-primary-foreground">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="max-w-3xl">
               <span className="text-xs tracking-[0.25em] uppercase text-accent/80">
-                La nostra selezione
+                {d.overline}
               </span>
               <h1 className="mt-4 font-serif text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight">
-                Vetture disponibili
+                {d.title}
               </h1>
               <p className="mt-6 text-xl text-primary-foreground/70 leading-relaxed">
-                Ogni vettura è selezionata, verificata e preparata personalmente. Qualità senza compromessi.
+                {d.subtitle}
               </p>
             </div>
           </div>
@@ -40,7 +46,7 @@ export default function VetturePage() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-12 pb-8 border-b border-border">
               <span className="text-sm text-muted-foreground">
-                <strong className="text-foreground">{vetture.length}</strong> vetture disponibili
+                <strong className="text-foreground">{vetture.length}</strong> {d.availablePost}
               </span>
               <Button asChild variant="outline" className="border-border hover:border-accent">
                 <a
@@ -48,7 +54,7 @@ export default function VetturePage() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Stock completo su AutoScout24
+                  {d.autoscoutCta}
                   <ExternalLink className="ml-2 h-4 w-4" />
                 </a>
               </Button>
@@ -110,8 +116,8 @@ export default function VetturePage() {
                     </div>
 
                     <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
-                      <Link href={`/vetture/${car.slug}`}>
-                        Scopri questa vettura
+                      <Link href={`/${lang}/vetture/${car.slug}`}>
+                        {d.discoverCar}
                       </Link>
                     </Button>
                   </div>
@@ -122,10 +128,10 @@ export default function VetturePage() {
             {/* Bottom CTA */}
             <div className="mt-16 p-12 bg-secondary border border-border text-center">
               <h3 className="font-serif text-2xl font-light text-foreground mb-4">
-                Non trovi quello che cerchi?
+                {d.notFound}
               </h3>
               <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-                Consulta il nostro inventario completo su AutoScout24, oppure contattaci per una ricerca personalizzata su tutto il mercato europeo.
+                {d.notFoundSub}
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Button
@@ -138,7 +144,7 @@ export default function VetturePage() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Vedi stock su AutoScout24
+                    {d.autoscoutFull}
                     <ExternalLink className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
@@ -148,14 +154,14 @@ export default function VetturePage() {
                   size="lg"
                   className="border-border hover:border-accent"
                 >
-                  <Link href="/servizi#ricerca">Ricerca personalizzata</Link>
+                  <Link href={`/${lang}/servizi#ricerca`}>{d.customSearch}</Link>
                 </Button>
               </div>
             </div>
           </div>
         </section>
       </main>
-      <Footer />
+      <Footer lang={lang} dict={dict} />
     </>
   )
 }

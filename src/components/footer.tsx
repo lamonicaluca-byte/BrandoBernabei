@@ -1,31 +1,49 @@
 import Link from "next/link"
 import { Phone, Mail, MapPin } from "lucide-react"
 
-const navigation = {
-  main: [
-    { name: "Chi Siamo", href: "/chi-siamo" },
-    { name: "Vetture", href: "/vetture" },
-    { name: "Servizi", href: "/servizi" },
-    { name: "Recensioni", href: "/recensioni" },
-    { name: "Contatti", href: "/contatti" },
-  ],
-  services: [
-    { name: "Ricerca Personalizzata", href: "/servizi#ricerca" },
-    { name: "Permuta", href: "/servizi#permuta" },
-    { name: "Finanziamenti", href: "/servizi#finanziamenti" },
-    { name: "Garanzia", href: "/servizi#garanzia" },
-    { name: "Consegna Italia", href: "/servizi#consegna" },
-  ],
+interface FooterDict {
+  nav: {
+    chiSiamo: string
+    vetture: string
+    servizi: string
+    recensioni: string
+    contattaci: string
+  }
+  footer: {
+    description: string
+    navTitle: string
+    servicesTitle: string
+    contactTitle: string
+    autoscoutLabel: string
+    autoscoutPositive: string
+    copyright: string
+    services: Array<{ name: string; hash: string }>
+  }
 }
 
-export function Footer() {
+interface FooterProps {
+  lang: string
+  dict: FooterDict
+}
+
+export function Footer({ lang, dict }: FooterProps) {
+  const d = dict.footer
+
+  const mainNav = [
+    { name: dict.nav.chiSiamo, href: `/${lang}/chi-siamo` },
+    { name: dict.nav.vetture, href: `/${lang}/vetture` },
+    { name: dict.nav.servizi, href: `/${lang}/servizi` },
+    { name: dict.nav.recensioni, href: `/${lang}/recensioni` },
+    { name: dict.nav.contattaci, href: `/${lang}/contatti` },
+  ]
+
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-4">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="inline-block">
+            <Link href={`/${lang}`} className="inline-block">
               <div className="flex flex-col">
                 <span className="font-serif text-2xl font-medium tracking-wide text-primary-foreground">
                   BERNABEI
@@ -36,17 +54,17 @@ export function Footer() {
               </div>
             </Link>
             <p className="mt-6 text-sm text-primary-foreground/70 leading-relaxed max-w-xs">
-              Selezione accurata di vetture premium e sportive. Trasparenza, competenza e assistenza personalizzata.
+              {d.description}
             </p>
           </div>
 
           {/* Navigation */}
           <div>
             <h3 className="text-sm font-semibold tracking-wide uppercase text-accent">
-              Navigazione
+              {d.navTitle}
             </h3>
             <ul className="mt-6 space-y-3">
-              {navigation.main.map((item) => (
+              {mainNav.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
@@ -62,13 +80,13 @@ export function Footer() {
           {/* Services */}
           <div>
             <h3 className="text-sm font-semibold tracking-wide uppercase text-accent">
-              Servizi
+              {d.servicesTitle}
             </h3>
             <ul className="mt-6 space-y-3">
-              {navigation.services.map((item) => (
+              {d.services.map((item) => (
                 <li key={item.name}>
                   <Link
-                    href={item.href}
+                    href={`/${lang}/servizi#${item.hash}`}
                     className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors"
                   >
                     {item.name}
@@ -81,7 +99,7 @@ export function Footer() {
           {/* Contact */}
           <div>
             <h3 className="text-sm font-semibold tracking-wide uppercase text-accent">
-              Contatti
+              {d.contactTitle}
             </h3>
             <ul className="mt-6 space-y-4">
               <li>
@@ -122,17 +140,17 @@ export function Footer() {
               className="flex items-center gap-3 px-6 py-3 bg-primary-foreground/10 rounded-sm hover:bg-primary-foreground/20 transition-colors"
             >
               <div className="flex flex-col">
-                <span className="text-xs text-primary-foreground/60 uppercase tracking-wider">Seguici su</span>
+                <span className="text-xs text-primary-foreground/60 uppercase tracking-wider">{d.autoscoutLabel}</span>
                 <span className="font-semibold text-primary-foreground">AutoScout24</span>
               </div>
               <div className="flex items-center gap-1 text-accent">
                 <span className="text-lg font-bold">97%</span>
-                <span className="text-xs text-primary-foreground/60">positivo</span>
+                <span className="text-xs text-primary-foreground/60">{d.autoscoutPositive}</span>
               </div>
             </a>
             <div className="text-center sm:text-right">
               <p className="text-xs text-primary-foreground/50">
-                © {new Date().getFullYear()} Bernabei Automobili di Brando Bernabei. Tutti i diritti riservati.
+                © {new Date().getFullYear()} Bernabei Automobili di Brando Bernabei. {d.copyright}
               </p>
               <p className="text-xs text-primary-foreground/40 mt-1">
                 P.IVA 15074791003

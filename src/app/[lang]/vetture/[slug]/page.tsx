@@ -6,13 +6,16 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/Button"
 import { ArrowLeft, MessageCircle, Phone, Gauge, Fuel, Calendar, Settings } from "lucide-react"
+import { getDictionary } from "../../../i18n"
+import type { Locale } from "../../layout"
 
 interface Props {
-  params: Promise<{ slug: string }>
+  params: Promise<{ lang: Locale; slug: string }>
 }
 
 export async function generateStaticParams() {
-  return vetture.map((v) => ({ slug: v.slug }))
+  const langs = ['it', 'en', 'fr']
+  return vetture.flatMap((v) => langs.map((lang) => ({ lang, slug: v.slug })))
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -26,7 +29,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function VetturaPage({ params }: Props) {
-  const { slug } = await params
+  const { lang, slug } = await params
+  const dict = await getDictionary(lang)
+  const d = dict.vetture
   const vettura = getVetturaBySlug(slug)
   if (!vettura) notFound()
 
@@ -35,28 +40,28 @@ export default async function VetturaPage({ params }: Props) {
   )
 
   const specs = [
-    { label: "Anno", value: vettura.year.toString() },
-    { label: "Chilometri", value: `${vettura.km.toLocaleString("it-IT")} km` },
-    { label: "Potenza", value: `${vettura.cv} CV` },
-    { label: "Cambio", value: vettura.cambio },
-    { label: "Carburante", value: vettura.carburante },
-    ...(vettura.colore ? [{ label: "Colore", value: vettura.colore }] : []),
-    ...(vettura.cilindrata ? [{ label: "Cilindrata", value: vettura.cilindrata }] : []),
+    { label: d.year, value: vettura.year.toString() },
+    { label: d.km, value: `${vettura.km.toLocaleString("it-IT")} km` },
+    { label: d.power, value: `${vettura.cv} CV` },
+    { label: d.gearbox, value: vettura.cambio },
+    { label: d.fuel, value: vettura.carburante },
+    ...(vettura.colore ? [{ label: d.color, value: vettura.colore }] : []),
+    ...(vettura.cilindrata ? [{ label: d.displacement, value: vettura.cilindrata }] : []),
   ]
 
   return (
     <>
-      <Header />
+      <Header lang={lang} dict={dict} />
       <main className="pt-20">
         {/* Hero */}
         <section className="py-16 lg:py-24 bg-primary text-primary-foreground">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <Link
-              href="/vetture"
+              href={`/${lang}/vetture`}
               className="inline-flex items-center gap-2 text-sm text-primary-foreground/60 hover:text-primary-foreground mb-8 transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
-              Tutte le vetture
+              {d.backToAll}
             </Link>
             <div className="inline-block px-3 py-1 bg-accent text-accent-foreground text-xs font-medium tracking-wide mb-4">
               {vettura.badge}
@@ -116,7 +121,7 @@ export default async function VetturaPage({ params }: Props) {
                 {/* Full specs */}
                 <div>
                   <h2 className="font-serif text-xl font-medium text-foreground mb-4">
-                    Specifiche tecniche
+                    {d.specs}
                   </h2>
                   <div className="divide-y divide-border">
                     {specs.map((spec) => (
@@ -131,7 +136,7 @@ export default async function VetturaPage({ params }: Props) {
                 {vettura.descrizione && (
                   <div>
                     <h2 className="font-serif text-xl font-medium text-foreground mb-3">
-                      Descrizione
+                      {d.description}
                     </h2>
                     <p className="text-muted-foreground leading-relaxed text-sm">
                       {vettura.descrizione}
@@ -148,7 +153,7 @@ export default async function VetturaPage({ params }: Props) {
                       rel="noopener noreferrer"
                     >
                       <MessageCircle className="mr-2 h-5 w-5" />
-                      Contatta Brando su WhatsApp
+                      {d.contactWhatsapp}
                     </a>
                   </Button>
                   <Button asChild variant="outline" className="w-full border-border hover:border-accent">
@@ -158,8 +163,8 @@ export default async function VetturaPage({ params }: Props) {
                     </a>
                   </Button>
                   <Button asChild variant="ghost" className="w-full text-muted-foreground hover:text-foreground">
-                    <Link href={`/contatti?vettura=${encodeURIComponent(`${vettura.make} ${vettura.model} ${vettura.year}`)}`}>
-                      Invia un messaggio
+                    <Link href={`/${lang}/contatti?vettura=${encodeURIComponent(`${vettura.make} ${vettura.model} ${vettura.year}`)}`}>
+                      {d.sendMessage}
                     </Link>
                   </Button>
                 </div>
@@ -168,7 +173,7 @@ export default async function VetturaPage({ params }: Props) {
           </div>
         </section>
       </main>
-      <Footer />
+      <Footer lang={lang} dict={dict} />
     </>
   )
 }

@@ -4,7 +4,21 @@ import { Phone, MessageCircle } from "lucide-react"
 
 const goldGradient = 'linear-gradient(135deg, #E8C97A 0%, #C9A96E 45%, #A07840 100%)'
 
-export function CTASection() {
+interface CTADict {
+  quote: string
+  quoteAuthor: string
+  subtitle: string
+  cta1: string
+  cta2: string
+  cta3: string
+}
+
+interface CTASectionProps {
+  dict: CTADict
+  lang: string
+}
+
+export function CTASection({ dict, lang }: CTASectionProps) {
   return (
     <section className="py-24 bg-background">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -12,17 +26,17 @@ export function CTASection() {
           {/* Quote */}
           <div>
             <blockquote className="font-serif text-3xl sm:text-4xl font-light text-foreground leading-snug tracking-tight">
-              &ldquo;Quando un cliente mi contatta, non vedo una vendita. Vedo una persona che sta per fare un investimento importante e merita tutta la mia attenzione.&rdquo;
+              &ldquo;{dict.quote}&rdquo;
             </blockquote>
             <p className="mt-6 text-sm text-muted-foreground tracking-wide">
-              Brando Bernabei, fondatore
+              {dict.quoteAuthor}
             </p>
           </div>
 
           {/* Contact */}
           <div>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              Hai trovato la vettura giusta o vuoi una consulenza? Contattami direttamente. Senza intermediari, senza pressioni commerciali.
+              {dict.subtitle}
             </p>
             <div className="flex flex-col gap-3">
               <Button
@@ -33,7 +47,7 @@ export function CTASection() {
               >
                 <a href="tel:+393395027983">
                   <Phone className="mr-3 h-5 w-5 shrink-0" />
-                  Chiamami: +39 339 502 7983
+                  {dict.cta1}
                 </a>
               </Button>
               <Button
@@ -48,7 +62,7 @@ export function CTASection() {
                   rel="noopener noreferrer"
                 >
                   <MessageCircle className="mr-3 h-5 w-5 shrink-0" />
-                  Scrivimi su WhatsApp
+                  {dict.cta2}
                 </a>
               </Button>
               <Button
@@ -57,8 +71,8 @@ export function CTASection() {
                 className="border-0 text-[#0A0A0A] font-medium justify-start px-6 hover:opacity-90"
                 style={{ background: goldGradient }}
               >
-                <Link href="/contatti">
-                  Invia un messaggio
+                <Link href={`/${lang}/contatti`}>
+                  {dict.cta3}
                 </Link>
               </Button>
             </div>

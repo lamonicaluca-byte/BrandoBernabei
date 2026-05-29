@@ -4,7 +4,20 @@ import { Button } from "@/components/ui/Button"
 import { Gauge, Calendar } from "lucide-react"
 import { getEvidenzaVetture } from "@/data/vetture"
 
-export function FeaturedCarsSection() {
+interface FeaturedCarsDict {
+  overline: string
+  title: string
+  viewAll: string
+  discover: string
+  autoscoutCta: string
+}
+
+interface FeaturedCarsSectionProps {
+  dict: FeaturedCarsDict
+  lang: string
+}
+
+export function FeaturedCarsSection({ dict, lang }: FeaturedCarsSectionProps) {
   const cars = getEvidenzaVetture()
 
   return (
@@ -14,15 +27,15 @@ export function FeaturedCarsSection() {
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-16">
           <div>
             <span className="text-xs tracking-[0.25em] uppercase text-accent/80">
-              Selezione esclusiva
+              {dict.overline}
             </span>
             <h2 className="mt-3 font-serif text-4xl sm:text-5xl lg:text-6xl font-light text-foreground tracking-tight">
-              Le vetture in evidenza
+              {dict.title}
             </h2>
           </div>
           <Button asChild variant="ghost" className="text-muted-foreground hover:text-foreground self-start sm:self-auto shrink-0">
-            <Link href="/vetture">
-              Vedi tutte le vetture
+            <Link href={`/${lang}/vetture`}>
+              {dict.viewAll}
             </Link>
           </Button>
         </div>
@@ -32,7 +45,7 @@ export function FeaturedCarsSection() {
           {cars.map((car) => (
             <Link
               key={car.slug}
-              href={`/vetture/${car.slug}`}
+              href={`/${lang}/vetture/${car.slug}`}
               className="group block bg-card overflow-hidden border border-border hover:border-accent/40 transition-all duration-500"
             >
               <div className="relative aspect-[4/3] overflow-hidden bg-secondary">
@@ -79,7 +92,7 @@ export function FeaturedCarsSection() {
                     <span>{car.km.toLocaleString("it-IT")} km</span>
                   </div>
                   <div className="ml-auto flex items-center gap-1 text-accent text-xs font-medium">
-                    <span>Scopri</span>
+                    <span>{dict.discover}</span>
                   </div>
                 </div>
               </div>
@@ -95,7 +108,7 @@ export function FeaturedCarsSection() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-8 py-4 border border-border hover:border-accent/50 transition-colors duration-300"
           >
-            <span className="text-sm text-muted-foreground">Stock completo disponibile su</span>
+            <span className="text-sm text-muted-foreground">{dict.autoscoutCta}</span>
             <span className="font-semibold text-foreground">AutoScout24</span>
           </a>
         </div>

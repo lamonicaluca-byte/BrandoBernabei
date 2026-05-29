@@ -2,11 +2,13 @@ import { Metadata } from "next"
 import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { getDictionary } from "../../i18n"
+import type { Locale } from "../layout"
 
-export const metadata: Metadata = {
-  title: "Recensioni | Bernabei Automobili",
-  description:
-    "4.9 su AutoScout24, 94 recensioni verificate, 97% positive. Leggi cosa dicono i nostri clienti da tutta Italia e dall'Europa.",
+export async function generateMetadata({ params }: { params: Promise<{ lang: Locale }> }): Promise<Metadata> {
+  const { lang } = await params
+  const dict = await getDictionary(lang)
+  return { title: dict.meta.recensioni.title, description: dict.meta.recensioni.description }
 }
 
 const AUTOSCOUT_URL =
@@ -52,10 +54,14 @@ const reviews = [
   },
 ]
 
-export default function RecensioniPage() {
+export default async function RecensioniPage({ params }: { params: Promise<{ lang: Locale }> }) {
+  const { lang } = await params
+  const dict = await getDictionary(lang)
+  const d = dict.recensioni
+
   return (
     <>
-      <Header />
+      <Header lang={lang} dict={dict} />
       <main className="bg-[#0d0d0d] min-h-screen">
         <section className="pt-36 pb-24 px-8 lg:px-16">
           <div className="max-w-[900px] mx-auto">
@@ -65,7 +71,7 @@ export default function RecensioniPage() {
               className="font-sans font-light uppercase"
               style={{ fontSize: '10px', letterSpacing: '0.2em', color: '#C9A96E' }}
             >
-              Recensioni
+              {d.overline}
             </span>
 
             {/* Stats row */}
@@ -167,7 +173,7 @@ export default function RecensioniPage() {
                   padding: '12px 28px',
                 }}
               >
-                Leggi tutte le recensioni
+                {d.ctaPrimary}
               </Link>
               <a
                 href={AUTOSCOUT_URL}
@@ -176,14 +182,14 @@ export default function RecensioniPage() {
                 className="font-sans font-light hover:opacity-80 transition-opacity"
                 style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)' }}
               >
-                94 recensioni verificate su AutoScout24 →
+                {d.ctaSecondary}
               </a>
             </div>
 
           </div>
         </section>
       </main>
-      <Footer />
+      <Footer lang={lang} dict={dict} />
     </>
   )
 }
