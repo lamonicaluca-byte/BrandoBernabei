@@ -163,19 +163,6 @@ export function HeroSection({ dict, lang }: HeroSectionProps) {
 
       </div>
 
-      {/* Slide dots */}
-      <div className="absolute bottom-10 right-8 z-10 flex gap-2">
-        {heroImages.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setCurrent(i)}
-            className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
-              i === current ? 'w-4' : 'bg-white/30'
-            }`}
-            style={i === current ? { background: goldGradient } : {}}
-          />
-        ))}
-      </div>
     </section>
   )
 }
