@@ -7,6 +7,7 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/Button"
 import { ArrowLeft, MessageCircle, Phone, Gauge, Fuel, Calendar, Settings } from "lucide-react"
 import { getDictionary, buildMetadata } from "../../../i18n"
+import { VehicleJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd"
 import type { Locale } from "../../layout"
 
 interface Props {
@@ -19,10 +20,9 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params
+  const { slug, lang } = await params
   const vettura = getVetturaBySlug(slug)
   if (!vettura) return {}
-  const { lang } = await params
   const title = `${vettura.make} ${vettura.model} ${vettura.year}`
   const description = vettura.descrizione ?? `${vettura.make} ${vettura.model} ${vettura.year}, ${vettura.km.toLocaleString("it-IT")} km, ${vettura.cv} CV. Disponibile da Bernabei Automobili Roma.`
   return buildMetadata({ title, description, path: `/vetture/${slug}`, lang })
@@ -51,6 +51,12 @@ export default async function VetturaPage({ params }: Props) {
 
   return (
     <>
+      <VehicleJsonLd vettura={vettura} lang={lang} />
+      <BreadcrumbJsonLd items={[
+        { name: "Home", url: `https://www.bernabeiautomobili.com/${lang}` },
+        { name: d.title, url: `https://www.bernabeiautomobili.com/${lang}/vetture` },
+        { name: `${vettura.make} ${vettura.model} ${vettura.year}`, url: `https://www.bernabeiautomobili.com/${lang}/vetture/${vettura.slug}` }
+      ]} />
       <Header lang={lang} dict={dict} />
       <main className="pt-20">
         {/* Hero */}

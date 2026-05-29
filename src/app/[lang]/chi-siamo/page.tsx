@@ -3,6 +3,7 @@ import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { getDictionary, buildMetadata } from "../../i18n"
+import { BreadcrumbJsonLd } from "@/components/JsonLd"
 import type { Locale } from "../layout"
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: Locale }> }): Promise<Metadata> {
@@ -17,6 +18,10 @@ export default async function ChiSiamoPage({ params }: { params: Promise<{ lang:
   const d = dict.chiSiamo
   return (
     <>
+      <BreadcrumbJsonLd items={[
+        { name: "Home", url: `https://www.bernabeiautomobili.com/${lang}` },
+        { name: d.overline, url: `https://www.bernabeiautomobili.com/${lang}/chi-siamo` }
+      ]} />
       <Header lang={lang} dict={dict} />
       <main className="bg-[#0d0d0d] min-h-screen">
         <section className="pt-36 pb-24 px-8 lg:px-16">
