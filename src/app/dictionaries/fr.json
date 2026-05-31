@@ -1,7 +1,7 @@
 {
   "meta": {
     "home": { "title": "Bernabei Automobili | Voitures Premium à Rome", "description": "Sélection exclusive de voitures premium et sportives à Rome. Depuis 1946, trois générations de passionnés." },
-    "chiSiamo": { "title": "Depuis 1946, Trois Générations — À Propos", "description": "Trois générations de passion pour les automobiles. Du grand-père, premier concessionnaire Ferrari du Centre-Sud de l'Italie, à Brando aujourd'hui au Via Flaminia 318, Rome." },
+    "chiSiamo": { "title": "Depuis 1946, Trois Générations — À Propos", "description": "Trois générations de passion pour les automobiles. Du grand-père, premier concessionnaire Ferrari du Centre-Sud de l'Italie, à Brando aujourd'hui à la Via Flaminia 318, Rome." },
     "vetture": { "title": "Voitures Premium et Sportives à Rome", "description": "Sélection de voitures premium et sportives à Rome. Chaque voiture vérifiée, garantie, avec historique documenté." },
     "servizi": { "title": "Reprise, Garantie, Financement — Services", "description": "Conseil personnalisé, reprise, financement, garantie et livraison dans toute l'Italie." },
     "recensioni": { "title": "Avis — 4.9★ sur AutoScout24", "description": "4.9 sur AutoScout24, 94 avis vérifiés, 97% positifs." },
@@ -43,7 +43,7 @@
     "pillars": [
       { "number": "01", "title": "Sélection", "description": "Chaque voiture intègre notre stock uniquement après une inspection personnelle. Nous n'achetons jamais à l'aveugle: la qualité se vérifie en personne." },
       { "number": "02", "title": "Transparence", "description": "Chaque défaut, chaque intervention, chaque historique de la voiture est communiqué avant la négociation. Aucune surprise, jamais." },
-      { "number": "03", "title": "Expertise", "description": "Plus de 25 ans sur le marché premium et sportif. Nous savons reconnaître les voitures qui le méritent, et celles à éviter." },
+      { "number": "03", "title": "Expertise", "description": "Plus de 80 ans d'histoire familiale dans le secteur automobile de luxe, trois générations d'expertise terrain." },
       { "number": "04", "title": "Relation", "description": "Nous ne vous vendons pas une voiture. Nous vous aidons à la choisir. Et nous restons disponibles bien après la livraison." }
     ],
     "stats": [
@@ -123,9 +123,9 @@
     "p2pre": "Son fils Franco a pris les rênes avec la même passion: concessionnaire Maserati et De Tomaso,",
     "p2strong": "triple champion d'Italie de Formule 3",
     "p2post": ", avec plusieurs participations en Formule 1. Les voitures n'étaient pas seulement un métier, elles étaient une vocation.",
-    "p3pre": "Aujourd'hui Brando, troisième génération, perpétue cette même identité au Via Flaminia 318, Rome.",
+    "p3pre": "Aujourd'hui Brando, troisième génération, perpétue cette même identité à la Via Flaminia 318, Rome.",
     "p3strong": "Avant d'être un vendeur, c'est un passionné.",
-    "p3post": "C'est pourquoi chaque voiture est sélectionnée, vérifiée et présentée avec le soin qu'elle mérite, et c'est pourquoi nos clients viennent de toute l'Italie et d'Europe.",
+    "p3post": "C'est pourquoi chaque voiture est sélectionnée, vérifiée et présentée avec le soin qu'elle mérite, et c'est pourquoi nos clients viennent de toute l'Italie et de toute l'Europe.",
     "cta": "Parlez à Brando",
     "timeline": [
       { "anno": "1946", "nome": "Le Grand-Père", "desc": "Premier concessionnaire Ferrari du Centre-Sud de l'Italie. Pilote aux Mille Miglia, ami de Nuvolari." },
