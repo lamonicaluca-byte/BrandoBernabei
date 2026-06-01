@@ -94,13 +94,6 @@ export default async function VetturePage({ params }: { params: Promise<{ lang: 
                           {car.make} {car.model}
                         </h2>
                         <p className="mt-0.5 text-sm text-muted-foreground">{car.year} · {car.carburante}</p>
-                        <span className={`inline-block mt-1.5 text-[10px] font-medium px-2 py-0.5 border ${
-                          car.disponibile === false
-                            ? 'border-border text-muted-foreground/50 bg-secondary'
-                            : 'border-emerald-800/40 text-emerald-500 bg-emerald-950/30'
-                        }`}>
-                          {car.disponibile === false ? d.reserved : d.available}
-                        </span>
                       </div>
                       <p className="font-serif text-xl font-light text-foreground whitespace-nowrap">
                         € {car.prezzo.toLocaleString("it-IT")}

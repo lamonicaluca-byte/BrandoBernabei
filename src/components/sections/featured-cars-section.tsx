@@ -10,8 +10,6 @@ interface FeaturedCarsDict {
   viewAll: string
   discover: string
   autoscoutCta: string
-  available: string
-  reserved: string
 }
 
 interface FeaturedCarsSectionProps {
@@ -78,13 +76,6 @@ export function FeaturedCarsSection({ dict, lang }: FeaturedCarsSectionProps) {
                       {car.make} {car.model}
                     </h3>
                     <p className="mt-0.5 text-sm text-muted-foreground">{car.year} · {car.carburante}</p>
-                    <span className={`inline-block mt-1.5 text-[10px] font-medium px-2 py-0.5 border ${
-                      car.disponibile === false
-                        ? 'border-border text-muted-foreground/50 bg-secondary'
-                        : 'border-emerald-800/40 text-emerald-500 bg-emerald-950/30'
-                    }`}>
-                      {car.disponibile === false ? dict.reserved : dict.available}
-                    </span>
                   </div>
                   <p className="font-serif text-xl font-light text-foreground whitespace-nowrap">
                     € {car.prezzo.toLocaleString("it-IT")}

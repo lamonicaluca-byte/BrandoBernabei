@@ -72,17 +72,8 @@ export default async function VetturaPage({ params }: Props) {
               <ArrowLeft className="h-4 w-4" />
               {d.backToAll}
             </Link>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="inline-block px-3 py-1 bg-accent text-accent-foreground text-xs font-medium tracking-wide">
-                {vettura.badge}
-              </div>
-              <span className={`text-xs font-medium px-2.5 py-1 border ${
-                vettura.disponibile === false
-                  ? 'border-white/15 text-white/40 bg-white/5'
-                  : 'border-emerald-700/50 text-emerald-400 bg-emerald-900/20'
-              }`}>
-                {vettura.disponibile === false ? d.reserved : d.available}
-              </span>
+            <div className="inline-block px-3 py-1 bg-accent text-accent-foreground text-xs font-medium tracking-wide mb-4">
+              {vettura.badge}
             </div>
             <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-light tracking-tight">
               {vettura.make} {vettura.model}
