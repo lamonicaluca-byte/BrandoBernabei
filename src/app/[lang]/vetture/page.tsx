@@ -5,7 +5,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/Button"
 import { vetture } from "@/data/vetture"
-import { Calendar, Gauge, Settings, ExternalLink } from "lucide-react"
+import { Gauge, Settings, Zap, ExternalLink } from "lucide-react"
 import { getDictionary, buildMetadata } from "../../i18n"
 import type { Locale } from "../layout"
 
@@ -94,6 +94,13 @@ export default async function VetturePage({ params }: { params: Promise<{ lang: 
                           {car.make} {car.model}
                         </h2>
                         <p className="mt-0.5 text-sm text-muted-foreground">{car.year} · {car.carburante}</p>
+                        <span className={`inline-block mt-1.5 text-[10px] font-medium px-2 py-0.5 border ${
+                          car.disponibile === false
+                            ? 'border-border text-muted-foreground/50 bg-secondary'
+                            : 'border-emerald-800/40 text-emerald-500 bg-emerald-950/30'
+                        }`}>
+                          {car.disponibile === false ? d.reserved : d.available}
+                        </span>
                       </div>
                       <p className="font-serif text-xl font-light text-foreground whitespace-nowrap">
                         € {car.prezzo.toLocaleString("it-IT")}
@@ -102,15 +109,15 @@ export default async function VetturePage({ params }: { params: Promise<{ lang: 
 
                     <div className="grid grid-cols-3 gap-3 mb-6 py-4 border-t border-border">
                       <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                        <Calendar className="h-3.5 w-3.5 shrink-0" />
-                        <span>{car.year}</span>
+                        <Settings className="h-3.5 w-3.5 shrink-0" />
+                        <span>{car.cambio}</span>
                       </div>
                       <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
                         <Gauge className="h-3.5 w-3.5 shrink-0" />
                         <span>{car.km.toLocaleString("it-IT")} km</span>
                       </div>
                       <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                        <Settings className="h-3.5 w-3.5 shrink-0" />
+                        <Zap className="h-3.5 w-3.5 shrink-0" />
                         <span>{car.cv} CV</span>
                       </div>
                     </div>

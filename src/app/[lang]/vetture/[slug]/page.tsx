@@ -36,7 +36,10 @@ export default async function VetturaPage({ params }: Props) {
   if (!vettura) notFound()
 
   const waMessage = encodeURIComponent(
-    `Ciao Brando, sono interessato alla ${vettura.make} ${vettura.model} ${vettura.year}. Puoi darmi più informazioni?`
+    d.whatsappMessage
+      .replace('{make}', vettura.make)
+      .replace('{model}', vettura.model)
+      .replace('{year}', vettura.year.toString())
   )
 
   const specs = [
@@ -58,7 +61,7 @@ export default async function VetturaPage({ params }: Props) {
         { name: `${vettura.make} ${vettura.model} ${vettura.year}`, url: `https://www.bernabeiautomobili.com/${lang}/vetture/${vettura.slug}` }
       ]} />
       <Header lang={lang} dict={dict} />
-      <main className="pt-20">
+      <main className="pt-20 pb-24 lg:pb-0">
         {/* Hero */}
         <section className="py-16 lg:py-24 bg-primary text-primary-foreground">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -69,8 +72,17 @@ export default async function VetturaPage({ params }: Props) {
               <ArrowLeft className="h-4 w-4" />
               {d.backToAll}
             </Link>
-            <div className="inline-block px-3 py-1 bg-accent text-accent-foreground text-xs font-medium tracking-wide mb-4">
-              {vettura.badge}
+            <div className="flex items-center gap-3 mb-4">
+              <div className="inline-block px-3 py-1 bg-accent text-accent-foreground text-xs font-medium tracking-wide">
+                {vettura.badge}
+              </div>
+              <span className={`text-xs font-medium px-2.5 py-1 border ${
+                vettura.disponibile === false
+                  ? 'border-white/15 text-white/40 bg-white/5'
+                  : 'border-emerald-700/50 text-emerald-400 bg-emerald-900/20'
+              }`}>
+                {vettura.disponibile === false ? d.reserved : d.available}
+              </span>
             </div>
             <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-light tracking-tight">
               {vettura.make} {vettura.model}
@@ -179,6 +191,23 @@ export default async function VetturaPage({ params }: Props) {
           </div>
         </section>
       </main>
+      {/* Sticky mobile CTA bar */}
+      <div className="fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-[#0A0A0A]/95 backdrop-blur-md border-t border-white/10 px-4 py-3 flex items-center justify-between gap-3">
+        <div>
+          <div className="text-[10px] uppercase tracking-[0.15em] text-white/40">{d.price}</div>
+          <div className="font-serif text-white text-lg leading-tight">€ {vettura.prezzo.toLocaleString("it-IT")}</div>
+        </div>
+        <a
+          href={`https://wa.me/393395027983?text=${waMessage}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 px-5 py-2.5 text-xs font-medium uppercase tracking-[0.1em] text-[#0A0A0A] shrink-0"
+          style={{ background: "linear-gradient(135deg, #E8C97A 0%, #C9A96E 45%, #A07840 100%)" }}
+        >
+          <MessageCircle className="h-4 w-4 shrink-0" />
+          WhatsApp
+        </a>
+      </div>
       <Footer lang={lang} dict={dict} />
     </>
   )

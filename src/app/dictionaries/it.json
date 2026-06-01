@@ -37,7 +37,9 @@
     "title": "Le vetture in evidenza",
     "viewAll": "Vedi tutte le vetture",
     "discover": "Scopri",
-    "autoscoutCta": "Stock completo disponibile su"
+    "autoscoutCta": "Stock completo disponibile su",
+    "available": "Disponibile",
+    "reserved": "Riservata"
   },
   "whyChooseUs": {
     "overline": "La nostra differenza",
@@ -158,7 +160,11 @@
     "gearbox": "Cambio",
     "fuel": "Carburante",
     "color": "Colore",
-    "displacement": "Cilindrata"
+    "displacement": "Cilindrata",
+    "whatsappMessage": "Ciao Brando, sono interessato alla {make} {model} {year}. Puoi darmi più informazioni?",
+    "available": "Disponibile",
+    "reserved": "Riservata",
+    "price": "Prezzo"
   },
   "servizi": {
     "overline": "I nostri servizi",

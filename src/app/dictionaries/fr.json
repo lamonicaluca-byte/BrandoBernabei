@@ -35,7 +35,9 @@
     "title": "Les voitures en vedette",
     "viewAll": "Voir toutes les voitures",
     "discover": "Découvrir",
-    "autoscoutCta": "Stock complet disponible sur"
+    "autoscoutCta": "Stock complet disponible sur",
+    "available": "Disponible",
+    "reserved": "Réservée"
   },
   "whyChooseUs": {
     "overline": "Notre différence",
@@ -156,7 +158,11 @@
     "gearbox": "Boîte de vitesses",
     "fuel": "Carburant",
     "color": "Couleur",
-    "displacement": "Cylindrée"
+    "displacement": "Cylindrée",
+    "whatsappMessage": "Bonjour Brando, je suis intéressé par la {make} {model} {year}. Pouvez-vous me donner plus d'informations ?",
+    "available": "Disponible",
+    "reserved": "Réservée",
+    "price": "Prix"
   },
   "servizi": {
     "overline": "Nos services",

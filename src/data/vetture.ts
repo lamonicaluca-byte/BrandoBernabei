@@ -17,6 +17,7 @@ export interface Vettura {
   cilindrata?: string;
   trasmissione?: string;
   note?: string;
+  disponibile?: boolean;
 }
 
 export const vetture: Vettura[] = [
@@ -72,6 +73,7 @@ export const vetture: Vettura[] = [
     prezzo: 68900,
     badge: "Permuta accettata",
     featured: false,
+    disponibile: false,
     image: "https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?w=800&q=80",
     colore: "Nero Ribelle",
     cilindrata: "3799 cc",

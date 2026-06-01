@@ -35,7 +35,9 @@
     "title": "Featured cars",
     "viewAll": "View all cars",
     "discover": "Discover",
-    "autoscoutCta": "Full stock available on"
+    "autoscoutCta": "Full stock available on",
+    "available": "Available",
+    "reserved": "Reserved"
   },
   "whyChooseUs": {
     "overline": "Our difference",
@@ -156,7 +158,11 @@
     "gearbox": "Gearbox",
     "fuel": "Fuel",
     "color": "Colour",
-    "displacement": "Displacement"
+    "displacement": "Displacement",
+    "whatsappMessage": "Hi Brando, I am interested in the {make} {model} {year}. Can you give me more information?",
+    "available": "Available",
+    "reserved": "Reserved",
+    "price": "Price"
   },
   "servizi": {
     "overline": "Our services",
