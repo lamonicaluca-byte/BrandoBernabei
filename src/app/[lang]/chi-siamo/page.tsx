@@ -34,7 +34,7 @@ export default async function ChiSiamoPage({ params }: { params: Promise<{ lang:
               {d.overline}
             </span>
 
-            <h2
+            <h1
               className="font-serif font-normal text-white mt-6 leading-[1.2]"
               style={{ fontSize: '42px' }}
             >
@@ -43,7 +43,7 @@ export default async function ChiSiamoPage({ params }: { params: Promise<{ lang:
               <em style={{ color: '#C9A96E' }}>{d.title2}</em>
               <br />
               {d.title3}
-            </h2>
+            </h1>
 
             <div className="mt-10 space-y-6">
               <p

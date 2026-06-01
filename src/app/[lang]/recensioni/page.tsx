@@ -2,6 +2,7 @@ import { Metadata } from "next"
 import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { RecensioniJsonLd } from "@/components/JsonLd"
 import { getDictionary, buildMetadata } from "../../i18n"
 import type { Locale } from "../layout"
 
@@ -51,6 +52,7 @@ export default async function RecensioniPage({ params }: { params: Promise<{ lan
 
   return (
     <>
+      <RecensioniJsonLd />
       <Header lang={lang} dict={dict} />
       <main className="bg-[#0d0d0d] min-h-screen">
         <section className="pt-36 pb-24 px-8 lg:px-16">

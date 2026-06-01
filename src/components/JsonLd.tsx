@@ -1,5 +1,3 @@
-"use client"
-
 // ─── Generic wrapper ─────────────────────────────────────────────────────────
 export function JsonLd({ schema }: { schema: Record<string, unknown> }) {
   return (
@@ -11,7 +9,6 @@ export function JsonLd({ schema }: { schema: Record<string, unknown> }) {
 }
 
 // ─── AutoDealer + Organization + Person ──────────────────────────────────────
-// Inserisci <OrganizationJsonLd /> in app/[lang]/layout.tsx
 export function OrganizationJsonLd() {
   const schema = {
     "@context": "https://schema.org",
@@ -74,8 +71,8 @@ export function OrganizationJsonLd() {
           "ratingValue": "4.9",
           "bestRating": "5",
           "worstRating": "1",
-          "reviewCount": "100",
-          "ratingCount": "100"
+          "reviewCount": "94",
+          "ratingCount": "94"
         },
         "sameAs": [
           "https://www.autoscout24.it/concessionari/bernabei-automobili-di-brando-bernabei"
@@ -99,7 +96,6 @@ export function OrganizationJsonLd() {
 }
 
 // ─── BreadcrumbList ──────────────────────────────────────────────────────────
-// Inserisci <BreadcrumbJsonLd items={[...]} /> in ogni page.tsx
 interface BreadcrumbItem {
   name: string
   url: string
@@ -119,8 +115,7 @@ export function BreadcrumbJsonLd({ items }: { items: BreadcrumbItem[] }) {
   return <JsonLd schema={schema} />
 }
 
-// ─── Vehicle ─────────────────────────────────────────────────────────────────
-// Inserisci <VehicleJsonLd vettura={vettura} /> in [lang]/vetture/[slug]/page.tsx
+// ─── Car (Vehicle) ───────────────────────────────────────────────────────────
 interface VehicleData {
   make: string
   model: string
@@ -138,7 +133,7 @@ interface VehicleData {
 export function VehicleJsonLd({ vettura, lang }: { vettura: VehicleData; lang: string }) {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Vehicle",
+    "@type": "Car",
     "name": `${vettura.make} ${vettura.model} ${vettura.year}`,
     "brand": { "@type": "Brand", "name": vettura.make },
     "model": vettura.model,
@@ -167,10 +162,83 @@ export function VehicleJsonLd({ vettura, lang }: { vettura: VehicleData; lang: s
       "@type": "Offer",
       "price": vettura.prezzo,
       "priceCurrency": "EUR",
+      "itemCondition": "https://schema.org/UsedCondition",
       "availability": "https://schema.org/InStock",
       "url": `https://www.bernabeiautomobili.com/${lang}/vetture/${vettura.slug}`,
       "seller": { "@id": "https://www.bernabeiautomobili.com/#organization" }
     }
+  }
+  return <JsonLd schema={schema} />
+}
+
+// ─── Reviews + AggregateRating ───────────────────────────────────────────────
+export function RecensioniJsonLd() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://www.bernabeiautomobili.com/#organization",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "bestRating": "5",
+      "worstRating": "1",
+      "reviewCount": "94",
+      "ratingCount": "94"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "author": { "@type": "Person", "name": "Adriano" },
+        "reviewBody": "Ho acquistato a distanza, pagata anticipatamente e consegnata a domicilio a Bari. L'auto era meglio di quanto descritta. Oggi la fiducia è difficile da trovare, ma loro ne hanno da vendere."
+      },
+      {
+        "@type": "Review",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "author": { "@type": "Person", "name": "Alessandra" },
+        "reviewBody": "Prima di essere venditori di auto sono persone. Qualità rarissima in questo settore."
+      },
+      {
+        "@type": "Review",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "author": { "@type": "Person", "name": "Giorgio" },
+        "reviewBody": "Ho acquistato una Porsche 997 da Torino in totale serenità. Brando ha gestito ogni mia richiesta con video e perizia meccanica indipendente. Ne sono felicissimo."
+      },
+      {
+        "@type": "Review",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "author": { "@type": "Person", "name": "Matteo Caroli" },
+        "reviewBody": "Un appassionato di auto prima ancora di essere un venditore. Non il solito commerciante."
+      },
+      {
+        "@type": "Review",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "author": { "@type": "Person", "name": "Prof. Dr. A.K." },
+        "reviewBody": "Ein besonders vertrauenswürdiger Händler, ein junges Team der alten Schule, das die Leidenschaft spürt."
+      }
+    ]
+  }
+  return <JsonLd schema={schema} />
+}
+
+// ─── FAQPage ─────────────────────────────────────────────────────────────────
+interface FAQItem {
+  question: string
+  answer: string
+}
+
+export function FAQPageJsonLd({ items }: { items: FAQItem[] }) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": items.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
   }
   return <JsonLd schema={schema} />
 }

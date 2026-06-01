@@ -4,6 +4,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/Button"
 import { Search, RefreshCw, CreditCard, Shield, Truck, Wrench, Check } from "lucide-react"
+import { BreadcrumbJsonLd, FAQPageJsonLd } from "@/components/JsonLd"
 import { getDictionary, buildMetadata } from "../../i18n"
 import type { Locale } from "../layout"
 
@@ -22,6 +23,14 @@ export default async function ServiziPage({ params }: { params: Promise<{ lang: 
 
   return (
     <>
+      <BreadcrumbJsonLd items={[
+        { name: "Home", url: `https://www.bernabeiautomobili.com/${lang}` },
+        { name: d.overline, url: `https://www.bernabeiautomobili.com/${lang}/servizi` }
+      ]} />
+      <FAQPageJsonLd items={(d.services as Array<{ question: string; description: string; features: string[] }>).map(s => ({
+        question: s.question,
+        answer: `${s.description} ${s.features.join('. ')}`
+      }))} />
       <Header lang={lang} dict={dict} />
       <main className="pt-20">
         {/* Hero */}
