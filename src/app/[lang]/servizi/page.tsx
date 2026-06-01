@@ -32,7 +32,7 @@ export default async function ServiziPage({ params }: { params: Promise<{ lang: 
         answer: `${s.description} ${s.features.join('. ')}`
       }))} />
       <Header lang={lang} dict={dict} />
-      <main className="pt-20">
+      <main className="pt-16 bg-primary">
         {/* Hero */}
         <section className="py-16 lg:py-24 bg-primary text-primary-foreground">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">

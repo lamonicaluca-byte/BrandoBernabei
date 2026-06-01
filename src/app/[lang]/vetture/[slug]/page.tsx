@@ -61,7 +61,7 @@ export default async function VetturaPage({ params }: Props) {
         { name: `${vettura.make} ${vettura.model} ${vettura.year}`, url: `https://www.bernabeiautomobili.com/${lang}/vetture/${vettura.slug}` }
       ]} />
       <Header lang={lang} dict={dict} />
-      <main className="pt-20 pb-24 lg:pb-0">
+      <main className="pt-16 pb-24 lg:pb-0 bg-primary">
         {/* Hero */}
         <section className="py-16 lg:py-24 bg-primary text-primary-foreground">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
