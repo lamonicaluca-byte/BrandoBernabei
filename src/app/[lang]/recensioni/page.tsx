@@ -2,6 +2,8 @@ import { Metadata } from "next"
 import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { Button } from "@/components/ui/Button"
+import { ExternalLink } from "lucide-react"
 import { RecensioniJsonLd } from "@/components/JsonLd"
 import { getDictionary, buildMetadata } from "../../i18n"
 import type { Locale } from "../layout"
@@ -54,50 +56,51 @@ export default async function RecensioniPage({ params }: { params: Promise<{ lan
     <>
       <RecensioniJsonLd />
       <Header lang={lang} dict={dict} />
-      <main className="bg-[#0d0d0d] min-h-screen">
-        <section className="pt-36 pb-24 px-8 lg:px-16">
-          <div className="max-w-[900px] mx-auto">
+      <main className="pt-16 bg-primary">
+        {/* Hero */}
+        <section className="py-16 lg:py-24 bg-primary text-primary-foreground">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="max-w-3xl">
+              <span className="text-sm font-medium tracking-widest uppercase text-accent">
+                {d.overline}
+              </span>
+              <h1 className="mt-4 font-serif text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight">
+                {d.title}
+              </h1>
+              <p className="mt-6 text-xl text-primary-foreground/70 leading-relaxed">
+                {d.subtitle}
+              </p>
+            </div>
+          </div>
+        </section>
 
-            {/* Label */}
-            <span
-              className="font-sans font-light uppercase"
-              style={{ fontSize: '10px', letterSpacing: '0.2em', color: '#C9A96E' }}
-            >
-              {d.overline}
-            </span>
+        {/* Stats + Reviews */}
+        <section className="pb-24 bg-primary text-primary-foreground">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
-            {/* Stats row */}
-            <div
-              className="mt-10 grid grid-cols-3 divide-x"
-              style={{ borderColor: 'rgba(255,255,255,0.08)' }}
-            >
+            {/* Stats */}
+            <div className="grid grid-cols-3 divide-x divide-white/10 border-t border-white/10 pt-10">
               {statsValues.map((s) => (
                 <div key={s.key} className="pr-8 first:pl-0 pl-8">
-                  <div
-                    className="font-serif font-normal text-white"
-                    style={{ fontSize: '52px', lineHeight: 1 }}
-                  >
+                  <div className="font-serif font-normal text-white" style={{ fontSize: '52px', lineHeight: 1 }}>
                     {s.value}
                   </div>
                   {s.stars && (
-                    <div className="mt-2" style={{ color: '#C9A96E', fontSize: '14px', letterSpacing: '2px' }}>
+                    <div className="mt-2 text-accent" style={{ fontSize: '14px', letterSpacing: '2px' }}>
                       ★★★★★
                     </div>
                   )}
-                  <div
-                    className="font-sans font-light mt-2"
-                    style={{ fontSize: '11px', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.4)' }}
-                  >
+                  <div className="font-light mt-2 text-primary-foreground/40 text-xs tracking-[0.12em]">
                     {d[s.key]}
                   </div>
                 </div>
               ))}
             </div>
 
-            {/* Griglia recensioni */}
+            {/* Reviews grid */}
             <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-6">
 
-              {/* Card featured, full width */}
+              {/* Featured review — full width */}
               <div
                 className="col-span-full rounded-[4px] p-6"
                 style={{
@@ -105,22 +108,16 @@ export default async function RecensioniPage({ params }: { params: Promise<{ lan
                   border: '0.5px solid rgba(192,160,96,0.3)',
                 }}
               >
-                <div style={{ fontSize: '36px', color: '#C9A96E', lineHeight: 1 }}>&ldquo;</div>
-                <p
-                  className="font-sans font-light italic leading-[1.75] mt-1"
-                  style={{ fontSize: '16px', color: 'rgba(255,255,255,0.7)' }}
-                >
+                <div className="text-accent" style={{ fontSize: '36px', lineHeight: 1 }}>&ldquo;</div>
+                <p className="font-light italic leading-[1.75] mt-1 text-primary-foreground/70 text-base">
                   {featuredReview.text}
                 </p>
-                <div
-                  className="font-sans font-light mt-4 uppercase"
-                  style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.4)' }}
-                >
+                <div className="font-light mt-4 uppercase text-primary-foreground/40 text-xs tracking-[0.1em]">
                   {featuredReview.author}
                 </div>
               </div>
 
-              {/* 4 card standard */}
+              {/* Standard reviews */}
               {reviews.map((r) => (
                 <div
                   key={r.author}
@@ -130,17 +127,11 @@ export default async function RecensioniPage({ params }: { params: Promise<{ lan
                     border: '0.5px solid rgba(255,255,255,0.08)',
                   }}
                 >
-                  <div style={{ fontSize: '36px', color: '#C9A96E', lineHeight: 1 }}>&ldquo;</div>
-                  <p
-                    className="font-sans font-light italic leading-[1.75] mt-1"
-                    style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)' }}
-                  >
+                  <div className="text-accent" style={{ fontSize: '36px', lineHeight: 1 }}>&ldquo;</div>
+                  <p className="font-light italic leading-[1.75] mt-1 text-primary-foreground/70 text-sm">
                     {r.text}
                   </p>
-                  <div
-                    className="font-sans font-light mt-4 uppercase"
-                    style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.4)' }}
-                  >
+                  <div className="font-light mt-4 uppercase text-primary-foreground/40 text-xs tracking-[0.1em]">
                     {r.author}
                   </div>
                 </div>
@@ -148,31 +139,24 @@ export default async function RecensioniPage({ params }: { params: Promise<{ lan
 
             </div>
 
-            {/* Footer CTA */}
-            <div
-              className="mt-12 pt-8 flex flex-col sm:flex-row items-start sm:items-center gap-6 border-t"
-              style={{ borderColor: 'rgba(255,255,255,0.08)' }}
-            >
-              <Link
-                href={AUTOSCOUT_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block rounded-[2px] font-sans font-medium text-[#0d0d0d] uppercase hover:opacity-85 transition-opacity"
-                style={{
-                  background: '#C9A96E',
-                  fontSize: '11px',
-                  letterSpacing: '0.15em',
-                  padding: '12px 28px',
-                }}
+            {/* CTA */}
+            <div className="mt-12 pt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4 border-t border-white/10">
+              <Button
+                asChild
+                size="lg"
+                className="border-0 text-[#0A0A0A] font-medium"
+                style={{ background: "linear-gradient(135deg, #E8C97A 0%, #C9A96E 45%, #A07840 100%)" }}
               >
-                {d.ctaPrimary}
-              </Link>
+                <a href={AUTOSCOUT_URL} target="_blank" rel="noopener noreferrer">
+                  {d.ctaPrimary}
+                  <ExternalLink className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
               <a
                 href={AUTOSCOUT_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-sans font-light hover:opacity-80 transition-opacity"
-                style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)' }}
+                className="font-light hover:opacity-80 transition-opacity text-primary-foreground/40 text-sm"
               >
                 {d.ctaSecondary}
               </a>

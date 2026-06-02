@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { Button } from "@/components/ui/Button"
 import { getDictionary, buildMetadata } from "../../i18n"
 import { BreadcrumbJsonLd } from "@/components/JsonLd"
 import type { Locale } from "../layout"
@@ -23,108 +24,74 @@ export default async function ChiSiamoPage({ params }: { params: Promise<{ lang:
         { name: d.overline, url: `https://www.bernabeiautomobili.com/${lang}/chi-siamo` }
       ]} />
       <Header lang={lang} dict={dict} />
-      <main className="bg-[#0d0d0d] min-h-screen">
-        <section className="pt-36 pb-24 px-8 lg:px-16">
-          <div className="max-w-[900px] mx-auto">
+      <main className="pt-16 bg-primary">
+        {/* Hero */}
+        <section className="py-16 lg:py-24 bg-primary text-primary-foreground">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="max-w-3xl">
+              <span className="text-sm font-medium tracking-widest uppercase text-accent">
+                {d.overline}
+              </span>
+              <h1 className="mt-4 font-serif text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight">
+                {d.title1}
+                <br />
+                <em className="text-accent">{d.title2}</em>
+                <br />
+                {d.title3}
+              </h1>
+            </div>
+          </div>
+        </section>
 
-            <span
-              className="font-sans font-light uppercase"
-              style={{ fontSize: '10px', letterSpacing: '0.2em', color: '#C9A96E' }}
-            >
-              {d.overline}
-            </span>
+        {/* Content */}
+        <section className="pb-24 bg-primary text-primary-foreground">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
-            <h1
-              className="font-serif font-normal text-white mt-6 leading-[1.2]"
-              style={{ fontSize: '42px' }}
-            >
-              {d.title1}
-              <br />
-              <em style={{ color: '#C9A96E' }}>{d.title2}</em>
-              <br />
-              {d.title3}
-            </h1>
-
-            <div className="mt-10 space-y-6">
-              <p
-                className="font-sans font-light text-base leading-[1.9]"
-                style={{ color: 'rgba(255,255,255,0.65)' }}
-              >
+            <div className="max-w-3xl space-y-6">
+              <p className="font-light text-base leading-[1.9] text-primary-foreground/65">
                 {d.p1pre}{' '}
-                <span className="font-normal" style={{ color: 'rgba(255,255,255,0.9)' }}>{d.p1year}</span>
+                <span className="font-normal text-primary-foreground/90">{d.p1year}</span>
                 , quando il nonno di Brando diventa il{' '}
-                <span className="font-normal" style={{ color: 'rgba(255,255,255,0.9)' }}>
-                  {d.p1strong}
-                </span>
+                <span className="font-normal text-primary-foreground/90">{d.p1strong}</span>
                 {d.p1post}
               </p>
-
-              <p
-                className="font-sans font-light text-base leading-[1.9]"
-                style={{ color: 'rgba(255,255,255,0.65)' }}
-              >
+              <p className="font-light text-base leading-[1.9] text-primary-foreground/65">
                 {d.p2pre}{' '}
-                <span className="font-normal" style={{ color: 'rgba(255,255,255,0.9)' }}>
-                  {d.p2strong}
-                </span>
+                <span className="font-normal text-primary-foreground/90">{d.p2strong}</span>
                 {d.p2post}
               </p>
-
-              <p
-                className="font-sans font-light text-base leading-[1.9]"
-                style={{ color: 'rgba(255,255,255,0.65)' }}
-              >
+              <p className="font-light text-base leading-[1.9] text-primary-foreground/65">
                 {d.p3pre}{' '}
-                <span className="font-normal" style={{ color: 'rgba(255,255,255,0.9)' }}>
-                  {d.p3strong}
-                </span>{' '}
+                <span className="font-normal text-primary-foreground/90">{d.p3strong}</span>{' '}
                 {d.p3post}
               </p>
             </div>
 
-            <div
-              className="mt-16 pt-0 border-t"
-              style={{ borderColor: 'rgba(255,255,255,0.1)' }}
-            >
-              <div
-                className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/10"
-              >
-                {d.timeline.map((item: { anno: string; nome: string; desc: string }) => (
-                  <div
-                    key={item.anno}
-                    className="pt-8 first:pl-0 last:pr-0 sm:px-8 first:sm:pl-0 last:sm:pr-0"
-                  >
-                    <div
-                      className="font-serif font-normal"
-                      style={{ fontSize: '28px', color: '#C9A96E' }}
-                    >
-                      {item.anno}
-                    </div>
-                    <div
-                      className="font-sans font-normal uppercase mt-2 mb-3"
-                      style={{ fontSize: '12px', letterSpacing: '0.1em', color: '#ffffff' }}
-                    >
-                      {item.nome}
-                    </div>
-                    <p
-                      className="font-sans font-light leading-relaxed"
-                      style={{ fontSize: '12px', color: 'rgba(255,255,255,0.4)' }}
-                    >
-                      {item.desc}
-                    </p>
+            {/* Timeline */}
+            <div className="mt-16 pt-10 border-t border-white/10 grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
+              {d.timeline.map((item: { anno: string; nome: string; desc: string }) => (
+                <div key={item.anno} className="pt-8 sm:first:pl-0 sm:last:pr-0 sm:px-8">
+                  <div className="font-serif text-[28px] leading-none text-accent">{item.anno}</div>
+                  <div className="font-sans font-normal uppercase mt-2 mb-3 text-xs tracking-[0.1em] text-white">
+                    {item.nome}
                   </div>
-                ))}
-              </div>
+                  <p className="font-light text-xs leading-relaxed text-white/40">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
             </div>
 
+            {/* CTA */}
             <div className="mt-16">
-              <Link
-                href={`/${lang}/contatti`}
-                className="inline-block rounded-sm text-[#0d0d0d] font-sans font-medium text-[11px] uppercase tracking-[.15em] px-7 py-3 hover:opacity-85 transition-opacity"
-                style={{ background: 'linear-gradient(135deg, #E8C97A 0%, #C9A96E 45%, #A07840 100%)' }}
+              <Button
+                asChild
+                size="lg"
+                className="border-0 text-[#0A0A0A] font-medium"
+                style={{ background: "linear-gradient(135deg, #E8C97A 0%, #C9A96E 45%, #A07840 100%)" }}
               >
-                {d.cta}
-              </Link>
+                <Link href={`/${lang}/contatti`}>{d.cta}</Link>
+              </Button>
             </div>
 
           </div>

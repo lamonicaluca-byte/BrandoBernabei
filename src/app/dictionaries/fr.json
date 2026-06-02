@@ -184,6 +184,8 @@
   },
   "recensioni": {
     "overline": "Avis",
+    "title": "La voix de nos clients",
+    "subtitle": "94 avis vérifiés sur AutoScout24. La confiance se construit un témoignage à la fois.",
     "stat1Label": "Sur AutoScout24",
     "stat2Label": "Avis vérifiés",
     "stat3Label": "Avis positifs",
