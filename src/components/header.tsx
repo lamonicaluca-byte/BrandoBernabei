@@ -82,7 +82,7 @@ export function Header({ lang, dict }: HeaderProps) {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm font-medium text-white/65 hover:text-white transition-colors tracking-wide"
+                className="text-sm font-medium text-white/90 hover:text-white transition-colors tracking-wide"
               >
                 {item.name}
               </Link>
@@ -138,7 +138,7 @@ export function Header({ lang, dict }: HeaderProps) {
             <Link
               key={item.name}
               href={item.href}
-              className="block px-4 py-2.5 text-sm font-medium text-white/70 hover:text-white hover:bg-white/8 rounded-md transition-colors"
+              className="block px-4 py-2.5 text-sm font-medium text-white/90 hover:text-white hover:bg-white/8 rounded-md transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               {item.name}
