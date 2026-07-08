@@ -70,7 +70,7 @@ export function HeroSection({ dict, lang }: HeroSectionProps) {
             />
           </div>
         ))}
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/85 via-primary/65 to-primary/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/40 to-primary/55" />
       </div>
 
       {/* Content */}
