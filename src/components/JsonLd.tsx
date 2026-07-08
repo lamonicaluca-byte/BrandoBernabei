@@ -221,6 +221,42 @@ export function RecensioniJsonLd() {
   return <JsonLd schema={schema} />
 }
 
+// ─── ItemList (catalogo vetture) ─────────────────────────────────────────────
+interface ItemListVehicle {
+  make: string
+  model: string
+  year: number
+  prezzo: number
+  slug: string
+}
+
+export function VetturesItemListJsonLd({ vetture, lang }: { vetture: ItemListVehicle[]; lang: string }) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Catalogo Bernabei Automobili",
+    "numberOfItems": vetture.length,
+    "itemListElement": vetture.map((v, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "url": `https://www.bernabeiautomobili.com/${lang}/vetture/${v.slug}`,
+      "item": {
+        "@type": "Car",
+        "name": `${v.make} ${v.model} ${v.year}`,
+        "brand": { "@type": "Brand", "name": v.make },
+        "model": v.model,
+        "offers": {
+          "@type": "Offer",
+          "price": v.prezzo,
+          "priceCurrency": "EUR",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    }))
+  }
+  return <JsonLd schema={schema} />
+}
+
 // ─── FAQPage ─────────────────────────────────────────────────────────────────
 interface FAQItem {
   question: string

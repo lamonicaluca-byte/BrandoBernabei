@@ -8,6 +8,7 @@ import { vetture } from "@/data/vetture"
 import { Gauge, Settings, Zap, ExternalLink } from "lucide-react"
 import { getDictionary, buildMetadata } from "../../i18n"
 import type { Locale } from "../layout"
+import { VetturesItemListJsonLd } from "@/components/JsonLd"
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: Locale }> }): Promise<Metadata> {
   const { lang } = await params
@@ -22,6 +23,7 @@ export default async function VetturePage({ params }: { params: Promise<{ lang: 
 
   return (
     <>
+      <VetturesItemListJsonLd vetture={vetture} lang={lang} />
       <Header lang={lang} dict={dict} />
       <main className="pt-16 bg-primary">
         {/* Hero */}

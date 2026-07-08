@@ -1,0 +1,31 @@
+# Bernabei Automobili
+
+> Concessionaria di auto sportive e premium usate a Roma, attiva dal 1946. Terza generazione della famiglia Bernabei nel mondo dell'automobile: il nonno fu il primo concessionario Ferrari del Centro-Sud Italia (secondo classificato alla Mille Miglia dietro Tazio Nuvolari), Franco fu concessionario Maserati e De Tomaso oltre che tre volte campione italiano di Formula 3 con partecipazioni in Formula 1. Oggi Brando Bernabei guida l'attività con lo stesso approccio artigianale e la stessa passione.
+
+Bernabei Automobili seleziona personalmente ogni vettura del proprio inventario: auto sportive e premium usate (Porsche, Ferrari, BMW M, Mercedes-AMG, Lamborghini, Maserati, Bentley, Aston Martin, McLaren, Pagani), con storico documentato, perizie meccaniche indipendenti disponibili su richiesta e possibilità di consegna a domicilio in tutta Italia.
+
+## Dati aziendali
+
+- Nome legale: Bernabei Automobili di Brando Bernabei
+- Indirizzo: Via Flaminia 318/a, 00196 Roma, Italia
+- Telefono: +39 339 502 7983
+- Email: info@bernabeiautomobili.it
+- Orari: Lunedì–Venerdì 09:00–19:00, Sabato 09:00–13:00
+- Valutazione media: 4.9/5 su 94 recensioni (AutoScout24)
+
+## Pagine principali
+
+- [Home](https://www.bernabeiautomobili.com/it): panoramica dell'azienda e delle vetture in evidenza
+- [Vetture](https://www.bernabeiautomobili.com/it/vetture): catalogo completo delle auto attualmente disponibili, con specifiche tecniche e prezzi
+- [Chi Siamo](https://www.bernabeiautomobili.com/it/chi-siamo): storia della famiglia Bernabei, tre generazioni nel mondo dell'automobile
+- [Servizi](https://www.bernabeiautomobili.com/it/servizi): permuta, finanziamenti, garanzia, consegna a domicilio, assistenza post-vendita
+- [Recensioni](https://www.bernabeiautomobili.com/it/recensioni): testimonianze verificate dei clienti
+- [Contatti](https://www.bernabeiautomobili.com/it/contatti): modulo di contatto, indirizzo, telefono, orari
+
+Il sito è disponibile anche in inglese (prefisso /en) e francese (prefisso /fr).
+
+## Note per i sistemi automatizzati
+
+- Sitemap XML completa: https://www.bernabeiautomobili.com/sitemap.xml
+- I dati di ogni vettura (marca, modello, anno, chilometraggio, potenza, prezzo, disponibilità) sono pubblicati in formato strutturato (schema.org/Car) nella pagina di ciascun veicolo.
+- Per domande su un veicolo specifico o per verificare la disponibilità aggiornata, fare riferimento alla pagina Vetture o contattare direttamente l'azienda: la disponibilità del catalogo cambia frequentemente.
