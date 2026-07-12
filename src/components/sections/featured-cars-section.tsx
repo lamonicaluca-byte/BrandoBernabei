@@ -12,12 +12,19 @@ interface FeaturedCarsDict {
   autoscoutCta: string
 }
 
+interface CarDataDict {
+  badges: Record<string, string>
+  fuels: Record<string, string>
+  gearboxes: Record<string, string>
+}
+
 interface FeaturedCarsSectionProps {
   dict: FeaturedCarsDict
+  carData: CarDataDict
   lang: string
 }
 
-export function FeaturedCarsSection({ dict, lang }: FeaturedCarsSectionProps) {
+export function FeaturedCarsSection({ dict, carData, lang }: FeaturedCarsSectionProps) {
   const cars = getEvidenzaVetture()
 
   return (
@@ -26,7 +33,7 @@ export function FeaturedCarsSection({ dict, lang }: FeaturedCarsSectionProps) {
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-16">
           <div>
-            <span className="text-xs tracking-[0.25em] uppercase text-accent/80">
+            <span className="text-xs tracking-[0.25em] uppercase text-gold-brand">
               {dict.overline}
             </span>
             <h2 className="mt-3 font-serif text-4xl sm:text-5xl lg:text-6xl font-light text-foreground tracking-tight">
@@ -64,7 +71,7 @@ export function FeaturedCarsSection({ dict, lang }: FeaturedCarsSectionProps) {
                 )}
                 {car.badge && (
                   <div className="absolute top-4 left-4 px-3 py-1 bg-accent text-accent-foreground text-xs font-medium tracking-wide">
-                    {car.badge}
+                    {carData.badges[car.badge]}
                   </div>
                 )}
               </div>
@@ -75,7 +82,7 @@ export function FeaturedCarsSection({ dict, lang }: FeaturedCarsSectionProps) {
                     <h3 className="font-serif text-xl font-medium text-foreground group-hover:text-accent transition-colors duration-300">
                       {car.make} {car.model}
                     </h3>
-                    <p className="mt-0.5 text-sm text-muted-foreground">{car.year} · {car.carburante}</p>
+                    <p className="mt-0.5 text-sm text-muted-foreground">{car.year} · {carData.fuels[car.carburante]}</p>
                   </div>
                   <p className="font-serif text-xl font-light text-foreground whitespace-nowrap">
                     € {car.prezzo.toLocaleString("it-IT")}
@@ -85,7 +92,7 @@ export function FeaturedCarsSection({ dict, lang }: FeaturedCarsSectionProps) {
                 <div className="mt-5 pt-5 border-t border-border flex items-center gap-5 text-xs text-muted-foreground">
                   <div className="flex items-center gap-1.5">
                     <Settings className="h-3.5 w-3.5" />
-                    <span>{car.cambio}</span>
+                    <span>{carData.gearboxes[car.cambio]}</span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <Gauge className="h-3.5 w-3.5" />

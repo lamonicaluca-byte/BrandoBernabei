@@ -20,31 +20,31 @@ export default async function ContattiPage({ params }: { params: Promise<{ lang:
   const contactInfo = [
     {
       icon: Phone,
-      title: "Telefono",
+      title: d.contactPhoneTitle,
       value: "+39 339 502 7983",
       href: "tel:+393395027983",
-      description: "Lun–Sab: 9:00–19:00",
+      description: d.contactPhoneDesc,
     },
     {
       icon: MessageCircle,
-      title: "WhatsApp",
+      title: d.contactWhatsappTitle,
       value: "+39 339 502 7983",
       href: "https://wa.me/393395027983",
-      description: "Risposta rapida",
+      description: d.contactWhatsappDesc,
     },
     {
       icon: Mail,
-      title: "Email",
+      title: d.contactEmailTitle,
       value: "info@bernabeiautomobili.it",
       href: "mailto:info@bernabeiautomobili.it",
-      description: "Risposta entro 24h",
+      description: d.contactEmailDesc,
     },
     {
       icon: MapPin,
-      title: "Indirizzo",
+      title: d.contactAddressTitle,
       value: "Via Flaminia, 318/a, Roma",
       href: "https://maps.app.goo.gl/EhJjdfo2syPRQTgKA",
-      description: "Visite su appuntamento",
+      description: d.contactAddressDesc,
     },
   ]
 
@@ -56,7 +56,7 @@ export default async function ContattiPage({ params }: { params: Promise<{ lang:
         <section className="py-16 lg:py-24 bg-primary text-primary-foreground">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="max-w-3xl">
-              <span className="text-sm font-medium tracking-widest uppercase text-accent">
+              <span className="text-sm font-medium tracking-widest uppercase text-gold-highlight">
                 {d.overline}
               </span>
               <h1 className="mt-4 font-serif text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight">
@@ -139,7 +139,7 @@ export default async function ContattiPage({ params }: { params: Promise<{ lang:
         {/* Map */}
         <section className="h-96">
           <iframe
-            src="https://maps.google.com/maps?q=Bernabei+Automobili+di+Brando+Bernabei+Via+Flaminia+318a+Roma&output=embed&hl=it&z=17"
+            src={`https://maps.google.com/maps?q=Bernabei+Automobili+di+Brando+Bernabei+Via+Flaminia+318a+Roma&output=embed&hl=${lang}&z=17`}
             width="100%"
             height="100%"
             style={{ border: 0 }}

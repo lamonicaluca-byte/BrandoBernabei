@@ -37,7 +37,7 @@ export default async function ServiziPage({ params }: { params: Promise<{ lang: 
         <section className="py-16 lg:py-24 bg-primary text-primary-foreground">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="max-w-3xl">
-              <span className="text-sm font-medium tracking-widest uppercase text-accent">
+              <span className="text-sm font-medium tracking-widest uppercase text-gold-highlight">
                 {d.overline}
               </span>
               <h1 className="mt-4 font-serif text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight">

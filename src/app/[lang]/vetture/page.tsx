@@ -30,7 +30,7 @@ export default async function VetturePage({ params }: { params: Promise<{ lang: 
         <section className="py-16 lg:py-24 bg-primary text-primary-foreground">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="max-w-3xl">
-              <span className="text-xs tracking-[0.25em] uppercase text-accent/80">
+              <span className="text-xs tracking-[0.25em] uppercase text-gold-highlight/80">
                 {d.overline}
               </span>
               <h1 className="mt-4 font-serif text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight">
@@ -84,7 +84,7 @@ export default async function VetturePage({ params }: { params: Promise<{ lang: 
                     )}
                     {car.badge && (
                       <div className="absolute top-4 left-4 px-3 py-1 bg-accent text-accent-foreground text-xs font-medium tracking-wide">
-                        {car.badge}
+                        {dict.carData.badges[car.badge]}
                       </div>
                     )}
                   </div>
@@ -95,7 +95,7 @@ export default async function VetturePage({ params }: { params: Promise<{ lang: 
                         <h2 className="font-serif text-xl font-medium text-foreground group-hover:text-accent transition-colors duration-300">
                           {car.make} {car.model}
                         </h2>
-                        <p className="mt-0.5 text-sm text-muted-foreground">{car.year} · {car.carburante}</p>
+                        <p className="mt-0.5 text-sm text-muted-foreground">{car.year} · {dict.carData.fuels[car.carburante]}</p>
                       </div>
                       <p className="font-serif text-xl font-light text-foreground whitespace-nowrap">
                         € {car.prezzo.toLocaleString("it-IT")}
@@ -105,7 +105,7 @@ export default async function VetturePage({ params }: { params: Promise<{ lang: 
                     <div className="grid grid-cols-3 gap-3 mb-6 py-4 border-t border-border">
                       <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
                         <Settings className="h-3.5 w-3.5 shrink-0" />
-                        <span>{car.cambio}</span>
+                        <span>{dict.carData.gearboxes[car.cambio]}</span>
                       </div>
                       <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
                         <Gauge className="h-3.5 w-3.5 shrink-0" />

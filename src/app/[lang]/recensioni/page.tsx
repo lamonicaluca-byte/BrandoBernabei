@@ -61,7 +61,7 @@ export default async function RecensioniPage({ params }: { params: Promise<{ lan
         <section className="py-16 lg:py-24 bg-primary text-primary-foreground">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="max-w-3xl">
-              <span className="text-sm font-medium tracking-widest uppercase text-accent">
+              <span className="text-sm font-medium tracking-widest uppercase text-gold-highlight">
                 {d.overline}
               </span>
               <h1 className="mt-4 font-serif text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight">
@@ -86,11 +86,11 @@ export default async function RecensioniPage({ params }: { params: Promise<{ lan
                     {s.value}
                   </div>
                   {s.stars && (
-                    <div className="mt-2 text-accent" style={{ fontSize: '14px', letterSpacing: '2px' }}>
+                    <div className="mt-2 text-gold-highlight" style={{ fontSize: '14px', letterSpacing: '2px' }}>
                       ★★★★★
                     </div>
                   )}
-                  <div className="font-light mt-2 text-primary-foreground/40 text-xs tracking-[0.12em]">
+                  <div className="font-light mt-2 text-primary-foreground/60 text-xs tracking-[0.12em]">
                     {d[s.key]}
                   </div>
                 </div>
@@ -102,17 +102,13 @@ export default async function RecensioniPage({ params }: { params: Promise<{ lan
 
               {/* Featured review — full width */}
               <div
-                className="col-span-full rounded-[4px] p-6"
-                style={{
-                  background: 'rgba(192,160,96,0.04)',
-                  border: '0.5px solid rgba(192,160,96,0.3)',
-                }}
+                className="col-span-full rounded-[4px] p-6 bg-gold-highlight/[0.04] border-[0.5px] border-gold-highlight/30"
               >
-                <div className="text-accent" style={{ fontSize: '36px', lineHeight: 1 }}>&ldquo;</div>
+                <div className="text-gold-highlight" style={{ fontSize: '36px', lineHeight: 1 }}>&ldquo;</div>
                 <p className="font-light italic leading-[1.75] mt-1 text-primary-foreground/70 text-base">
                   {featuredReview.text}
                 </p>
-                <div className="font-light mt-4 uppercase text-primary-foreground/40 text-xs tracking-[0.1em]">
+                <div className="font-light mt-4 uppercase text-primary-foreground/60 text-xs tracking-[0.1em]">
                   {featuredReview.author}
                 </div>
               </div>
@@ -127,11 +123,11 @@ export default async function RecensioniPage({ params }: { params: Promise<{ lan
                     border: '0.5px solid rgba(255,255,255,0.08)',
                   }}
                 >
-                  <div className="text-accent" style={{ fontSize: '36px', lineHeight: 1 }}>&ldquo;</div>
+                  <div className="text-gold-highlight" style={{ fontSize: '36px', lineHeight: 1 }}>&ldquo;</div>
                   <p className="font-light italic leading-[1.75] mt-1 text-primary-foreground/70 text-sm">
                     {r.text}
                   </p>
-                  <div className="font-light mt-4 uppercase text-primary-foreground/40 text-xs tracking-[0.1em]">
+                  <div className="font-light mt-4 uppercase text-primary-foreground/60 text-xs tracking-[0.1em]">
                     {r.author}
                   </div>
                 </div>
@@ -156,7 +152,7 @@ export default async function RecensioniPage({ params }: { params: Promise<{ lan
                 href={AUTOSCOUT_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-light hover:opacity-80 transition-opacity text-primary-foreground/40 text-sm"
+                className="font-light hover:opacity-80 transition-opacity text-primary-foreground/60 text-sm"
               >
                 {d.ctaSecondary}
               </a>

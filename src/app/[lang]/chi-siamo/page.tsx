@@ -29,13 +29,13 @@ export default async function ChiSiamoPage({ params }: { params: Promise<{ lang:
         <section className="py-16 lg:py-24 bg-primary text-primary-foreground">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="max-w-3xl">
-              <span className="text-sm font-medium tracking-widest uppercase text-accent">
+              <span className="text-sm font-medium tracking-widest uppercase text-gold-highlight">
                 {d.overline}
               </span>
               <h1 className="mt-4 font-serif text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight">
                 {d.title1}
                 <br />
-                <em className="text-accent">{d.title2}</em>
+                <em className="text-gold-highlight">{d.title2}</em>
                 <br />
                 {d.title3}
               </h1>
@@ -51,7 +51,7 @@ export default async function ChiSiamoPage({ params }: { params: Promise<{ lang:
               <p className="font-light text-base leading-[1.9] text-primary-foreground/65">
                 {d.p1pre}{' '}
                 <span className="font-normal text-primary-foreground/90">{d.p1year}</span>
-                , quando il nonno di Brando diventa il{' '}
+                {d.p1mid}{' '}
                 <span className="font-normal text-primary-foreground/90">{d.p1strong}</span>
                 {d.p1post}
               </p>
@@ -71,11 +71,11 @@ export default async function ChiSiamoPage({ params }: { params: Promise<{ lang:
             <div className="mt-16 pt-10 border-t border-white/10 grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
               {d.timeline.map((item: { anno: string; nome: string; desc: string }) => (
                 <div key={item.anno} className="pt-8 sm:first:pl-0 sm:last:pr-0 sm:px-8">
-                  <div className="font-serif text-[28px] leading-none text-accent">{item.anno}</div>
+                  <div className="font-serif text-[28px] leading-none text-gold-highlight">{item.anno}</div>
                   <div className="font-sans font-normal uppercase mt-2 mb-3 text-xs tracking-[0.1em] text-white">
                     {item.nome}
                   </div>
-                  <p className="font-light text-xs leading-relaxed text-white/40">
+                  <p className="font-light text-xs leading-relaxed text-white/60">
                     {item.desc}
                   </p>
                 </div>

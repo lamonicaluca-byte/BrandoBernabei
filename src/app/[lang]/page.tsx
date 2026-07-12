@@ -27,7 +27,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: Loc
       <main>
         <HeroSection dict={dict.hero} lang={lang} />
         <BrandStripSection dict={dict.brandStrip} />
-        <FeaturedCarsSection dict={dict.featuredCars} lang={lang} />
+        <FeaturedCarsSection dict={dict.featuredCars} carData={dict.carData} lang={lang} />
         <WhyChooseUsSection dict={dict.whyChooseUs} />
         <TestimonialsSection dict={dict.testimonials} />
         <MethodSection dict={dict.method} />

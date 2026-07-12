@@ -13,6 +13,7 @@ interface HeaderDict {
     servizi: string
     recensioni: string
     contattaci: string
+    openMenu: string
   }
 }
 
@@ -125,7 +126,7 @@ export function Header({ lang, dict }: HeaderProps) {
             className="lg:hidden p-1 text-white/75 hover:text-white transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            <span className="sr-only">Apri menu</span>
+            <span className="sr-only">{dict.nav.openMenu}</span>
             {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>

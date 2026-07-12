@@ -50,6 +50,7 @@ interface TestimonialsDict {
   autoscoutPositive: string
   prevLabel: string
   nextLabel: string
+  goToReview: string
 }
 
 export function TestimonialsSection({ dict }: { dict: TestimonialsDict }) {
@@ -65,7 +66,7 @@ export function TestimonialsSection({ dict }: { dict: TestimonialsDict }) {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-sm font-medium tracking-widest uppercase text-accent">
+          <span className="text-sm font-medium tracking-widest uppercase text-gold-brand">
             {dict.overline}
           </span>
           <h2 className="mt-3 font-serif text-4xl sm:text-5xl lg:text-6xl font-light text-foreground tracking-tight">
@@ -81,7 +82,7 @@ export function TestimonialsSection({ dict }: { dict: TestimonialsDict }) {
             <div className="relative z-10">
               <div className="flex items-center gap-1 mb-6">
                 {[...Array(current.rating)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 fill-accent text-accent" />
+                  <Star key={i} className="h-5 w-5 fill-gold-brand text-gold-brand" />
                 ))}
               </div>
 
@@ -121,7 +122,7 @@ export function TestimonialsSection({ dict }: { dict: TestimonialsDict }) {
                     index === currentIndex ? "w-8 bg-accent" : "w-2 bg-border hover:bg-muted-foreground"
                   }`}
                 >
-                  <span className="sr-only">Vai alla recensione {index + 1}</span>
+                  <span className="sr-only">{dict.goToReview} {index + 1}</span>
                 </button>
               ))}
             </div>

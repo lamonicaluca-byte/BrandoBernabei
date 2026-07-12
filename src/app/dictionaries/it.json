@@ -12,7 +12,8 @@
     "vetture": "Vetture",
     "servizi": "Servizi",
     "recensioni": "Recensioni",
-    "contattaci": "Contattaci"
+    "contattaci": "Contattaci",
+    "openMenu": "Apri menu"
   },
   "hero": {
     "headline1": "Dal 1946, scegliamo",
@@ -31,6 +32,23 @@
   },
   "brandStrip": {
     "label": "I marchi"
+  },
+  "carData": {
+    "badges": {
+      "featured": "In evidenza",
+      "warranty": "Garanzia inclusa",
+      "tradeIn": "Permuta accettata",
+      "available": "Disponibile",
+      "certified": "Certificata"
+    },
+    "fuels": {
+      "petrol": "Benzina"
+    },
+    "gearboxes": {
+      "pdk": "PDK",
+      "automatic": "Automatico",
+      "f1DualClutch": "Doppia frizione F1"
+    }
   },
   "featuredCars": {
     "overline": "Selezione esclusiva",
@@ -63,7 +81,8 @@
     "autoscoutLink": "Leggi tutte le recensioni su",
     "autoscoutPositive": "97% positive",
     "prevLabel": "Precedente",
-    "nextLabel": "Successivo"
+    "nextLabel": "Successivo",
+    "goToReview": "Vai alla recensione"
   },
   "method": {
     "overline": "Il nostro processo",
@@ -122,6 +141,7 @@
     "title3": "da tre generazioni.",
     "p1pre": "La storia di Bernabei Automobili inizia nel",
     "p1year": "1946",
+    "p1mid": ", quando il nonno di Brando diventa il",
     "p1strong": "primo concessionario Ferrari del Centro-Sud Italia",
     "p1post": ", e arriva secondo alla Mille Miglia, dietro al solo Nuvolari di cui era grande amico.",
     "p2pre": "Suo figlio Franco prende le redini con la stessa passione: concessionario Maserati e De Tomaso,",
@@ -199,6 +219,14 @@
     "title": "Parliamo della tua prossima auto",
     "subtitle": "Sono a tua disposizione per qualsiasi domanda. Contattami senza impegno, sarò felice di aiutarti.",
     "howTitle": "Come contattarmi",
+    "contactPhoneTitle": "Telefono",
+    "contactPhoneDesc": "Lun–Sab: 9:00–19:00",
+    "contactWhatsappTitle": "WhatsApp",
+    "contactWhatsappDesc": "Risposta rapida",
+    "contactEmailTitle": "Email",
+    "contactEmailDesc": "Risposta entro 24h",
+    "contactAddressTitle": "Indirizzo",
+    "contactAddressDesc": "Visite su appuntamento",
     "formTitle": "Inviami un messaggio",
     "hoursTitle": "Orari di apertura",
     "weekdays": "Lunedì – Venerdì",

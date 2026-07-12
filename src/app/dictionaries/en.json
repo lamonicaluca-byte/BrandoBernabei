@@ -12,7 +12,8 @@
     "vetture": "Cars",
     "servizi": "Services",
     "recensioni": "Reviews",
-    "contattaci": "Contact Us"
+    "contattaci": "Contact Us",
+    "openMenu": "Open menu"
   },
   "hero": {
     "headline1": "Since 1946, we choose",
@@ -30,6 +31,23 @@
     "scrollLabel": "Scroll"
   },
   "brandStrip": { "label": "The brands" },
+  "carData": {
+    "badges": {
+      "featured": "Featured",
+      "warranty": "Warranty included",
+      "tradeIn": "Trade-in accepted",
+      "available": "Available",
+      "certified": "Certified"
+    },
+    "fuels": {
+      "petrol": "Petrol"
+    },
+    "gearboxes": {
+      "pdk": "PDK",
+      "automatic": "Automatic",
+      "f1DualClutch": "F1 dual-clutch"
+    }
+  },
   "featuredCars": {
     "overline": "Exclusive selection",
     "title": "Featured cars",
@@ -61,7 +79,8 @@
     "autoscoutLink": "Read all reviews on",
     "autoscoutPositive": "97% positive",
     "prevLabel": "Previous",
-    "nextLabel": "Next"
+    "nextLabel": "Next",
+    "goToReview": "Go to review"
   },
   "method": {
     "overline": "Our process",
@@ -120,6 +139,7 @@
     "title3": "for three generations.",
     "p1pre": "The story of Bernabei Automobili begins in",
     "p1year": "1946",
+    "p1mid": ", when Brando's grandfather becomes the",
     "p1strong": "first Ferrari dealer in Central-Southern Italy",
     "p1post": ", finishing second at the Mille Miglia, behind only Nuvolari, a lifelong friend of his.",
     "p2pre": "His son Franco carried on with the same passion: Maserati and De Tomaso dealer,",
@@ -197,6 +217,14 @@
     "title": "Let's talk about your next car",
     "subtitle": "I'm available for any questions. Contact me with no obligation, I'll be happy to help.",
     "howTitle": "How to contact me",
+    "contactPhoneTitle": "Phone",
+    "contactPhoneDesc": "Mon–Sat: 9am–7pm",
+    "contactWhatsappTitle": "WhatsApp",
+    "contactWhatsappDesc": "Quick reply",
+    "contactEmailTitle": "Email",
+    "contactEmailDesc": "Reply within 24h",
+    "contactAddressTitle": "Address",
+    "contactAddressDesc": "Visits by appointment",
     "formTitle": "Send me a message",
     "hoursTitle": "Opening hours",
     "weekdays": "Monday – Friday",

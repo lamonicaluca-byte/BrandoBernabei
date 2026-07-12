@@ -12,7 +12,8 @@
     "vetture": "Voitures",
     "servizi": "Services",
     "recensioni": "Avis",
-    "contattaci": "Contactez-nous"
+    "contattaci": "Contactez-nous",
+    "openMenu": "Ouvrir le menu"
   },
   "hero": {
     "headline1": "Depuis 1946, nous choisissons",
@@ -30,6 +31,23 @@
     "scrollLabel": "Défiler"
   },
   "brandStrip": { "label": "Les marques" },
+  "carData": {
+    "badges": {
+      "featured": "En vedette",
+      "warranty": "Garantie incluse",
+      "tradeIn": "Reprise acceptée",
+      "available": "Disponible",
+      "certified": "Certifiée"
+    },
+    "fuels": {
+      "petrol": "Essence"
+    },
+    "gearboxes": {
+      "pdk": "PDK",
+      "automatic": "Automatique",
+      "f1DualClutch": "Double embrayage F1"
+    }
+  },
   "featuredCars": {
     "overline": "Sélection exclusive",
     "title": "Les voitures en vedette",
@@ -61,7 +79,8 @@
     "autoscoutLink": "Lire tous les avis sur",
     "autoscoutPositive": "97% positifs",
     "prevLabel": "Précédent",
-    "nextLabel": "Suivant"
+    "nextLabel": "Suivant",
+    "goToReview": "Aller à l'avis"
   },
   "method": {
     "overline": "Notre processus",
@@ -120,6 +139,7 @@
     "title3": "depuis trois générations.",
     "p1pre": "L'histoire de Bernabei Automobili commence en",
     "p1year": "1946",
+    "p1mid": ", quand le grand-père de Brando devient le",
     "p1strong": "premier concessionnaire Ferrari du Centre-Sud de l'Italie",
     "p1post": ", terminant deuxième aux Mille Miglia, derrière Nuvolari dont il était un grand ami.",
     "p2pre": "Son fils Franco a pris les rênes avec la même passion: concessionnaire Maserati et De Tomaso,",
@@ -197,6 +217,14 @@
     "title": "Parlons de votre prochaine voiture",
     "subtitle": "Je suis disponible pour toute question. Contactez-moi sans engagement, je serai heureux de vous aider.",
     "howTitle": "Comment me contacter",
+    "contactPhoneTitle": "Téléphone",
+    "contactPhoneDesc": "Lun–Sam : 9h–19h",
+    "contactWhatsappTitle": "WhatsApp",
+    "contactWhatsappDesc": "Réponse rapide",
+    "contactEmailTitle": "Email",
+    "contactEmailDesc": "Réponse sous 24h",
+    "contactAddressTitle": "Adresse",
+    "contactAddressDesc": "Visites sur rendez-vous",
     "formTitle": "Envoyez-moi un message",
     "hoursTitle": "Horaires d'ouverture",
     "weekdays": "Lundi – Vendredi",

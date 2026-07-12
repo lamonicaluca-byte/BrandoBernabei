@@ -22,7 +22,7 @@ export function WhyChooseUsSection({ dict }: { dict: WhyChooseUsDict }) {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Header */}
         <div className="max-w-2xl mb-20">
-          <span className="text-xs tracking-[0.25em] uppercase text-accent/80">
+          <span className="text-xs tracking-[0.25em] uppercase text-gold-brand">
             {dict.overline}
           </span>
           <h2 className="mt-3 font-serif text-4xl sm:text-5xl lg:text-6xl font-light text-foreground tracking-tight">
@@ -34,7 +34,7 @@ export function WhyChooseUsSection({ dict }: { dict: WhyChooseUsDict }) {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
           {dict.pillars.map((pillar) => (
             <div key={pillar.number}>
-              <div className="font-serif text-5xl font-light text-accent/60 mb-4">
+              <div className="font-serif text-5xl font-light text-gold-brand mb-4">
                 {pillar.number}
               </div>
               <h3 className="font-serif text-xl font-medium text-foreground mb-3">

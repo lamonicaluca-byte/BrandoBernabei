@@ -46,15 +46,22 @@ export default async function VetturaPage({ params }: Props) {
     { label: d.year, value: vettura.year.toString() },
     { label: d.km, value: `${vettura.km.toLocaleString("it-IT")} km` },
     { label: d.power, value: `${vettura.cv} CV` },
-    { label: d.gearbox, value: vettura.cambio },
-    { label: d.fuel, value: vettura.carburante },
+    { label: d.gearbox, value: dict.carData.gearboxes[vettura.cambio] },
+    { label: d.fuel, value: dict.carData.fuels[vettura.carburante] },
     ...(vettura.colore ? [{ label: d.color, value: vettura.colore }] : []),
     ...(vettura.cilindrata ? [{ label: d.displacement, value: vettura.cilindrata }] : []),
   ]
 
   return (
     <>
-      <VehicleJsonLd vettura={vettura} lang={lang} />
+      <VehicleJsonLd
+        vettura={{
+          ...vettura,
+          carburante: dict.carData.fuels[vettura.carburante],
+          cambio: dict.carData.gearboxes[vettura.cambio],
+        }}
+        lang={lang}
+      />
       <BreadcrumbJsonLd items={[
         { name: "Home", url: `https://www.bernabeiautomobili.com/${lang}` },
         { name: d.title, url: `https://www.bernabeiautomobili.com/${lang}/vetture` },
@@ -73,12 +80,12 @@ export default async function VetturaPage({ params }: Props) {
               {d.backToAll}
             </Link>
             <div className="inline-block px-3 py-1 bg-accent text-accent-foreground text-xs font-medium tracking-wide mb-4">
-              {vettura.badge}
+              {dict.carData.badges[vettura.badge]}
             </div>
             <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-light tracking-tight">
               {vettura.make} {vettura.model}
             </h1>
-            <p className="mt-4 font-serif text-3xl text-accent font-light">
+            <p className="mt-4 font-serif text-3xl text-gold-highlight font-light">
               € {vettura.prezzo.toLocaleString("it-IT")}
             </p>
           </div>
@@ -119,7 +126,7 @@ export default async function VetturaPage({ params }: Props) {
                   </div>
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <Fuel className="h-4 w-4 text-accent" />
-                    <span>{vettura.carburante}</span>
+                    <span>{dict.carData.fuels[vettura.carburante]}</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <Settings className="h-4 w-4 text-accent" />
@@ -185,7 +192,7 @@ export default async function VetturaPage({ params }: Props) {
       {/* Sticky mobile CTA bar */}
       <div className="fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-[#0A0A0A]/95 backdrop-blur-md border-t border-white/10 px-4 py-3 flex items-center justify-between gap-3">
         <div>
-          <div className="text-[10px] uppercase tracking-[0.15em] text-white/40">{d.price}</div>
+          <div className="text-[10px] uppercase tracking-[0.15em] text-white/60">{d.price}</div>
           <div className="font-serif text-white text-lg leading-tight">€ {vettura.prezzo.toLocaleString("it-IT")}</div>
         </div>
         <a

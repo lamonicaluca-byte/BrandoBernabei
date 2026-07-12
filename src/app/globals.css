@@ -12,6 +12,10 @@
   --gold-mid: #C9A96E;
   --gold-dark: #A07840;
   --gold-gradient: linear-gradient(135deg, #E8C97A 0%, #C9A96E 40%, #A07840 100%);
+  /* Due soli token oro: gold-brand (testo/eyebrow/numeri su fondo chiaro, AA su crema/bianco),
+     gold-highlight (oro brillante, riservato a CTA primarie, prezzi e accenti su fondo scuro). */
+  --gold-brand: #7A5C28;
+  --gold-highlight: #C9A96E;
   --warm-white: oklch(0.98 0.005 90);
   --graphite: oklch(0.25 0.005 250);
 
@@ -59,6 +63,8 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --color-gold-brand: var(--gold-brand);
+  --color-gold-highlight: var(--gold-highlight);
   --color-luxury-black: var(--luxury-black);
   --color-anthracite: var(--anthracite);
   --color-champagne: var(--champagne);

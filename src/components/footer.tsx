@@ -152,7 +152,7 @@ export function Footer({ lang, dict }: FooterProps) {
               <p className="text-xs text-primary-foreground/50">
                 © {new Date().getFullYear()} Bernabei Automobili di Brando Bernabei. {d.copyright}
               </p>
-              <p className="text-xs text-primary-foreground/40 mt-1">
+              <p className="text-xs text-primary-foreground/60 mt-1">
                 P.IVA 15074791003
               </p>
             </div>

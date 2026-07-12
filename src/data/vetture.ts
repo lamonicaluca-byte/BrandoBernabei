@@ -1,3 +1,7 @@
+export type BadgeKey = "featured" | "warranty" | "tradeIn" | "available" | "certified";
+export type FuelKey = "petrol";
+export type GearboxKey = "pdk" | "automatic" | "f1DualClutch";
+
 export interface Vettura {
   slug: string;
   make: string;
@@ -5,10 +9,10 @@ export interface Vettura {
   year: number;
   km: number;
   cv: number;
-  cambio: string;
-  carburante: string;
+  cambio: GearboxKey;
+  carburante: FuelKey;
   prezzo: number;
-  badge: string;
+  badge: BadgeKey;
   descrizione?: string;
   featured: boolean;
   image?: string;
@@ -28,10 +32,10 @@ export const vetture: Vettura[] = [
     year: 2021,
     km: 18000,
     cv: 450,
-    cambio: "PDK",
-    carburante: "Benzina",
+    cambio: "pdk",
+    carburante: "petrol",
     prezzo: 139900,
-    badge: "In evidenza",
+    badge: "featured",
     descrizione:
       "Veicolo selezionato personalmente. Certificata Porsche Approved, mantenimento scrupoloso, service documentato dal primo km.",
     featured: true,
@@ -48,10 +52,10 @@ export const vetture: Vettura[] = [
     year: 2020,
     km: 31000,
     cv: 510,
-    cambio: "Automatico",
-    carburante: "Benzina",
+    cambio: "automatic",
+    carburante: "petrol",
     prezzo: 79500,
-    badge: "Garanzia inclusa",
+    badge: "warranty",
     featured: false,
     image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&q=80",
     colore: "Sao Paulo Yellow",
@@ -68,10 +72,10 @@ export const vetture: Vettura[] = [
     year: 2019,
     km: 44000,
     cv: 580,
-    cambio: "Automatico",
-    carburante: "Benzina",
+    cambio: "automatic",
+    carburante: "petrol",
     prezzo: 68900,
-    badge: "Permuta accettata",
+    badge: "tradeIn",
     featured: false,
     disponibile: false,
     image: "https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?w=800&q=80",
@@ -89,10 +93,10 @@ export const vetture: Vettura[] = [
     year: 2022,
     km: 12000,
     cv: 639,
-    cambio: "Automatico",
-    carburante: "Benzina",
+    cambio: "automatic",
+    carburante: "petrol",
     prezzo: 189000,
-    badge: "Disponibile",
+    badge: "available",
     featured: false,
     image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&q=80",
     colore: "Obsidian Black",
@@ -109,10 +113,10 @@ export const vetture: Vettura[] = [
     year: 2021,
     km: 27000,
     cv: 600,
-    cambio: "Automatico",
-    carburante: "Benzina",
+    cambio: "automatic",
+    carburante: "petrol",
     prezzo: 109900,
-    badge: "Disponibile",
+    badge: "available",
     featured: false,
     image: "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=800&q=80",
     colore: "Nardo Grey",
@@ -129,10 +133,10 @@ export const vetture: Vettura[] = [
     year: 2016,
     km: 22000,
     cv: 560,
-    cambio: "Doppia frizione F1",
-    carburante: "Benzina",
+    cambio: "f1DualClutch",
+    carburante: "petrol",
     prezzo: 149900,
-    badge: "Certificata",
+    badge: "certified",
     featured: false,
     image: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=800&q=80",
     colore: "Rosso Corsa",
@@ -149,10 +153,10 @@ export const vetture: Vettura[] = [
     year: 2021,
     km: 19000,
     cv: 650,
-    cambio: "Automatico",
-    carburante: "Benzina",
+    cambio: "automatic",
+    carburante: "petrol",
     prezzo: 239000,
-    badge: "In evidenza",
+    badge: "featured",
     featured: false,
     image: "https://images.unsplash.com/photo-1621135802920-133df287f89c?w=800&q=80",
     colore: "Giallo Auge",
@@ -169,10 +173,10 @@ export const vetture: Vettura[] = [
     year: 2020,
     km: 35000,
     cv: 635,
-    cambio: "Automatico",
-    carburante: "Benzina",
+    cambio: "automatic",
+    carburante: "petrol",
     prezzo: 179000,
-    badge: "Garanzia inclusa",
+    badge: "warranty",
     featured: false,
     image: "https://images.unsplash.com/photo-1580274455191-1c62238fa333?w=800&q=80",
     colore: "Midnight Emerald",

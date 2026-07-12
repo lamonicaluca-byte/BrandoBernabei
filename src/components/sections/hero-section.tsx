@@ -71,6 +71,8 @@ export function HeroSection({ dict, lang }: HeroSectionProps) {
           </div>
         ))}
         <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/40 to-primary/55" />
+        {/* Scrim aggiuntivo dietro al blocco di testo: protegge la leggibilità anche dove la foto è chiara (es. riflessi sul cerchione) */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/55" />
       </div>
 
       {/* Content */}
@@ -82,8 +84,8 @@ export function HeroSection({ dict, lang }: HeroSectionProps) {
           style={{ fontSize: 'clamp(32px, 4vw, 52px)', lineHeight: 1.15 }}
         >
           <span className="block text-white">{dict.headline1}</span>
-          <span className="block italic" style={{ color: '#C9A96E' }}>{dict.headline2}</span>
-          <span className="block italic" style={{ color: '#C9A96E', paddingBottom: '0.1em' }}>{dict.headline3}</span>
+          <span className="block italic" style={{ color: 'var(--gold-highlight)' }}>{dict.headline2}</span>
+          <span className="block italic" style={{ color: 'var(--gold-highlight)', paddingBottom: '0.1em' }}>{dict.headline3}</span>
         </h1>
 
         {/* Sottotitolo */}
@@ -113,15 +115,16 @@ export function HeroSection({ dict, lang }: HeroSectionProps) {
               {dict.cta1}
             </Link>
           </Button>
-          {/* Mobile: testo puro */}
+          {/* Mobile: ghost button (stesso trattamento del desktop) */}
           <Link
             href={`/${lang}/recensioni`}
-            className="sm:hidden font-sans text-center"
+            className="sm:hidden font-sans font-medium uppercase text-center w-full max-w-[280px] hover:bg-white/10 transition-all"
             style={{
-              fontSize: '13px',
-              letterSpacing: '0.08em',
-              color: 'rgba(255,255,255,0.80)',
-              padding: '8px 0',
+              color: 'rgba(255,255,255,0.85)',
+              fontSize: '12px',
+              letterSpacing: '0.1em',
+              border: '0.5px solid rgba(255,255,255,0.35)',
+              padding: '11px 28px',
             }}
           >
             {dict.cta2}

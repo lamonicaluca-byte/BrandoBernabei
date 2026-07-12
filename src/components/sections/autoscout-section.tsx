@@ -24,7 +24,7 @@ export function AutoScoutSection({ dict }: { dict: AutoScoutDict }) {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
           <div>
-            <span className="text-xs tracking-[0.25em] uppercase text-accent/80">
+            <span className="text-xs tracking-[0.25em] uppercase text-gold-brand">
               {dict.overline}
             </span>
             <h2 className="mt-3 font-serif text-4xl sm:text-5xl lg:text-6xl font-light text-foreground tracking-tight">
@@ -37,7 +37,7 @@ export function AutoScoutSection({ dict }: { dict: AutoScoutDict }) {
             <div className="mt-8 flex items-center gap-3">
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 fill-accent text-accent" />
+                  <Star key={i} className="h-5 w-5 fill-gold-brand text-gold-brand" />
                 ))}
               </div>
               <span className="font-semibold text-foreground">4.9 / 5</span>
@@ -82,7 +82,7 @@ export function AutoScoutSection({ dict }: { dict: AutoScoutDict }) {
           {/* Stats */}
           <div className="space-y-4">
             <div className="bg-card border border-border p-8 lg:p-10">
-              <div className="font-serif text-8xl lg:text-9xl font-light text-accent leading-none">
+              <div className="font-serif text-8xl lg:text-9xl font-light text-gold-brand leading-none">
                 97%
               </div>
               <p className="mt-4 text-muted-foreground">

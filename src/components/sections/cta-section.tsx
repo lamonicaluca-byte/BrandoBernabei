@@ -52,9 +52,9 @@ export function CTASection({ dict, lang }: CTASectionProps) {
               </Button>
               <Button
                 asChild
+                variant="outline"
                 size="lg"
-                className="border-0 text-[#0A0A0A] font-medium justify-start px-6 hover:opacity-90"
-                style={{ background: goldGradient }}
+                className="justify-start px-6 border-border hover:border-accent font-medium"
               >
                 <a
                   href="https://wa.me/393395027983"
@@ -67,9 +67,9 @@ export function CTASection({ dict, lang }: CTASectionProps) {
               </Button>
               <Button
                 asChild
+                variant="outline"
                 size="lg"
-                className="border-0 text-[#0A0A0A] font-medium justify-start px-6 hover:opacity-90"
-                style={{ background: goldGradient }}
+                className="justify-start px-6 border-border hover:border-accent font-medium"
               >
                 <Link href={`/${lang}/contatti`}>
                   {dict.cta3}

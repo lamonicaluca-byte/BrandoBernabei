@@ -17,7 +17,7 @@ export function MethodSection({ dict }: { dict: MethodDict }) {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Header */}
         <div className="max-w-2xl mb-20">
-          <span className="text-xs tracking-[0.25em] uppercase text-accent/80">
+          <span className="text-xs tracking-[0.25em] uppercase text-gold-highlight/80">
             {dict.overline}
           </span>
           <h2 className="mt-3 font-serif text-4xl sm:text-5xl lg:text-6xl font-light text-primary-foreground tracking-tight">
@@ -32,7 +32,7 @@ export function MethodSection({ dict }: { dict: MethodDict }) {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
           {dict.steps.map((step) => (
             <div key={step.number}>
-              <div className="font-serif text-5xl font-light text-accent mb-5">
+              <div className="w-14 h-14 rounded-full border border-gold-highlight/40 flex items-center justify-center font-serif text-xl font-light text-gold-highlight mb-5">
                 {step.number}
               </div>
               <h3 className="font-serif text-xl font-medium text-primary-foreground mb-3">
