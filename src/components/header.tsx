@@ -9,7 +9,6 @@ import { Button } from "@/components/ui/Button"
 interface HeaderDict {
   nav: {
     chiSiamo: string
-    vetture: string
     servizi: string
     recensioni: string
     contattaci: string
@@ -30,7 +29,6 @@ export function Header({ lang, dict }: HeaderProps) {
 
   const navigation = [
     { name: dict.nav.chiSiamo, href: `/${lang}/chi-siamo` },
-    { name: dict.nav.vetture, href: `/${lang}/vetture` },
     { name: dict.nav.servizi, href: `/${lang}/servizi` },
     { name: dict.nav.recensioni, href: `/${lang}/recensioni` },
   ]

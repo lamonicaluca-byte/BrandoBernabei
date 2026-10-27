@@ -2,14 +2,12 @@
   "meta": {
     "home": { "title": "Auto Sportive Usate Roma | Bernabei Automobili", "description": "Concessionaria auto lusso usate a Roma dal 1946. Porsche, Ferrari, BMW M, Mercedes-AMG. 97% recensioni positive. Selezionate da Brando Bernabei." },
     "chiSiamo": { "title": "Dal 1946, Tre Generazioni — Chi Siamo", "description": "Tre generazioni di passione per le automobili. Dal nonno, primo concessionario Ferrari del Centro-Sud Italia, fino a Brando oggi in Via Flaminia 318, Roma." },
-    "vetture": { "title": "Auto Premium e Sportive Usate Roma", "description": "Auto sportive e di lusso usate a Roma: Porsche, Ferrari, BMW M, Mercedes-AMG, Lamborghini. Verificate, garantite, con storico documentato." },
     "servizi": { "title": "Permuta, Garanzia, Consegna — Servizi", "description": "Consulenza personalizzata, permuta, finanziamenti, garanzia e consegna in tutta Italia." },
     "recensioni": { "title": "Recensioni — 4.9★ su AutoScout24", "description": "4.9 su AutoScout24, 94 recensioni verificate, 97% positive." },
     "contatti": { "title": "Contatti — Via Flaminia 318, Roma", "description": "Contatta Bernabei Automobili: telefono, WhatsApp, email o modulo di contatto. Via Flaminia 318/a, Roma." }
   },
   "nav": {
     "chiSiamo": "Chi Siamo",
-    "vetture": "Vetture",
     "servizi": "Servizi",
     "recensioni": "Recensioni",
     "contattaci": "Contattaci",
@@ -20,7 +18,7 @@
     "headline2": "ogni auto come",
     "headline3": "fosse la nostra.",
     "subtitle": "Chi entra da Bernabei non cerca solo un'auto, cerca qualcuno di cui fidarsi.",
-    "cta1": "Scopri le vetture",
+    "cta1": "Contattaci",
     "cta2": "Leggi le recensioni",
     "proof1Value": "4.9 ★",
     "proof1Label": "AutoScout24",
@@ -32,32 +30,6 @@
   },
   "brandStrip": {
     "label": "I marchi"
-  },
-  "carData": {
-    "badges": {
-      "featured": "In evidenza",
-      "warranty": "Garanzia inclusa",
-      "tradeIn": "Permuta accettata",
-      "available": "Disponibile",
-      "certified": "Certificata"
-    },
-    "fuels": {
-      "petrol": "Benzina"
-    },
-    "gearboxes": {
-      "pdk": "PDK",
-      "automatic": "Automatico",
-      "f1DualClutch": "Doppia frizione F1"
-    }
-  },
-  "featuredCars": {
-    "overline": "Selezione esclusiva",
-    "title": "Le vetture in evidenza",
-    "viewAll": "Vedi tutte le vetture",
-    "discover": "Scopri",
-    "autoscoutCta": "Stock completo disponibile su",
-    "available": "Disponibile",
-    "reserved": "Riservata"
   },
   "whyChooseUs": {
     "overline": "La nostra differenza",
@@ -156,35 +128,6 @@
       { "anno": "1970s", "nome": "Franco", "desc": "Concessionario Maserati e De Tomaso. 3× campione italiano Formula 3. Partecipazioni in Formula 1." },
       { "anno": "Oggi", "nome": "Brando", "desc": "Laurea in Economia, MBA, 4 lingue. Via Flaminia 318, Roma. Clienti in tutta Europa." }
     ]
-  },
-  "vetture": {
-    "overline": "La nostra selezione",
-    "title": "Vetture disponibili",
-    "subtitle": "Ogni vettura è selezionata, verificata e preparata personalmente. Qualità senza compromessi.",
-    "availablePre": "",
-    "availablePost": "vetture disponibili",
-    "autoscoutCta": "Stock completo su AutoScout24",
-    "discoverCar": "Scopri questa vettura",
-    "notFound": "Non trovi quello che cerchi?",
-    "notFoundSub": "Consulta il nostro inventario completo su AutoScout24, oppure contattaci per una ricerca personalizzata su tutto il mercato europeo.",
-    "autoscoutFull": "Vedi stock su AutoScout24",
-    "customSearch": "Ricerca personalizzata",
-    "backToAll": "Tutte le vetture",
-    "specs": "Specifiche tecniche",
-    "description": "Descrizione",
-    "contactWhatsapp": "Contatta Brando su WhatsApp",
-    "sendMessage": "Invia un messaggio",
-    "year": "Anno",
-    "km": "Chilometri",
-    "power": "Potenza",
-    "gearbox": "Cambio",
-    "fuel": "Carburante",
-    "color": "Colore",
-    "displacement": "Cilindrata",
-    "whatsappMessage": "Ciao Brando, sono interessato alla {make} {model} {year}. Puoi darmi più informazioni?",
-    "available": "Disponibile",
-    "reserved": "Riservata",
-    "price": "Prezzo"
   },
   "servizi": {
     "overline": "I nostri servizi",

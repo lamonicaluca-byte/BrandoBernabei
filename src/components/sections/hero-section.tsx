@@ -111,7 +111,7 @@ export function HeroSection({ dict, lang }: HeroSectionProps) {
               boxShadow: '0 4px 24px rgba(201,169,110,0.35)',
             }}
           >
-            <Link href={`/${lang}/vetture`}>
+            <Link href={`/${lang}/contatti`}>
               {dict.cta1}
             </Link>
           </Button>

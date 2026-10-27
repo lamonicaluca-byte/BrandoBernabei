@@ -2,14 +2,12 @@
   "meta": {
     "home": { "title": "Bernabei Automobili | Voitures Premium à Rome", "description": "Sélection exclusive de voitures premium et sportives à Rome. Depuis 1946, trois générations de passionnés." },
     "chiSiamo": { "title": "Depuis 1946, Trois Générations — À Propos", "description": "Trois générations de passion pour les automobiles. Du grand-père, premier concessionnaire Ferrari du Centre-Sud de l'Italie, à Brando aujourd'hui à la Via Flaminia 318, Rome." },
-    "vetture": { "title": "Voitures Premium et Sportives à Rome", "description": "Sélection de voitures premium et sportives à Rome. Chaque voiture vérifiée, garantie, avec historique documenté." },
     "servizi": { "title": "Reprise, Garantie, Financement — Services", "description": "Conseil personnalisé, reprise, financement, garantie et livraison dans toute l'Italie." },
     "recensioni": { "title": "Avis — 4.9★ sur AutoScout24", "description": "4.9 sur AutoScout24, 94 avis vérifiés, 97% positifs." },
     "contatti": { "title": "Contact — Via Flaminia 318, Rome", "description": "Contactez Bernabei Automobili: téléphone, WhatsApp, email ou formulaire de contact. Via Flaminia 318/a, Rome." }
   },
   "nav": {
     "chiSiamo": "À Propos",
-    "vetture": "Voitures",
     "servizi": "Services",
     "recensioni": "Avis",
     "contattaci": "Contactez-nous",
@@ -20,7 +18,7 @@
     "headline2": "chaque voiture comme",
     "headline3": "si elle était la nôtre.",
     "subtitle": "Ceux qui entrent chez Bernabei ne cherchent pas seulement une voiture, ils cherchent quelqu'un en qui avoir confiance.",
-    "cta1": "Découvrir nos voitures",
+    "cta1": "Nous contacter",
     "cta2": "Lire les avis",
     "proof1Value": "4.9 ★",
     "proof1Label": "AutoScout24",
@@ -31,32 +29,6 @@
     "scrollLabel": "Défiler"
   },
   "brandStrip": { "label": "Les marques" },
-  "carData": {
-    "badges": {
-      "featured": "En vedette",
-      "warranty": "Garantie incluse",
-      "tradeIn": "Reprise acceptée",
-      "available": "Disponible",
-      "certified": "Certifiée"
-    },
-    "fuels": {
-      "petrol": "Essence"
-    },
-    "gearboxes": {
-      "pdk": "PDK",
-      "automatic": "Automatique",
-      "f1DualClutch": "Double embrayage F1"
-    }
-  },
-  "featuredCars": {
-    "overline": "Sélection exclusive",
-    "title": "Les voitures en vedette",
-    "viewAll": "Voir toutes les voitures",
-    "discover": "Découvrir",
-    "autoscoutCta": "Stock complet disponible sur",
-    "available": "Disponible",
-    "reserved": "Réservée"
-  },
   "whyChooseUs": {
     "overline": "Notre différence",
     "title": "Pourquoi nos clients nous choisissent",
@@ -154,35 +126,6 @@
       { "anno": "1970s", "nome": "Franco", "desc": "Concessionnaire Maserati et De Tomaso. 3× champion d'Italie de Formule 3. Participations en Formule 1." },
       { "anno": "Aujourd'hui", "nome": "Brando", "desc": "Licence en Économie, MBA, 4 langues. Via Flaminia 318, Rome. Clients dans toute l'Europe." }
     ]
-  },
-  "vetture": {
-    "overline": "Notre sélection",
-    "title": "Voitures disponibles",
-    "subtitle": "Chaque voiture est personnellement sélectionnée, vérifiée et préparée. Qualité sans compromis.",
-    "availablePre": "",
-    "availablePost": "voitures disponibles",
-    "autoscoutCta": "Stock complet sur AutoScout24",
-    "discoverCar": "Découvrir cette voiture",
-    "notFound": "Vous ne trouvez pas ce que vous cherchez?",
-    "notFoundSub": "Consultez notre inventaire complet sur AutoScout24, ou contactez-nous pour une recherche personnalisée sur tout le marché européen.",
-    "autoscoutFull": "Voir le stock sur AutoScout24",
-    "customSearch": "Recherche personnalisée",
-    "backToAll": "Toutes les voitures",
-    "specs": "Spécifications techniques",
-    "description": "Description",
-    "contactWhatsapp": "Contactez Brando sur WhatsApp",
-    "sendMessage": "Envoyer un message",
-    "year": "Année",
-    "km": "Kilométrage",
-    "power": "Puissance",
-    "gearbox": "Boîte de vitesses",
-    "fuel": "Carburant",
-    "color": "Couleur",
-    "displacement": "Cylindrée",
-    "whatsappMessage": "Bonjour Brando, je suis intéressé par la {make} {model} {year}. Pouvez-vous me donner plus d'informations ?",
-    "available": "Disponible",
-    "reserved": "Réservée",
-    "price": "Prix"
   },
   "servizi": {
     "overline": "Nos services",

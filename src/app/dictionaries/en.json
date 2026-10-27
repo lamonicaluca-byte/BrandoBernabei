@@ -2,14 +2,12 @@
   "meta": {
     "home": { "title": "Bernabei Automobili | Premium Cars in Rome", "description": "Exclusive selection of premium and sports cars in Rome. Since 1946, three generations of enthusiasts." },
     "chiSiamo": { "title": "Since 1946, Three Generations — About Us", "description": "Three generations of passion for cars. From our grandfather, first Ferrari dealer in Central-Southern Italy, to Brando today at Via Flaminia 318, Rome." },
-    "vetture": { "title": "Premium & Sports Cars Rome — Available Now", "description": "Selection of premium and sports cars in Rome. Every car verified, guaranteed, with documented history." },
     "servizi": { "title": "Trade-in, Warranty, Financing — Services", "description": "Personalised consultation, trade-in, financing, warranty and delivery throughout Italy." },
     "recensioni": { "title": "Reviews — 4.9★ on AutoScout24", "description": "4.9 on AutoScout24, 94 verified reviews, 97% positive." },
     "contatti": { "title": "Contact — Via Flaminia 318, Rome", "description": "Contact Bernabei Automobili: phone, WhatsApp, email or contact form. Via Flaminia 318/a, Rome." }
   },
   "nav": {
     "chiSiamo": "About Us",
-    "vetture": "Cars",
     "servizi": "Services",
     "recensioni": "Reviews",
     "contattaci": "Contact Us",
@@ -20,7 +18,7 @@
     "headline2": "every car as if",
     "headline3": "it were our own.",
     "subtitle": "Those who come to Bernabei aren't just looking for a car, they're looking for someone they can trust.",
-    "cta1": "Discover our cars",
+    "cta1": "Contact us",
     "cta2": "Read reviews",
     "proof1Value": "4.9 ★",
     "proof1Label": "AutoScout24",
@@ -31,32 +29,6 @@
     "scrollLabel": "Scroll"
   },
   "brandStrip": { "label": "The brands" },
-  "carData": {
-    "badges": {
-      "featured": "Featured",
-      "warranty": "Warranty included",
-      "tradeIn": "Trade-in accepted",
-      "available": "Available",
-      "certified": "Certified"
-    },
-    "fuels": {
-      "petrol": "Petrol"
-    },
-    "gearboxes": {
-      "pdk": "PDK",
-      "automatic": "Automatic",
-      "f1DualClutch": "F1 dual-clutch"
-    }
-  },
-  "featuredCars": {
-    "overline": "Exclusive selection",
-    "title": "Featured cars",
-    "viewAll": "View all cars",
-    "discover": "Discover",
-    "autoscoutCta": "Full stock available on",
-    "available": "Available",
-    "reserved": "Reserved"
-  },
   "whyChooseUs": {
     "overline": "Our difference",
     "title": "Why clients choose us",
@@ -154,35 +126,6 @@
       { "anno": "1970s", "nome": "Franco", "desc": "Maserati and De Tomaso dealer. 3× Italian Formula 3 champion. Formula 1 appearances." },
       { "anno": "Today", "nome": "Brando", "desc": "Economics degree, MBA, 4 languages. Via Flaminia 318, Rome. Clients across Europe." }
     ]
-  },
-  "vetture": {
-    "overline": "Our selection",
-    "title": "Available cars",
-    "subtitle": "Every car is personally selected, verified and prepared. Quality without compromise.",
-    "availablePre": "",
-    "availablePost": "cars available",
-    "autoscoutCta": "Full stock on AutoScout24",
-    "discoverCar": "Discover this car",
-    "notFound": "Can't find what you're looking for?",
-    "notFoundSub": "Browse our complete inventory on AutoScout24, or contact us for a personalised search across the European market.",
-    "autoscoutFull": "View stock on AutoScout24",
-    "customSearch": "Custom search",
-    "backToAll": "All cars",
-    "specs": "Technical specifications",
-    "description": "Description",
-    "contactWhatsapp": "Contact Brando on WhatsApp",
-    "sendMessage": "Send a message",
-    "year": "Year",
-    "km": "Mileage",
-    "power": "Power",
-    "gearbox": "Gearbox",
-    "fuel": "Fuel",
-    "color": "Colour",
-    "displacement": "Displacement",
-    "whatsappMessage": "Hi Brando, I am interested in the {make} {model} {year}. Can you give me more information?",
-    "available": "Available",
-    "reserved": "Reserved",
-    "price": "Price"
   },
   "servizi": {
     "overline": "Our services",

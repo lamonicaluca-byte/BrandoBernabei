@@ -115,62 +115,6 @@ export function BreadcrumbJsonLd({ items }: { items: BreadcrumbItem[] }) {
   return <JsonLd schema={schema} />
 }
 
-// ─── Car (Vehicle) ───────────────────────────────────────────────────────────
-interface VehicleData {
-  make: string
-  model: string
-  year: number
-  km: number
-  cv: number
-  carburante: string
-  cambio: string
-  prezzo: number
-  colore?: string
-  cilindrata?: string
-  slug: string
-}
-
-export function VehicleJsonLd({ vettura, lang }: { vettura: VehicleData; lang: string }) {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "Car",
-    "name": `${vettura.make} ${vettura.model} ${vettura.year}`,
-    "brand": { "@type": "Brand", "name": vettura.make },
-    "model": vettura.model,
-    "modelDate": vettura.year.toString(),
-    "vehicleEngine": {
-      "@type": "EngineSpecification",
-      "enginePower": {
-        "@type": "QuantitativeValue",
-        "value": vettura.cv,
-        "unitCode": "BHP"
-      },
-      ...(vettura.cilindrata ? { "engineDisplacement": {
-        "@type": "QuantitativeValue",
-        "value": vettura.cilindrata
-      }} : {})
-    },
-    "mileageFromOdometer": {
-      "@type": "QuantitativeValue",
-      "value": vettura.km,
-      "unitCode": "KMT"
-    },
-    "fuelType": vettura.carburante,
-    "vehicleTransmission": vettura.cambio,
-    ...(vettura.colore ? { "color": vettura.colore } : {}),
-    "offers": {
-      "@type": "Offer",
-      "price": vettura.prezzo,
-      "priceCurrency": "EUR",
-      "itemCondition": "https://schema.org/UsedCondition",
-      "availability": "https://schema.org/InStock",
-      "url": `https://www.bernabeiautomobili.com/${lang}/vetture/${vettura.slug}`,
-      "seller": { "@id": "https://www.bernabeiautomobili.com/#organization" }
-    }
-  }
-  return <JsonLd schema={schema} />
-}
-
 // ─── Reviews + AggregateRating ───────────────────────────────────────────────
 export function RecensioniJsonLd() {
   const schema = {
@@ -217,42 +161,6 @@ export function RecensioniJsonLd() {
         "reviewBody": "Ein besonders vertrauenswürdiger Händler, ein junges Team der alten Schule, das die Leidenschaft spürt."
       }
     ]
-  }
-  return <JsonLd schema={schema} />
-}
-
-// ─── ItemList (catalogo vetture) ─────────────────────────────────────────────
-interface ItemListVehicle {
-  make: string
-  model: string
-  year: number
-  prezzo: number
-  slug: string
-}
-
-export function VetturesItemListJsonLd({ vetture, lang }: { vetture: ItemListVehicle[]; lang: string }) {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": "Catalogo Bernabei Automobili",
-    "numberOfItems": vetture.length,
-    "itemListElement": vetture.map((v, i) => ({
-      "@type": "ListItem",
-      "position": i + 1,
-      "url": `https://www.bernabeiautomobili.com/${lang}/vetture/${v.slug}`,
-      "item": {
-        "@type": "Car",
-        "name": `${v.make} ${v.model} ${v.year}`,
-        "brand": { "@type": "Brand", "name": v.make },
-        "model": v.model,
-        "offers": {
-          "@type": "Offer",
-          "price": v.prezzo,
-          "priceCurrency": "EUR",
-          "availability": "https://schema.org/InStock"
-        }
-      }
-    }))
   }
   return <JsonLd schema={schema} />
 }

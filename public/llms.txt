@@ -15,8 +15,7 @@ Bernabei Automobili seleziona personalmente ogni vettura del proprio inventario:
 
 ## Pagine principali
 
-- [Home](https://www.bernabeiautomobili.com/it): panoramica dell'azienda e delle vetture in evidenza
-- [Vetture](https://www.bernabeiautomobili.com/it/vetture): catalogo completo delle auto attualmente disponibili, con specifiche tecniche e prezzi
+- [Home](https://www.bernabeiautomobili.com/it): panoramica dell'azienda
 - [Chi Siamo](https://www.bernabeiautomobili.com/it/chi-siamo): storia della famiglia Bernabei, tre generazioni nel mondo dell'automobile
 - [Servizi](https://www.bernabeiautomobili.com/it/servizi): permuta, finanziamenti, garanzia, consegna a domicilio, assistenza post-vendita
 - [Recensioni](https://www.bernabeiautomobili.com/it/recensioni): testimonianze verificate dei clienti
@@ -27,5 +26,3 @@ Il sito è disponibile anche in inglese (prefisso /en) e francese (prefisso /fr)
 ## Note per i sistemi automatizzati
 
 - Sitemap XML completa: https://www.bernabeiautomobili.com/sitemap.xml
-- I dati di ogni vettura (marca, modello, anno, chilometraggio, potenza, prezzo, disponibilità) sono pubblicati in formato strutturato (schema.org/Car) nella pagina di ciascun veicolo.
-- Per domande su un veicolo specifico o per verificare la disponibilità aggiornata, fare riferimento alla pagina Vetture o contattare direttamente l'azienda: la disponibilità del catalogo cambia frequentemente.

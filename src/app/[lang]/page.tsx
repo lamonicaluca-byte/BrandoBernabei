@@ -2,7 +2,6 @@ import type { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { HeroSection } from "@/components/sections/hero-section"
-import { FeaturedCarsSection } from "@/components/sections/featured-cars-section"
 import { WhyChooseUsSection } from "@/components/sections/why-choose-us-section"
 import { TestimonialsSection } from "@/components/sections/testimonials-section"
 import { MethodSection } from "@/components/sections/method-section"
@@ -27,7 +26,6 @@ export default async function HomePage({ params }: { params: Promise<{ lang: Loc
       <main>
         <HeroSection dict={dict.hero} lang={lang} />
         <BrandStripSection dict={dict.brandStrip} />
-        <FeaturedCarsSection dict={dict.featuredCars} carData={dict.carData} lang={lang} />
         <WhyChooseUsSection dict={dict.whyChooseUs} />
         <TestimonialsSection dict={dict.testimonials} />
         <MethodSection dict={dict.method} />
