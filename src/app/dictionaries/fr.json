@@ -4,11 +4,13 @@
     "chiSiamo": { "title": "Depuis 1946, Trois Générations - À Propos", "description": "Trois générations de passion pour les automobiles. Du grand-père, premier concessionnaire Ferrari du Centre-Sud de l'Italie, à Brando aujourd'hui à la Via Flaminia 318, Rome." },
     "servizi": { "title": "Reprise, Garantie, Financement - Services", "description": "Conseil personnalisé, reprise, financement, garantie et livraison dans toute l'Italie." },
     "recensioni": { "title": "Avis - 4.9★ sur AutoScout24", "description": "4.9 sur AutoScout24, 94 avis vérifiés, 97% positifs." },
+    "vendute": { "title": "Voitures Vendues - Nos Livraisons", "description": "Les voitures sportives et premium que nous avons traitées et livrées à nos clients en Italie et en Europe." },
     "contatti": { "title": "Contact - Via Flaminia 318, Rome", "description": "Contactez Bernabei Automobili: téléphone, WhatsApp, email ou formulaire de contact. Via Flaminia 318/a, Rome." }
   },
   "nav": {
     "chiSiamo": "À Propos",
     "vetture": "Voitures",
+    "vendute": "Vendues",
     "servizi": "Services",
     "recensioni": "Avis",
     "contattaci": "Contactez-nous",
@@ -36,6 +38,16 @@
     "cta": "Voir le stock sur AutoScout24",
     "contactPrompt": "Vous cherchez une voiture en particulier ?",
     "contactLink": "Contactez-nous"
+  },
+  "vendute": {
+    "overline": "Nos archives",
+    "title": "Les voitures que nous avons livrées",
+    "subtitle": "Chaque voiture de cette page est passée par nous : sélectionnée, vérifiée et livrée à un client satisfait.",
+    "soldBadge": "Vendue",
+    "soldOn": "Vendue en",
+    "ctaTitle": "Une voiture à vendre ?",
+    "ctaText": "Nous évaluons votre voiture et vous proposons une reprise ou un achat direct.",
+    "ctaButton": "Contactez-nous"
   },
   "brandStrip": { "label": "Les marques" },
   "whyChooseUs": {

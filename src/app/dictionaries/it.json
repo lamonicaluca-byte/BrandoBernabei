@@ -4,11 +4,13 @@
     "chiSiamo": { "title": "Dal 1946, Tre Generazioni - Chi Siamo", "description": "Tre generazioni di passione per le automobili. Dal nonno, primo concessionario Ferrari del Centro-Sud Italia, fino a Brando oggi in Via Flaminia 318, Roma." },
     "servizi": { "title": "Permuta, Garanzia, Consegna - Servizi", "description": "Consulenza personalizzata, permuta, finanziamenti, garanzia e consegna in tutta Italia." },
     "recensioni": { "title": "Recensioni - 4.9★ su AutoScout24", "description": "4.9 su AutoScout24, 94 recensioni verificate, 97% positive." },
+    "vendute": { "title": "Auto Vendute - Le Nostre Consegne", "description": "Le auto sportive e premium che abbiamo trattato e consegnato ai nostri clienti in tutta Italia." },
     "contatti": { "title": "Contatti - Via Flaminia 318, Roma", "description": "Contatta Bernabei Automobili: telefono, WhatsApp, email o modulo di contatto. Via Flaminia 318/a, Roma." }
   },
   "nav": {
     "chiSiamo": "Chi Siamo",
     "vetture": "Vetture",
+    "vendute": "Vendute",
     "servizi": "Servizi",
     "recensioni": "Recensioni",
     "contattaci": "Contattaci",
@@ -36,6 +38,16 @@
     "cta": "Vedi lo stock su AutoScout24",
     "contactPrompt": "Cerchi un'auto in particolare?",
     "contactLink": "Contattaci"
+  },
+  "vendute": {
+    "overline": "Il nostro archivio",
+    "title": "Le auto che abbiamo consegnato",
+    "subtitle": "Ogni auto di questa pagina è passata da noi: selezionata, verificata e consegnata a un cliente soddisfatto.",
+    "soldBadge": "Venduta",
+    "soldOn": "Venduta a",
+    "ctaTitle": "Hai un’auto da vendere?",
+    "ctaText": "Valutiamo la tua vettura e ti proponiamo la permuta o l’acquisto diretto.",
+    "ctaButton": "Contattaci"
   },
   "brandStrip": {
     "label": "I marchi"

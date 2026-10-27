@@ -11,6 +11,7 @@ interface HeaderDict {
   nav: {
     chiSiamo: string
     vetture: string
+    vendute: string
     servizi: string
     recensioni: string
     contattaci: string
@@ -32,6 +33,7 @@ export function Header({ lang, dict }: HeaderProps) {
   const navigation = [
     { name: dict.nav.chiSiamo, href: `/${lang}/chi-siamo` },
     { name: dict.nav.vetture, href: AUTOSCOUT_URL, external: true },
+    { name: dict.nav.vendute, href: `/${lang}/vendute` },
     { name: dict.nav.servizi, href: `/${lang}/servizi` },
     { name: dict.nav.recensioni, href: `/${lang}/recensioni` },
   ]

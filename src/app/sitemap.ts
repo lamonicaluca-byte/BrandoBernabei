@@ -7,6 +7,7 @@ const NOW = new Date()
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     { path: '',        priority: 1.0, changeFrequency: 'weekly'  as const },
+    { path: '/vendute', priority: 0.7, changeFrequency: 'monthly' as const },
     { path: '/chi-siamo', priority: 0.7, changeFrequency: 'monthly' as const },
     { path: '/servizi',  priority: 0.7, changeFrequency: 'monthly' as const },
     { path: '/recensioni', priority: 0.6, changeFrequency: 'weekly'  as const },

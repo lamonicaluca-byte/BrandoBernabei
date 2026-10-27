@@ -4,11 +4,13 @@
     "chiSiamo": { "title": "Since 1946, Three Generations - About Us", "description": "Three generations of passion for cars. From our grandfather, first Ferrari dealer in Central-Southern Italy, to Brando today at Via Flaminia 318, Rome." },
     "servizi": { "title": "Trade-in, Warranty, Financing - Services", "description": "Personalised consultation, trade-in, financing, warranty and delivery throughout Italy." },
     "recensioni": { "title": "Reviews - 4.9★ on AutoScout24", "description": "4.9 on AutoScout24, 94 verified reviews, 97% positive." },
+    "vendute": { "title": "Sold Cars - Our Deliveries", "description": "The sports and premium cars we have handled and delivered to our clients across Italy and Europe." },
     "contatti": { "title": "Contact - Via Flaminia 318, Rome", "description": "Contact Bernabei Automobili: phone, WhatsApp, email or contact form. Via Flaminia 318/a, Rome." }
   },
   "nav": {
     "chiSiamo": "About Us",
     "vetture": "Cars",
+    "vendute": "Sold",
     "servizi": "Services",
     "recensioni": "Reviews",
     "contattaci": "Contact Us",
@@ -36,6 +38,16 @@
     "cta": "View our stock on AutoScout24",
     "contactPrompt": "Looking for a specific car?",
     "contactLink": "Contact us"
+  },
+  "vendute": {
+    "overline": "Our archive",
+    "title": "The cars we have delivered",
+    "subtitle": "Every car on this page went through us: selected, verified and delivered to a satisfied client.",
+    "soldBadge": "Sold",
+    "soldOn": "Sold in",
+    "ctaTitle": "Have a car to sell?",
+    "ctaText": "We will assess your car and offer a trade-in or a direct purchase.",
+    "ctaButton": "Contact us"
   },
   "brandStrip": { "label": "The brands" },
   "whyChooseUs": {
