@@ -28,6 +28,14 @@
     "proof3Label": "Trois générations",
     "scrollLabel": "Défiler"
   },
+  "stock": {
+    "overline": "Notre stock",
+    "title": "Voitures disponibles",
+    "subtitle": "Chaque voiture est sélectionnée, vérifiée et mise à jour en temps réel sur notre profil AutoScout24.",
+    "cta": "Voir le stock sur AutoScout24",
+    "contactPrompt": "Vous cherchez une voiture en particulier ?",
+    "contactLink": "Contactez-nous"
+  },
   "brandStrip": { "label": "Les marques" },
   "whyChooseUs": {
     "overline": "Notre différence",

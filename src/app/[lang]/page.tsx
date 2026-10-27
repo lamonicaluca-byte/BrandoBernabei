@@ -7,6 +7,7 @@ import { TestimonialsSection } from "@/components/sections/testimonials-section"
 import { MethodSection } from "@/components/sections/method-section"
 import { AutoScoutSection } from "@/components/sections/autoscout-section"
 import { CTASection } from "@/components/sections/cta-section"
+import { StockSection } from "@/components/sections/stock-section"
 import { BrandStripSection } from "@/components/sections/brand-strip-section"
 import { getDictionary, buildMetadata } from "../i18n"
 import type { Locale } from "./layout"
@@ -26,6 +27,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: Loc
       <main>
         <HeroSection dict={dict.hero} lang={lang} />
         <BrandStripSection dict={dict.brandStrip} />
+        <StockSection dict={dict.stock} lang={lang} />
         <WhyChooseUsSection dict={dict.whyChooseUs} />
         <TestimonialsSection dict={dict.testimonials} />
         <MethodSection dict={dict.method} />
