@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { AUTOSCOUT_URL } from "@/lib/links"
+import { AUTOSCOUT_URL, SHOW_VENDUTE } from "@/lib/links"
 import { Phone, Mail, MapPin } from "lucide-react"
 
 interface FooterDict {
@@ -34,7 +34,7 @@ export function Footer({ lang, dict }: FooterProps) {
   const mainNav = [
     { name: dict.nav.chiSiamo, href: `/${lang}/chi-siamo` },
     { name: dict.nav.vetture, href: AUTOSCOUT_URL, external: true },
-    { name: dict.nav.vendute, href: `/${lang}/vendute` },
+    ...(SHOW_VENDUTE ? [{ name: dict.nav.vendute, href: `/${lang}/vendute` }] : []),
     { name: dict.nav.servizi, href: `/${lang}/servizi` },
     { name: dict.nav.recensioni, href: `/${lang}/recensioni` },
     { name: dict.nav.contattaci, href: `/${lang}/contatti` },

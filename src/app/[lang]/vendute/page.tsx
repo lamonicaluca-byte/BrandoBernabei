@@ -1,6 +1,8 @@
 import { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
+import { notFound } from "next/navigation"
+import { SHOW_VENDUTE } from "@/lib/links"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/Button"
@@ -17,6 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Loc
 const LOCALE_TAG: Record<Locale, string> = { it: 'it-IT', en: 'en-GB', fr: 'fr-FR' }
 
 export default async function VendutePage({ params }: { params: Promise<{ lang: Locale }> }) {
+  if (!SHOW_VENDUTE) notFound()
   const { lang } = await params
   const dict = await getDictionary(lang)
   const d = dict.vendute
