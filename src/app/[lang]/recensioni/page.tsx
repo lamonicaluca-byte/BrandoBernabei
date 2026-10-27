@@ -100,7 +100,7 @@ export default async function RecensioniPage({ params }: { params: Promise<{ lan
             {/* Reviews grid */}
             <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-6">
 
-              {/* Featured review — full width */}
+              {/* Featured review - full width */}
               <div
                 className="col-span-full rounded-[4px] p-6 bg-gold-highlight/[0.04] border-[0.5px] border-gold-highlight/30"
               >
