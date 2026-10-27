@@ -35,8 +35,8 @@ export default async function ContattiPage({ params }: { params: Promise<{ lang:
     {
       icon: Mail,
       title: d.contactEmailTitle,
-      value: "info@bernabeiautomobili.it",
-      href: "mailto:info@bernabeiautomobili.it",
+      value: "info@bernabeiautomobili.com",
+      href: "mailto:info@bernabeiautomobili.com",
       description: d.contactEmailDesc,
     },
     {

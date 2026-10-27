@@ -27,7 +27,7 @@ export function OrganizationJsonLd() {
         "description": "Concessionaria di auto sportive e premium usate a Roma dal 1946. Il nonno fu il primo concessionario Ferrari del Centro-Sud Italia, arrivò secondo alla Mille Miglia dietro Nuvolari. Franco fu concessionario Maserati e De Tomaso, 3× campione italiano F3 con partecipazioni in F1. Brando è la terza generazione, attivo in Via Flaminia 318, Roma.",
         "vatID": "15074791003",
         "telephone": "+393395027983",
-        "email": "info@bernabeiautomobili.it",
+        "email": "info@bernabeiautomobili.com",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Via Flaminia, 318/a",
@@ -87,7 +87,7 @@ export function OrganizationJsonLd() {
         "worksFor": { "@id": "https://www.bernabeiautomobili.com/#organization" },
         "knowsLanguage": ["it","en","fr","de"],
         "telephone": "+393395027983",
-        "email": "info@bernabeiautomobili.it"
+        "email": "info@bernabeiautomobili.com"
       }
     ]
   }

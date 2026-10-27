@@ -111,11 +111,11 @@ export function Footer({ lang, dict }: FooterProps) {
               </li>
               <li>
                 <a
-                  href="mailto:info@bernabeiautomobili.it"
+                  href="mailto:info@bernabeiautomobili.com"
                   className="flex items-center gap-3 text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors"
                 >
                   <Mail className="h-4 w-4 text-accent" />
-                  info@bernabeiautomobili.it
+                  info@bernabeiautomobili.com
                 </a>
               </li>
               <li>
