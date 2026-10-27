@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import { AUTOSCOUT_URL } from "@/lib/links"
 import { useState, useEffect } from "react"
 import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
@@ -9,6 +10,7 @@ import { Button } from "@/components/ui/Button"
 interface HeaderDict {
   nav: {
     chiSiamo: string
+    vetture: string
     servizi: string
     recensioni: string
     contattaci: string
@@ -29,6 +31,7 @@ export function Header({ lang, dict }: HeaderProps) {
 
   const navigation = [
     { name: dict.nav.chiSiamo, href: `/${lang}/chi-siamo` },
+    { name: dict.nav.vetture, href: AUTOSCOUT_URL, external: true },
     { name: dict.nav.servizi, href: `/${lang}/servizi` },
     { name: dict.nav.recensioni, href: `/${lang}/recensioni` },
   ]
@@ -81,6 +84,7 @@ export function Header({ lang, dict }: HeaderProps) {
               <Link
                 key={item.name}
                 href={item.href}
+                {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 className="text-sm font-medium text-white/90 hover:text-white transition-colors tracking-wide"
               >
                 {item.name}
@@ -137,6 +141,7 @@ export function Header({ lang, dict }: HeaderProps) {
             <Link
               key={item.name}
               href={item.href}
+              {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               className="block px-4 py-2.5 text-sm font-medium text-white/90 hover:text-white hover:bg-white/8 rounded-md transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >

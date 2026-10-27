@@ -1,8 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/Button"
 import { ExternalLink } from "lucide-react"
-
-export const AUTOSCOUT_URL = "https://www.autoscout24.it/concessionari/bernabei-automobili-di-brando-bernabei"
+import { AUTOSCOUT_URL } from "@/lib/links"
 
 interface StockDict {
   overline: string

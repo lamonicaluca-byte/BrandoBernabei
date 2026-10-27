@@ -1,9 +1,11 @@
 import Link from "next/link"
+import { AUTOSCOUT_URL } from "@/lib/links"
 import { Phone, Mail, MapPin } from "lucide-react"
 
 interface FooterDict {
   nav: {
     chiSiamo: string
+    vetture: string
     servizi: string
     recensioni: string
     contattaci: string
@@ -30,6 +32,7 @@ export function Footer({ lang, dict }: FooterProps) {
 
   const mainNav = [
     { name: dict.nav.chiSiamo, href: `/${lang}/chi-siamo` },
+    { name: dict.nav.vetture, href: AUTOSCOUT_URL, external: true },
     { name: dict.nav.servizi, href: `/${lang}/servizi` },
     { name: dict.nav.recensioni, href: `/${lang}/recensioni` },
     { name: dict.nav.contattaci, href: `/${lang}/contatti` },
@@ -66,6 +69,7 @@ export function Footer({ lang, dict }: FooterProps) {
                 <li key={item.name}>
                   <Link
                     href={item.href}
+                    {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                     className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors"
                   >
                     {item.name}
