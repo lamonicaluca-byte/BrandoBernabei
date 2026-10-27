@@ -40,6 +40,8 @@
     "contactLink": "Contact us"
   },
   "vendute": {
+    "demoBadge": "Example",
+    "demoNotice": "The cars and photos on this page are illustrative examples. The real archive of our deliveries will be published soon.",
     "overline": "Our archive",
     "title": "The cars we have delivered",
     "subtitle": "Every car on this page went through us: selected, verified and delivered to a satisfied client.",

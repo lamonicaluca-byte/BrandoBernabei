@@ -40,6 +40,8 @@
     "contactLink": "Contattaci"
   },
   "vendute": {
+    "demoBadge": "Esempio",
+    "demoNotice": "Le auto e le foto di questa pagina sono esempi illustrativi. L’archivio reale delle nostre consegne sarà pubblicato a breve.",
     "overline": "Il nostro archivio",
     "title": "Le auto che abbiamo consegnato",
     "subtitle": "Ogni auto di questa pagina è passata da noi: selezionata, verificata e consegnata a un cliente soddisfatto.",

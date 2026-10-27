@@ -4,7 +4,7 @@ import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/Button"
-import { getVendute } from "@/data/vendute"
+import { getVendute, isDemo } from "@/data/vendute"
 import { getDictionary, buildMetadata } from "../../i18n"
 import type { Locale } from "../layout"
 
@@ -35,6 +35,11 @@ export default async function VendutePage({ params }: { params: Promise<{ lang: 
                 {d.title}
               </h1>
               <p className="mt-6 text-lg text-muted-foreground leading-relaxed">{d.subtitle}</p>
+              {isDemo && (
+                <p className="mt-8 border border-gold-brand/40 bg-gold-brand/5 px-4 py-3 text-sm text-foreground/80">
+                  {d.demoNotice}
+                </p>
+              )}
             </div>
 
             <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -52,7 +57,7 @@ export default async function VendutePage({ params }: { params: Promise<{ lang: 
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />
                       <div className="absolute top-4 left-4 px-3 py-1 bg-primary text-primary-foreground text-xs font-medium tracking-wide uppercase">
-                        {d.soldBadge}
+                        {isDemo ? d.demoBadge : d.soldBadge}
                       </div>
                     </div>
                     <div className="p-6">
@@ -65,6 +70,9 @@ export default async function VendutePage({ params }: { params: Promise<{ lang: 
                       <p className="mt-5 pt-5 border-t border-border text-xs text-muted-foreground">
                         {d.soldOn} {soldLabel}
                       </p>
+                      {car.credit && (
+                        <p className="mt-2 text-[10px] text-muted-foreground/70">Foto: {car.credit}</p>
+                      )}
                     </div>
                   </article>
                 )
