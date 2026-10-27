@@ -9,8 +9,8 @@
   },
   "nav": {
     "chiSiamo": "About Us",
-    "vetture": "Cars",
-    "vendute": "Sold",
+    "vetture": "Stock",
+    "vendute": "Delivered",
     "servizi": "Services",
     "recensioni": "Reviews",
     "contattaci": "Contact Us",
