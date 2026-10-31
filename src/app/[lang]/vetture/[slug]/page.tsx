@@ -5,10 +5,13 @@ import { ArrowLeft, Check, ExternalLink, MessageCircle, Phone } from "lucide-rea
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/Button"
-import { VehicleGallery } from "@/components/vehicle-gallery"
+import { VehicleGallery } from "@/components/gallery/vehicle-gallery"
 import { VehicleJsonLd } from "@/components/JsonLd"
 import { getVettura, vetture } from "@/data/vetture"
 import { displayVersion, fullTitle } from "@/lib/vehicle"
+import { altText, resolveGallery } from "@/lib/gallery"
+import { photoMeta } from "@/lib/gallery-meta"
+import { PHONE_TEL, fillTemplate, whatsappUrl } from "@/lib/whatsapp"
 import { getDictionary, buildMetadata } from "../../../i18n"
 import type { Locale } from "../../layout"
 
@@ -57,9 +60,20 @@ export default async function VetturaPage({ params }: { params: Promise<{ lang: 
 
   const title = `${car.make} ${car.model}`
   const version = displayVersion(car)
-  const whatsapp = `https://wa.me/393395027983?text=${encodeURIComponent(
-    d.whatsappMessage.replace("{car}", `${title} ${car.year}`),
-  )}`
+  const whatsapp = whatsappUrl(fillTemplate(d.whatsappMessage, { car: `${title} ${car.year}` }))
+
+  // foto per capitolo, con dimensioni e miniatura sfocata lette in fase di build
+  const items = resolveGallery(car, lang)
+  const metas = await Promise.all(items.map((item) => photoMeta(item.src)))
+  const altBase = [car.make, car.model, version, car.year].filter(Boolean).join(" ")
+  const photos = items.map((item, i) => ({
+    ...item,
+    ...metas[i],
+    alt:
+      item.chapter === "foto"
+        ? `${altBase}, ${d.photo} ${i + 1}`
+        : altText(altBase, d.gallery.chapters[item.chapter], item.caption),
+  }))
   const bookHref = `/${lang}/contatti?visita=1&auto=${encodeURIComponent(car.id)}`
 
   const included = [
@@ -99,11 +113,7 @@ export default async function VetturaPage({ params }: { params: Promise<{ lang: 
             </Link>
 
             <div className="mt-8 grid lg:grid-cols-[1.5fr_1fr] gap-10 lg:gap-14">
-              <VehicleGallery
-                images={car.images}
-                alt={`${title} ${car.year}`}
-                labels={{ previous: d.previousPhoto, next: d.nextPhoto, photo: d.photo }}
-              />
+              <VehicleGallery photos={photos} labels={d.gallery} carName={`${title} ${car.year}`} bookHref={bookHref} />
 
               <div>
                 <span className="text-xs tracking-[0.25em] uppercase text-gold-brand">{car.make}</span>
@@ -133,7 +143,7 @@ export default async function VetturaPage({ params }: { params: Promise<{ lang: 
                     </a>
                   </Button>
                   <Button asChild variant="outline" size="lg" className="border-border hover:border-accent">
-                    <a href="tel:+393395027983">
+                    <a href={PHONE_TEL}>
                       <Phone className="mr-2 h-4 w-4" />
                       {d.call} +39 339 502 7983
                     </a>
