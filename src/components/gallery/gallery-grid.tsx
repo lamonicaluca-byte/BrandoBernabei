@@ -79,10 +79,19 @@ export function GalleryGrid({ photos, labels, covered, focusIndex, onOpenPhoto, 
       inert={covered}
       className="fixed inset-0 z-[60] flex flex-col bg-background"
     >
-      <header className="flex items-center gap-3 border-b border-border bg-background px-4 py-2">
-        <h2 className="shrink-0 font-serif text-xl text-foreground">{labels.allPhotosTitle}</h2>
+      <header className="flex flex-wrap items-center gap-x-3 gap-y-2 border-b border-border bg-background px-4 py-2">
+        <h2 className="min-w-0 flex-1 font-serif text-xl text-foreground">{labels.allPhotosTitle}</h2>
+        <button
+          ref={closeButton}
+          type="button"
+          onClick={onClose}
+          aria-label={labels.close}
+          className="order-2 flex h-11 w-11 shrink-0 items-center justify-center text-foreground hover:bg-secondary"
+        >
+          <X className="h-5 w-5" aria-hidden="true" />
+        </button>
         {showChips && (
-          <nav aria-label={labels.chaptersNav} className="flex min-w-0 flex-1 gap-2 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <nav aria-label={labels.chaptersNav} className="order-3 flex w-full gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {groups.map((g) => (
               <button
                 key={g.key}
@@ -95,15 +104,6 @@ export function GalleryGrid({ photos, labels, covered, focusIndex, onOpenPhoto, 
             ))}
           </nav>
         )}
-        <button
-          ref={closeButton}
-          type="button"
-          onClick={onClose}
-          aria-label={labels.close}
-          className="ml-auto flex h-11 w-11 shrink-0 items-center justify-center text-foreground hover:bg-secondary"
-        >
-          <X className="h-5 w-5" aria-hidden="true" />
-        </button>
       </header>
 
       <div ref={scroller} className="flex-1 overflow-y-auto overscroll-contain px-4 pb-10">
@@ -123,15 +123,16 @@ export function GalleryGrid({ photos, labels, covered, focusIndex, onOpenPhoto, 
                     aria-haspopup="dialog"
                     onClick={() => onOpenPhoto(index)}
                     className="relative block overflow-hidden bg-secondary"
-                    style={{ aspectRatio: `${photo.width} / ${photo.height}` }}
+                    style={{
+                      aspectRatio: `${photo.width} / ${photo.height}`,
+                      ...(photo.blur ? { backgroundImage: `url(${photo.blur})`, backgroundSize: "cover" } : {}),
+                    }}
                   >
                     <Image
                       src={photo.src}
                       alt={photo.alt}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      placeholder={photo.blur ? "blur" : "empty"}
-                      blurDataURL={photo.blur}
                       className="object-cover"
                     />
                   </button>

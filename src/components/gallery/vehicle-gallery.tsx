@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic"
 import Image from "next/image"
 import Link from "next/link"
-import { useCallback, useEffect, useMemo, useRef, useState } from "react"
+import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react"
 import { ChevronLeft, ChevronRight, LayoutGrid } from "lucide-react"
 import { Button } from "@/components/ui/Button"
 import { groupChapters } from "@/lib/gallery"
@@ -27,8 +27,19 @@ interface VehicleGalleryProps {
 const goldGradient = "linear-gradient(135deg, #E8C97A 0%, #C9A96E 45%, #A07840 100%)"
 const prefersReducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches
 
+// Le miniature servono solo da desktop: su telefono non si creano (meno DOM e meno lavoro all'avvio).
+const DESKTOP = "(min-width: 1024px)"
+function subscribeDesktop(onChange: () => void) {
+  const query = window.matchMedia(DESKTOP)
+  query.addEventListener("change", onChange)
+  return () => query.removeEventListener("change", onChange)
+}
+const useIsDesktop = () =>
+  useSyncExternalStore(subscribeDesktop, () => window.matchMedia(DESKTOP).matches, () => false)
+
 export function VehicleGallery({ photos, labels, carName, bookHref }: VehicleGalleryProps) {
   const total = photos.length
+  const isDesktop = useIsDesktop()
   const track = useRef<HTMLDivElement>(null)
   const slides = useRef<Array<HTMLDivElement | null>>([])
   const opener = useRef<HTMLElement | null>(null)
@@ -218,9 +229,8 @@ export function VehicleGallery({ photos, labels, carName, bookHref }: VehicleGal
                     alt={photo.alt}
                     fill
                     priority={i === 0}
+                    fetchPriority={i === 0 ? "high" : undefined}
                     sizes="(max-width: 768px) 88vw, 66vw"
-                    placeholder={photo.blur ? "blur" : "empty"}
-                    blurDataURL={photo.blur}
                     className="object-cover"
                   />
                 )}
@@ -283,25 +293,27 @@ export function VehicleGallery({ photos, labels, carName, bookHref }: VehicleGal
         </button>
       </div>
 
-      {total > 1 && (
-        <ul className="mt-3 hidden flex-wrap gap-2 lg:flex">
-          {photos.map((photo, i) => (
-            <li key={photo.src}>
-              <button
-                type="button"
-                onClick={() => goTo(i)}
-                aria-label={photo.alt}
-                aria-current={i === active}
-                className={`relative block h-[72px] w-24 overflow-hidden border bg-secondary transition-opacity duration-200 ${
-                  i === active ? "border-foreground" : "border-transparent opacity-70 hover:opacity-100"
-                }`}
-              >
-                <Image src={photo.src} alt={photo.alt} width={96} height={72} sizes="96px" className="h-full w-full object-cover" />
-              </button>
-            </li>
-          ))}
-        </ul>
-      )}
+      <div className="mt-3 hidden lg:block lg:h-[72px]">
+        {isDesktop && total > 1 && (
+          <ul className="flex gap-2 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {photos.map((photo, i) => (
+              <li key={photo.src} className="shrink-0">
+                <button
+                  type="button"
+                  onClick={() => goTo(i)}
+                  aria-label={photo.alt}
+                  aria-current={i === active}
+                  className={`relative block h-[72px] w-24 overflow-hidden border bg-secondary transition-opacity duration-200 ${
+                    i === active ? "border-foreground" : "border-transparent opacity-70 hover:opacity-100"
+                  }`}
+                >
+                  <Image src={photo.src} alt={photo.alt} width={96} height={72} sizes="96px" className="h-full w-full object-cover" />
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
 
       <button
         type="button"

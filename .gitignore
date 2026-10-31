@@ -44,3 +44,6 @@ next-env.d.ts
 .claude/worktrees/
 bernabei-automobili-website.zip
 tmp_fl.html
+
+# fogli di classificazione foto generati da scripts/gallery-sheet.mjs
+.gallery-sheets/
