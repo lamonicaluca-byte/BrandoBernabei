@@ -4,6 +4,7 @@
     "chiSiamo": { "title": "Dal 1946, Tre Generazioni - Chi Siamo", "description": "Tre generazioni di passione per le automobili. Dal nonno, primo concessionario Ferrari del Centro-Sud Italia, fino a Brando oggi in Via Flaminia 318, Roma." },
     "servizi": { "title": "Permuta, Garanzia, Consegna - Servizi", "description": "Consulenza personalizzata, permuta, finanziamenti, garanzia e consegna in tutta Italia." },
     "recensioni": { "title": "Recensioni - 4.9★ su AutoScout24", "description": "4.9 su AutoScout24, 94 recensioni verificate, 97% positive." },
+    "vetture": { "title": "Auto Premium e Sportive Disponibili a Roma", "description": "Auto sportive e di lusso usate a Roma: Porsche, Rolls-Royce, Audi RS, Mercedes. Ogni vettura verificata, con storico documentato." },
     "vendute": { "title": "Auto Vendute - Le Nostre Consegne", "description": "Le auto sportive e premium che abbiamo trattato e consegnato ai nostri clienti in tutta Italia." },
     "contatti": { "title": "Contatti - Via Flaminia 318, Roma", "description": "Contatta Bernabei Automobili: telefono, WhatsApp, email o modulo di contatto. Via Flaminia 318/a, Roma." }
   },
@@ -21,7 +22,7 @@
     "headline2": "ogni auto come",
     "headline3": "fosse la nostra.",
     "subtitle": "Chi entra da Bernabei non cerca solo un'auto, cerca qualcuno di cui fidarsi.",
-    "cta1": "Contattaci",
+    "cta1": "Scopri le vetture",
     "cta2": "Leggi le recensioni",
     "proof1Value": "4.9 ★",
     "proof1Label": "AutoScout24",
@@ -35,7 +36,7 @@
     "overline": "Il nostro stock",
     "title": "Le vetture disponibili",
     "subtitle": "Ogni auto è selezionata, verificata e aggiornata in tempo reale sul nostro profilo AutoScout24.",
-    "cta": "Vedi lo stock su AutoScout24",
+    "cta": "Vedi le vetture disponibili",
     "contactPrompt": "Cerchi un'auto in particolare?",
     "contactLink": "Contattaci"
   },
@@ -50,6 +51,51 @@
     "ctaTitle": "Hai un’auto da vendere?",
     "ctaText": "Valutiamo la tua vettura e ti proponiamo la permuta o l’acquisto diretto.",
     "ctaButton": "Contattaci"
+  },
+  "vetture": {
+    "overline": "La nostra selezione",
+    "title": "Vetture disponibili",
+    "subtitle": "Ogni vettura è selezionata, verificata e preparata personalmente. Qualità senza compromessi.",
+    "empty": "Al momento non ci sono vetture in elenco. Contattaci per una ricerca personalizzata.",
+    "discover": "Scopri",
+    "notFound": "Non trovi quello che cerchi?",
+    "notFoundSub": "Possiamo cercare per te l'auto giusta su tutto il mercato europeo, oppure puoi consultare il nostro profilo completo su AutoScout24.",
+    "customSearch": "Ricerca personalizzata",
+    "autoscoutLink": "Profilo AutoScout24",
+    "backToAll": "Tutte le vetture",
+    "year": "Immatricolazione",
+    "km": "Chilometri",
+    "power": "Potenza",
+    "fuel": "Alimentazione",
+    "gearbox": "Cambio",
+    "color": "Colore",
+    "bodyType": "Carrozzeria",
+    "driveTrain": "Trazione",
+    "description": "Descrizione",
+    "descriptionNote": "",
+    "equipment": "Dotazioni",
+    "show": "Mostra",
+    "hide": "Nascondi",
+    "contactWhatsapp": "Scrivi a Brando su WhatsApp",
+    "sendMessage": "Invia un messaggio",
+    "viewOnAutoscout": "Vedi l'annuncio su AutoScout24",
+    "whatsappMessage": "Ciao Brando, sono interessato a {car}. Puoi darmi più informazioni?",
+    "previousPhoto": "Foto precedente",
+    "nextPhoto": "Foto successiva",
+    "photo": "Foto",
+    "metaSuffix": "Bernabei Automobili, Roma.",
+    "fuels": {
+      "Benzina": "Benzina",
+      "Diesel": "Diesel"
+    },
+    "gearboxes": {
+      "Automatico": "Automatico",
+      "Manuale": "Manuale",
+      "Semiautomatico": "Semiautomatico"
+    },
+    "colors": {},
+    "bodyTypes": {},
+    "driveTrains": {}
   },
   "brandStrip": {
     "label": "I marchi"

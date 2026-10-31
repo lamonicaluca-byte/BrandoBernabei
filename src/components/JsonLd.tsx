@@ -165,6 +165,51 @@ export function RecensioniJsonLd() {
   return <JsonLd schema={schema} />
 }
 
+// ─── Car (Vehicle) ───────────────────────────────────────────────────────────
+interface VehicleData {
+  make: string
+  model: string
+  year: number
+  km: number
+  cv: number
+  carburante: string
+  cambio: string
+  prezzo: number
+  colore?: string
+  slug: string
+  image?: string
+}
+
+export function VehicleJsonLd({ vettura, lang }: { vettura: VehicleData; lang: string }) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": `${vettura.make} ${vettura.model} ${vettura.year}`,
+    "brand": { "@type": "Brand", "name": vettura.make },
+    "model": vettura.model,
+    "modelDate": vettura.year.toString(),
+    ...(vettura.image ? { "image": `https://www.bernabeiautomobili.com${vettura.image}` } : {}),
+    "vehicleEngine": {
+      "@type": "EngineSpecification",
+      "enginePower": { "@type": "QuantitativeValue", "value": vettura.cv, "unitCode": "BHP" }
+    },
+    "mileageFromOdometer": { "@type": "QuantitativeValue", "value": vettura.km, "unitCode": "KMT" },
+    "fuelType": vettura.carburante,
+    "vehicleTransmission": vettura.cambio,
+    ...(vettura.colore ? { "color": vettura.colore } : {}),
+    "offers": {
+      "@type": "Offer",
+      "price": vettura.prezzo,
+      "priceCurrency": "EUR",
+      "itemCondition": "https://schema.org/UsedCondition",
+      "availability": "https://schema.org/InStock",
+      "url": `https://www.bernabeiautomobili.com/${lang}/vetture/${vettura.slug}`,
+      "seller": { "@id": "https://www.bernabeiautomobili.com/#organization" }
+    }
+  }
+  return <JsonLd schema={schema} />
+}
+
 // ─── FAQPage ─────────────────────────────────────────────────────────────────
 interface FAQItem {
   question: string

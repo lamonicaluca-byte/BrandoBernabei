@@ -4,6 +4,7 @@
     "chiSiamo": { "title": "Since 1946, Three Generations - About Us", "description": "Three generations of passion for cars. From our grandfather, first Ferrari dealer in Central-Southern Italy, to Brando today at Via Flaminia 318, Rome." },
     "servizi": { "title": "Trade-in, Warranty, Financing - Services", "description": "Personalised consultation, trade-in, financing, warranty and delivery throughout Italy." },
     "recensioni": { "title": "Reviews - 4.9★ on AutoScout24", "description": "4.9 on AutoScout24, 94 verified reviews, 97% positive." },
+    "vetture": { "title": "Premium & Sports Cars Available in Rome", "description": "Used sports and luxury cars in Rome: Porsche, Rolls-Royce, Audi RS, Mercedes. Every car verified, with documented history." },
     "vendute": { "title": "Sold Cars - Our Deliveries", "description": "The sports and premium cars we have handled and delivered to our clients across Italy and Europe." },
     "contatti": { "title": "Contact - Via Flaminia 318, Rome", "description": "Contact Bernabei Automobili: phone, WhatsApp, email or contact form. Via Flaminia 318/a, Rome." }
   },
@@ -21,7 +22,7 @@
     "headline2": "every car as if",
     "headline3": "it were our own.",
     "subtitle": "Those who come to Bernabei aren't just looking for a car, they're looking for someone they can trust.",
-    "cta1": "Contact us",
+    "cta1": "Discover our cars",
     "cta2": "Read reviews",
     "proof1Value": "4.9 ★",
     "proof1Label": "AutoScout24",
@@ -35,7 +36,7 @@
     "overline": "Our stock",
     "title": "Available cars",
     "subtitle": "Every car is selected, verified and updated in real time on our AutoScout24 profile.",
-    "cta": "View our stock on AutoScout24",
+    "cta": "View available cars",
     "contactPrompt": "Looking for a specific car?",
     "contactLink": "Contact us"
   },
@@ -50,6 +51,67 @@
     "ctaTitle": "Have a car to sell?",
     "ctaText": "We will assess your car and offer a trade-in or a direct purchase.",
     "ctaButton": "Contact us"
+  },
+  "vetture": {
+    "overline": "Our selection",
+    "title": "Available cars",
+    "subtitle": "Every car is selected, verified and prepared personally. Quality without compromise.",
+    "empty": "There are no cars listed at the moment. Contact us for a personalised search.",
+    "discover": "Discover",
+    "notFound": "Can't find what you're looking for?",
+    "notFoundSub": "We can search for the right car for you across the whole European market, or you can browse our full profile on AutoScout24.",
+    "customSearch": "Personalised search",
+    "autoscoutLink": "AutoScout24 profile",
+    "backToAll": "All cars",
+    "year": "Registration",
+    "km": "Mileage",
+    "power": "Power",
+    "fuel": "Fuel",
+    "gearbox": "Gearbox",
+    "color": "Colour",
+    "bodyType": "Body type",
+    "driveTrain": "Drivetrain",
+    "description": "Description",
+    "descriptionNote": "Description in Italian.",
+    "equipment": "Equipment",
+    "show": "Show",
+    "hide": "Hide",
+    "contactWhatsapp": "Message Brando on WhatsApp",
+    "sendMessage": "Send a message",
+    "viewOnAutoscout": "View the listing on AutoScout24",
+    "whatsappMessage": "Hi Brando, I'm interested in the {car}. Can you give me more information?",
+    "previousPhoto": "Previous photo",
+    "nextPhoto": "Next photo",
+    "photo": "Photo",
+    "metaSuffix": "Bernabei Automobili, Rome.",
+    "fuels": {
+      "Benzina": "Petrol",
+      "Diesel": "Diesel"
+    },
+    "gearboxes": {
+      "Automatico": "Automatic",
+      "Manuale": "Manual",
+      "Semiautomatico": "Semi-automatic"
+    },
+    "colors": {
+      "Argento": "Silver",
+      "Bianco": "White",
+      "Blu/Azzurro": "Blue",
+      "Grigio": "Grey",
+      "Nero": "Black",
+      "Verde": "Green"
+    },
+    "bodyTypes": {
+      "Berlina": "Saloon",
+      "Cabrio": "Convertible",
+      "Coupé": "Coupe",
+      "SUV/Fuoristrada/Pick-up": "SUV"
+    },
+    "driveTrains": {
+      "4x4": "4x4",
+      "Anteriore": "Front-wheel drive",
+      "Posteriore": "Rear-wheel drive"
+    }
   },
   "brandStrip": { "label": "The brands" },
   "whyChooseUs": {

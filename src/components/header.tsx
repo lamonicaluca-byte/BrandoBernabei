@@ -1,10 +1,10 @@
 "use client"
 
 import Link from "next/link"
-import { AUTOSCOUT_URL, SHOW_VENDUTE } from "@/lib/links"
+import { SHOW_VENDUTE } from "@/lib/links"
 import { useState, useEffect } from "react"
 import { usePathname } from "next/navigation"
-import { Menu, X, ArrowUpRight } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/Button"
 
 interface HeaderDict {
@@ -32,7 +32,7 @@ export function Header({ lang, dict }: HeaderProps) {
 
   const navigation = [
     { name: dict.nav.chiSiamo, href: `/${lang}/chi-siamo` },
-    { name: dict.nav.vetture, href: AUTOSCOUT_URL, external: true },
+    { name: dict.nav.vetture, href: `/${lang}/vetture` },
     ...(SHOW_VENDUTE ? [{ name: dict.nav.vendute, href: `/${lang}/vendute` }] : []),
     { name: dict.nav.servizi, href: `/${lang}/servizi` },
     { name: dict.nav.recensioni, href: `/${lang}/recensioni` },
@@ -83,12 +83,11 @@ export function Header({ lang, dict }: HeaderProps) {
           {/* Desktop nav links */}
           <div className="hidden lg:flex items-center gap-9">
             {navigation.map((item) => {
-              const active = !item.external && pathname.startsWith(item.href)
+              const active = pathname.startsWith(item.href)
               return (
                 <Link
                   key={item.name}
                   href={item.href}
-                  {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   aria-current={active ? "page" : undefined}
                   className={`inline-flex items-center gap-1 py-1.5 text-[13px] font-normal uppercase tracking-[0.12em] border-b transition-colors ${
                     active
@@ -97,7 +96,6 @@ export function Header({ lang, dict }: HeaderProps) {
                   }`}
                 >
                   {item.name}
-                  {item.external && <ArrowUpRight className="h-3 w-3 opacity-70" aria-hidden="true" />}
                 </Link>
               )
             })}
@@ -151,12 +149,10 @@ export function Header({ lang, dict }: HeaderProps) {
             <Link
               key={item.name}
               href={item.href}
-              {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               className="flex items-center gap-1.5 px-4 py-3 text-[13px] uppercase tracking-[0.12em] text-white/80 hover:text-white hover:bg-white/8 rounded-md transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               {item.name}
-              {item.external && <ArrowUpRight className="h-3 w-3 opacity-70" aria-hidden="true" />}
             </Link>
           ))}
 

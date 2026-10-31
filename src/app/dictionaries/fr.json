@@ -4,6 +4,7 @@
     "chiSiamo": { "title": "Depuis 1946, Trois Générations - À Propos", "description": "Trois générations de passion pour les automobiles. Du grand-père, premier concessionnaire Ferrari du Centre-Sud de l'Italie, à Brando aujourd'hui à la Via Flaminia 318, Rome." },
     "servizi": { "title": "Reprise, Garantie, Financement - Services", "description": "Conseil personnalisé, reprise, financement, garantie et livraison dans toute l'Italie." },
     "recensioni": { "title": "Avis - 4.9★ sur AutoScout24", "description": "4.9 sur AutoScout24, 94 avis vérifiés, 97% positifs." },
+    "vetture": { "title": "Voitures Premium et Sportives Disponibles à Rome", "description": "Voitures sportives et de luxe d'occasion à Rome : Porsche, Rolls-Royce, Audi RS, Mercedes. Chaque voiture vérifiée, avec historique documenté." },
     "vendute": { "title": "Voitures Vendues - Nos Livraisons", "description": "Les voitures sportives et premium que nous avons traitées et livrées à nos clients en Italie et en Europe." },
     "contatti": { "title": "Contact - Via Flaminia 318, Rome", "description": "Contactez Bernabei Automobili: téléphone, WhatsApp, email ou formulaire de contact. Via Flaminia 318/a, Rome." }
   },
@@ -21,7 +22,7 @@
     "headline2": "chaque voiture comme",
     "headline3": "si elle était la nôtre.",
     "subtitle": "Ceux qui entrent chez Bernabei ne cherchent pas seulement une voiture, ils cherchent quelqu'un en qui avoir confiance.",
-    "cta1": "Nous contacter",
+    "cta1": "Découvrir nos voitures",
     "cta2": "Lire les avis",
     "proof1Value": "4.9 ★",
     "proof1Label": "AutoScout24",
@@ -35,7 +36,7 @@
     "overline": "Notre stock",
     "title": "Voitures disponibles",
     "subtitle": "Chaque voiture est sélectionnée, vérifiée et mise à jour en temps réel sur notre profil AutoScout24.",
-    "cta": "Voir le stock sur AutoScout24",
+    "cta": "Voir les voitures disponibles",
     "contactPrompt": "Vous cherchez une voiture en particulier ?",
     "contactLink": "Contactez-nous"
   },
@@ -50,6 +51,67 @@
     "ctaTitle": "Une voiture à vendre ?",
     "ctaText": "Nous évaluons votre voiture et vous proposons une reprise ou un achat direct.",
     "ctaButton": "Contactez-nous"
+  },
+  "vetture": {
+    "overline": "Notre sélection",
+    "title": "Voitures disponibles",
+    "subtitle": "Chaque voiture est sélectionnée, vérifiée et préparée personnellement. Une qualité sans compromis.",
+    "empty": "Aucune voiture n'est listée pour le moment. Contactez-nous pour une recherche personnalisée.",
+    "discover": "Découvrir",
+    "notFound": "Vous ne trouvez pas ce que vous cherchez ?",
+    "notFoundSub": "Nous pouvons chercher pour vous la voiture idéale sur tout le marché européen, ou vous pouvez consulter notre profil complet sur AutoScout24.",
+    "customSearch": "Recherche personnalisée",
+    "autoscoutLink": "Profil AutoScout24",
+    "backToAll": "Toutes les voitures",
+    "year": "Immatriculation",
+    "km": "Kilométrage",
+    "power": "Puissance",
+    "fuel": "Carburant",
+    "gearbox": "Boîte",
+    "color": "Couleur",
+    "bodyType": "Carrosserie",
+    "driveTrain": "Transmission",
+    "description": "Description",
+    "descriptionNote": "Description en italien.",
+    "equipment": "Équipements",
+    "show": "Afficher",
+    "hide": "Masquer",
+    "contactWhatsapp": "Écrire à Brando sur WhatsApp",
+    "sendMessage": "Envoyer un message",
+    "viewOnAutoscout": "Voir l'annonce sur AutoScout24",
+    "whatsappMessage": "Bonjour Brando, je suis intéressé par la {car}. Pouvez-vous me donner plus d'informations ?",
+    "previousPhoto": "Photo précédente",
+    "nextPhoto": "Photo suivante",
+    "photo": "Photo",
+    "metaSuffix": "Bernabei Automobili, Rome.",
+    "fuels": {
+      "Benzina": "Essence",
+      "Diesel": "Diesel"
+    },
+    "gearboxes": {
+      "Automatico": "Automatique",
+      "Manuale": "Manuelle",
+      "Semiautomatico": "Semi-automatique"
+    },
+    "colors": {
+      "Argento": "Argent",
+      "Bianco": "Blanc",
+      "Blu/Azzurro": "Bleu",
+      "Grigio": "Gris",
+      "Nero": "Noir",
+      "Verde": "Vert"
+    },
+    "bodyTypes": {
+      "Berlina": "Berline",
+      "Cabrio": "Cabriolet",
+      "Coupé": "Coupé",
+      "SUV/Fuoristrada/Pick-up": "SUV"
+    },
+    "driveTrains": {
+      "4x4": "4x4",
+      "Anteriore": "Traction",
+      "Posteriore": "Propulsion"
+    }
   },
   "brandStrip": { "label": "Les marques" },
   "whyChooseUs": {

@@ -35,6 +35,7 @@ const demo: Venduta[] = [
 
 export const vendute: Venduta[] = isDemo ? demo : reali
 
+// Le auto reali seguono l'ordine scelto in /gestione; gli esempi sono ordinati per data.
 export function getVendute(): Venduta[] {
-  return [...vendute].sort((a, b) => b.soldAt.localeCompare(a.soldAt))
+  return isDemo ? [...vendute].sort((a, b) => b.soldAt.localeCompare(a.soldAt)) : vendute
 }

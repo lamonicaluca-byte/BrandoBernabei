@@ -1,7 +1,6 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/Button"
-import { ExternalLink } from "lucide-react"
-import { AUTOSCOUT_URL } from "@/lib/links"
+import { ArrowRight } from "lucide-react"
 
 interface StockDict {
   overline: string
@@ -36,10 +35,10 @@ export function StockSection({ dict, lang }: StockSectionProps) {
             size="lg"
             className="bg-primary hover:bg-primary/90 text-primary-foreground"
           >
-            <a href={AUTOSCOUT_URL} target="_blank" rel="noopener noreferrer">
+            <Link href={`/${lang}/vetture`}>
               {dict.cta}
-              <ExternalLink className="ml-2 h-4 w-4" />
-            </a>
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
           </Button>
         </div>
         <p className="mt-6 text-sm text-muted-foreground">

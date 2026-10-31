@@ -4,12 +4,12 @@ import { startTransition, useActionState, useState } from "react"
 import { Button } from "@/components/ui/Button"
 import { addVenduta, login, type ActionState } from "./actions"
 
-const inputClass =
+export const inputClass =
   "w-full border border-border bg-card px-3 py-2.5 text-sm text-foreground outline-none focus:border-foreground/60"
-const labelClass = "block text-xs uppercase tracking-[0.12em] text-muted-foreground mb-1.5"
+export const labelClass = "block text-xs uppercase tracking-[0.12em] text-muted-foreground mb-1.5"
 
 /** Ridimensiona la foto nel browser: i telefoni producono file da 5-10 MB, oltre il limite del server. */
-async function shrink(file: File): Promise<File> {
+export async function shrink(file: File): Promise<File> {
   const bitmap = await createImageBitmap(file, { imageOrientation: "from-image" })
   const scale = Math.min(1, 1800 / bitmap.width)
   const canvas = document.createElement("canvas")
