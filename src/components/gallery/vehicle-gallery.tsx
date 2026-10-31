@@ -8,11 +8,11 @@ import { ChevronLeft, ChevronRight, LayoutGrid } from "lucide-react"
 import { Button } from "@/components/ui/Button"
 import { groupChapters } from "@/lib/gallery"
 import { fillTemplate, whatsappUrl } from "@/lib/whatsapp"
+import type { LightboxHandle } from "./lightbox"
 import type { GalleryLabels, GalleryPhoto } from "./types"
 
-// Griglia e lightbox pesano: si scaricano solo quando l'utente li apre.
+// Griglia e lightbox pesano: si scaricano solo quando l'utente li apre (il lightbox con un import dal tocco, vedi lightbox.ts).
 const GalleryGrid = dynamic(() => import("./gallery-grid").then((m) => m.GalleryGrid), { ssr: false })
-const Lightbox = dynamic(() => import("./lightbox").then((m) => m.Lightbox), { ssr: false })
 
 type Layer = "none" | "grid" | "lightbox"
 
@@ -47,7 +47,7 @@ export function VehicleGallery({ photos, labels, carName, bookHref }: VehicleGal
   const [active, setActive] = useState(0)
   const [loaded, setLoaded] = useState<Set<number>>(() => new Set([0, 1]))
   const [layer, setLayer] = useState<Layer>("none")
-  const [lightboxIndex, setLightboxIndex] = useState(0)
+  const lightbox = useRef<LightboxHandle | null>(null)
   const [focusIndex, setFocusIndex] = useState<number | null>(null)
 
   const groups = useMemo(() => groupChapters(photos), [photos])
@@ -105,14 +105,39 @@ export function VehicleGallery({ photos, labels, carName, bookHref }: VehicleGal
     setLayer("grid")
   }
 
+  // Il lightbox è un modulo caricato al tocco: se nel frattempo l'utente è già tornato indietro, non si apre.
+  const showLightbox = async (index: number) => {
+    const { openLightbox: open } = await import("./lightbox")
+    if ((window.history.state as { gl?: number } | null)?.gl !== 2) return
+    lightbox.current?.destroy()
+    lightbox.current = open({
+      photos,
+      index,
+      labels,
+      carName,
+      onClosed: closeTop,
+      onChange: (i) => {
+        setFocusIndex(i)
+        window.history.replaceState({ ...window.history.state, gl: 2, i }, "", `#foto-${i + 1}`)
+      },
+    })
+  }
+
   const openLightbox = (index: number) => {
-    setLightboxIndex(index)
     setFocusIndex(index)
     push(2, `#foto-${index + 1}`, { i: index })
     setLayer("lightbox")
+    void showLightbox(index)
   }
 
-  const closeTop = useCallback(() => window.history.back(), [])
+  function closeTop() {
+    window.history.back()
+  }
+
+  const showLightboxRef = useRef(showLightbox)
+  useEffect(() => {
+    showLightboxRef.current = showLightbox
+  })
 
   useEffect(() => {
     const onPop = (event: PopStateEvent) => {
@@ -121,8 +146,8 @@ export function VehicleGallery({ photos, labels, carName, bookHref }: VehicleGal
       if (level === 0) setLayer("none")
       else if (level === 1) setLayer("grid")
       else {
-        setLightboxIndex(state?.i ?? 0)
         setLayer("lightbox")
+        void showLightboxRef.current(state?.i ?? 0)
       }
     }
     window.addEventListener("popstate", onPop)
@@ -141,6 +166,14 @@ export function VehicleGallery({ photos, labels, carName, bookHref }: VehicleGal
       document.body.style.overflow = previous
     }
   }, [layer])
+
+  useEffect(() => {
+    if (layer !== "lightbox") {
+      lightbox.current?.destroy()
+      lightbox.current = null
+    }
+  }, [layer])
+  useEffect(() => () => lightbox.current?.destroy(), [])
 
   // aperta la griglia, il lightbox si scarica in anticipo: al tocco successivo è immediato
   useEffect(() => {
@@ -333,19 +366,6 @@ export function VehicleGallery({ photos, labels, carName, bookHref }: VehicleGal
           focusIndex={focusIndex}
           onOpenPhoto={openLightbox}
           onClose={closeTop}
-        />
-      )}
-      {layer === "lightbox" && (
-        <Lightbox
-          photos={photos}
-          index={lightboxIndex}
-          labels={labels}
-          carName={carName}
-          onClosed={closeTop}
-          onChange={(i) => {
-            setFocusIndex(i)
-            window.history.replaceState({ ...window.history.state, gl: 2, i }, "", `#foto-${i + 1}`)
-          }}
         />
       )}
     </div>

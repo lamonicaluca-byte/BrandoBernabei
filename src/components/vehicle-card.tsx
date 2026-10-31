@@ -17,17 +17,19 @@ export function VehicleCard({
   lang,
   labels,
   priority = false,
+  sizes = "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw",
 }: {
   car: Vettura
   lang: string
   labels: VehicleCardLabels
   priority?: boolean
+  sizes?: string
 }) {
   const fmt = new Intl.NumberFormat(LOCALE_TAG[lang] ?? "it-IT")
   return (
     <Link
       href={`/${lang}/vetture/${car.id}`}
-      className="group block bg-card border border-border overflow-hidden hover:border-accent/40 transition-colors duration-500"
+      className="group flex h-full flex-col bg-card border border-border overflow-hidden hover:border-accent/40 transition-colors duration-500"
     >
       <div className="relative aspect-[4/3] overflow-hidden bg-secondary">
         {car.images[0] && (
@@ -36,12 +38,12 @@ export function VehicleCard({
             alt={`${car.make} ${car.model} ${car.year}`}
             fill
             priority={priority}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            sizes={sizes}
             className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
           />
         )}
       </div>
-      <div className="p-6">
+      <div className="flex flex-1 flex-col p-6">
         <div className="flex items-start justify-between gap-4">
           <div className="min-w-0">
             <h3 className="font-serif text-xl font-medium text-foreground group-hover:text-gold-brand transition-colors">
@@ -58,7 +60,8 @@ export function VehicleCard({
             € {fmt.format(car.price)}
           </p>
         </div>
-        <div className="mt-5 pt-5 border-t border-border flex items-center gap-5 text-xs text-muted-foreground">
+        <div className="h-5 shrink-0" aria-hidden="true" />
+        <div className="mt-auto flex items-center gap-5 border-t border-border pt-5 text-xs text-muted-foreground">
           <span className="flex items-center gap-1.5">
             <Settings className="h-3.5 w-3.5" />
             {labels.gearboxes[car.gearbox] ?? car.gearbox}

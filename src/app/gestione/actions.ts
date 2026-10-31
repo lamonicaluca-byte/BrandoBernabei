@@ -75,13 +75,13 @@ export async function login(_prev: ActionState | null, formData: FormData): Prom
   if (!process.env.ADMIN_PASSWORD) return fail("Password non configurata sul server.")
   if (!passwordMatches(String(formData.get("password") ?? ""))) return fail("Password errata.")
   await startSession()
-  revalidatePath("/gestione")
+  revalidatePath("/gestione", "layout")
   return done("ok")
 }
 
 export async function logout() {
   await endSession()
-  revalidatePath("/gestione")
+  revalidatePath("/gestione", "layout")
 }
 
 // ───────────────────────────── consegnate ─────────────────────────────
@@ -126,7 +126,7 @@ export async function addVenduta(_prev: ActionState | null, formData: FormData):
     console.error(e)
     return fail("Pubblicazione non riuscita. Riprova tra poco; se persiste avvisa Luca.")
   }
-  revalidatePath("/gestione")
+  revalidatePath("/gestione/consegnate")
   return done(`${make} ${model} salvata. Sarà online sul sito tra circa un minuto.`)
 }
 
@@ -138,7 +138,7 @@ export async function moveVenduta(formData: FormData): Promise<void> {
   const next = moved(entries, entries.findIndex((e) => e.image === image), String(formData.get("dir")))
   if (!next) return
   await commitFiles(g.cfg, "chore: cambia l'ordine delle consegnate", [{ path: VENDUTE_PATH, content: toJson(next) }])
-  revalidatePath("/gestione")
+  revalidatePath("/gestione/consegnate")
 }
 
 export async function removeVenduta(formData: FormData): Promise<void> {
@@ -153,7 +153,7 @@ export async function removeVenduta(formData: FormData): Promise<void> {
     { path: `public${image}`, delete: true },
     { path: VENDUTE_PATH, content: toJson(next) },
   ])
-  revalidatePath("/gestione")
+  revalidatePath("/gestione/consegnate")
 }
 
 // ───────────────────────────── disponibili ─────────────────────────────
@@ -303,7 +303,7 @@ export async function markSold(formData: FormData): Promise<void> {
     { path: VENDUTE_PATH, content: toJson(vendute) },
   ])
   revalidatePath("/gestione/disponibili")
-  revalidatePath("/gestione")
+  revalidatePath("/gestione/consegnate")
 }
 
 export async function removeVettura(formData: FormData): Promise<void> {

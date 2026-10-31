@@ -45,7 +45,12 @@
     "subtitle": "Every car is selected, verified and prepared personally.",
     "cta": "View available cars",
     "contactPrompt": "Looking for a specific car?",
-    "contactLink": "Contact us"
+    "contactLink": "Contact us",
+    "carouselLabel": "Available cars",
+    "slide": "{n} of {total}",
+    "previous": "Previous car",
+    "next": "Next car",
+    "seeAll": "See all cars ({n})"
   },
   "vendute": {
     "demoBadge": "Example",

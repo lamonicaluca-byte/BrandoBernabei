@@ -1,11 +1,12 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/Button"
 import { ArrowRight } from "lucide-react"
-import { VehicleCard, type VehicleCardLabels } from "@/components/vehicle-card"
+import type { VehicleCardLabels } from "@/components/vehicle-card"
+import { StockCarousel } from "@/components/sections/stock-carousel"
 import { vetture } from "@/data/vetture"
 
 /** Quante schede mostrare in homepage: sono le prime dell'ordine scelto in /gestione/disponibili. */
-const HOME_COUNT = 3
+const HOME_COUNT = 6
 
 interface StockDict {
   overline: string
@@ -14,6 +15,11 @@ interface StockDict {
   cta: string
   contactPrompt: string
   contactLink: string
+  carouselLabel: string
+  slide: string
+  previous: string
+  next: string
+  seeAll: string
 }
 
 interface StockSectionProps {
@@ -37,10 +43,14 @@ export function StockSection({ dict, cardLabels, lang }: StockSectionProps) {
         </div>
 
         {cars.length > 0 && (
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {cars.map((car) => (
-              <VehicleCard key={car.id} car={car} lang={lang} labels={cardLabels} />
-            ))}
+          <div className="mt-16">
+            <StockCarousel
+              cars={cars}
+              lang={lang}
+              cardLabels={cardLabels}
+              totalCount={vetture.length}
+              labels={{ region: dict.carouselLabel, slide: dict.slide, previous: dict.previous, next: dict.next, seeAll: dict.seeAll }}
+            />
           </div>
         )}
 
