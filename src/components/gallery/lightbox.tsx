@@ -88,14 +88,22 @@ export function Lightbox({ photos, index, labels, carName, onClosed, onChange }:
     pswp.on("change", () => callbacks.current.onChange(pswp.currIndex))
 
     let disposed = false
+    let opened = false
     pswp.on("close", () => {
       if (!disposed) callbacks.current.onClosed()
+    })
+    // PhotoSwipe ignora la chiusura mentre sta ancora aprendosi: se il componente viene smontato in quel momento
+    // (per esempio con il tasto indietro premuto subito) lo si nasconde e lo si distrugge a fine animazione.
+    pswp.on("openingAnimationEnd", () => {
+      opened = true
+      if (disposed) pswp.destroy()
     })
     pswp.init()
 
     return () => {
       disposed = true
-      pswp.destroy()
+      if (opened) pswp.destroy()
+      else if (pswp.element) pswp.element.style.display = "none"
     }
     // PhotoSwipe si crea una sola volta per apertura: index e callback sono letti all'avvio
     // eslint-disable-next-line react-hooks/exhaustive-deps

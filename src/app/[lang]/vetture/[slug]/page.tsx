@@ -112,7 +112,7 @@ export default async function VetturaPage({ params }: { params: Promise<{ lang: 
               {d.backToAll}
             </Link>
 
-            <div className="mt-8 grid lg:grid-cols-[1.5fr_1fr] gap-10 lg:gap-14">
+            <div className="mt-8 grid grid-cols-[minmax(0,1fr)] lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)] gap-10 lg:gap-14">
               <VehicleGallery photos={photos} labels={d.gallery} carName={`${title} ${car.year}`} bookHref={bookHref} />
 
               <div>

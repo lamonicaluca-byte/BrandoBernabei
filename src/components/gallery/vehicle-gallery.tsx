@@ -157,7 +157,8 @@ export function VehicleGallery({ photos, labels, carName, bookHref }: VehicleGal
     : ""
 
   return (
-    <div>
+    // min-w-0: senza, il carosello (largo quanto tutte le slide) allarga la colonna della pagina e crea uno scorrimento orizzontale
+    <div className="min-w-0 max-w-full">
       {showChapters && (
         <nav aria-label={labels.chaptersNav} className="mb-3 flex gap-2 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {groups.map((g) => {
