@@ -44,7 +44,7 @@ export async function adminGate(): Promise<React.ReactNode | null> {
 
 const TABS = [
   { key: "disponibili", href: "/gestione/disponibili", label: "Disponibili" },
-  { key: "consegnate", href: "/gestione", label: "Consegnate" },
+  { key: "consegnate", href: "/gestione/consegnate", label: "Consegnate" },
 ] as const
 
 export function AdminFrame({
