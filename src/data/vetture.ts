@@ -1,5 +1,16 @@
 import entries from "./vetture.json"
 
+export type GalleryChapter = "esterni" | "interni" | "dettagli" | "documenti"
+/** Didascalia: una sola lingua (italiano) oppure una per lingua. */
+export type GalleryCaption = string | { it?: string; en?: string; fr?: string }
+
+/** Assegna una foto di `images` a un capitolo. `file` è il nome del file, es. "01.webp". */
+export interface GalleryEntry {
+  file: string
+  chapter: GalleryChapter
+  caption?: GalleryCaption
+}
+
 export interface Vettura {
   /** Identificativo e parte dell'indirizzo: /vetture/<id> */
   id: string
@@ -24,6 +35,8 @@ export interface Vettura {
   /** Percorsi in /public: la prima è la copertina */
   images: string[]
   autoscoutUrl?: string
+  /** Facoltativo: capitoli e didascalie delle foto. Senza, le foto sono in un unico capitolo. */
+  gallery?: GalleryEntry[]
 }
 
 // L'ordine dell'array è l'ordine di visualizzazione. Si gestisce da /gestione/disponibili.

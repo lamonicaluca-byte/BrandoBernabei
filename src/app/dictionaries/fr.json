@@ -60,6 +60,35 @@
     "ctaButton": "Contactez-nous"
   },
   "vetture": {
+    "gallery": {
+      "label": "Galerie photo",
+      "slide": "{n} sur {total}",
+      "chaptersNav": "Chapitres de la galerie",
+      "chapters": {
+        "esterni": "Extérieur",
+        "interni": "Intérieur",
+        "dettagli": "Détails",
+        "documenti": "Documents",
+        "altre": "Autres photos",
+        "foto": "Photos"
+      },
+      "counter": "{chapter} {n}/{total}",
+      "allPhotos": "Toutes les photos ({n})",
+      "allPhotosTitle": "Toutes les photos",
+      "openPhoto": "Ouvrir la photo en plein écran",
+      "close": "Fermer",
+      "previous": "Photo précédente",
+      "next": "Photo suivante",
+      "zoom": "Agrandir",
+      "loadError": "La photo n'a pas pu être chargée",
+      "actionTitle": "Vous voulez la voir en vrai ou en vidéo ?",
+      "actionText": "Nous vous la montrons sur place, ou nous vous envoyons une vidéo de présentation.",
+      "actionBook": "Réserver une visite",
+      "actionVideo": "Vidéo de présentation sur WhatsApp",
+      "videoMessage": "Bonjour, je suis intéressé par la {car}. Pourrais-je avoir une vidéo de présentation ?",
+      "askPhoto": "Poser une question sur cette photo",
+      "photoMessage": "Bonjour, je suis intéressé par la {car}. J'ai une question sur la photo {chapter} {n}."
+    },
     "filters": "Filtres",
     "brand": "Marque",
     "allBrands": "Toutes les marques",

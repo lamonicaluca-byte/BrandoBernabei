@@ -60,6 +60,35 @@
     "ctaButton": "Contact us"
   },
   "vetture": {
+    "gallery": {
+      "label": "Photo gallery",
+      "slide": "{n} of {total}",
+      "chaptersNav": "Gallery chapters",
+      "chapters": {
+        "esterni": "Exterior",
+        "interni": "Interior",
+        "dettagli": "Details",
+        "documenti": "Documents",
+        "altre": "More photos",
+        "foto": "Photos"
+      },
+      "counter": "{chapter} {n}/{total}",
+      "allPhotos": "All photos ({n})",
+      "allPhotosTitle": "All photos",
+      "openPhoto": "Open the photo full screen",
+      "close": "Close",
+      "previous": "Previous photo",
+      "next": "Next photo",
+      "zoom": "Zoom",
+      "loadError": "The photo could not be loaded",
+      "actionTitle": "Want to see it in person or on video?",
+      "actionText": "We can show it to you in person, or send you a walkaround video.",
+      "actionBook": "Book a visit",
+      "actionVideo": "Walkaround video on WhatsApp",
+      "videoMessage": "Hello, I'm interested in the {car}. Could I have a walkaround video?",
+      "askPhoto": "Ask about this photo",
+      "photoMessage": "Hello, I'm interested in the {car}. I have a question about the {chapter} photo {n}."
+    },
     "filters": "Filters",
     "brand": "Make",
     "allBrands": "All makes",
