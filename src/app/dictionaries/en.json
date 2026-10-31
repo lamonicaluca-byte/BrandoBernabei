@@ -3,12 +3,13 @@
     "home": { "title": "Bernabei Automobili | Premium Cars in Rome", "description": "Exclusive selection of premium and sports cars in Rome. Since 1946, three generations of enthusiasts." },
     "chiSiamo": { "title": "Since 1946, Three Generations - About Us", "description": "Three generations of passion for cars. From our grandfather, first Ferrari dealer in Central-Southern Italy, to Brando today at Via Flaminia 318, Rome." },
     "servizi": { "title": "Trade-in, Warranty, Financing - Services", "description": "Personalised consultation, trade-in, financing, warranty and delivery throughout Italy." },
-    "recensioni": { "title": "Reviews - 4.9★ on AutoScout24", "description": "4.9 on AutoScout24, 94 verified reviews, 97% positive." },
+    "recensioni": { "title": "Reviews - 4.9★ on AutoScout24", "description": "4.9 on AutoScout24, 95 verified reviews, 97% positive." },
     "vetture": { "title": "Premium & Sports Cars Available in Rome", "description": "Used sports and luxury cars in Rome: Porsche, Rolls-Royce, Audi RS, Mercedes. Every car verified, with documented history." },
     "vendute": { "title": "Sold Cars - Our Deliveries", "description": "The sports and premium cars we have handled and delivered to our clients across Italy and Europe." },
     "contatti": { "title": "Contact - Via Flaminia 318, Rome", "description": "Contact Bernabei Automobili: phone, WhatsApp, email or contact form. Via Flaminia 318/a, Rome." }
   },
   "nav": {
+    "call": "Call",
     "chiSiamo": "About Us",
     "vetture": "Stock",
     "vendute": "Delivered",
@@ -16,6 +17,12 @@
     "recensioni": "Reviews",
     "contattaci": "Contact Us",
     "openMenu": "Open menu"
+  },
+  "contactBar": {
+    "call": "Call",
+    "whatsapp": "WhatsApp",
+    "book": "Book a visit",
+    "message": "Hi Brando, I'd like information about this page: {url}"
   },
   "hero": {
     "headline1": "Since 1946, we choose",
@@ -26,7 +33,7 @@
     "cta2": "Read reviews",
     "proof1Value": "4.9 ★",
     "proof1Label": "AutoScout24",
-    "proof2Value": "94",
+    "proof2Value": "95",
     "proof2Label": "Reviews",
     "proof3Value": "Since 1946",
     "proof3Label": "Three generations",
@@ -53,6 +60,33 @@
     "ctaButton": "Contact us"
   },
   "vetture": {
+    "filters": "Filters",
+    "brand": "Make",
+    "allBrands": "All makes",
+    "priceMax": "Price up to",
+    "yearMin": "Year from",
+    "kmMax": "Mileage up to",
+    "any": "Any",
+    "sort": "Sort by",
+    "sortFeatured": "Featured",
+    "sortPriceAsc": "Price, low to high",
+    "sortPriceDesc": "Price, high to low",
+    "sortYearDesc": "Newest first",
+    "sortKmAsc": "Lowest mileage",
+    "reset": "Clear filters",
+    "results": "{n} cars",
+    "resultOne": "1 car",
+    "noResults": "No car matches the filters. Try widening your search or contact us: we will find the right car for you.",
+    "includedTitle": "Included with every car",
+    "includedWarranty": "Warranty included",
+    "includedWarrantyText": "Engine cover and dedicated assistance.",
+    "includedDelivery": "Delivery across Italy",
+    "includedDeliveryText": "To your door, with insured transport.",
+    "includedTradeIn": "Trade-in valued",
+    "includedTradeInText": "A clear quote for your current car.",
+    "includedLink": "Discover our services",
+    "bookVisit": "Book a visit",
+    "call": "Call",
     "overline": "Our selection",
     "title": "Available cars",
     "subtitle": "Every car is selected, verified and prepared personally. Quality without compromise.",
@@ -125,7 +159,6 @@
     ],
     "stats": [
       { "value": "97%", "label": "Positive reviews on AutoScout24" },
-      { "value": "500+", "label": "Satisfied clients over the years" },
       { "value": "80+", "label": "Years in the sector since 1946" },
       { "value": "100%", "label": "Guaranteed cars with included coverage" }
     ]
@@ -155,7 +188,7 @@
     "title": "Follow us on AutoScout24",
     "subtitle": "Browse our complete inventory, read verified client reviews and discover available cars in real time.",
     "ratingText": "Based on",
-    "ratingStrong": "100+",
+    "ratingStrong": "95",
     "ratingLabel": "verified reviews",
     "ctaPrimary": "View stock on AutoScout24",
     "ctaSecondary": "Read reviews",
@@ -174,6 +207,8 @@
     "cta3": "Send a message"
   },
   "footer": {
+    "privacy": "Privacy",
+    "cookie": "Cookies",
     "description": "Careful selection of premium and sports cars. Transparency, expertise and personalised assistance.",
     "navTitle": "Navigation",
     "servicesTitle": "Services",
@@ -224,7 +259,7 @@
     "services": [
       { "id": "ricerca", "title": "Custom Search", "question": "How does the personalised car search work?", "description": "Can't find the car of your dreams? Trust us. We search for the perfect car across the entire European market, with a personal inspection before purchase.", "features": ["Search tailored to your needs", "Provenance and history verification", "Personal inspection before purchase", "Detailed report with photos and video", "No cost if you don't find the right car"] },
       { "id": "permuta", "title": "Trade-in", "question": "How does the trade-in work?", "description": "Already have a car? We evaluate it seriously and transparently. Clear quote, complete transfer management. No surprises.", "features": ["Free evaluation with no obligation", "Transparent and competitive quote", "Complete transfer management", "Collection even without purchase", "Immediate payment"] },
-      { "id": "finanziamenti", "title": "Financing & Leasing", "question": "How does financing and leasing work?", "description": "Personalised financing solutions with selected institutions. We manage the process directly, from application to signing.", "features": ["Free instant quote", "Competitive rates from 3.99%", "Flexible term up to 84 months", "Final balloon payment option", "Fast approval in 24h"] },
+      { "id": "finanziamenti", "title": "Financing & Leasing", "question": "How does financing and leasing work?", "description": "Personalised financing solutions with selected institutions. We manage the process directly, from application to signing.", "features": ["Free instant quote", "Competitive rates, with a personalised quote", "Flexible term up to 84 months", "Final balloon payment option", "Fast approval in 24h"] },
       { "id": "garanzia", "title": "Warranty", "question": "What kind of warranty is included with the purchase?", "description": "All our cars come with a warranty. Not because the law requires it, but because it's the minimum you can expect from a serious professional.", "features": ["Minimum 12-month warranty included", "Extension available up to 36 months", "Full engine coverage", "24/7 roadside assistance", "No excess"] },
       { "id": "consegna", "title": "Italy-wide Delivery", "question": "How does delivery across Italy work?", "description": "Wherever you are, we'll reach you. We deliver your new car directly to your door anywhere in Italy, with trusted transporters.", "features": ["Home delivery", "Enclosed transporter", "Insurance during transport", "Guaranteed delivery times", "Documentation handled remotely"] },
       { "id": "assistenza", "title": "After-Sales Support", "question": "How does after-sales support work?", "description": "Our relationship doesn't end with the sale. We're always available for any need, months after purchase.", "features": ["Dedicated post-purchase support", "Network of partner workshops", "Maintenance advice", "Priority for Bernabei clients", "Direct contact with Brando"] }
@@ -233,12 +268,12 @@
   "recensioni": {
     "overline": "Reviews",
     "title": "The voice of our clients",
-    "subtitle": "94 verified reviews on AutoScout24. Trust is built one testimonial at a time.",
+    "subtitle": "95 verified reviews on AutoScout24. Trust is built one testimonial at a time.",
     "stat1Label": "On AutoScout24",
     "stat2Label": "Verified reviews",
     "stat3Label": "Positive reviews",
     "ctaPrimary": "Read all reviews",
-    "ctaSecondary": "94 verified reviews on AutoScout24 →"
+    "ctaSecondary": "95 verified reviews on AutoScout24 →"
   },
   "contatti": {
     "overline": "Contact",
@@ -264,7 +299,16 @@
     "formPhone": "Phone *",
     "formEmail": "Email *",
     "formMessage": "Message *",
-    "formPrivacy": "* Required fields. Your data will be processed in accordance with privacy regulations.",
+    "formPrivacy": "* Required fields.",
+    "formConsent": "I have read the {privacy} and consent to the processing of my data so that I can be contacted.",
+    "privacyLabel": "privacy policy",
+    "formError": "We could not send your message. Please try again shortly, or write to us on WhatsApp or call +39 339 502 7983.",
+    "prefillService": "I would like information about: {service}.",
+    "prefillCar": "I am interested in the {car}.",
+    "prefillVisit": "I would like to book a visit to see the {car}. Days and times that suit me: ",
+    "mapLoad": "Show the map",
+    "mapNotice": "The map is provided by Google: by loading it, Google may set cookies and process data according to its own policy.",
+    "mapOpen": "Open in Google Maps",
     "formSubmit": "Send message",
     "formSubmitting": "Sending...",
     "formSuccess": "Message sent!",

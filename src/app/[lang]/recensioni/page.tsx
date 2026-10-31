@@ -19,7 +19,7 @@ const AUTOSCOUT_URL =
 
 const statsValues = [
   { value: "4.9", stars: true, key: "stat1Label" as const },
-  { value: "94", stars: false, key: "stat2Label" as const },
+  { value: "95", stars: false, key: "stat2Label" as const },
   { value: "97%", stars: false, key: "stat3Label" as const },
 ]
 

@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/Button"
 import { useState, useEffect } from "react"
@@ -36,6 +37,13 @@ interface HeroSectionProps {
 
 export function HeroSection({ dict, lang }: HeroSectionProps) {
   const [current, setCurrent] = useState(0)
+  // la prima foto è subito prioritaria; le altre si caricano solo dopo, per non rallentare la prima schermata
+  const [shown, setShown] = useState(1)
+
+  useEffect(() => {
+    const t = setTimeout(() => setShown(heroImages.length), 2500)
+    return () => clearTimeout(t)
+  }, [])
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -48,27 +56,18 @@ export function HeroSection({ dict, lang }: HeroSectionProps) {
     <section className="relative min-h-screen lg:min-h-[calc(100vh-60px)] flex items-center overflow-hidden">
       {/* Background slideshow */}
       <div className="absolute inset-0 z-0">
-        {heroImages.map((url, i) => (
-          <div key={url}>
-            {/* Mobile: mostra il muso dell'auto */}
-            <div
-              className="sm:hidden absolute inset-0 bg-cover bg-no-repeat transition-opacity duration-1000"
-              style={{
-                backgroundImage: `url('${url}')`,
-                backgroundPosition: '30% center',
-                opacity: i === current ? 1 : 0,
-              }}
-            />
-            {/* Desktop */}
-            <div
-              className="hidden sm:block absolute inset-0 bg-cover bg-no-repeat transition-opacity duration-1000"
-              style={{
-                backgroundImage: `url('${url}')`,
-                backgroundPosition: 'center center',
-                opacity: i === current ? 1 : 0,
-              }}
-            />
-          </div>
+        {heroImages.slice(0, shown).map((url, i) => (
+          <Image
+            key={url}
+            src={url}
+            alt=""
+            fill
+            priority={i === 0}
+            sizes="100vw"
+            quality={70}
+            className="object-cover object-[30%_center] sm:object-center transition-opacity duration-1000"
+            style={{ opacity: i === current ? 1 : 0 }}
+          />
         ))}
         <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/40 to-primary/55" />
         {/* Scrim aggiuntivo dietro al blocco di testo: protegge la leggibilità anche dove la foto è chiara (es. riflessi sul cerchione) */}

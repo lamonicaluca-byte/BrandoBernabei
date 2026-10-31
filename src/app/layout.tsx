@@ -25,18 +25,6 @@ export const metadata: Metadata = {
   },
   description:
     'Selezione esclusiva di auto premium e sportive usate a Roma. Porsche, Ferrari, BMW M, Mercedes-AMG, Lamborghini. Trasparenza, competenza e garanzia inclusa.',
-  keywords: [
-    'auto usate di lusso Roma',
-    'auto sportive usate Roma',
-    'Porsche usate Roma',
-    'concessionaria auto premium Roma',
-    'vendita auto sportive Roma',
-    'Ferrari usata Roma',
-    'BMW M usata Roma',
-    'Mercedes AMG usata Roma',
-    'Bernabei Automobili',
-    'Brando Bernabei',
-  ],
   openGraph: {
     title: 'Bernabei Automobili | Auto Premium Selezionate a Roma',
     description:

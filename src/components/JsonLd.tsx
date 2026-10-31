@@ -56,23 +56,17 @@ export function OrganizationJsonLd() {
             "closes": "13:00"
           }
         ],
-        "makesOffer": [
+        "brand": [
           "Porsche","Ferrari","BMW M","Mercedes-AMG","Lamborghini",
           "Maserati","Bentley","Aston Martin","McLaren","Pagani"
-        ].map(brand => ({
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Product",
-            "brand": { "@type": "Brand", "name": brand }
-          }
-        })),
+        ].map(name => ({ "@type": "Brand", "name": name })),
         "aggregateRating": {
           "@type": "AggregateRating",
           "ratingValue": "4.9",
           "bestRating": "5",
           "worstRating": "1",
-          "reviewCount": "94",
-          "ratingCount": "94"
+          "reviewCount": "95",
+          "ratingCount": "95"
         },
         "sameAs": [
           "https://www.autoscout24.it/concessionari/bernabei-automobili-di-brando-bernabei"
@@ -126,8 +120,8 @@ export function RecensioniJsonLd() {
       "ratingValue": "4.9",
       "bestRating": "5",
       "worstRating": "1",
-      "reviewCount": "94",
-      "ratingCount": "94"
+      "reviewCount": "95",
+      "ratingCount": "95"
     },
     "review": [
       {

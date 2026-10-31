@@ -3,12 +3,13 @@
     "home": { "title": "Bernabei Automobili | Voitures Premium à Rome", "description": "Sélection exclusive de voitures premium et sportives à Rome. Depuis 1946, trois générations de passionnés." },
     "chiSiamo": { "title": "Depuis 1946, Trois Générations - À Propos", "description": "Trois générations de passion pour les automobiles. Du grand-père, premier concessionnaire Ferrari du Centre-Sud de l'Italie, à Brando aujourd'hui à la Via Flaminia 318, Rome." },
     "servizi": { "title": "Reprise, Garantie, Financement - Services", "description": "Conseil personnalisé, reprise, financement, garantie et livraison dans toute l'Italie." },
-    "recensioni": { "title": "Avis - 4.9★ sur AutoScout24", "description": "4.9 sur AutoScout24, 94 avis vérifiés, 97% positifs." },
+    "recensioni": { "title": "Avis - 4.9★ sur AutoScout24", "description": "4.9 sur AutoScout24, 95 avis vérifiés, 97% positifs." },
     "vetture": { "title": "Voitures Premium et Sportives Disponibles à Rome", "description": "Voitures sportives et de luxe d'occasion à Rome : Porsche, Rolls-Royce, Audi RS, Mercedes. Chaque voiture vérifiée, avec historique documenté." },
     "vendute": { "title": "Voitures Vendues - Nos Livraisons", "description": "Les voitures sportives et premium que nous avons traitées et livrées à nos clients en Italie et en Europe." },
     "contatti": { "title": "Contact - Via Flaminia 318, Rome", "description": "Contactez Bernabei Automobili: téléphone, WhatsApp, email ou formulaire de contact. Via Flaminia 318/a, Rome." }
   },
   "nav": {
+    "call": "Appeler",
     "chiSiamo": "À Propos",
     "vetture": "Stock",
     "vendute": "Livrées",
@@ -16,6 +17,12 @@
     "recensioni": "Avis",
     "contattaci": "Contactez-nous",
     "openMenu": "Ouvrir le menu"
+  },
+  "contactBar": {
+    "call": "Appeler",
+    "whatsapp": "WhatsApp",
+    "book": "Réserver une visite",
+    "message": "Bonjour Brando, je souhaite des informations sur cette page : {url}"
   },
   "hero": {
     "headline1": "Depuis 1946, nous choisissons",
@@ -26,7 +33,7 @@
     "cta2": "Lire les avis",
     "proof1Value": "4.9 ★",
     "proof1Label": "AutoScout24",
-    "proof2Value": "94",
+    "proof2Value": "95",
     "proof2Label": "Avis",
     "proof3Value": "Depuis 1946",
     "proof3Label": "Trois générations",
@@ -53,6 +60,33 @@
     "ctaButton": "Contactez-nous"
   },
   "vetture": {
+    "filters": "Filtres",
+    "brand": "Marque",
+    "allBrands": "Toutes les marques",
+    "priceMax": "Prix jusqu'à",
+    "yearMin": "Année à partir de",
+    "kmMax": "Km jusqu'à",
+    "any": "Indifférent",
+    "sort": "Trier par",
+    "sortFeatured": "À la une",
+    "sortPriceAsc": "Prix croissant",
+    "sortPriceDesc": "Prix décroissant",
+    "sortYearDesc": "Plus récentes",
+    "sortKmAsc": "Moins de kilomètres",
+    "reset": "Réinitialiser",
+    "results": "{n} voitures",
+    "resultOne": "1 voiture",
+    "noResults": "Aucune voiture ne correspond aux filtres. Élargissez la recherche ou contactez-nous : nous trouverons la bonne voiture pour vous.",
+    "includedTitle": "Inclus avec chaque voiture",
+    "includedWarranty": "Garantie incluse",
+    "includedWarrantyText": "Couverture du moteur et assistance dédiée.",
+    "includedDelivery": "Livraison dans toute l'Italie",
+    "includedDeliveryText": "À domicile, avec transport assuré.",
+    "includedTradeIn": "Reprise estimée",
+    "includedTradeInText": "Une estimation claire de votre voiture actuelle.",
+    "includedLink": "Découvrir les services",
+    "bookVisit": "Réserver une visite",
+    "call": "Appeler",
     "overline": "Notre sélection",
     "title": "Voitures disponibles",
     "subtitle": "Chaque voiture est sélectionnée, vérifiée et préparée personnellement. Une qualité sans compromis.",
@@ -125,7 +159,6 @@
     ],
     "stats": [
       { "value": "97%", "label": "Avis positifs sur AutoScout24" },
-      { "value": "500+", "label": "Clients satisfaits au fil des années" },
       { "value": "80+", "label": "Années dans le secteur depuis 1946" },
       { "value": "100%", "label": "Voitures garanties avec couverture incluse" }
     ]
@@ -155,7 +188,7 @@
     "title": "Suivez-nous sur AutoScout24",
     "subtitle": "Consultez notre inventaire complet, lisez les avis vérifiés de nos clients et découvrez les voitures disponibles en temps réel.",
     "ratingText": "Basé sur",
-    "ratingStrong": "100+",
+    "ratingStrong": "95",
     "ratingLabel": "avis vérifiés",
     "ctaPrimary": "Voir le stock sur AutoScout24",
     "ctaSecondary": "Lire les avis",
@@ -174,6 +207,8 @@
     "cta3": "Envoyer un message"
   },
   "footer": {
+    "privacy": "Confidentialité",
+    "cookie": "Cookies",
     "description": "Sélection soignée de voitures premium et sportives. Transparence, expertise et assistance personnalisée.",
     "navTitle": "Navigation",
     "servicesTitle": "Services",
@@ -224,7 +259,7 @@
     "services": [
       { "id": "ricerca", "title": "Recherche Personnalisée", "question": "Comment fonctionne la recherche personnalisée ?", "description": "Vous ne trouvez pas la voiture de vos rêves? Confiez-nous votre recherche. Nous cherchons pour vous la voiture idéale sur tout le marché européen, avec inspection personnelle avant achat.", "features": ["Recherche sur mesure selon vos besoins", "Vérification de la provenance et de l'historique", "Inspection personnelle avant achat", "Rapport détaillé avec photos et vidéo", "Aucun frais si vous ne trouvez pas la bonne voiture"] },
       { "id": "permuta", "title": "Reprise", "question": "Comment fonctionne la reprise de votre véhicule ?", "description": "Vous avez déjà une voiture? Nous l'évaluons sérieusement et en toute transparence. Devis clair, gestion complète du transfert. Sans surprises.", "features": ["Évaluation gratuite sans engagement", "Devis transparent et compétitif", "Gestion complète du transfert", "Reprise même sans achat", "Paiement immédiat"] },
-      { "id": "finanziamenti", "title": "Financement & Leasing", "question": "Comment fonctionnent les financements et le crédit-bail ?", "description": "Solutions de financement personnalisées avec des établissements sélectionnés. Nous gérons le dossier directement, de l'instruction jusqu'à la signature.", "features": ["Devis gratuit immédiat", "Taux compétitifs à partir de 3,99%", "Durée flexible jusqu'à 84 mois", "Option de ballon final", "Approbation rapide en 24h"] },
+      { "id": "finanziamenti", "title": "Financement & Leasing", "question": "Comment fonctionnent les financements et le crédit-bail ?", "description": "Solutions de financement personnalisées avec des établissements sélectionnés. Nous gérons le dossier directement, de l'instruction jusqu'à la signature.", "features": ["Devis gratuit immédiat", "Taux compétitifs, avec devis personnalisé", "Durée flexible jusqu'à 84 mois", "Option de ballon final", "Approbation rapide en 24h"] },
       { "id": "garanzia", "title": "Garantie", "question": "Quel type de garantie est inclus avec l'achat ?", "description": "Toutes nos voitures sont couvertes par une garantie. Non pas parce que la loi l'exige, mais parce que c'est le minimum attendu d'un professionnel sérieux.", "features": ["Garantie minimale de 12 mois incluse", "Extension disponible jusqu'à 36 mois", "Couverture complète du moteur", "Assistance routière 24h/7j", "Sans franchise"] },
       { "id": "consegna", "title": "Livraison dans toute l'Italie", "question": "Comment se déroule la livraison dans toute l'Italie ?", "description": "Où que vous soyez, nous vous rejoignons. Nous livrons votre nouvelle voiture directement chez vous dans toute l'Italie, avec des transporteurs de confiance.", "features": ["Livraison à domicile", "Transport sur camion fermé", "Assurance pendant le transport", "Délais de livraison garantis", "Documentation gérée à distance"] },
       { "id": "assistenza", "title": "Service Après-Vente", "question": "Comment fonctionne le service après-vente ?", "description": "Notre relation ne s'arrête pas à la vente. Nous sommes toujours disponibles pour tout besoin, des mois après l'achat.", "features": ["Support dédié après achat", "Réseau d'ateliers partenaires", "Conseils d'entretien", "Priorité aux clients Bernabei", "Contact direct avec Brando"] }
@@ -233,12 +268,12 @@
   "recensioni": {
     "overline": "Avis",
     "title": "La voix de nos clients",
-    "subtitle": "94 avis vérifiés sur AutoScout24. La confiance se construit un témoignage à la fois.",
+    "subtitle": "95 avis vérifiés sur AutoScout24. La confiance se construit un témoignage à la fois.",
     "stat1Label": "Sur AutoScout24",
     "stat2Label": "Avis vérifiés",
     "stat3Label": "Avis positifs",
     "ctaPrimary": "Lire tous les avis",
-    "ctaSecondary": "94 avis vérifiés sur AutoScout24 →"
+    "ctaSecondary": "95 avis vérifiés sur AutoScout24 →"
   },
   "contatti": {
     "overline": "Contact",
@@ -264,7 +299,16 @@
     "formPhone": "Téléphone *",
     "formEmail": "Email *",
     "formMessage": "Message *",
-    "formPrivacy": "* Champs obligatoires. Vos données seront traitées conformément à la politique de confidentialité.",
+    "formPrivacy": "* Champs obligatoires.",
+    "formConsent": "J'ai lu la {privacy} et j'accepte le traitement de mes données afin d'être recontacté.",
+    "privacyLabel": "politique de confidentialité",
+    "formError": "Nous n'avons pas pu envoyer votre message. Réessayez dans un instant, ou écrivez-nous sur WhatsApp ou appelez le +39 339 502 7983.",
+    "prefillService": "Je souhaiterais des informations sur : {service}.",
+    "prefillCar": "Je suis intéressé par la {car}.",
+    "prefillVisit": "Je souhaite réserver une visite pour voir la {car}. Jours et horaires qui me conviennent : ",
+    "mapLoad": "Afficher la carte",
+    "mapNotice": "La carte est fournie par Google : en la chargeant, Google peut déposer des cookies et traiter des données selon sa propre politique.",
+    "mapOpen": "Ouvrir dans Google Maps",
     "formSubmit": "Envoyer le message",
     "formSubmitting": "Envoi en cours...",
     "formSuccess": "Message envoyé!",

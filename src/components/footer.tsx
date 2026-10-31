@@ -12,6 +12,8 @@ interface FooterDict {
     contattaci: string
   }
   footer: {
+    privacy: string
+    cookie: string
     description: string
     navTitle: string
     servicesTitle: string
@@ -157,6 +159,11 @@ export function Footer({ lang, dict }: FooterProps) {
               </p>
               <p className="text-xs text-primary-foreground/60 mt-1">
                 P.IVA 15074791003
+              </p>
+              <p className="text-xs text-primary-foreground/60 mt-1">
+                <Link href={`/${lang}/privacy`} className="underline underline-offset-4 hover:text-primary-foreground transition-colors">{d.privacy}</Link>
+                <span aria-hidden="true"> · </span>
+                <Link href={`/${lang}/cookie`} className="underline underline-offset-4 hover:text-primary-foreground transition-colors">{d.cookie}</Link>
               </p>
             </div>
           </div>

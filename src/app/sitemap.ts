@@ -15,6 +15,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/servizi',  priority: 0.7, changeFrequency: 'monthly' as const },
     { path: '/recensioni', priority: 0.6, changeFrequency: 'weekly'  as const },
     { path: '/contatti', priority: 0.6, changeFrequency: 'monthly' as const },
+    { path: '/privacy', priority: 0.2, changeFrequency: 'yearly' as const },
+    { path: '/cookie', priority: 0.2, changeFrequency: 'yearly' as const },
   ]
 
   const staticEntries: MetadataRoute.Sitemap = LOCALES.flatMap(lang =>

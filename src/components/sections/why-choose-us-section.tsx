@@ -48,7 +48,7 @@ export function WhyChooseUsSection({ dict }: { dict: WhyChooseUsDict }) {
         </div>
 
         {/* Stats strip */}
-        <div className="mt-20 pt-12 border-t border-border grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="mt-20 pt-12 border-t border-border grid grid-cols-1 sm:grid-cols-3 gap-8">
           {dict.stats.map((stat, index) => (
             <div key={index} className="text-center sm:text-left">
               <div className="font-serif text-3xl font-light text-foreground">

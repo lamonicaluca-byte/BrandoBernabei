@@ -4,7 +4,7 @@ import Link from "next/link"
 import { SHOW_VENDUTE } from "@/lib/links"
 import { useState, useEffect } from "react"
 import { usePathname } from "next/navigation"
-import { Menu, X } from "lucide-react"
+import { Menu, X, Phone } from "lucide-react"
 import { Button } from "@/components/ui/Button"
 
 interface HeaderDict {
@@ -15,6 +15,7 @@ interface HeaderDict {
     servizi: string
     recensioni: string
     contattaci: string
+    call: string
     openMenu: string
   }
 }
@@ -130,15 +131,24 @@ export function Header({ lang, dict }: HeaderProps) {
             </Button>
           </div>
 
-          {/* Mobile hamburger */}
+          {/* Mobile: telefono + menu */}
+          <div className="lg:hidden flex items-center gap-1">
+            <a
+              href="tel:+393395027983"
+              aria-label={`${dict.nav.call} +39 339 502 7983`}
+              className="flex h-11 w-11 items-center justify-center text-white/85 hover:text-white transition-colors"
+            >
+              <Phone className="h-5 w-5" />
+            </a>
           <button
             type="button"
-            className="lg:hidden p-1 text-white/75 hover:text-white transition-colors"
+            className="flex h-11 w-11 items-center justify-center text-white/85 hover:text-white transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             <span className="sr-only">{dict.nav.openMenu}</span>
             {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
+          </div>
         </div>
       </div>
 

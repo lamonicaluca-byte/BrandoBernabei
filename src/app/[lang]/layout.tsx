@@ -2,6 +2,8 @@ import type { Locale } from '../i18n'
 import { Inter, Cormorant_Garamond } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { OrganizationJsonLd } from '@/components/JsonLd'
+import { MobileContactBar } from '@/components/mobile-contact-bar'
+import { getDictionary } from '../i18n'
 import '../globals.css'
 
 export type { Locale }
@@ -28,11 +30,13 @@ export default async function LangLayout({
   params: Promise<{ lang: string }>
 }) {
   const { lang } = await params
+  const dict = await getDictionary(lang as 'it' | 'en' | 'fr')
   return (
     <html lang={lang} className={`${inter.variable} ${cormorant.variable} bg-background`}>
       <body className="font-sans antialiased">
         <OrganizationJsonLd />
         {children}
+        <MobileContactBar lang={lang} labels={dict.contactBar} />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

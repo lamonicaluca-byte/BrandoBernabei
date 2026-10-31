@@ -2,7 +2,7 @@ import { Metadata } from "next"
 import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { VehicleCard } from "@/components/vehicle-card"
+import { StockExplorer } from "@/components/stock-explorer"
 import { Button } from "@/components/ui/Button"
 import { vetture } from "@/data/vetture"
 import { AUTOSCOUT_URL } from "@/lib/links"
@@ -34,15 +34,13 @@ export default async function VetturePage({ params }: { params: Promise<{ lang: 
               <p className="mt-6 text-lg text-muted-foreground leading-relaxed">{d.subtitle}</p>
             </div>
 
-            {vetture.length === 0 ? (
-              <p className="mt-16 text-muted-foreground">{d.empty}</p>
-            ) : (
-              <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {vetture.map((car, i) => (
-                  <VehicleCard key={car.id} car={car} lang={lang} labels={d} priority={i < 3} />
-                ))}
-              </div>
-            )}
+            <div className="mt-12">
+              {vetture.length === 0 ? (
+                <p className="text-muted-foreground">{d.empty}</p>
+              ) : (
+                <StockExplorer cars={vetture} lang={lang} labels={d} />
+              )}
+            </div>
 
             <div className="mt-20 text-center">
               <h2 className="font-serif text-3xl font-light text-foreground">{d.notFound}</h2>

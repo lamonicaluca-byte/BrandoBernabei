@@ -14,6 +14,9 @@ const MAX_PHOTO_BYTES = 4 * 1024 * 1024 // limite di Vercel per il corpo della r
 const MAX_PHOTOS_PER_SAVE = 12
 const FUELS = ["Benzina", "Diesel", "Ibrida", "Elettrica", "GPL", "Metano"]
 const GEARBOXES = ["Manuale", "Automatico", "Semiautomatico"]
+const IMAGE_PATH = /^\/vetture\/[a-z0-9-]+\/[a-z0-9]+\.(jpg|webp)$/
+// una consegnata ha la foto in /vendute oppure, se arriva dalle disponibili, quella di copertina rimasta in /vetture
+const SOLD_IMAGE_PATH = /^\/(vendute\/[a-z0-9-]+\.jpg|vetture\/[a-z0-9-]+\/[a-z0-9]+\.(jpg|webp))$/
 
 export interface ActionState {
   ok: boolean
@@ -142,7 +145,7 @@ export async function removeVenduta(formData: FormData): Promise<void> {
   const g = await guard()
   if ("error" in g) return
   const image = String(formData.get("image") ?? "")
-  if (!/^\/vendute\/[a-z0-9-]+\.jpg$/.test(image)) return
+  if (!SOLD_IMAGE_PATH.test(image)) return
   const entries = await readList<Venduta>(g.cfg, VENDUTE_PATH)
   const next = entries.filter((e) => e.image !== image)
   if (next.length === entries.length) return
@@ -155,7 +158,6 @@ export async function removeVenduta(formData: FormData): Promise<void> {
 
 // ───────────────────────────── disponibili ─────────────────────────────
 
-const IMAGE_PATH = /^\/vetture\/[a-z0-9-]+\/[a-z0-9]+\.(jpg|webp)$/
 
 /** Crea una vettura, oppure ne modifica una esistente se il modulo contiene "id". */
 export async function saveVettura(_prev: ActionState | null, formData: FormData): Promise<ActionState> {
@@ -273,6 +275,35 @@ export async function moveVettura(formData: FormData): Promise<void> {
   if (!next) return
   await commitFiles(g.cfg, "chore: cambia l'ordine delle auto disponibili", [{ path: VETTURE_PATH, content: toJson(next) }])
   revalidatePath("/gestione/disponibili")
+}
+
+/**
+ * Sposta un'auto dalle disponibili alle consegnate. Della scheda resta solo la foto di copertina
+ * (usata per la card nelle consegnate); le altre foto vengono tolte per non appesantire il sito.
+ */
+export async function markSold(formData: FormData): Promise<void> {
+  const g = await guard()
+  if ("error" in g) return
+  const id = String(formData.get("id") ?? "")
+  const soldAt = clean(formData.get("soldAt"))
+  if (!/^\d{4}-(0[1-9]|1[0-2])$/.test(soldAt)) return
+
+  const [vetture, vendute] = await Promise.all([
+    readList<Vettura>(g.cfg, VETTURE_PATH),
+    readList<Venduta>(g.cfg, VENDUTE_PATH),
+  ])
+  const car = vetture.find((v) => v.id === id)
+  const cover = car?.images[0]
+  if (!car || !cover || !SOLD_IMAGE_PATH.test(cover)) return
+
+  vendute.unshift({ make: car.make, model: car.model, year: car.year, km: car.km, image: cover, soldAt }) // in cima
+  await commitFiles(g.cfg, `feat: ${car.make} ${car.model} passa alle consegnate`, [
+    ...car.images.slice(1).filter((p) => IMAGE_PATH.test(p)).map((p) => ({ path: `public${p}`, delete: true as const })),
+    { path: VETTURE_PATH, content: toJson(vetture.filter((v) => v.id !== id)) },
+    { path: VENDUTE_PATH, content: toJson(vendute) },
+  ])
+  revalidatePath("/gestione/disponibili")
+  revalidatePath("/gestione")
 }
 
 export async function removeVettura(formData: FormData): Promise<void> {

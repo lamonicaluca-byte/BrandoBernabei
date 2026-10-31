@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Gauge, Settings } from "lucide-react"
 import type { Vettura } from "@/data/vetture"
+import { displayVersion } from "@/lib/vehicle"
 
 export interface VehicleCardLabels {
   discover: string
@@ -43,9 +44,12 @@ export function VehicleCard({
       <div className="p-6">
         <div className="flex items-start justify-between gap-4">
           <div className="min-w-0">
-            <h3 className="font-serif text-xl font-medium text-foreground group-hover:text-accent transition-colors">
+            <h3 className="font-serif text-xl font-medium text-foreground group-hover:text-gold-brand transition-colors">
               {car.make} {car.model}
             </h3>
+            {displayVersion(car) && (
+              <p className="mt-0.5 truncate text-sm text-foreground/70">{displayVersion(car)}</p>
+            )}
             <p className="mt-0.5 text-sm text-muted-foreground">
               {car.year} · {labels.fuels[car.fuel] ?? car.fuel} · {car.cv} CV
             </p>
@@ -63,7 +67,7 @@ export function VehicleCard({
             <Gauge className="h-3.5 w-3.5" />
             {fmt.format(car.km)} km
           </span>
-          <span className="ml-auto text-accent font-medium">{labels.discover}</span>
+          <span className="ml-auto text-gold-brand font-medium">{labels.discover}</span>
         </div>
       </div>
     </Link>

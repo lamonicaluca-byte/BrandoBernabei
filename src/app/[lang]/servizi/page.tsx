@@ -64,7 +64,7 @@ export default async function ServiziPage({ params }: { params: Promise<{ lang: 
                   >
                     <div className={index % 2 === 1 ? "lg:order-2" : ""}>
                       <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-accent/10 mb-6">
-                        <Icon className="h-7 w-7 text-accent" />
+                        <Icon className="h-7 w-7 text-gold-brand" />
                       </div>
                       <h2 className="font-serif text-3xl sm:text-4xl font-light text-foreground tracking-tight">
                         {service.title}
@@ -75,7 +75,7 @@ export default async function ServiziPage({ params }: { params: Promise<{ lang: 
                       <ul className="mt-8 space-y-3">
                         {service.features.map((feature, featureIndex) => (
                           <li key={featureIndex} className="flex items-start gap-3">
-                            <Check className="h-5 w-5 text-accent mt-0.5 shrink-0" />
+                            <Check className="h-5 w-5 text-gold-brand mt-0.5 shrink-0" />
                             <span className="text-foreground">{feature}</span>
                           </li>
                         ))}

@@ -2,7 +2,7 @@ import Link from "next/link"
 import { getGithubConfig, readTextFile } from "@/lib/github"
 import { Button } from "@/components/ui/Button"
 import type { Vettura } from "@/data/vetture"
-import { moveVettura, removeVettura } from "../actions"
+import { markSold, moveVettura, removeVettura } from "../actions"
 import { OrderControls } from "../order-controls"
 import { AdminFrame, adminGate } from "../shared"
 import { VetturaForm } from "../vettura-form"
@@ -34,6 +34,7 @@ export default async function GestioneDisponibiliPage({
   const { entries, error } = await loadEntries()
   const editing = edit ? entries.find((e) => e.id === edit) : undefined
   const eur = new Intl.NumberFormat("it-IT")
+  const thisMonth = new Date().toISOString().slice(0, 7)
 
   return (
     <AdminFrame
@@ -84,6 +85,31 @@ export default async function GestioneDisponibiliPage({
                 <Button asChild variant="ghost" size="sm">
                   <Link href={`/gestione/disponibili?edit=${encodeURIComponent(e.id)}#top`}>Modifica</Link>
                 </Button>
+                <details className="relative">
+                  <summary className="inline-flex h-8 cursor-pointer list-none items-center rounded-md px-3 text-sm font-medium hover:bg-accent hover:text-accent-foreground">
+                    Consegnata
+                  </summary>
+                  <form
+                    action={markSold}
+                    className="absolute right-0 top-full z-10 mt-1 w-64 space-y-3 border border-border bg-card p-4 shadow-md"
+                  >
+                    <input type="hidden" name="id" value={e.id} />
+                    <p className="text-xs text-muted-foreground">
+                      Sposta l&apos;auto tra le consegnate. Resta solo la foto di copertina.
+                    </p>
+                    <label className="block text-xs uppercase tracking-[0.1em] text-muted-foreground">
+                      Mese di consegna
+                      <input
+                        type="month"
+                        name="soldAt"
+                        required
+                        defaultValue={thisMonth}
+                        className="mt-1.5 w-full border border-border bg-background px-3 py-2 text-sm normal-case tracking-normal text-foreground"
+                      />
+                    </label>
+                    <Button type="submit" size="sm" className="w-full">Sposta tra le consegnate</Button>
+                  </form>
+                </details>
                 <form action={removeVettura}>
                   <input type="hidden" name="id" value={e.id} />
                   <ConfirmButton message={`Eliminare ${e.make} ${e.model} e tutte le sue foto?`}>Elimina</ConfirmButton>

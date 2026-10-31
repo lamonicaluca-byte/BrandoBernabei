@@ -36,9 +36,11 @@ export function buildMetadata(opts: {
   lang: string
   ogImage?: string
 }) {
-  const { title, description, path, lang, ogImage = OG_IMAGE } = opts
+  const { title: rawTitle, description, path, lang, ogImage = OG_IMAGE } = opts
+  // se il titolo contiene già il marchio non lo aggiungiamo una seconda volta
+  const title = /bernabei automobili/i.test(rawTitle) ? rawTitle : `${rawTitle} | Bernabei Automobili`
   return {
-    title: { absolute: `${title} | Bernabei Automobili` },
+    title: { absolute: title },
     description,
     alternates: getAlternates(path),
     openGraph: {

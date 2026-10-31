@@ -95,7 +95,7 @@ export function AutoScoutSection({ dict }: { dict: AutoScoutDict }) {
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-card border border-border p-6 text-center">
-                <div className="font-serif text-3xl font-light text-foreground">100+</div>
+                <div className="font-serif text-3xl font-light text-foreground">{dict.ratingStrong}</div>
                 <div className="text-xs text-muted-foreground mt-2">{dict.statLabel2}</div>
               </div>
               <div className="bg-card border border-border p-6 text-center">

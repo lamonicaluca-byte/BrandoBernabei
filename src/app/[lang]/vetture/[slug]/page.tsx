@@ -1,18 +1,20 @@
 import { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { ArrowLeft, ExternalLink, MessageCircle } from "lucide-react"
+import { ArrowLeft, Check, ExternalLink, MessageCircle, Phone } from "lucide-react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/Button"
 import { VehicleGallery } from "@/components/vehicle-gallery"
 import { VehicleJsonLd } from "@/components/JsonLd"
 import { getVettura, vetture } from "@/data/vetture"
+import { displayVersion, fullTitle } from "@/lib/vehicle"
 import { getDictionary, buildMetadata } from "../../../i18n"
 import type { Locale } from "../../layout"
 
 const LOCALE_TAG: Record<Locale, string> = { it: "it-IT", en: "en-GB", fr: "fr-FR" }
 const LOCALES: Locale[] = ["it", "en", "fr"]
+const goldGradient = "linear-gradient(135deg, #E8C97A 0%, #C9A96E 45%, #A07840 100%)"
 
 export function generateStaticParams() {
   return LOCALES.flatMap((lang) => vetture.map((v) => ({ lang, slug: v.id })))
@@ -23,15 +25,14 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Loc
   const car = getVettura(slug)
   if (!car) return {}
   const dict = await getDictionary(lang)
-  const price = new Intl.NumberFormat(LOCALE_TAG[lang]).format(car.price)
-  const base = buildMetadata({
-    title: `${car.make} ${car.model} ${car.year}`,
-    description: `${car.make} ${car.model} ${car.version}, ${car.year}, ${new Intl.NumberFormat(LOCALE_TAG[lang]).format(car.km)} km, € ${price}. ${dict.vetture.metaSuffix}`,
+  const fmt = new Intl.NumberFormat(LOCALE_TAG[lang])
+  return buildMetadata({
+    title: fullTitle(car),
+    description: `${fullTitle(car)}, ${fmt.format(car.km)} km, ${car.cv} CV, € ${fmt.format(car.price)}. ${dict.vetture.metaSuffix}`,
     path: `/vetture/${slug}`,
     lang,
     ogImage: car.images[0] ? `https://www.bernabeiautomobili.com${car.images[0]}` : undefined,
   })
-  return base
 }
 
 export default async function VetturaPage({ params }: { params: Promise<{ lang: Locale; slug: string }> }) {
@@ -55,9 +56,17 @@ export default async function VetturaPage({ params }: { params: Promise<{ lang: 
   ].filter((s): s is [string, string] => Boolean(s[1]))
 
   const title = `${car.make} ${car.model}`
+  const version = displayVersion(car)
   const whatsapp = `https://wa.me/393395027983?text=${encodeURIComponent(
     d.whatsappMessage.replace("{car}", `${title} ${car.year}`),
   )}`
+  const bookHref = `/${lang}/contatti?visita=1&auto=${encodeURIComponent(car.id)}`
+
+  const included = [
+    [d.includedWarranty, d.includedWarrantyText],
+    [d.includedDelivery, d.includedDeliveryText],
+    [d.includedTradeIn, d.includedTradeInText],
+  ]
 
   return (
     <>
@@ -101,7 +110,7 @@ export default async function VetturaPage({ params }: { params: Promise<{ lang: 
                 <h1 className="mt-2 font-serif text-4xl lg:text-5xl font-light text-foreground tracking-tight">
                   {car.model}
                 </h1>
-                {car.version && <p className="mt-2 text-muted-foreground">{car.version}</p>}
+                {version && <p className="mt-2 text-muted-foreground">{version}</p>}
                 <p className="mt-6 font-serif text-4xl font-light text-foreground">€ {fmt.format(car.price)}</p>
 
                 <dl className="mt-8 divide-y divide-border border-y border-border text-sm">
@@ -114,6 +123,9 @@ export default async function VetturaPage({ params }: { params: Promise<{ lang: 
                 </dl>
 
                 <div className="mt-8 flex flex-col gap-3">
+                  <Button asChild size="lg" className="border-0 text-[#0A0A0A] font-medium" style={{ background: goldGradient }}>
+                    <Link href={bookHref}>{d.bookVisit}</Link>
+                  </Button>
                   <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
                     <a href={whatsapp} target="_blank" rel="noopener noreferrer">
                       <MessageCircle className="mr-2 h-4 w-4" />
@@ -121,7 +133,10 @@ export default async function VetturaPage({ params }: { params: Promise<{ lang: 
                     </a>
                   </Button>
                   <Button asChild variant="outline" size="lg" className="border-border hover:border-accent">
-                    <Link href={`/${lang}/contatti`}>{d.sendMessage}</Link>
+                    <a href="tel:+393395027983">
+                      <Phone className="mr-2 h-4 w-4" />
+                      {d.call} +39 339 502 7983
+                    </a>
                   </Button>
                   {car.autoscoutUrl && (
                     <a
@@ -135,6 +150,24 @@ export default async function VetturaPage({ params }: { params: Promise<{ lang: 
                     </a>
                   )}
                 </div>
+
+                <div className="mt-8 border border-border bg-card p-5">
+                  <h2 className="text-xs uppercase tracking-[0.15em] text-muted-foreground">{d.includedTitle}</h2>
+                  <ul className="mt-4 space-y-3 text-sm">
+                    {included.map(([name, text]) => (
+                      <li key={name} className="flex gap-3">
+                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-gold-brand" aria-hidden="true" />
+                        <span>
+                          <span className="text-foreground">{name}.</span>{" "}
+                          <span className="text-muted-foreground">{text}</span>
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link href={`/${lang}/servizi`} className="mt-4 inline-block text-sm text-gold-brand underline underline-offset-4">
+                    {d.includedLink}
+                  </Link>
+                </div>
               </div>
             </div>
 
@@ -147,7 +180,7 @@ export default async function VetturaPage({ params }: { params: Promise<{ lang: 
             )}
 
             {car.equipment && car.equipment.length > 0 && (
-              <details className="mt-12 max-w-3xl border-t border-border pt-6 group">
+              <details open className="mt-12 max-w-3xl border-t border-border pt-6 group">
                 <summary className="cursor-pointer font-serif text-2xl font-light text-foreground list-none flex items-center justify-between">
                   {d.equipment}
                   <span className="text-sm text-muted-foreground group-open:hidden">{d.show}</span>

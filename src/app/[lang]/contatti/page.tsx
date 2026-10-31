@@ -3,6 +3,9 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react"
 import { ContactForm } from "./ContactForm"
+import { MapEmbed } from "./MapEmbed"
+import { getVettura } from "@/data/vetture"
+import { fullTitle } from "@/lib/vehicle"
 import { getDictionary, buildMetadata } from "../../i18n"
 import type { Locale } from "../layout"
 
@@ -12,10 +15,28 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Loc
   return buildMetadata({ title: dict.meta.contatti.title, description: dict.meta.contatti.description, path: '/contatti', lang })
 }
 
-export default async function ContattiPage({ params }: { params: Promise<{ lang: Locale }> }) {
+export default async function ContattiPage({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ lang: Locale }>
+  searchParams: Promise<{ servizio?: string; auto?: string; visita?: string }>
+}) {
   const { lang } = await params
+  const { servizio, auto, visita } = await searchParams
   const dict = await getDictionary(lang)
   const d = dict.contatti
+
+  // messaggio precompilato: arriva dai pulsanti "Richiedi informazioni", "Prenota una visita" e dalle schede auto
+  const car = auto ? getVettura(auto) : undefined
+  const carName = car ? fullTitle(car) : ""
+  const defaultMessage = visita && carName
+    ? d.prefillVisit.replace("{car}", carName)
+    : carName
+      ? d.prefillCar.replace("{car}", carName)
+      : servizio
+        ? d.prefillService.replace("{service}", servizio.slice(0, 80))
+        : ""
 
   const contactInfo = [
     {
@@ -88,10 +109,10 @@ export default async function ContattiPage({ params }: { params: Promise<{ lang:
                       className="p-6 bg-card rounded-sm border border-border hover:border-accent/50 transition-colors group"
                     >
                       <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
-                        <item.icon className="h-6 w-6 text-accent" />
+                        <item.icon className="h-6 w-6 text-gold-brand" />
                       </div>
                       <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
-                      <p className="text-foreground group-hover:text-accent transition-colors">
+                      <p className="text-foreground group-hover:text-gold-brand transition-colors">
                         {item.value}
                       </p>
                       <p className="text-sm text-muted-foreground mt-1">{item.description}</p>
@@ -102,7 +123,7 @@ export default async function ContattiPage({ params }: { params: Promise<{ lang:
                 {/* Hours */}
                 <div className="mt-8 p-6 bg-secondary rounded-sm">
                   <div className="flex items-center gap-3 mb-4">
-                    <Clock className="h-5 w-5 text-accent" />
+                    <Clock className="h-5 w-5 text-gold-brand" />
                     <h3 className="font-semibold text-foreground">{d.hoursTitle}</h3>
                   </div>
                   <div className="space-y-2 text-sm">
@@ -130,7 +151,7 @@ export default async function ContattiPage({ params }: { params: Promise<{ lang:
                 <h2 className="font-serif text-2xl font-medium text-foreground mb-8">
                   {d.formTitle}
                 </h2>
-                <ContactForm dict={dict.contatti} />
+                <ContactForm dict={dict.contatti} lang={lang} defaultMessage={defaultMessage} />
               </div>
             </div>
           </div>
@@ -138,15 +159,10 @@ export default async function ContattiPage({ params }: { params: Promise<{ lang:
 
         {/* Map */}
         <section className="h-96">
-          <iframe
-            src={`https://maps.google.com/maps?q=Bernabei+Automobili+di+Brando+Bernabei+Via+Flaminia+318a+Roma&output=embed&hl=${lang}&z=17`}
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
+          <MapEmbed
+            lang={lang}
             title={d.mapTitle}
+            labels={{ load: d.mapLoad, notice: d.mapNotice, open: d.mapOpen }}
           />
         </section>
       </main>
