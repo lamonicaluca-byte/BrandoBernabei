@@ -1,3 +1,5 @@
+import entries from "./vendute.json"
+
 export interface Venduta {
   make: string
   model: string
@@ -11,12 +13,14 @@ export interface Venduta {
   credit?: string
 }
 
-// Aggiungi le nuove auto in qualsiasi posizione: la pagina le ordina dalla più recente.
-/** true finché le auto sono esempi: mostra l'avviso "Esempio" in pagina. Mettere false con i dati reali. */
-export const isDemo = true
+// Le auto reali stanno in vendute.json e si gestiscono dalla pagina riservata /gestione.
+const reali = entries as Venduta[]
 
-// DEMO: dati e foto di esempio (foto da Wikimedia Commons, licenze CC). Sostituire con le auto realmente vendute prima della pubblicazione.
-export const vendute: Venduta[] = [
+/** true finché non c'è nessuna auto reale: la pagina mostra gli esempi con l'avviso "Esempio". */
+export const isDemo = reali.length === 0
+
+// DEMO: dati e foto di esempio (foto da Wikimedia Commons, licenze CC). Spariscono da soli con la prima auto reale.
+const demo: Venduta[] = [
   { make: "Ferrari", model: "F8 Tributo", year: 2021, km: 12000, image: "/vendute/ferrari-f8-tributo.jpg", soldAt: "2026-09", credit: "Wikimedia Commons / Alexander Migl, CC BY-SA 4.0" },
   { make: "Porsche", model: "911 Carrera S", year: 2021, km: 18000, image: "/vendute/porsche-911-carrera-s.jpg", soldAt: "2026-08", credit: "Wikimedia Commons / Alexander Migl, CC BY-SA 4.0" },
   { make: "Lamborghini", model: "Huracán Performante", year: 2019, km: 15500, image: "/vendute/lamborghini-huracan-performante.jpg", soldAt: "2026-07", credit: "Wikimedia Commons / Matti Blume, CC BY-SA 4.0" },
@@ -28,6 +32,8 @@ export const vendute: Venduta[] = [
   { make: "Audi", model: "R8 V10 Plus", year: 2018, km: 24000, image: "/vendute/audi-r8-v10-plus.jpg", soldAt: "2026-01", credit: "Wikimedia Commons / Vauxford, CC BY-SA 4.0" },
   { make: "Porsche", model: "911 Carrera 4S", year: 2013, km: 48000, image: "/vendute/porsche-911-carrera-4s.jpg", soldAt: "2025-12", credit: "Wikimedia Commons / David Villarreal Fernández, CC BY-SA 2.0" },
 ]
+
+export const vendute: Venduta[] = isDemo ? demo : reali
 
 export function getVendute(): Venduta[] {
   return [...vendute].sort((a, b) => b.soldAt.localeCompare(a.soldAt))

@@ -6,7 +6,7 @@ const defaultLocale = 'it'
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
-  if (pathname.startsWith('/_next') || pathname.startsWith('/api') || pathname.includes('.')) return
+  if (pathname.startsWith('/_next') || pathname.startsWith('/api') || pathname.startsWith('/gestione') || pathname.includes('.')) return
   const hasLocale = locales.some(locale => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`)
   if (!hasLocale) {
     const acceptLang = request.headers.get('accept-language') ?? ''
