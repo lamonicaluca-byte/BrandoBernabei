@@ -271,7 +271,126 @@
       "/vetture/rolls-royce-ghost-ii-6-7-v12-black-badge-iva-esposta-2026/12.webp",
       "/vetture/rolls-royce-ghost-ii-6-7-v12-black-badge-iva-esposta-2026/13.webp"
     ],
-    "autoscoutUrl": "https://www.autoscout24.it/annunci/rolls-royce-ghost-ghost-ii-6-7-v12-black-badge-iva-esposta-benzina-nero-cat_ma61mo19263-21da5950-8dfe-4612-93e7-dd36208904b2"
+    "autoscoutUrl": "https://www.autoscout24.it/annunci/rolls-royce-ghost-ghost-ii-6-7-v12-black-badge-iva-esposta-benzina-nero-cat_ma61mo19263-21da5950-8dfe-4612-93e7-dd36208904b2",
+    "gallery": [
+      {
+        "file": "01.webp",
+        "chapter": "esterni",
+        "caption": {
+          "it": "3/4 anteriore",
+          "en": "Front three-quarter",
+          "fr": "Trois quarts avant"
+        }
+      },
+      {
+        "file": "02.webp",
+        "chapter": "esterni",
+        "caption": {
+          "it": "Frontale",
+          "en": "Front",
+          "fr": "Face avant"
+        }
+      },
+      {
+        "file": "03.webp",
+        "chapter": "esterni",
+        "caption": {
+          "it": "3/4 anteriore, altro lato",
+          "en": "Front three-quarter, other side",
+          "fr": "Trois quarts avant, autre côté"
+        }
+      },
+      {
+        "file": "04.webp",
+        "chapter": "esterni",
+        "caption": {
+          "it": "3/4 posteriore",
+          "en": "Rear three-quarter",
+          "fr": "Trois quarts arrière"
+        }
+      },
+      {
+        "file": "05.webp",
+        "chapter": "esterni",
+        "caption": {
+          "it": "Posteriore",
+          "en": "Rear",
+          "fr": "Face arrière"
+        }
+      },
+      {
+        "file": "06.webp",
+        "chapter": "esterni",
+        "caption": {
+          "it": "3/4 posteriore, altro lato",
+          "en": "Rear three-quarter, other side",
+          "fr": "Trois quarts arrière, autre côté"
+        }
+      },
+      {
+        "file": "08.webp",
+        "chapter": "interni",
+        "caption": {
+          "it": "Porte aperte",
+          "en": "Doors open",
+          "fr": "Portes ouvertes"
+        }
+      },
+      {
+        "file": "09.webp",
+        "chapter": "interni",
+        "caption": {
+          "it": "Plancia e volante",
+          "en": "Dashboard and steering wheel",
+          "fr": "Tableau de bord et volant"
+        }
+      },
+      {
+        "file": "10.webp",
+        "chapter": "interni",
+        "caption": {
+          "it": "Posto guida e console centrale",
+          "en": "Driver's seat and centre console",
+          "fr": "Poste de conduite et console centrale"
+        }
+      },
+      {
+        "file": "11.webp",
+        "chapter": "interni",
+        "caption": {
+          "it": "Sedile anteriore",
+          "en": "Front seat",
+          "fr": "Siège avant"
+        }
+      },
+      {
+        "file": "12.webp",
+        "chapter": "interni",
+        "caption": {
+          "it": "Sedile anteriore e plancia",
+          "en": "Front seat and dashboard",
+          "fr": "Siège avant et tableau de bord"
+        }
+      },
+      {
+        "file": "07.webp",
+        "chapter": "dettagli",
+        "caption": {
+          "it": "Cerchio con pinza freno azzurra",
+          "en": "Wheel with blue brake caliper",
+          "fr": "Jante avec étrier de frein bleu"
+        }
+      },
+      {
+        "file": "13.webp",
+        "chapter": "dettagli",
+        "caption": {
+          "it": "Cielo stellato e poggiatesta",
+          "en": "Starlight headliner and headrests",
+          "fr": "Ciel étoilé et appuie-têtes"
+        }
+      }
+    ]
   },
   {
     "id": "porsche-992-carrera-t-ufficiale-italiana-2023",
